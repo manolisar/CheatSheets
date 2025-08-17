@@ -1,2 +1,2 @@
 # CheatSheets
-Various cheat sheets for convenience.!
+Various cheat sheets for your convenience.!
