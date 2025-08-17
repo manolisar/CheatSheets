@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshop Shortcuts Cheat Sheet</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 9px;
+            line-height: 1.2;
+            color: #333;
+            background: white;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            padding: 10px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #001e36;
+            padding-bottom: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            color: #001e36;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 10px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .section h2 {
+            font-size: 11px;
+            color: #001e36;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2px;
+        }
+        
+        .shortcut-group {
+            margin-bottom: 6px;
+        }
+        
+        .shortcut-group h3 {
+            font-size: 9px;
+            color: #555;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 0;
+            font-size: 8px;
+        }
+        
+        .key {
+            background: #e9ecef;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #495057;
+            border: 1px solid #ced4da;
+            white-space: nowrap;
+        }
+        
+        .tool {
+            background: #1976d2;
+            color: white;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .description {
+            flex: 1;
+            margin-left: 6px;
+            color: #666;
+        }
+        
+        .workflow {
+            background: #e8f4fd;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+            padding: 6px;
+            margin: 4px 0;
+        }
+        
+        .workflow h4 {
+            font-size: 9px;
+            color: #0d47a1;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .workflow ol {
+            margin-left: 12px;
+        }
+        
+        .workflow li {
+            font-size: 8px;
+            color: #0d47a1;
+            margin-bottom: 1px;
+        }
+        
+        .tip {
+            background: #f3e5f5;
+            border: 1px solid #ce93d8;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 4px 0;
+            font-size: 8px;
+            color: #4a148c;
+        }
+        
+        .tip strong {
+            color: #4a148c;
+        }
+        
+        .blend-mode {
+            background: #fff3e0;
+            border: 1px solid #ffcc02;
+            border-radius: 2px;
+            padding: 2px 4px;
+            margin: 2px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 7px;
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Photoshop Shortcuts Cheat Sheet</h1>
+            <p>Essential keyboard shortcuts for Adobe Photoshop CC - Tools, editing, and workflow optimization</p>
+        </div>
+        
+        <div class="section">
+            <h2>Tool Shortcuts</h2>
+            <div class="shortcut-group">
+                <h3>Selection Tools</h3>
+                <div class="shortcut">
+                    <span class="tool">V</span>
+                    <span class="description">Move Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">M</span>
+                    <span class="description">Marquee Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">L</span>
+                    <span class="description">Lasso Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">W</span>
+                    <span class="description">Quick Selection Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">C</span>
+                    <span class="description">Crop Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">I</span>
+                    <span class="description">Eyedropper Tool</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Painting Tools</h3>
+                <div class="shortcut">
+                    <span class="tool">B</span>
+                    <span class="description">Brush Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">S</span>
+                    <span class="description">Clone Stamp Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">Y</span>
+                    <span class="description">History Brush Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">E</span>
+                    <span class="description">Eraser Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">G</span>
+                    <span class="description">Gradient Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">P</span>
+                    <span class="description">Pen Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">T</span>
+                    <span class="description">Type Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">A</span>
+                    <span class="description">Path Selection Tool</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Retouching Tools</h3>
+                <div class="shortcut">
+                    <span class="tool">J</span>
+                    <span class="description">Healing Brush Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">O</span>
+                    <span class="description">Burn Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">R</span>
+                    <span class="description">Blur Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">U</span>
+                    <span class="description">Rectangle Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">H</span>
+                    <span class="description">Hand Tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="tool">Z</span>
+                    <span class="description">Zoom Tool</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>View & Navigation</h2>
+            <div class="shortcut-group">
+                <h3>Zoom & Pan</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + +</span>
+                    <span class="description">Zoom in</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + -</span>
+                    <span class="description">Zoom out</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + 0</span>
+                    <span class="description">Fit to screen</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + 1</span>
+                    <span class="description">100% zoom</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Space + Drag</span>
+                    <span class="description">Pan image</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F</span>
+                    <span class="description">Cycle screen modes</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Tab</span>
+                    <span class="description">Hide/show panels</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>View Options</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + H</span>
+                    <span class="description">Hide/show extras</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + R</span>
+                    <span class="description">Show/hide rulers</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + ;</span>
+                    <span class="description">Show/hide guides</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + '</span>
+                    <span class="description">Show/hide grid</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + 0</span>
+                    <span class="description">Fit to window width</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Selection & Editing</h2>
+            <div class="shortcut-group">
+                <h3>Selection Operations</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + A</span>
+                    <span class="description">Select all</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + D</span>
+                    <span class="description">Deselect</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + I</span>
+                    <span class="description">Inverse selection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + D</span>
+                    <span class="description">Feather selection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Drag</span>
+                    <span class="description">Subtract from selection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Drag</span>
+                    <span class="description">Add to selection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Alt + Drag</span>
+                    <span class="description">Intersect selection</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Basic Editing</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + C</span>
+                    <span class="description">Copy</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + V</span>
+                    <span class="description">Paste</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + V</span>
+                    <span class="description">Paste in place</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + V</span>
+                    <span class="description">Paste into</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Delete</span>
+                    <span class="description">Fill with background color</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Delete</span>
+                    <span class="description">Fill with foreground color</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Delete</span>
+                    <span class="description">Fill dialog</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Layers</h2>
+            <div class="shortcut-group">
+                <h3>Layer Management</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + N</span>
+                    <span class="description">New layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + J</span>
+                    <span class="description">Duplicate layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + J</span>
+                    <span class="description">Cut to new layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + G</span>
+                    <span class="description">Group layers</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + G</span>
+                    <span class="description">Ungroup layers</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + E</span>
+                    <span class="description">Merge down</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + E</span>
+                    <span class="description">Merge visible</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + Shift + E</span>
+                    <span class="description">Stamp visible</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Layer Navigation</h3>
+                <div class="shortcut">
+                    <span class="key">Alt + ]</span>
+                    <span class="description">Select next layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + [</span>
+                    <span class="description">Select previous layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + ]</span>
+                    <span class="description">Bring layer forward</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + [</span>
+                    <span class="description">Send layer backward</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + ]</span>
+                    <span class="description">Bring to front</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + [</span>
+                    <span class="description">Send to back</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Transformations</h2>
+            <div class="shortcut-group">
+                <h3>Transform Commands</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + T</span>
+                    <span class="description">Free transform</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + T</span>
+                    <span class="description">Transform again</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + T</span>
+                    <span class="description">Transform copy</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Drag</span>
+                    <span class="description">Constrain proportions</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Drag</span>
+                    <span class="description">Transform from center</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Specific Transforms</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + C</span>
+                    <span class="description">Canvas size</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + I</span>
+                    <span class="description">Image size</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Adjustments & Filters</h2>
+            <div class="shortcut-group">
+                <h3>Color Adjustments</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + L</span>
+                    <span class="description">Levels</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + M</span>
+                    <span class="description">Curves</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + U</span>
+                    <span class="description">Hue/Saturation</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + B</span>
+                    <span class="description">Color Balance</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + L</span>
+                    <span class="description">Auto Levels</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Alt + L</span>
+                    <span class="description">Auto Color</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + Shift + B</span>
+                    <span class="description">Black & White</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Filters</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + F</span>
+                    <span class="description">Last filter</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + F</span>
+                    <span class="description">Fade last filter</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Alt + X</span>
+                    <span class="description">Extract</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Alt + F</span>
+                    <span class="description">Liquify</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Brush & Tool Settings</h2>
+            <div class="shortcut-group">
+                <h3>Brush Controls</h3>
+                <div class="shortcut">
+                    <span class="key">[</span>
+                    <span class="description">Decrease brush size</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">]</span>
+                    <span class="description">Increase brush size</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + [</span>
+                    <span class="description">Decrease hardness</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + ]</span>
+                    <span class="description">Increase hardness</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">0-9</span>
+                    <span class="description">Set opacity (10%-100%)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + 0-9</span>
+                    <span class="description">Set flow (10%-100%)</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Color Controls</h3>
+                <div class="shortcut">
+                    <span class="key">D</span>
+                    <span class="description">Default colors (B&W)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">X</span>
+                    <span class="description">Swap foreground/background</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Click</span>
+                    <span class="description">Sample color (eyedropper)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Alt + Click</span>
+                    <span class="description">Sample background color</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="shortcut-group">
+                <h3>Basic File Operations</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + N</span>
+                    <span class="description">New document</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + O</span>
+                    <span class="description">Open file</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + S</span>
+                    <span class="description">Save</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + S</span>
+                    <span class="description">Save As</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + S</span>
+                    <span class="description">Save for Web</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + W</span>
+                    <span class="description">Close document</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Q</span>
+                    <span class="description">Quit Photoshop</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>History</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Z</span>
+                    <span class="description">Undo/Redo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + Z</span>
+                    <span class="description">Step backward</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Z</span>
+                    <span class="description">Step forward</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Text & Type</h2>
+            <div class="shortcut-group">
+                <h3>Text Editing</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + ></span>
+                    <span class="description">Increase font size</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + <</span>
+                    <span class="description">Decrease font size</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + +</span>
+                    <span class="description">Increase leading</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + -</span>
+                    <span class="description">Decrease leading</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Left/Right</span>
+                    <span class="description">Adjust kerning</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + C</span>
+                    <span class="description">Center text</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + L</span>
+                    <span class="description">Left align text</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + R</span>
+                    <span class="description">Right align text</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Common Workflows</h2>
+            
+            <div class="workflow">
+                <h4>Basic Photo Retouching</h4>
+                <ol>
+                    <li>Open image (Ctrl + O)</li>
+                    <li>Duplicate background layer (Ctrl + J)</li>
+                    <li>Use Healing Brush (J) for blemishes</li>
+                    <li>Adjust levels (Ctrl + L)</li>
+                    <li>Apply Unsharp Mask filter</li>
+                    <li>Save for web (Ctrl + Alt + S)</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>Layer Mask Workflow</h4>
+                <ol>
+                    <li>Add layer mask (Layer menu)</li>
+                    <li>Select brush tool (B)</li>
+                    <li>Paint with black to hide</li>
+                    <li>Paint with white to reveal</li>
+                    <li>Use gray for partial transparency</li>
+                    <li>Alt + click mask to view</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>Selection to Path</h4>
+                <ol>
+                    <li>Make selection with any tool</li>
+                    <li>Go to Paths panel</li>
+                    <li>Click "Make work path from selection"</li>
+                    <li>Refine path with Pen Tool (P)</li>
+                    <li>Save path for future use</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Pro Tips</h2>
+            
+            <div class="tip">
+                <strong>Quick Mask:</strong> Press Q to enter Quick Mask mode for painting selections
+            </div>
+            
+            <div class="tip">
+                <strong>Spacebar:</strong> Hold Space to temporarily switch to Hand tool
+            </div>
+            
+            <div class="tip">
+                <strong>Caps Lock:</strong> Toggle precise cursors for painting tools
+            </div>
+            
+            <div class="tip">
+                <strong>Alt + Click:</strong> Create clipping mask when between layers in panel
+            </div>
+            
+            <div class="tip">
+                <strong>Shift + Tool:</strong> Cycle through tool variants in same group
+            </div>
+            
+            <div class="tip">
+                <strong>Right-click:</strong> Access context menus for brush settings and options
+            </div>
+            
+            <div class="tip">
+                <strong>Ctrl + Click:</strong> Load layer as selection from Layers panel
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Blend Modes Shortcuts</h2>
+            
+            <div class="blend-mode">
+                Shift + Alt + N - Normal<br>
+                Shift + Alt + M - Multiply<br>
+                Shift + Alt + S - Screen<br>
+                Shift + Alt + O - Overlay<br>
+                Shift + Alt + F - Soft Light<br>
+                Shift + Alt + H - Hard Light<br>
+                Shift + Alt + D - Color Dodge<br>
+                Shift + Alt + B - Color Burn<br>
+                Shift + Alt + K - Darken<br>
+                Shift + Alt + G - Lighten
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Panel Shortcuts</h2>
+            <div class="shortcut-group">
+                <h3>Panel Visibility</h3>
+                <div class="shortcut">
+                    <span class="key">F9</span>
+                    <span class="description">Actions panel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F7</span>
+                    <span class="description">Layers panel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F6</span>
+                    <span class="description">Color panel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F5</span>
+                    <span class="description">Brush panel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + F5</span>
+                    <span class="description">Fill dialog</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + F6</span>
+                    <span class="description">Feather selection</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

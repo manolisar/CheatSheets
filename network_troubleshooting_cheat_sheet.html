@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Troubleshooting Cheat Sheet</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 9px;
+            line-height: 1.2;
+            color: #333;
+            background: white;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            padding: 10px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            color: #1976d2;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 10px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .section h2 {
+            font-size: 11px;
+            color: #1976d2;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2px;
+        }
+        
+        .shortcut-group {
+            margin-bottom: 6px;
+        }
+        
+        .shortcut-group h3 {
+            font-size: 9px;
+            color: #555;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 0;
+            font-size: 8px;
+        }
+        
+        .command {
+            background: #2d3748;
+            color: #68d391;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-weight: bold;
+            white-space: nowrap;
+            border: 1px solid #4a5568;
+        }
+        
+        .description {
+            flex: 1;
+            margin-left: 6px;
+            color: #666;
+        }
+        
+        .workflow {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+            padding: 6px;
+            margin: 4px 0;
+        }
+        
+        .workflow h4 {
+            font-size: 9px;
+            color: #0d47a1;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .workflow ol {
+            margin-left: 12px;
+        }
+        
+        .workflow li {
+            font-size: 8px;
+            color: #0d47a1;
+            margin-bottom: 1px;
+        }
+        
+        .tip {
+            background: #fff3e0;
+            border: 1px solid #ffcc02;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 4px 0;
+            font-size: 8px;
+            color: #e65100;
+        }
+        
+        .tip strong {
+            color: #e65100;
+        }
+        
+        .critical {
+            background: #ffebee;
+            border: 1px solid #ef5350;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 4px 0;
+            font-size: 8px;
+            color: #c62828;
+        }
+        
+        .critical strong {
+            color: #c62828;
+        }
+        
+        .example {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 2px;
+            padding: 2px 4px;
+            margin: 2px 0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 7px;
+            color: #22543d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Network Troubleshooting Cheat Sheet</h1>
+            <p>Essential commands and methodologies for diagnosing and fixing network connectivity issues</p>
+        </div>
+        
+        <div class="section">
+            <h2>Basic Connectivity Tests</h2>
+            <div class="shortcut-group">
+                <h3>Ping Commands</h3>
+                <div class="shortcut">
+                    <span class="command">ping 8.8.8.8</span>
+                    <span class="description">Test internet connectivity</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ping -t 8.8.8.8</span>
+                    <span class="description">Continuous ping (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ping -c 4 8.8.8.8</span>
+                    <span class="description">Ping 4 times (Linux/Mac)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ping gateway_ip</span>
+                    <span class="description">Test local network</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ping localhost</span>
+                    <span class="description">Test TCP/IP stack</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ping -f -s 1472 target</span>
+                    <span class="description">Test MTU size</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Traceroute</h3>
+                <div class="shortcut">
+                    <span class="command">tracert google.com</span>
+                    <span class="description">Trace route (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">traceroute google.com</span>
+                    <span class="description">Trace route (Linux/Mac)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">mtr google.com</span>
+                    <span class="description">Continuous traceroute</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">pathping target</span>
+                    <span class="description">Combined ping/tracert</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>DNS Troubleshooting</h2>
+            <div class="shortcut-group">
+                <h3>DNS Lookup Commands</h3>
+                <div class="shortcut">
+                    <span class="command">nslookup domain.com</span>
+                    <span class="description">Basic DNS lookup</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nslookup domain.com 8.8.8.8</span>
+                    <span class="description">Query specific DNS server</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">dig domain.com</span>
+                    <span class="description">Detailed DNS info (Linux/Mac)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">dig @8.8.8.8 domain.com</span>
+                    <span class="description">Query specific server</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">dig domain.com MX</span>
+                    <span class="description">Query MX records</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">host domain.com</span>
+                    <span class="description">Simple DNS lookup</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>DNS Cache</h3>
+                <div class="shortcut">
+                    <span class="command">ipconfig /flushdns</span>
+                    <span class="description">Clear DNS cache (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sudo dscacheutil -flushcache</span>
+                    <span class="description">Clear DNS cache (Mac)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sudo systemctl restart systemd-resolved</span>
+                    <span class="description">Restart DNS (Ubuntu)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ipconfig /displaydns</span>
+                    <span class="description">Display DNS cache</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Network Configuration</h2>
+            <div class="shortcut-group">
+                <h3>IP Configuration</h3>
+                <div class="shortcut">
+                    <span class="command">ipconfig</span>
+                    <span class="description">Basic IP info (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ipconfig /all</span>
+                    <span class="description">Detailed IP info (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ifconfig</span>
+                    <span class="description">IP configuration (Linux/Mac)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ip addr show</span>
+                    <span class="description">Show IP addresses (Linux)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ip route show</span>
+                    <span class="description">Show routing table</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">route print</span>
+                    <span class="description">Show routes (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netstat -rn</span>
+                    <span class="description">Show routing table</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>DHCP Operations</h3>
+                <div class="shortcut">
+                    <span class="command">ipconfig /release</span>
+                    <span class="description">Release IP address</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ipconfig /renew</span>
+                    <span class="description">Renew IP address</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sudo dhclient -r</span>
+                    <span class="description">Release DHCP (Linux)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sudo dhclient</span>
+                    <span class="description">Request new DHCP</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Port & Connection Testing</h2>
+            <div class="shortcut-group">
+                <h3>Port Connectivity</h3>
+                <div class="shortcut">
+                    <span class="command">telnet host 80</span>
+                    <span class="description">Test port connectivity</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nc -zv host 80</span>
+                    <span class="description">Test port (netcat)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmap -p 80 host</span>
+                    <span class="description">Scan specific port</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmap -p 1-1000 host</span>
+                    <span class="description">Scan port range</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ss -tulpn</span>
+                    <span class="description">Show listening ports</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netstat -an</span>
+                    <span class="description">Show all connections</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netstat -b</span>
+                    <span class="description">Show process names</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Connection Analysis</h3>
+                <div class="shortcut">
+                    <span class="command">netstat -anp | grep :80</span>
+                    <span class="description">Check specific port usage</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">lsof -i :80</span>
+                    <span class="description">See what's using port 80</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ss -tulpn | grep :80</span>
+                    <span class="description">Modern netstat alternative</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Network Interface Tools</h2>
+            <div class="shortcut-group">
+                <h3>Interface Management</h3>
+                <div class="shortcut">
+                    <span class="command">ifup eth0</span>
+                    <span class="description">Bring interface up</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ifdown eth0</span>
+                    <span class="description">Bring interface down</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ip link show</span>
+                    <span class="description">Show network interfaces</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ethtool eth0</span>
+                    <span class="description">Show interface details</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">iwconfig</span>
+                    <span class="description">Wireless interface config</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmcli dev status</span>
+                    <span class="description">NetworkManager status</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Traffic Analysis</h3>
+                <div class="shortcut">
+                    <span class="command">tcpdump -i eth0</span>
+                    <span class="description">Capture packets</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">tcpdump -i any port 80</span>
+                    <span class="description">Capture HTTP traffic</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">wireshark</span>
+                    <span class="description">GUI packet analyzer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">iftop</span>
+                    <span class="description">Real-time bandwidth usage</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nethogs</span>
+                    <span class="description">Per-process bandwidth</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Wireless Troubleshooting</h2>
+            <div class="shortcut-group">
+                <h3>WiFi Diagnostics</h3>
+                <div class="shortcut">
+                    <span class="command">iwlist scan</span>
+                    <span class="description">Scan for networks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">iwconfig wlan0</span>
+                    <span class="description">Show wireless config</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmcli dev wifi</span>
+                    <span class="description">List available networks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netsh wlan show drivers</span>
+                    <span class="description">Show WiFi drivers (Windows)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netsh wlan show profiles</span>
+                    <span class="description">Show saved networks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">iw dev wlan0 link</span>
+                    <span class="description">Show connection status</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Signal Analysis</h3>
+                <div class="shortcut">
+                    <span class="command">iwconfig | grep Signal</span>
+                    <span class="description">Check signal strength</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">watch -n 1 iwconfig</span>
+                    <span class="description">Monitor signal continuously</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">wavemon</span>
+                    <span class="description">Wireless network monitor</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Firewall & Security</h2>
+            <div class="shortcut-group">
+                <h3>Firewall Commands</h3>
+                <div class="shortcut">
+                    <span class="command">iptables -L</span>
+                    <span class="description">List firewall rules</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">ufw status</span>
+                    <span class="description">Ubuntu firewall status</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">netsh advfirewall show allprofiles</span>
+                    <span class="description">Windows firewall status</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sudo ufw allow 80</span>
+                    <span class="description">Allow port through firewall</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">firewall-cmd --list-all</span>
+                    <span class="description">Show firewall rules (RHEL)</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Security Scanning</h3>
+                <div class="shortcut">
+                    <span class="command">nmap -sS target</span>
+                    <span class="description">Stealth port scan</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmap -O target</span>
+                    <span class="description">OS detection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nmap -sV target</span>
+                    <span class="description">Service version detection</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Common Issue Workflows</h2>
+            
+            <div class="workflow">
+                <h4>No Internet Connection</h4>
+                <ol>
+                    <li>ping 127.0.0.1 (test local stack)</li>
+                    <li>ping gateway_ip (test local network)</li>
+                    <li>ping 8.8.8.8 (test internet)</li>
+                    <li>nslookup google.com (test DNS)</li>
+                    <li>ipconfig /release && ipconfig /renew</li>
+                    <li>ipconfig /flushdns</li>
+                    <li>Check cables and WiFi connection</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>Slow Network Performance</h4>
+                <ol>
+                    <li>ping -t gateway (check latency)</li>
+                    <li>tracert target (find bottlenecks)</li>
+                    <li>iperf3 -c server (bandwidth test)</li>
+                    <li>netstat -an (check connections)</li>
+                    <li>Check for duplicate IP addresses</li>
+                    <li>Monitor interface errors</li>
+                    <li>Check for network congestion</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>DNS Resolution Issues</h4>
+                <ol>
+                    <li>nslookup domain.com</li>
+                    <li>Try different DNS servers</li>
+                    <li>ipconfig /flushdns</li>
+                    <li>Check hosts file</li>
+                    <li>Verify DNS settings</li>
+                    <li>Test with dig/nslookup</li>
+                    <li>Check firewall DNS rules</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>Port Connectivity Issues</h4>
+                <ol>
+                    <li>telnet host port</li>
+                    <li>nmap -p port host</li>
+                    <li>Check if service is running</li>
+                    <li>Verify firewall rules</li>
+                    <li>Check routing tables</li>
+                    <li>Test from different locations</li>
+                    <li>Capture packets with tcpdump</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Critical Troubleshooting Tips</h2>
+            
+            <div class="critical">
+                <strong>Layer-by-Layer Approach:</strong> Always start with physical layer (cables, WiFi) and work up through OSI layers
+            </div>
+            
+            <div class="tip">
+                <strong>Document Everything:</strong> Keep logs of commands and results for complex issues
+            </div>
+            
+            <div class="tip">
+                <strong>Isolate Variables:</strong> Change one thing at a time to identify root cause
+            </div>
+            
+            <div class="critical">
+                <strong>Baseline Knowledge:</strong> Know your normal network configuration before problems occur
+            </div>
+            
+            <div class="tip">
+                <strong>Multiple Tests:</strong> Don't rely on single test results - verify with multiple methods
+            </div>
+            
+            <div class="tip">
+                <strong>Time-based Issues:</strong> Some problems are intermittent - monitor over time
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Quick Reference</h2>
+            
+            <div class="example">
+                # Common IP addresses:<br>
+                127.0.0.1 - Loopback (localhost)<br>
+                8.8.8.8 - Google DNS<br>
+                1.1.1.1 - Cloudflare DNS<br>
+                192.168.1.1 - Common router IP<br>
+                169.254.x.x - APIPA (no DHCP)
+            </div>
+            
+            <div class="example">
+                # Common ports:<br>
+                22 - SSH<br>
+                23 - Telnet<br>
+                53 - DNS<br>
+                80 - HTTP<br>
+                443 - HTTPS<br>
+                993 - IMAPS<br>
+                995 - POP3S
+            </div>
+            
+            <div class="example">
+                # Quick connectivity test:<br>
+                ping 8.8.8.8 && echo "Internet OK" || echo "No Internet"<br><br>
+                # Quick DNS test:<br>
+                nslookup google.com || echo "DNS issues"
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Advanced Tools</h2>
+            <div class="shortcut-group">
+                <h3>Performance Testing</h3>
+                <div class="shortcut">
+                    <span class="command">iperf3 -s</span>
+                    <span class="description">Start bandwidth server</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">iperf3 -c server_ip</span>
+                    <span class="description">Test bandwidth to server</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">speedtest-cli</span>
+                    <span class="description">Internet speed test</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">mtr -r host</span>
+                    <span class="description">Network route analysis</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Monitoring Tools</h3>
+                <div class="shortcut">
+                    <span class="command">vnstat</span>
+                    <span class="description">Network statistics</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">bmon</span>
+                    <span class="description">Bandwidth monitor</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">nload</span>
+                    <span class="description">Real-time network usage</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">sar -n DEV 1</span>
+                    <span class="description">Network interface statistics</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
