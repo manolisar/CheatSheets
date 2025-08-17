@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DS Max Cheat Sheet</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 9px;
+            line-height: 1.2;
+            color: #333;
+            background: white;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            padding: 10px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 10px;
+            color: #666;
+            margin-top: 2px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .section h2 {
+            font-size: 11px;
+            color: #2c5aa0;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2px;
+        }
+        
+        .shortcut-group {
+            margin-bottom: 6px;
+        }
+        
+        .shortcut-group h3 {
+            font-size: 9px;
+            color: #555;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 0;
+            font-size: 8px;
+        }
+        
+        .key {
+            background: #e9ecef;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #495057;
+            border: 1px solid #ced4da;
+            white-space: nowrap;
+        }
+        
+        .description {
+            flex: 1;
+            margin-left: 6px;
+            color: #666;
+        }
+        
+        .workflow {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 6px;
+            margin: 4px 0;
+        }
+        
+        .workflow h4 {
+            font-size: 9px;
+            color: #856404;
+            margin-bottom: 3px;
+            font-weight: bold;
+        }
+        
+        .workflow ol {
+            margin-left: 12px;
+        }
+        
+        .workflow li {
+            font-size: 8px;
+            color: #856404;
+            margin-bottom: 1px;
+        }
+        
+        .tip {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+            padding: 4px;
+            margin: 4px 0;
+            font-size: 8px;
+            color: #0c5460;
+        }
+        
+        .tip strong {
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>3DS Max Cheat Sheet</h1>
+            <p>Essential shortcuts, tools, and workflows for 3D modeling and animation</p>
+        </div>
+        
+        <div class="section">
+            <h2>Navigation & Views</h2>
+            <div class="shortcut-group">
+                <h3>Viewport Navigation</h3>
+                <div class="shortcut">
+                    <span class="key">MMB + Drag</span>
+                    <span class="description">Pan view</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Scroll Wheel</span>
+                    <span class="description">Zoom in/out</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + MMB</span>
+                    <span class="description">Rotate view</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Alt + MMB</span>
+                    <span class="description">Zoom region</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Z</span>
+                    <span class="description">Zoom extents all</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Z</span>
+                    <span class="description">Zoom extents selected</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + Z</span>
+                    <span class="description">Zoom extents region</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>View Controls</h3>
+                <div class="shortcut">
+                    <span class="key">F3</span>
+                    <span class="description">Wireframe toggle</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F4</span>
+                    <span class="description">Edged faces</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">7</span>
+                    <span class="description">Poly count</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">G</span>
+                    <span class="description">Grid toggle</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + X</span>
+                    <span class="description">X-ray mode</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Selection</h2>
+            <div class="shortcut-group">
+                <h3>Basic Selection</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + A</span>
+                    <span class="description">Select all</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + D</span>
+                    <span class="description">Deselect all</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + I</span>
+                    <span class="description">Invert selection</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">H</span>
+                    <span class="description">Select by name</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Q</span>
+                    <span class="description">Quick select</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Sub-object Selection</h3>
+                <div class="shortcut">
+                    <span class="key">1</span>
+                    <span class="description">Vertex mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">2</span>
+                    <span class="description">Edge mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">3</span>
+                    <span class="description">Border mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">4</span>
+                    <span class="description">Polygon mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">5</span>
+                    <span class="description">Element mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Click</span>
+                    <span class="description">Loop select</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Transform Tools</h2>
+            <div class="shortcut-group">
+                <h3>Basic Transforms</h3>
+                <div class="shortcut">
+                    <span class="key">W</span>
+                    <span class="description">Move tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">E</span>
+                    <span class="description">Rotate tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">R</span>
+                    <span class="description">Scale tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + V</span>
+                    <span class="description">Clone options</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Move</span>
+                    <span class="description">Clone while moving</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Transform Constraints</h3>
+                <div class="shortcut">
+                    <span class="key">X</span>
+                    <span class="description">X-axis constraint</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Y</span>
+                    <span class="description">Y-axis constraint</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + X</span>
+                    <span class="description">YZ plane constraint</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F5</span>
+                    <span class="description">Restrict to X</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F6</span>
+                    <span class="description">Restrict to Y</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F7</span>
+                    <span class="description">Restrict to Z</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F8</span>
+                    <span class="description">Restrict to XY</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Modeling Tools</h2>
+            <div class="shortcut-group">
+                <h3>Edit Poly</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Backspace</span>
+                    <span class="description">Delete selected</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Ctrl + A</span>
+                    <span class="description">Attach</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + E</span>
+                    <span class="description">Extrude</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + B</span>
+                    <span class="description">Bevel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + I</span>
+                    <span class="description">Inset</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + C</span>
+                    <span class="description">Connect</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Mesh Tools</h3>
+                <div class="shortcut">
+                    <span class="key">Alt + A</span>
+                    <span class="description">Angle snap</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">S</span>
+                    <span class="description">Snap toggle</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + S</span>
+                    <span class="description">Snap settings</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">J</span>
+                    <span class="description">Hide selected</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + J</span>
+                    <span class="description">Unhide all</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Animation</h2>
+            <div class="shortcut-group">
+                <h3>Time Controls</h3>
+                <div class="shortcut">
+                    <span class="key">Space</span>
+                    <span class="description">Play/Stop animation</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">/</span>
+                    <span class="description">Play animation</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">.</span>
+                    <span class="description">Next frame</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">,</span>
+                    <span class="description">Previous frame</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Home</span>
+                    <span class="description">Go to start</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">End</span>
+                    <span class="description">Go to end</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Keys</h3>
+                <div class="shortcut">
+                    <span class="key">K</span>
+                    <span class="description">Set key</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">N</span>
+                    <span class="description">Auto key toggle</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + N</span>
+                    <span class="description">New scene</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="shortcut-group">
+                <h3>Basic File Ops</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + N</span>
+                    <span class="description">New scene</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + O</span>
+                    <span class="description">Open file</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + S</span>
+                    <span class="description">Save scene</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + S</span>
+                    <span class="description">Save as</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + I</span>
+                    <span class="description">Import</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + E</span>
+                    <span class="description">Export selected</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Undo/Redo</h3>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Z</span>
+                    <span class="description">Undo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Y</span>
+                    <span class="description">Redo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + Shift + Z</span>
+                    <span class="description">Redo alternative</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Rendering</h2>
+            <div class="shortcut-group">
+                <h3>Render Controls</h3>
+                <div class="shortcut">
+                    <span class="key">F9</span>
+                    <span class="description">Quick render</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F10</span>
+                    <span class="description">Render setup</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + Q</span>
+                    <span class="description">Quick render</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + R</span>
+                    <span class="description">Render last</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F11</span>
+                    <span class="description">Advanced lighting</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F12</span>
+                    <span class="description">Render options</span>
+                </div>
+            </div>
+            
+            <div class="shortcut-group">
+                <h3>Material Editor</h3>
+                <div class="shortcut">
+                    <span class="key">M</span>
+                    <span class="description">Material editor</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Ctrl + M</span>
+                    <span class="description">Assign material</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Common Workflows</h2>
+            
+            <div class="workflow">
+                <h4>Basic Box Modeling</h4>
+                <ol>
+                    <li>Create → Box</li>
+                    <li>Right-click → Convert to Editable Poly</li>
+                    <li>Select polygon mode (4)</li>
+                    <li>Extrude faces (Ctrl+Shift+E)</li>
+                    <li>Inset for detail (Ctrl+Shift+I)</li>
+                    <li>Connect edges (Ctrl+Shift+C)</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>UV Unwrapping</h4>
+                <ol>
+                    <li>Select object → Modifier List → Unwrap UVW</li>
+                    <li>Select faces in polygon mode</li>
+                    <li>Edit UVs → Open UV Editor</li>
+                    <li>Flatten Mapping or Planar Map</li>
+                    <li>Relax by face angles</li>
+                    <li>Pack UVs for efficient layout</li>
+                </ol>
+            </div>
+            
+            <div class="workflow">
+                <h4>Quick Turbosmooth</h4>
+                <ol>
+                    <li>Select object</li>
+                    <li>Modifier List → Turbosmooth</li>
+                    <li>Set Iterations to 1-3</li>
+                    <li>Use Isoline Display for preview</li>
+                    <li>Collapse stack when final</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Pro Tips</h2>
+            
+            <div class="tip">
+                <strong>Isolation Mode:</strong> Alt+Q isolates selected objects for focused modeling
+            </div>
+            
+            <div class="tip">
+                <strong>Quick Align:</strong> Alt+A for angle snap, great for architectural modeling
+            </div>
+            
+            <div class="tip">
+                <strong>Modifier Stack:</strong> Always work non-destructively - keep base mesh editable
+            </div>
+            
+            <div class="tip">
+                <strong>Reference Images:</strong> Use viewport backgrounds for modeling reference
+            </div>
+            
+            <div class="tip">
+                <strong>Naming Convention:</strong> Use descriptive names - helps with complex scenes
+            </div>
+            
+            <div class="tip">
+                <strong>Backup Often:</strong> Increment saves (Shift+Ctrl+S) prevent data loss
+            </div>
+            
+            <div class="tip">
+                <strong>Customize UI:</strong> Save custom workspaces for different tasks
+            </div>
+            
+            <div class="tip">
+                <strong>Xview:</strong> Use X-ray mode (Alt+X) for interior selections
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Viewport Shading</h2>
+            <div class="shortcut-group">
+                <h3>Display Modes</h3>
+                <div class="shortcut">
+                    <span class="key">F3</span>
+                    <span class="description">Wireframe</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F4</span>
+                    <span class="description">Edged faces</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">F2</span>
+                    <span class="description">Shaded mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Shift + F4</span>
+                    <span class="description">Facets + highlights</span>
+                </div>
+                <div class="shortcut">
+                    <span class="key">Alt + L</span>
+                    <span class="description">Default lighting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
