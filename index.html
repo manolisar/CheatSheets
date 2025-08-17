@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Cheat Sheets Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-color-light));
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+            background: var(--accent-color);
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-features li {
+            padding: 0.3rem 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .card-features li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .card-footer {
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Color schemes for each card */
+        .windows-cmd {
+            --accent-color: #0078d4;
+            --accent-color-light: #40e0d0;
+        }
+        
+        .unix-macos {
+            --accent-color: #007aff;
+            --accent-color-light: #5ac8fa;
+        }
+        
+        .autocad {
+            --accent-color: #c41e3a;
+            --accent-color-light: #ff6b6b;
+        }
+        
+        .max3d {
+            --accent-color: #2c5aa0;
+            --accent-color-light: #4fc3f7;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .footer a:hover {
+            border-bottom-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Professional Cheat Sheets</h1>
+            <p>Quick reference guides for developers, designers, and technical professionals. Optimized for printing and desktop use.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Cheat Sheets</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Commands</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">A4</span>
+                    <span class="stat-label">Print Ready</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <a href="windows_cmd_cheat_sheet.html" class="card windows-cmd">
+                <div class="card-icon">💻</div>
+                <h2>Windows CMD</h2>
+                <p>Comprehensive command prompt reference covering file operations, system administration, networking, and batch scripting.</p>
+                <ul class="card-features">
+                    <li>File & directory operations</li>
+                    <li>Network diagnostics</li>
+                    <li>Process management</li>
+                    <li>Batch scripting basics</li>
+                    <li>PowerShell integration</li>
+                </ul>
+                <div class="card-footer">
+                    Essential for Windows system administration
+                </div>
+            </a>
+            
+            <a href="unix_macos_cheat_sheet.html" class="card unix-macos">
+                <div class="card-icon">🖥️</div>
+                <h2>Unix/macOS Terminal</h2>
+                <p>Complete terminal command reference for Unix systems and macOS, from basic navigation to advanced text processing.</p>
+                <ul class="card-features">
+                    <li>File & permission management</li>
+                    <li>Process control</li>
+                    <li>Text processing & pipes</li>
+                    <li>macOS specific commands</li>
+                    <li>SSH & network tools</li>
+                </ul>
+                <div class="card-footer">
+                    Perfect for developers and system admins
+                </div>
+            </a>
+            
+            <a href="autocad_cheat_sheet.html" class="card autocad">
+                <div class="card-icon">📐</div>
+                <h2>AutoCAD</h2>
+                <p>Professional AutoCAD command reference for 2D drafting and 3D modeling, with essential shortcuts and workflows.</p>
+                <ul class="card-features">
+                    <li>Drawing & modify commands</li>
+                    <li>Navigation & selection</li>
+                    <li>Dimensioning & text</li>
+                    <li>Layer management</li>
+                    <li>3D modeling basics</li>
+                </ul>
+                <div class="card-footer">
+                    Ideal for architects and engineers
+                </div>
+            </a>
+            
+            <a href="3dsmax_cheat_sheet.html" class="card max3d">
+                <div class="card-icon">🎨</div>
+                <h2>3DS Max</h2>
+                <p>Complete 3DS Max shortcut guide for 3D modeling, animation, and rendering with professional workflows.</p>
+                <ul class="card-features">
+                    <li>Viewport navigation</li>
+                    <li>Modeling & transform tools</li>
+                    <li>Animation controls</li>
+                    <li>Rendering setup</li>
+                    <li>Material editor</li>
+                </ul>
+                <div class="card-footer">
+                    Essential for 3D artists and animators
+                </div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>These cheat sheets are designed for quick reference and optimized for A4 printing.<br>
+            <a href="https://github.com">View on GitHub</a> | Print-friendly layouts | Mobile responsive</p>
+        </div>
+    </div>
+</body>
+</html>
