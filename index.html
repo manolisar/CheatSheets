@@ -3,412 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Cheat Sheets Collection</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Professional Cheat Sheets Collection | Quick Reference Guides for Developers & Designers</title>
+    <meta name="description" content="Free collection of 9 professional cheat sheets including Git, Python, Excel, Photoshop, AutoCAD, Windows CMD, Unix/macOS, 3DS Max, and Network Troubleshooting. Print-ready reference guides for developers, designers, and IT professionals.">
+    <meta name="keywords" content="cheat sheets, programming reference, git commands, python syntax, excel shortcuts, photoshop shortcuts, autocad commands, unix commands, windows cmd, network troubleshooting, developer tools, quick reference, programming guide">
+    <meta name="author" content="Manolis AR">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manolisar.github.io/CheatSheets/">
+    <meta property="og:title" content="Professional Cheat Sheets Collection | Quick Reference Guides">
+    <meta property="og:description" content="Free collection of 9 professional cheat sheets for developers, designers, and IT professionals. Including Git, Python, Excel, Photoshop, AutoCAD, and more.">
+    <meta property="og:image" content="https://manolisar.github.io/CheatSheets/og-image.png">
+    <meta property="og:site_name" content="Professional Cheat Sheets">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://manolisar.github.io/CheatSheets/">
+    <meta property="twitter:title" content="Professional Cheat Sheets Collection | Quick Reference Guides">
+    <meta property="twitter:description" content="Free collection of 9 professional cheat sheets for developers, designers, and IT professionals.">
+    <meta property="twitter:image" content="https://manolisar.github.io/CheatSheets/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://manolisar.github.io/CheatSheets/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Professional Cheat Sheets Collection",
+        "description": "Free collection of professional cheat sheets for developers, designers, and IT professionals",
+        "url": "https://manolisar.github.io/CheatSheets/",
+        "author": {
+            "@type": "Person",
+            "name": "Manolis AR"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://manolisar.github.io/CheatSheets/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "mainEntity": [
+            {
+                "@type": "CreativeWork",
+                "name": "Git Commands Cheat Sheet",
+                "description": "Comprehensive Git version control commands reference",
+                "url": "https://manolisar.github.io/CheatSheets/git_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork", 
+                "name": "Python Programming Cheat Sheet",
+                "description": "Python syntax, data structures, and common patterns reference",
+                "url": "https://manolisar.github.io/CheatSheets/python_programming_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Excel Shortcuts Cheat Sheet", 
+                "description": "Excel productivity shortcuts and formulas reference",
+                "url": "https://manolisar.github.io/CheatSheets/excel_shortcuts_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Photoshop Shortcuts Cheat Sheet",
+                "description": "Photoshop design shortcuts and tools reference", 
+                "url": "https://manolisar.github.io/CheatSheets/photoshop_shortcuts_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "AutoCAD Commands Cheat Sheet",
+                "description": "AutoCAD 2D/3D drafting commands and shortcuts reference",
+                "url": "https://manolisar.github.io/CheatSheets/autocad_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Windows CMD Cheat Sheet",
+                "description": "Windows command prompt reference and batch scripting",
+                "url": "https://manolisar.github.io/CheatSheets/windows_cmd_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Unix/macOS Terminal Cheat Sheet",
+                "description": "Unix and macOS terminal commands reference", 
+                "url": "https://manolisar.github.io/CheatSheets/unix_macos_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "3DS Max Cheat Sheet",
+                "description": "3DS Max 3D modeling and animation tools reference",
+                "url": "https://manolisar.github.io/CheatSheets/3dsmax_cheat_sheet.html"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Network Troubleshooting Cheat Sheet",
+                "description": "Network diagnostic commands and troubleshooting guide",
+                "url": "https://manolisar.github.io/CheatSheets/network_troubleshooting_cheat_sheet.html"
+            }
+        ]
+    }
+    </script>
+    
     <style>
+        /* Your existing CSS styles here */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            color: #333;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 20px;
         }
-        
+
         .header {
             text-align: center;
-            margin-bottom: 3rem;
             color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
         }
-        
+
         .header h1 {
             font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .header p {
             font-size: 1.2rem;
+            margin-bottom: 20px;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
         }
-        
-        .grid {
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .cheat-sheets-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
-        
-        .card {
+
+        .cheat-sheet-card {
             background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
-            position: relative;
-            overflow: hidden;
+            display: block;
         }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), var(--accent-color-light));
+
+        .cheat-sheet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+
+        .card-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            color: white;
-            background: var(--accent-color);
+            margin-bottom: 15px;
         }
-        
-        .card h2 {
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+
+        .card-title {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+            font-weight: bold;
+            color: var(--accent-color, #333);
         }
-        
-        .card p {
+
+        .card-description {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
-        
+
         .card-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 15px;
         }
-        
+
         .card-features li {
-            padding: 0.3rem 0;
-            color: #555;
+            color: #888;
             font-size: 0.9rem;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 15px;
         }
-        
-        .card-features li::before {
-            content: '✓';
-            color: var(--accent-color);
+
+        .card-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color, #007bff);
             font-weight: bold;
-            margin-right: 0.5rem;
         }
-        
+
         .card-footer {
-            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid #eee;
+        }
+
+        .commands-count {
             font-size: 0.9rem;
             color: #888;
         }
-        
-        /* Color schemes for each card */
-        .windows-cmd {
-            --accent-color: #0078d4;
-            --accent-color-light: #40e0d0;
-        }
-        
-        .unix-macos {
-            --accent-color: #007aff;
-            --accent-color-light: #5ac8fa;
-        }
-        
-        .autocad {
-            --accent-color: #c41e3a;
-            --accent-color-light: #ff6b6b;
-        }
-        
-        .max3d {
-            --accent-color: #2c5aa0;
-            --accent-color-light: #4fc3f7;
-        }
-        
-        .git {
-            --accent-color: #f05032;
-            --accent-color-light: #ff8a65;
-        }
-        
-        .excel {
-            --accent-color: #217346;
-            --accent-color-light: #66bb6a;
-        }
-        
-        .photoshop {
-            --accent-color: #001e36;
-            --accent-color-light: #5c6bc0;
-        }
-        
-        .python {
-            --accent-color: #3776ab;
-            --accent-color-light: #42a5f5;
-        }
-        
-        .network {
-            --accent-color: #1976d2;
-            --accent-color-light: #29b6f6;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 3rem;
+
+        .view-button {
+            background: var(--accent-color, #007bff);
             color: white;
-            opacity: 0.8;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
         }
-        
-        .footer a {
+
+        .view-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Color schemes */
+        .windows-cmd { --accent-color: #0078d4; }
+        .unix-macos { --accent-color: #007aff; }
+        .autocad { --accent-color: #c41e3a; }
+        .max3d { --accent-color: #2c5aa0; }
+        .git { --accent-color: #f05032; }
+        .excel { --accent-color: #217346; }
+        .photoshop { --accent-color: #001e36; }
+        .python { --accent-color: #3776ab; }
+        .network { --accent-color: #1976d2; }
+
+        .footer {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .github-link {
             color: white;
             text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            transition: background 0.3s ease;
         }
-        
-        .footer a:hover {
-            border-bottom-color: white;
+
+        .github-link:hover {
+            background: rgba(255,255,255,0.3);
         }
-        
+
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
             .header h1 {
                 font-size: 2rem;
             }
             
-            .header p {
-                font-size: 1rem;
+            .stats {
+                gap: 20px;
             }
             
-            .grid {
+            .cheat-sheets-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 20px;
             }
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .stat {
-            text-align: center;
-            color: white;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Professional Cheat Sheets</h1>
-            <p>Quick reference guides for developers, designers, and technical professionals. Optimized for printing and desktop use.</p>
+        <header class="header">
+            <h1>Professional Cheat Sheets Collection</h1>
+            <p>Essential Quick Reference Guides for Developers, Designers & IT Professionals</p>
             
             <div class="stats">
                 <div class="stat">
                     <span class="stat-number">9</span>
-                    <span class="stat-label">Cheat Sheets</span>
+                    <span>Cheat Sheets</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">500+</span>
-                    <span class="stat-label">Commands</span>
+                    <span>Commands & Shortcuts</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">A4</span>
-                    <span class="stat-label">Print Ready</span>
+                    <span class="stat-number">100%</span>
+                    <span>Free & Open Source</span>
                 </div>
             </div>
-        </div>
-        
-        <div class="grid">
-            <a href="windows_cmd_cheat_sheet.html" class="card windows-cmd">
-                <div class="card-icon">💻</div>
-                <h2>Windows CMD</h2>
-                <p>Comprehensive command prompt reference covering file operations, system administration, networking, and batch scripting.</p>
-                <ul class="card-features">
-                    <li>File & directory operations</li>
-                    <li>Network diagnostics</li>
-                    <li>Process management</li>
-                    <li>Batch scripting basics</li>
-                    <li>PowerShell integration</li>
-                </ul>
-                <div class="card-footer">
-                    Essential for Windows system administration
-                </div>
+        </header>
+
+        <main>
+            <div class="cheat-sheets-grid">
+                <a href="git_cheat_sheet.html" class="cheat-sheet-card git">
+                    <div class="card-header">
+                        <span class="card-icon">🔧</span>
+                        <div class="card-title">Git Version Control</div>
+                    </div>
+                    <div class="card-description">
+                        Master Git version control with essential commands for branching, merging, and collaboration workflows.
+                    </div>
+                    <ul class="card-features">
+                        <li>Repository management commands</li>
+                        <li>Branching and merging strategies</li>
+                        <li>Collaboration workflows</li>
+                        <li>Conflict resolution techniques</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">50+ Git commands</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="python_programming_cheat_sheet.html" class="cheat-sheet-card python">
+                    <div class="card-header">
+                        <span class="card-icon">🐍</span>
+                        <div class="card-title">Python Programming</div>
+                    </div>
+                    <div class="card-description">
+                        Complete Python syntax reference covering data structures, functions, and common programming patterns.
+                    </div>
+                    <ul class="card-features">
+                        <li>Python syntax fundamentals</li>
+                        <li>Data structures and types</li>
+                        <li>Built-in functions and methods</li>
+                        <li>Common libraries and modules</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">80+ Python concepts</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="excel_shortcuts_cheat_sheet.html" class="cheat-sheet-card excel">
+                    <div class="card-header">
+                        <span class="card-icon">📊</span>
+                        <div class="card-title">Excel Shortcuts</div>
+                    </div>
+                    <div class="card-description">
+                        Boost your Excel productivity with essential keyboard shortcuts, formulas, and data analysis techniques.
+                    </div>
+                    <ul class="card-features">
+                        <li>Navigation and selection shortcuts</li>
+                        <li>Formatting and editing commands</li>
+                        <li>Formula and function references</li>
+                        <li>Data analysis and pivot tables</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">60+ Excel shortcuts</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="photoshop_shortcuts_cheat_sheet.html" class="cheat-sheet-card photoshop">
+                    <div class="card-header">
+                        <span class="card-icon">🎨</span>
+                        <div class="card-title">Photoshop Shortcuts</div>
+                    </div>
+                    <div class="card-description">
+                        Master Adobe Photoshop with essential shortcuts for photo editing, design, and digital art creation.
+                    </div>
+                    <ul class="card-features">
+                        <li>Tool selection shortcuts</li>
+                        <li>Layer management commands</li>
+                        <li>Selection and masking tools</li>
+                        <li>Color and adjustment shortcuts</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">70+ Photoshop shortcuts</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="autocad_cheat_sheet.html" class="cheat-sheet-card autocad">
+                    <div class="card-header">
+                        <span class="card-icon">📐</span>
+                        <div class="card-title">AutoCAD Commands</div>
+                    </div>
+                    <div class="card-description">
+                        Comprehensive AutoCAD reference for 2D drafting, 3D modeling, and technical drawing workflows.
+                    </div>
+                    <ul class="card-features">
+                        <li>Drawing and editing commands</li>
+                        <li>2D and 3D modeling tools</li>
+                        <li>Annotation and dimensioning</li>
+                        <li>Layer and block management</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">65+ AutoCAD commands</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="windows_cmd_cheat_sheet.html" class="cheat-sheet-card windows-cmd">
+                    <div class="card-header">
+                        <span class="card-icon">💻</span>
+                        <div class="card-title">Windows Command Prompt</div>
+                    </div>
+                    <div class="card-description">
+                        Essential Windows CMD commands for file operations, system administration, and network troubleshooting.
+                    </div>
+                    <ul class="card-features">
+                        <li>File and directory operations</li>
+                        <li>System information commands</li>
+                        <li>Network diagnostic tools</li>
+                        <li>Batch scripting basics</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">45+ CMD commands</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="unix_macos_cheat_sheet.html" class="cheat-sheet-card unix-macos">
+                    <div class="card-header">
+                        <span class="card-icon">🖥️</span>
+                        <div class="card-title">Unix/macOS Terminal</div>
+                    </div>
+                    <div class="card-description">
+                        Master Unix and macOS terminal with essential commands for navigation, text processing, and system management.
+                    </div>
+                    <ul class="card-features">
+                        <li>File system navigation</li>
+                        <li>Text processing and search</li>
+                        <li>Process and system management</li>
+                        <li>Shell scripting fundamentals</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">55+ Terminal commands</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="3dsmax_cheat_sheet.html" class="cheat-sheet-card max3d">
+                    <div class="card-header">
+                        <span class="card-icon">🎬</span>
+                        <div class="card-title">3DS Max</div>
+                    </div>
+                    <div class="card-description">
+                        Complete 3DS Max reference for 3D modeling, animation, rendering, and visualization workflows.
+                    </div>
+                    <ul class="card-features">
+                        <li>3D modeling tools and modifiers</li>
+                        <li>Animation and rigging commands</li>
+                        <li>Rendering and lighting setup</li>
+                        <li>Material and texture workflows</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">40+ 3DS Max shortcuts</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+
+                <a href="network_troubleshooting_cheat_sheet.html" class="cheat-sheet-card network">
+                    <div class="card-header">
+                        <span class="card-icon">🌐</span>
+                        <div class="card-title">Network Troubleshooting</div>
+                    </div>
+                    <div class="card-description">
+                        Essential network diagnostic commands and troubleshooting methodologies for IT professionals.
+                    </div>
+                    <ul class="card-features">
+                        <li>Network connectivity testing</li>
+                        <li>DNS and routing diagnostics</li>
+                        <li>Performance monitoring tools</li>
+                        <li>Security and firewall commands</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="commands-count">35+ Network commands</span>
+                        <span class="view-button">View Cheat Sheet</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <h2>Open Source & Free to Use</h2>
+            <p>All cheat sheets are optimized for printing and available for download. Perfect for developers, designers, and IT professionals who need quick access to essential commands and shortcuts.</p>
+            <a href="https://github.com/manolisar/CheatSheets" class="github-link" target="_blank" rel="noopener noreferrer">
+                📂 View on GitHub
             </a>
-            
-            <a href="unix_macos_cheat_sheet.html" class="card unix-macos">
-                <div class="card-icon">🖥️</div>
-                <h2>Unix/macOS Terminal</h2>
-                <p>Complete terminal command reference for Unix systems and macOS, from basic navigation to advanced text processing.</p>
-                <ul class="card-features">
-                    <li>File & permission management</li>
-                    <li>Process control</li>
-                    <li>Text processing & pipes</li>
-                    <li>macOS specific commands</li>
-                    <li>SSH & network tools</li>
-                </ul>
-                <div class="card-footer">
-                    Perfect for developers and system admins
-                </div>
-            </a>
-            
-            <a href="autocad_cheat_sheet.html" class="card autocad">
-                <div class="card-icon">📐</div>
-                <h2>AutoCAD</h2>
-                <p>Professional AutoCAD command reference for 2D drafting and 3D modeling, with essential shortcuts and workflows.</p>
-                <ul class="card-features">
-                    <li>Drawing & modify commands</li>
-                    <li>Navigation & selection</li>
-                    <li>Dimensioning & text</li>
-                    <li>Layer management</li>
-                    <li>3D modeling basics</li>
-                </ul>
-                <div class="card-footer">
-                    Ideal for architects and engineers
-                </div>
-            </a>
-            
-            <a href="3dsmax_cheat_sheet.html" class="card max3d">
-                <div class="card-icon">🎨</div>
-                <h2>3DS Max</h2>
-                <p>Complete 3DS Max shortcut guide for 3D modeling, animation, and rendering with professional workflows.</p>
-                <ul class="card-features">
-                    <li>Viewport navigation</li>
-                    <li>Modeling & transform tools</li>
-                    <li>Animation controls</li>
-                    <li>Rendering setup</li>
-                    <li>Material editor</li>
-                </ul>
-                <div class="card-footer">
-                    Essential for 3D artists and animators
-                </div>
-            </a>
-            
-            <a href="git_cheat_sheet.html" class="card git">
-                <div class="card-icon">🔀</div>
-                <h2>Git Commands</h2>
-                <p>Essential Git commands for version control, branching, and collaboration workflows for developers.</p>
-                <ul class="card-features">
-                    <li>Repository management</li>
-                    <li>Branching & merging</li>
-                    <li>Remote operations</li>
-                    <li>Conflict resolution</li>
-                    <li>Advanced workflows</li>
-                </ul>
-                <div class="card-footer">
-                    Critical for modern development
-                </div>
-            </a>
-            
-            <a href="excel_shortcuts_cheat_sheet.html" class="card excel">
-                <div class="card-icon">📊</div>
-                <h2>Excel Shortcuts</h2>
-                <p>Comprehensive Excel keyboard shortcuts for productivity, data analysis, and spreadsheet management.</p>
-                <ul class="card-features">
-                    <li>Navigation & selection</li>
-                    <li>Formulas & functions</li>
-                    <li>Data management</li>
-                    <li>Formatting shortcuts</li>
-                    <li>Chart creation</li>
-                </ul>
-                <div class="card-footer">
-                    Boost spreadsheet productivity
-                </div>
-            </a>
-            
-            <a href="photoshop_shortcuts_cheat_sheet.html" class="card photoshop">
-                <div class="card-icon">🖌️</div>
-                <h2>Photoshop Shortcuts</h2>
-                <p>Essential Adobe Photoshop keyboard shortcuts for photo editing, design, and digital art workflows.</p>
-                <ul class="card-features">
-                    <li>Tool shortcuts</li>
-                    <li>Layer management</li>
-                    <li>Selection techniques</li>
-                    <li>Color adjustments</li>
-                    <li>Transform operations</li>
-                </ul>
-                <div class="card-footer">
-                    Speed up your design workflow
-                </div>
-            </a>
-            
-            <a href="python_programming_cheat_sheet.html" class="card python">
-                <div class="card-icon">🐍</div>
-                <h2>Python Programming</h2>
-                <p>Complete Python syntax reference covering data structures, functions, libraries, and common programming patterns.</p>
-                <ul class="card-features">
-                    <li>Basic syntax & data types</li>
-                    <li>Control structures</li>
-                    <li>Functions & classes</li>
-                    <li>Built-in functions</li>
-                    <li>Popular libraries</li>
-                </ul>
-                <div class="card-footer">
-                    Essential for Python developers
-                </div>
-            </a>
-            
-            <a href="network_troubleshooting_cheat_sheet.html" class="card network">
-                <div class="card-icon">🌐</div>
-                <h2>Network Troubleshooting</h2>
-                <p>Comprehensive network diagnostic commands and methodologies for identifying and fixing connectivity issues.</p>
-                <ul class="card-features">
-                    <li>Connectivity testing</li>
-                    <li>DNS troubleshooting</li>
-                    <li>Port diagnostics</li>
-                    <li>Performance analysis</li>
-                    <li>Security scanning</li>
-                </ul>
-                <div class="card-footer">
-                    Critical for network administrators
-                </div>
-            </a>
-        </div>
-        
-        <div class="footer">
-            <p>These cheat sheets are designed for quick reference and optimized for A4 printing.<br>
-            <a href="https://github.com">View on GitHub</a> | Print-friendly layouts | Mobile responsive</p>
-        </div>
+        </footer>
     </div>
 </body>
 </html>
