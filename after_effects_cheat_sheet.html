@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Effects Cheat Sheet | Complete Shortcuts & Commands Reference</title>
+    <meta name="description" content="Comprehensive Adobe After Effects cheat sheet with essential shortcuts, motion graphics commands, and animation tools. Perfect for video editors and motion designers.">
+    <meta name="keywords" content="after effects shortcuts, after effects cheat sheet, motion graphics, ae shortcuts, animation, video editing, adobe after effects">
+    <link rel="canonical" href="https://manolisar.github.io/CheatSheets/after_effects_cheat_sheet.html">
+    
+    <style>
+        :root {
+            --accent-color: #9999ff;
+            --secondary-color: #1e1e1e;
+            --text-color: #333;
+            --bg-color: #fff;
+            --border-color: #e0e0e0;
+            --highlight-color: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            line-height: 1.2;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0.5in;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-color), #6b73ff);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            background: var(--accent-color);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 10px;
+            margin: -12px -12px 10px -12px;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .shortcut-group h3 {
+            font-size: 10px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 8px 0 4px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2px;
+        }
+
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3px 0;
+            padding: 2px 0;
+        }
+
+        .command {
+            background: var(--secondary-color);
+            color: #00ff88;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .key {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .description {
+            flex: 1;
+            margin-left: 8px;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        .workflow {
+            background: #f8f9fa;
+            border-left: 3px solid var(--accent-color);
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .workflow h4 {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: var(--accent-color);
+        }
+
+        .workflow ol {
+            margin-left: 15px;
+            font-size: 8px;
+        }
+
+        .workflow li {
+            margin: 2px 0;
+        }
+
+        .tip {
+            background: #f0f0ff;
+            border: 1px solid #d0d0ff;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 6px 0;
+            font-size: 8px;
+        }
+
+        .tip strong {
+            color: #4a4a9f;
+        }
+
+        .tool-indicator {
+            display: inline-block;
+            background: var(--highlight-color);
+            color: white;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 7px;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        .layer-type {
+            font-size: 7px;
+            color: #666;
+            font-style: italic;
+            margin-left: 4px;
+        }
+
+        @media print {
+            body { 
+                font-size: 8px; 
+                margin: 0;
+                padding: 0;
+            }
+            .container { 
+                padding: 0.3in;
+                gap: 10px;
+            }
+            .section { 
+                break-inside: avoid; 
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+            .header { 
+                margin-bottom: 15px; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            .section {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 After Effects Cheat Sheet</h1>
+            <p>Essential shortcuts for motion graphics, animation & visual effects • Creative Professional</p>
+        </div>
+
+        <!-- Project & File -->
+        <div class="section">
+            <h2>📁 Project & File</h2>
+            
+            <div class="shortcut-group">
+                <h3>File Operations</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+N</span>
+                    <span class="description">New project</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+O</span>
+                    <span class="description">Open project</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+S</span>
+                    <span class="description">Save project</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+S</span>
+                    <span class="description">Save As / Increment and Save</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+I</span>
+                    <span class="description">Import files</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+I</span>
+                    <span class="description">Import multiple files</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Project Navigation</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Z</span>
+                    <span class="description">Undo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+Z</span>
+                    <span class="description">Redo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+F</span>
+                    <span class="description">Find in project</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+F</span>
+                    <span class="description">Find next</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Composition -->
+        <div class="section">
+            <h2>🎞️ Composition</h2>
+            
+            <div class="shortcut-group">
+                <h3>Composition Management</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+N</span>
+                    <span class="description">New composition</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+K</span>
+                    <span class="description">Composition settings</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+M</span>
+                    <span class="description">Add to render queue</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+N</span>
+                    <span class="description">New folder</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Preview & Playback</h3>
+                <div class="shortcut">
+                    <span class="command">Space</span>
+                    <span class="description">Play/Stop preview</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">0 (Numpad)</span>
+                    <span class="description">RAM preview</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">. (Period)</span>
+                    <span class="description">Audio preview</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+0</span>
+                    <span class="description">Fast previews</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+0</span>
+                    <span class="description">Live update</span>
+                </div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> Use spacebar for quick previews, Numpad 0 for full RAM previews with audio
+            </div>
+        </div>
+
+        <!-- Layers -->
+        <div class="section">
+            <h2>📚 Layers</h2>
+            
+            <div class="shortcut-group">
+                <h3>Layer Creation</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Y</span>
+                    <span class="description">New solid layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+Y</span>
+                    <span class="description">New adjustment layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+Y</span>
+                    <span class="description">New null object</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+T</span>
+                    <span class="description">New text layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+Shift+T</span>
+                    <span class="description">New camera</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+Shift+L</span>
+                    <span class="description">New light</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Layer Operations</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+D</span>
+                    <span class="description">Duplicate layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Delete</span>
+                    <span class="description">Delete selected layers</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+D</span>
+                    <span class="description">Split layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+]</span>
+                    <span class="description">Move layer up</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+[</span>
+                    <span class="description">Move layer down</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+]</span>
+                    <span class="description">Move layer to top</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+[</span>
+                    <span class="description">Move layer to bottom</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Layer Visibility & Locking</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+V</span>
+                    <span class="description">Toggle layer visibility</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+L</span>
+                    <span class="description">Lock/unlock layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+L</span>
+                    <span class="description">Lock all other layers</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transform & Animation -->
+        <div class="section">
+            <h2>🔄 Transform & Animation</h2>
+            
+            <div class="shortcut-group">
+                <h3>Transform Properties (Layer Selected)</h3>
+                <div class="shortcut">
+                    <span class="command">P</span>
+                    <span class="description">Position</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">A</span>
+                    <span class="description">Anchor Point</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">S</span>
+                    <span class="description">Scale</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">R</span>
+                    <span class="description">Rotation</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">T</span>
+                    <span class="description">Opacity</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">U</span>
+                    <span class="description">Show all animated properties</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">UU</span>
+                    <span class="description">Show all modified properties</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Keyframe Operations</h3>
+                <div class="shortcut">
+                    <span class="command">Alt+Click</span>
+                    <span class="description">Add/remove keyframe</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">J</span>
+                    <span class="description">Go to previous keyframe</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">K</span>
+                    <span class="description">Go to next keyframe</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F9</span>
+                    <span class="description">Easy ease keyframes</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+F9</span>
+                    <span class="description">Easy ease in</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+F9</span>
+                    <span class="description">Easy ease out</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>⚡ Quick Animation Workflow</h4>
+                <ol>
+                    <li>Select layer and press property key (P, S, R, T)</li>
+                    <li>Alt+click stopwatch to add first keyframe</li>
+                    <li>Move timeline and change value</li>
+                    <li>Press F9 for smooth animation</li>
+                    <li>Use J/K to navigate between keyframes</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Timeline Navigation -->
+        <div class="section">
+            <h2>⏰ Timeline Navigation</h2>
+            
+            <div class="shortcut-group">
+                <h3>Playhead Movement</h3>
+                <div class="shortcut">
+                    <span class="command">Home</span>
+                    <span class="description">Go to beginning</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">End</span>
+                    <span class="description">Go to end</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Page Up</span>
+                    <span class="description">Go to previous frame</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Page Down</span>
+                    <span class="description">Go to next frame</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+Page Up</span>
+                    <span class="description">Go 10 frames back</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+Page Down</span>
+                    <span class="description">Go 10 frames forward</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Work Area & Time</h3>
+                <div class="shortcut">
+                    <span class="command">B</span>
+                    <span class="description">Set work area beginning</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">N</span>
+                    <span class="description">Set work area end</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+B</span>
+                    <span class="description">Trim comp to work area</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">;</span>
+                    <span class="description">Go to time dialog</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Timeline Zoom</h3>
+                <div class="shortcut">
+                    <span class="command">+</span>
+                    <span class="description">Zoom in timeline</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">-</span>
+                    <span class="description">Zoom out timeline</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+;</span>
+                    <span class="description">Fit composition in timeline</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="section">
+            <h2>🛠️ Tools</h2>
+            
+            <div class="shortcut-group">
+                <h3>Selection & Navigation</h3>
+                <div class="shortcut">
+                    <span class="command">V</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Selection tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">H</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Hand tool (pan)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Z</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Zoom tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">W</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Rotation tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Y</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Pan Behind tool</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Shape & Mask Tools</h3>
+                <div class="shortcut">
+                    <span class="command">Q</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Rectangle/Ellipse tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">G</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Pen tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+T</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Type tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">C</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Camera tool</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Brush & Paint</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+B</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Brush tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+B</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Clone Stamp tool</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+E</span>
+                    <span class="description"><span class="tool-indicator">TOOL</span>Eraser tool</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effects & Expressions -->
+        <div class="section">
+            <h2>✨ Effects & Expressions</h2>
+            
+            <div class="shortcut-group">
+                <h3>Effects</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+E</span>
+                    <span class="description">Apply last effect</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">E</span>
+                    <span class="description">Show effects on selected layer</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">EE</span>
+                    <span class="description">Show all effects properties</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F3</span>
+                    <span class="description">Effects & Presets panel</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Expressions</h3>
+                <div class="shortcut">
+                    <span class="command">Alt+Click</span>
+                    <span class="description">Add expression to property</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Enter</span>
+                    <span class="description">Exit text editing mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+'</span>
+                    <span class="description">New expression</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>🎨 Effect Application Workflow</h4>
+                <ol>
+                    <li>Select layer</li>
+                    <li>Open Effects & Presets (F3)</li>
+                    <li>Double-click effect to apply</li>
+                    <li>Press E to reveal effect properties</li>
+                    <li>Animate effect parameters as needed</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Rendering & Output -->
+        <div class="section">
+            <h2>🎬 Rendering & Output</h2>
+            
+            <div class="shortcut-group">
+                <h3>Render Queue</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+M</span>
+                    <span class="description">Add to render queue</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+M</span>
+                    <span class="description">Add to Adobe Media Encoder</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+/</span>
+                    <span class="description">Add current frame to render queue</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Enter</span>
+                    <span class="description">Start render</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Export Options</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+S</span>
+                    <span class="description">Save frame as file</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+S</span>
+                    <span class="description">Save frame as Photoshop file</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>🚀 Quick Render Workflow</h4>
+                <ol>
+                    <li>Set work area (B and N keys)</li>
+                    <li>Add to render queue (Ctrl+M)</li>
+                    <li>Choose output format and location</li>
+                    <li>Press Enter to start rendering</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Expert Tips -->
+        <div class="section">
+            <h2>🎓 Expert Tips</h2>
+            
+            <div class="tip">
+                <strong>🔥 Speed Tips:</strong><br>
+                • Hold Alt while dragging time indicator to hear audio scrub<br>
+                • Use UU to see all modified properties quickly<br>
+                • Press and hold a property key (P, S, R, T) to see that property for all selected layers<br>
+                • Shift+scroll to zoom timeline horizontally
+            </div>
+
+            <div class="tip">
+                <strong>⚡ Workflow Accelerators:</strong><br>
+                • Create custom workspaces for different tasks<br>
+                • Use expressions instead of keyframes for repetitive animations<br>
+                • Pre-compose (Ctrl+Shift+C) to organize complex projects<br>
+                • Use adjustment layers for effects that affect multiple layers
+            </div>
+
+            <div class="tip">
+                <strong>🎯 Animation Pro Tips:</strong><br>
+                • F9 (Easy Ease) is your best friend for smooth animations<br>
+                • Graph Editor (Shift+F3) for precise timing control<br>
+                • Motion blur (Ctrl+Shift+M) adds realism to fast movement<br>
+                • Parent layers (pick whip) for complex hierarchical animation
+            </div>
+
+            <div class="tip">
+                <strong>💾 Project Management:</strong><br>
+                • Save frequently (Ctrl+S) - AE can be unstable<br>
+                • Use Collect Files to gather project assets<br>
+                • Proxy workflow for 4K+ footage<br>
+                • Reduce project size by removing unused footage
+            </div>
+        </div>
+
+        <!-- Platform Notes -->
+        <div class="section">
+            <h2>💻 Platform Notes</h2>
+            
+            <div class="tip">
+                <strong>🖥️ Windows vs Mac:</strong><br>
+                • Windows: Use Ctrl for most shortcuts<br>
+                • Mac: Replace Ctrl with Cmd (⌘) for most shortcuts<br>
+                • Alt on Windows = Option on Mac<br>
+                • Right-click on Mac: Ctrl+click or two-finger tap<br>
+                • Some shortcuts are different on Mac (check Help → Keyboard Shortcuts)
+            </div>
+
+            <div class="tip">
+                <strong>🎮 Hardware Recommendations:</strong><br>
+                • Use a three-button mouse with scroll wheel<br>
+                • Numeric keypad highly recommended for navigation<br>
+                • Dual monitors: Timeline on one, Composition on another<br>
+                • Dedicated graphics card for GPU acceleration
+            </div>
+        </div>
+    </div>
+</body>
+</html>

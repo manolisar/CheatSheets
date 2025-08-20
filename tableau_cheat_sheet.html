@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Desktop Cheat Sheet | Complete Shortcuts & Commands Reference</title>
+    <meta name="description" content="Comprehensive Tableau Desktop cheat sheet with essential shortcuts, data visualization commands, and dashboard creation tools. Perfect for analysts and data professionals.">
+    <meta name="keywords" content="tableau shortcuts, tableau cheat sheet, data visualization, tableau commands, tableau reference, business intelligence, tableau hotkeys">
+    <link rel="canonical" href="https://manolisar.github.io/CheatSheets/tableau_cheat_sheet.html">
+    
+    <style>
+        :root {
+            --accent-color: #1f77b4;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --border-color: #e0e0e0;
+            --highlight-color: #ff7f0e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            line-height: 1.2;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0.5in;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-color), #3498db);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+
+        .section h2 {
+            background: var(--accent-color);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 10px;
+            margin: -12px -12px 10px -12px;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .shortcut-group h3 {
+            font-size: 10px;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 8px 0 4px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2px;
+        }
+
+        .shortcut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3px 0;
+            padding: 2px 0;
+        }
+
+        .command {
+            background: var(--secondary-color);
+            color: #00ff88;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            font-weight: bold;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .key {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .description {
+            flex: 1;
+            margin-left: 8px;
+            font-size: 9px;
+            line-height: 1.3;
+        }
+
+        .workflow {
+            background: #f8f9fa;
+            border-left: 3px solid var(--accent-color);
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .workflow h4 {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: var(--accent-color);
+        }
+
+        .workflow ol {
+            margin-left: 15px;
+            font-size: 8px;
+        }
+
+        .workflow li {
+            margin: 2px 0;
+        }
+
+        .tip {
+            background: #e8f4f8;
+            border: 1px solid #bee5eb;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 6px 0;
+            font-size: 8px;
+        }
+
+        .tip strong {
+            color: #0c5460;
+        }
+
+        .shelf-indicator {
+            display: inline-block;
+            background: var(--highlight-color);
+            color: white;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 7px;
+            font-weight: bold;
+            margin-right: 4px;
+        }
+
+        .platform {
+            font-size: 7px;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media print {
+            body { 
+                font-size: 8px; 
+                margin: 0;
+                padding: 0;
+            }
+            .container { 
+                padding: 0.3in;
+                gap: 10px;
+            }
+            .section { 
+                break-inside: avoid; 
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+            .header { 
+                margin-bottom: 15px; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            .section {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Tableau Desktop Cheat Sheet</h1>
+            <p>Essential shortcuts for data visualization & dashboard creation • Business Intelligence</p>
+        </div>
+
+        <!-- File Operations -->
+        <div class="section">
+            <h2>📁 File Operations</h2>
+            
+            <div class="shortcut-group">
+                <h3>Workbook Management</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+N</span>
+                    <span class="description">New workbook</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+O</span>
+                    <span class="description">Open workbook</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+S</span>
+                    <span class="description">Save workbook</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+S</span>
+                    <span class="description">Save As</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+D</span>
+                    <span class="description">Connect to data source</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F5</span>
+                    <span class="description">Refresh data source</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Worksheet Management</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+M</span>
+                    <span class="description">New worksheet</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+T</span>
+                    <span class="description">New dashboard</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+W</span>
+                    <span class="description">Close current sheet</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Page Up/Down</span>
+                    <span class="description">Navigate between sheets</span>
+                </div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> Use Ctrl+S frequently - Tableau doesn't auto-save your work!
+            </div>
+        </div>
+
+        <!-- Data & Fields -->
+        <div class="section">
+            <h2>🗂️ Data & Fields</h2>
+            
+            <div class="shortcut-group">
+                <h3>Field Operations</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+F</span>
+                    <span class="description">Find dimension/measure</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Enter</span>
+                    <span class="description">Add selected field to view</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F2</span>
+                    <span class="description">Rename field</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Drag</span>
+                    <span class="description">Copy field</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Field Placement (Alt+Shift+...)</h3>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+R</span>
+                    <span class="description"><span class="shelf-indicator">ROWS</span>Place field on Rows shelf</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+C</span>
+                    <span class="description"><span class="shelf-indicator">COLS</span>Place field on Columns shelf</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+F</span>
+                    <span class="description"><span class="shelf-indicator">FILTER</span>Place field on Filters shelf</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+O</span>
+                    <span class="description"><span class="shelf-indicator">COLOR</span>Place field on Color marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+S</span>
+                    <span class="description"><span class="shelf-indicator">SIZE</span>Place field on Size marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+L</span>
+                    <span class="description"><span class="shelf-indicator">LABEL</span>Place field on Label marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+D</span>
+                    <span class="description"><span class="shelf-indicator">DETAIL</span>Place field on Detail marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+Shift+P</span>
+                    <span class="description"><span class="shelf-indicator">PAGES</span>Place field on Pages shelf</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>🎯 Quick Field Workflow</h4>
+                <ol>
+                    <li>Select field from data pane</li>
+                    <li>Use Alt+Shift+[Key] to place directly</li>
+                    <li>No need to drag and drop!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- View Navigation -->
+        <div class="section">
+            <h2>👁️ View Navigation</h2>
+            
+            <div class="shortcut-group">
+                <h3>Zoom & Pan</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl++</span>
+                    <span class="description">Zoom in</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+-</span>
+                    <span class="description">Zoom out</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+0</span>
+                    <span class="description">Reset zoom (fit to window)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+Drag</span>
+                    <span class="description">Pan view</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Row/Column Sizing</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+←</span>
+                    <span class="description">Make rows narrower</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+→</span>
+                    <span class="description">Make rows wider</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+↑</span>
+                    <span class="description">Make columns taller</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+↓</span>
+                    <span class="description">Make columns shorter</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>View Options</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+H</span>
+                    <span class="description">Toggle presentation mode</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">T</span>
+                    <span class="description">Show/hide toolbar</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+D</span>
+                    <span class="description">Show/hide data pane</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+B</span>
+                    <span class="description">Show/hide status bar</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Types & Show Me -->
+        <div class="section">
+            <h2>📈 Chart Types & Show Me</h2>
+            
+            <div class="shortcut-group">
+                <h3>Show Me Panel</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+1</span>
+                    <span class="description">Show/hide Show Me panel</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+K</span>
+                    <span class="description">Show data (Data tab)</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Quick Chart Changes</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+W</span>
+                    <span class="description">Swap rows and columns</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+L</span>
+                    <span class="description">Show/hide legends</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+T</span>
+                    <span class="description">Show/hide title</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+C</span>
+                    <span class="description">Show/hide caption</span>
+                </div>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Pro Tip:</strong> Double-click any chart type in Show Me to instantly apply it to your selected fields
+            </div>
+        </div>
+
+        <!-- Selection & Editing -->
+        <div class="section">
+            <h2>🎯 Selection & Editing</h2>
+            
+            <div class="shortcut-group">
+                <h3>Selection</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+A</span>
+                    <span class="description">Select all data in view</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Click</span>
+                    <span class="description">Multi-select marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+Click</span>
+                    <span class="description">Select range of marks</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Esc</span>
+                    <span class="description">Clear selection</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Copy & Paste</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+C</span>
+                    <span class="description">Copy selected data</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+V</span>
+                    <span class="description">Paste data</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+C</span>
+                    <span class="description">Copy worksheet</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+C</span>
+                    <span class="description">Copy formatting</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Alt+V</span>
+                    <span class="description">Paste formatting</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Undo & Redo</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Z</span>
+                    <span class="description">Undo</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Y</span>
+                    <span class="description">Redo</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis & Calculations -->
+        <div class="section">
+            <h2>🧮 Analysis & Calculations</h2>
+            
+            <div class="shortcut-group">
+                <h3>Analysis Features</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+E</span>
+                    <span class="description">Describe sheet (summary)</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+F</span>
+                    <span class="description">Full screen</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+R</span>
+                    <span class="description">Clear filters</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Calculated Fields</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+D</span>
+                    <span class="description">Duplicate field</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+N</span>
+                    <span class="description">Create calculated field</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>📊 Quick Analysis Workflow</h4>
+                <ol>
+                    <li>Drag dimension to Rows (or Alt+Shift+R)</li>
+                    <li>Drag measure to Columns (or Alt+Shift+C)</li>
+                    <li>Add color coding (Alt+Shift+O)</li>
+                    <li>View summary (Ctrl+E)</li>
+                    <li>Apply filters as needed (Alt+Shift+F)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Dashboard Creation -->
+        <div class="section">
+            <h2>🖥️ Dashboard Creation</h2>
+            
+            <div class="shortcut-group">
+                <h3>Dashboard Navigation</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+T</span>
+                    <span class="description">New dashboard</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Shift+F4</span>
+                    <span class="description">Show/hide dashboard layout pane</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+G</span>
+                    <span class="description">Group selected objects</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+G</span>
+                    <span class="description">Ungroup objects</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Object Manipulation</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+D</span>
+                    <span class="description">Duplicate object</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Delete</span>
+                    <span class="description">Remove selected object</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+B</span>
+                    <span class="description">Send to back</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+F</span>
+                    <span class="description">Bring to front</span>
+                </div>
+            </div>
+
+            <div class="workflow">
+                <h4>🎛️ Dashboard Creation Workflow</h4>
+                <ol>
+                    <li>Create individual worksheets first</li>
+                    <li>New dashboard (Ctrl+T)</li>
+                    <li>Drag worksheets from left panel</li>
+                    <li>Add filters and legends</li>
+                    <li>Format and arrange layout</li>
+                    <li>Test interactivity</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Publishing & Sharing -->
+        <div class="section">
+            <h2>🌐 Publishing & Sharing</h2>
+            
+            <div class="shortcut-group">
+                <h3>Export & Print</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+P</span>
+                    <span class="description">Print</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+E</span>
+                    <span class="description">Export to image</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F12</span>
+                    <span class="description">Save as image</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Alt+F1</span>
+                    <span class="description">Show as crosstab</span>
+                </div>
+            </div>
+
+            <div class="shortcut-group">
+                <h3>Server Operations</h3>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+P</span>
+                    <span class="description">Publish to Tableau Server</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">F5</span>
+                    <span class="description">Refresh data from server</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help & Learning -->
+        <div class="section">
+            <h2>❓ Help & Learning</h2>
+            
+            <div class="shortcut-group">
+                <h3>Help Resources</h3>
+                <div class="shortcut">
+                    <span class="command">F1</span>
+                    <span class="description">Open Help</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+F1</span>
+                    <span class="description">Getting Started tutorial</span>
+                </div>
+                <div class="shortcut">
+                    <span class="command">Ctrl+Shift+?</span>
+                    <span class="description">Keyboard shortcuts help</span>
+                </div>
+            </div>
+
+            <div class="tip">
+                <strong>🎓 Learning Tip:</strong> Use F1 frequently when starting out - Tableau's built-in help is excellent and context-aware
+            </div>
+        </div>
+
+        <!-- Advanced Tips -->
+        <div class="section">
+            <h2>🚀 Advanced Tips</h2>
+            
+            <div class="workflow">
+                <h4>⚡ Power User Techniques</h4>
+                <ol>
+                    <li><strong>Double-click to add:</strong> Double-click measures to add to view instantly</li>
+                    <li><strong>Right-click everything:</strong> Context menus provide fastest access to options</li>
+                    <li><strong>Drag to Color/Size:</strong> Drag fields directly onto chart elements</li>
+                    <li><strong>Multi-select fields:</strong> Ctrl+click multiple fields before dragging</li>
+                    <li><strong>Type in calculations:</strong> Click pills and type for quick edits</li>
+                </ol>
+            </div>
+
+            <div class="workflow">
+                <h4>🎨 Formatting Shortcuts</h4>
+                <ol>
+                    <li>Right-click any element to format</li>
+                    <li>Use Format menu for global changes</li>
+                    <li>Copy formatting with Ctrl+Alt+C</li>
+                    <li>Paste formatting with Ctrl+Alt+V</li>
+                </ol>
+            </div>
+
+            <div class="tip">
+                <strong>💡 Expert Tip:</strong> Create custom shortcuts in Help → Settings → Keyboard Shortcuts for your most-used functions
+            </div>
+        </div>
+
+        <!-- Platform Notes -->
+        <div class="section">
+            <h2>💻 Platform Notes</h2>
+            
+            <div class="tip">
+                <strong>🖥️ Windows vs Mac:</strong><br>
+                • Windows: Use Ctrl key for most shortcuts<br>
+                • Mac: Replace Ctrl with Cmd (⌘) for most shortcuts<br>
+                • Alt on Windows = Option on Mac<br>
+                • Right-click on Mac: Ctrl+click or two-finger tap
+            </div>
+
+            <div class="tip">
+                <strong>⚡ Performance Tips:</strong><br>
+                • Use Extract instead of Live connection for large datasets<br>
+                • Limit marks displayed (Analysis → Table Layout)<br>
+                • Use Context filters for better performance<br>
+                • Close unused worksheets
+            </div>
+        </div>
+    </div>
+</body>
+</html>
