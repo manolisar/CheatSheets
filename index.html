@@ -272,32 +272,6 @@
         .productivity { --accent-color: #34C759; }
         .system { --accent-color: #5856D6; }
 
-        /* Special Highlight for Python Ecosystem */
-        .python-ecosystem {
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border: 2px solid #0ea5e9;
-            position: relative;
-        }
-
-        .python-ecosystem::before {
-            content: "🐍 Complete Python Data Science Stack";
-            position: absolute;
-            top: -1px;
-            left: 24px;
-            background: #0ea5e9;
-            color: white;
-            padding: 4px 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 0 0 8px 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .python-ecosystem .card-title {
-            color: #0369a1;
-        }
-
         /* Footer */
         .footer {
             background: #1d1d1f;
@@ -451,13 +425,13 @@
                     <span class="category-icon">🔬</span>
                     <div class="category-info">
                         <h2>Scientific Computing & Data Analysis</h2>
-                        <p class="category-description">Complete Python data science ecosystem plus advanced mathematical computing tools</p>
+                        <p class="category-description">Advanced mathematical computing and data science tools</p>
                     </div>
                 </div>
                 
                 <div class="cheat-sheets-grid">
                     <!-- Python Programming -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
+                    <div class="cheat-sheet-card scientific">
                         <div class="card-header">
                             <span class="card-icon">🐍</span>
                             <div>
@@ -479,7 +453,7 @@
                     </div>
 
                     <!-- Pandas -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
+                    <div class="cheat-sheet-card scientific">
                         <div class="card-header">
                             <span class="card-icon">🐼</span>
                             <div>
@@ -501,7 +475,7 @@
                     </div>
 
                     <!-- Matplotlib -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
+                    <div class="cheat-sheet-card scientific">
                         <div class="card-header">
                             <span class="card-icon">📊</span>
                             <div>
@@ -523,7 +497,7 @@
                     </div>
 
                     <!-- SciPy -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
+                    <div class="cheat-sheet-card scientific">
                         <div class="card-header">
                             <span class="card-icon">🔬</span>
                             <div>
@@ -541,50 +515,6 @@
                         <div class="card-footer">
                             <span class="card-commands">90+ functions</span>
                             <a href="scipy_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-
-                    <!-- Microsoft Python in Excel -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
-                        <div class="card-header">
-                            <span class="card-icon">🐍</span>
-                            <div>
-                                <h3 class="card-title">Microsoft Python in Excel</h3>
-                                <p class="card-subtitle">Cloud-Based Analytics</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Native Python integration in Excel for advanced analytics and machine learning.</p>
-                        <ul class="card-features">
-                            <li>PY() and xl() functions</li>
-                            <li>Data import/export</li>
-                            <li>Machine learning workflows</li>
-                            <li>API integration</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">120+ commands</span>
-                            <a href="microsoft_python_in_excel_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-
-                    <!-- OpenPyXL -->
-                    <div class="cheat-sheet-card scientific python-ecosystem">
-                        <div class="card-header">
-                            <span class="card-icon">🔧</span>
-                            <div>
-                                <h3 class="card-title">OpenPyXL</h3>
-                                <p class="card-subtitle">Local Excel Automation</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Comprehensive Excel file manipulation for automation and report generation.</p>
-                        <ul class="card-features">
-                            <li>Workbook and worksheet operations</li>
-                            <li>Cell formatting and styling</li>
-                            <li>Charts and visualizations</li>
-                            <li>Business automation workflows</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">100+ commands</span>
-                            <a href="openpyxl_cheat_sheet.html" class="card-link">View Sheet</a>
                         </div>
                     </div>
 
@@ -820,7 +750,7 @@
                     <span class="category-icon">📊</span>
                     <div class="category-info">
                         <h2>Productivity</h2>
-                        <p class="category-description">Essential productivity and office software tools</p>
+                        <p class="category-description">Spreadsheet productivity and automation tools</p>
                     </div>
                 </div>
                 
@@ -844,6 +774,50 @@
                         <div class="card-footer">
                             <span class="card-commands">90+ shortcuts</span>
                             <a href="excel_shortcuts_cheat_sheet.html" class="card-link">View Sheet</a>
+                        </div>
+                    </div>
+
+                    <!-- Microsoft Python in Excel -->
+                    <div class="cheat-sheet-card productivity">
+                        <div class="card-header">
+                            <span class="card-icon">🐍</span>
+                            <div>
+                                <h3 class="card-title">Microsoft Python in Excel</h3>
+                                <p class="card-subtitle">Cloud-Based Analytics</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Native Python integration in Excel for advanced analytics and machine learning.</p>
+                        <ul class="card-features">
+                            <li>PY() and xl() functions</li>
+                            <li>Data import/export</li>
+                            <li>Machine learning workflows</li>
+                            <li>API integration</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="card-commands">120+ commands</span>
+                            <a href="microsoft_python_in_excel_cheat_sheet.html" class="card-link">View Sheet</a>
+                        </div>
+                    </div>
+
+                    <!-- OpenPyXL -->
+                    <div class="cheat-sheet-card productivity">
+                        <div class="card-header">
+                            <span class="card-icon">🔧</span>
+                            <div>
+                                <h3 class="card-title">OpenPyXL</h3>
+                                <p class="card-subtitle">Local Excel Automation</p>
+                            </div>
+                        </div>
+                        <p class="card-description">Comprehensive Excel file manipulation for automation and report generation.</p>
+                        <ul class="card-features">
+                            <li>Workbook and worksheet operations</li>
+                            <li>Cell formatting and styling</li>
+                            <li>Charts and visualizations</li>
+                            <li>Business automation workflows</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="card-commands">100+ commands</span>
+                            <a href="openpyxl_cheat_sheet.html" class="card-link">View Sheet</a>
                         </div>
                     </div>
                 </div>
