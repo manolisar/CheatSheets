@@ -1,6 +1,6 @@
-# Professional CheatSheets Collection
+# Curated CheatSheets Library
 
-> **Comprehensive technical reference library with 16 professional cheat sheets covering 1,100+ commands across development, scientific computing, design, and productivity tools.**
+> **Comprehensive technical reference collection with 16 curated cheat sheets covering 1,100+ commands across development, scientific computing, design, and productivity tools.**
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://manolisar.github.io/CheatSheets/)
 [![Total Sheets](https://img.shields.io/badge/Cheat%20Sheets-16-blue)](#cheat-sheets-overview)
@@ -11,7 +11,7 @@
 
 ## 🎯 Overview
 
-A professionally curated collection of technical reference sheets designed for developers, scientists, designers, and professionals. Each cheat sheet is meticulously crafted with:
+A thoughtfully curated collection of technical reference sheets designed for developers, scientists, designers, and professionals. Each cheat sheet is meticulously crafted with:
 
 - **Modern design** inspired by macOS Sequoia
 - **Print optimization** for A4 paper with professional layouts
@@ -195,7 +195,7 @@ Each cheat sheet is optimized for A4 printing:
 - **Accuracy**: All commands must be tested and verified
 - **Completeness**: Cover essential use cases and workflows
 - **Consistency**: Follow the established design system
-- **Quality**: Professional-grade documentation standards
+- **Quality**: Curated documentation standards
 
 ### Suggested Additions
 - **JavaScript Frameworks** (React, Vue.js, Angular)
