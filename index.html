@@ -83,6 +83,40 @@
             font-weight: 500;
         }
 
+        /* Header Navigation - NEW */
+        .header-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 32px 0 24px 0;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
         .header-stats {
             display: flex;
             justify-content: center;
@@ -328,6 +362,17 @@
                 gap: 24px;
             }
 
+            .header-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .nav-button {
+                width: 200px;
+                justify-content: center;
+            }
+
             .main {
                 padding: 48px 0;
             }
@@ -392,6 +437,22 @@
             <div class="header-content">
                 <h1>Curated CheatSheets Library</h1>
                 <p class="header-subtitle">Comprehensive technical reference collection for developers, scientists, and professionals</p>
+                
+                <!-- NEW NAVIGATION SECTION -->
+                <div class="header-nav">
+                    <a href="index.html" class="nav-button">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="about.html" class="nav-button">
+                        <span>ℹ️</span>
+                        <span>About</span>
+                    </a>
+                    <a href="https://github.com/manolisar/CheatSheets" class="nav-button" target="_blank" rel="noopener">
+                        <span>📂</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
                 
                 <div class="header-stats">
                     <div class="stat">
@@ -521,7 +582,7 @@
                     <!-- MATLAB -->
                     <div class="cheat-sheet-card scientific">
                         <div class="card-header">
-                            <span class="card-icon">📐</span>
+                            <span class="card-icon">📈</span>
                             <div>
                                 <h3 class="card-title">MATLAB</h3>
                                 <p class="card-subtitle">Numerical Computing</p>
@@ -701,7 +762,7 @@
                     <!-- SketchUp -->
                     <div class="cheat-sheet-card design-cad">
                         <div class="card-header">
-                            <span class="card-icon">📝</span>
+                            <span class="card-icon">📏</span>
                             <div>
                                 <h3 class="card-title">SketchUp</h3>
                                 <p class="card-subtitle">Conceptual 3D Modeling</p>
@@ -763,144 +824,4 @@
                                 <h3 class="card-title">Excel Shortcuts</h3>
                                 <p class="card-subtitle">Spreadsheet Productivity</p>
                             </div>
-                        </div>
-                        <p class="card-description">Essential keyboard shortcuts and formulas for advanced Excel productivity and data analysis.</p>
-                        <ul class="card-features">
-                            <li>Navigation and selection</li>
-                            <li>Formatting and editing</li>
-                            <li>Formula shortcuts</li>
-                            <li>Data analysis tools</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">90+ shortcuts</span>
-                            <a href="excel_shortcuts_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-
-                    <!-- Microsoft Python in Excel -->
-                    <div class="cheat-sheet-card productivity">
-                        <div class="card-header">
-                            <span class="card-icon">🐍</span>
-                            <div>
-                                <h3 class="card-title">Microsoft Python in Excel</h3>
-                                <p class="card-subtitle">Cloud-Based Analytics</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Native Python integration in Excel for advanced analytics and machine learning.</p>
-                        <ul class="card-features">
-                            <li>PY() and xl() functions</li>
-                            <li>Data import/export</li>
-                            <li>Machine learning workflows</li>
-                            <li>API integration</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">120+ commands</span>
-                            <a href="microsoft_python_in_excel_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-
-                    <!-- OpenPyXL -->
-                    <div class="cheat-sheet-card productivity">
-                        <div class="card-header">
-                            <span class="card-icon">🔧</span>
-                            <div>
-                                <h3 class="card-title">OpenPyXL</h3>
-                                <p class="card-subtitle">Local Excel Automation</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Comprehensive Excel file manipulation for automation and report generation.</p>
-                        <ul class="card-features">
-                            <li>Workbook and worksheet operations</li>
-                            <li>Cell formatting and styling</li>
-                            <li>Charts and visualizations</li>
-                            <li>Business automation workflows</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">100+ commands</span>
-                            <a href="openpyxl_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- System Administration -->
-            <section class="section">
-                <div class="category-header">
-                    <span class="category-icon">🖥️</span>
-                    <div class="category-info">
-                        <h2>System Administration</h2>
-                        <p class="category-description">Command line interfaces for system management and automation</p>
-                    </div>
-                </div>
-                
-                <div class="cheat-sheets-grid">
-                    <!-- Windows CMD -->
-                    <div class="cheat-sheet-card system">
-                        <div class="card-header">
-                            <span class="card-icon">🪟</span>
-                            <div>
-                                <h3 class="card-title">Windows CMD</h3>
-                                <p class="card-subtitle">Command Prompt Reference</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Essential Windows command prompt commands for file operations, networking, and system administration.</p>
-                        <ul class="card-features">
-                            <li>File and directory operations</li>
-                            <li>Network commands</li>
-                            <li>System information</li>
-                            <li>Batch scripting</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">55+ commands</span>
-                            <a href="windows_cmd_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-
-                    <!-- Unix/macOS -->
-                    <div class="cheat-sheet-card system">
-                        <div class="card-header">
-                            <span class="card-icon">🐧</span>
-                            <div>
-                                <h3 class="card-title">Unix/macOS</h3>
-                                <p class="card-subtitle">Terminal Commands</p>
-                            </div>
-                        </div>
-                        <p class="card-description">Comprehensive terminal commands for Unix-based systems including macOS and Linux.</p>
-                        <ul class="card-features">
-                            <li>File system navigation</li>
-                            <li>Text processing</li>
-                            <li>Process management</li>
-                            <li>System administration</li>
-                        </ul>
-                        <div class="card-footer">
-                            <span class="card-commands">75+ commands</span>
-                            <a href="unix_macos_cheat_sheet.html" class="card-link">View Sheet</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h3>Professional CheatSheets Collection</h3>
-            <p>A comprehensive library of technical references designed for professionals, developers, scientists, and students. Each cheat sheet is optimized for both digital viewing and A4 printing.</p>
-            <p>All content is carefully curated, professionally formatted, and regularly updated to ensure accuracy and relevance.</p>
-            
-            <div class="footer-links">
-                <a href="https://github.com/manolisar/CheatSheets" class="footer-link" target="_blank" rel="noopener">GitHub Repository</a>
-                <a href="#" class="footer-link">About</a>
-                <a href="#" class="footer-link">Contact</a>
-                <a href="#" class="footer-link">Contribute</a>
-            </div>
-            
-            <p style="margin-top: 32px; font-size: 0.875rem; opacity: 0.7;">
-                © 2025 Professional CheatSheets Collection. Open source and free to use.
-            </p>
-        </div>
-    </footer>
-</body>
-</html>
+                        
