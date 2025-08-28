@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Design & CAD Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/3dsmax_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/after_effects_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/autocad_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/blender_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/photoshop_shortcuts_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/revit_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/rhino_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/design-cad/sketchup_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Development Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/development/git_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/development/network_macos_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/development/network_windows_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Mathematical Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/mathematical/matlab_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/mathematical/tableau_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Productivity Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/productivity/excel_shortcuts_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/productivity/openpyxl_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/productivity/python_in_excel_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Python Data Science Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/python-data-science/matplotlib_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/python-data-science/numpy_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/python-data-science/pandas_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/python-data-science/python_programming_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/python-data-science/scipy_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- System Cheat Sheets -->
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/system/unix_macos_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://manolisar.github.io/cheatsheets-collection/src/cheatsheets/system/windows_cmd_cheat_sheet.html</loc>
+    <lastmod>2024-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
