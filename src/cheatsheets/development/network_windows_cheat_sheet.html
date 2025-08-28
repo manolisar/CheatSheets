@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Troubleshooting Windows CheatSheet</title>
+    <meta name="description" content="Network diagnostic commands and tools for troubleshooting connectivity issues on Windows">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="system">
+    <header class="header">
+        <h1>Network Troubleshooting Windows</h1>
+        <p>Network diagnostic commands and tools for troubleshooting connectivity issues on Windows</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Basic Network Information</h2>
+            <div class="command-line">
+                <span class="command">ipconfig</span>
+                <span class="description">Display IP configuration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ipconfig /all</span>
+                <span class="description">Display detailed configuration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hostname</span>
+                <span class="description">Display computer name</span>
+            </div>
+            <div class="command-line">
+                <span class="command">systeminfo | findstr /i "network"</span>
+                <span class="description">Display network adapter info</span>
+            </div>
+            <div class="command-line">
+                <span class="command">getmac</span>
+                <span class="description">Display MAC addresses</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wmic computersystem get name</span>
+                <span class="description">Get computer name via WMI</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>IP Configuration Management</h2>
+            <div class="command-line">
+                <span class="command">ipconfig /release</span>
+                <span class="description">Release current IP address</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ipconfig /renew</span>
+                <span class="description">Renew IP address from DHCP</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ipconfig /flushdns</span>
+                <span class="description">Clear DNS cache</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ipconfig /registerdns</span>
+                <span class="description">Refresh DNS registration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ipconfig /displaydns</span>
+                <span class="description">Display DNS cache contents</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh int ip reset</span>
+                <span class="description">Reset TCP/IP stack</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Network Interface Management</h2>
+            <div class="command-line">
+                <span class="command">netsh interface show interface</span>
+                <span class="description">Display network interfaces</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface ip show config</span>
+                <span class="description">Show IP configuration per interface</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface set interface "Wi-Fi" enabled</span>
+                <span class="description">Enable network adapter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface set interface "Wi-Fi" disabled</span>
+                <span class="description">Disable network adapter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan show profiles</span>
+                <span class="description">Show WiFi profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan connect name="NetworkName"</span>
+                <span class="description">Connect to WiFi network</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>DNS Configuration</h2>
+            <div class="command-line">
+                <span class="command">nslookup google.com</span>
+                <span class="description">DNS lookup</span>
+            </div>
+            <div class="command-line">
+                <span class="command">nslookup google.com 8.8.8.8</span>
+                <span class="description">DNS lookup using specific server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface ip set dns "Local Area Connection" static 8.8.8.8</span>
+                <span class="description">Set primary DNS server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface ip add dns "Local Area Connection" 8.8.4.4 index=2</span>
+                <span class="description">Add secondary DNS server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh interface ip set dns "Local Area Connection" dhcp</span>
+                <span class="description">Set DNS to automatic (DHCP)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Connectivity Testing</h2>
+            <div class="command-line">
+                <span class="command">ping google.com</span>
+                <span class="description">Test basic connectivity</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ping -t google.com</span>
+                <span class="description">Continuous ping</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ping -n 10 8.8.8.8</span>
+                <span class="description">Ping with specific count</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ping -6 ipv6.google.com</span>
+                <span class="description">IPv6 ping</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tracert google.com</span>
+                <span class="description">Trace route to destination</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pathping google.com</span>
+                <span class="description">Combination of ping and tracert</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Port and Service Testing</h2>
+            <div class="command-line">
+                <span class="command">telnet google.com 80</span>
+                <span class="description">Test port connectivity</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -an</span>
+                <span class="description">Show all connections and ports</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -rn</span>
+                <span class="description">Display routing table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -b</span>
+                <span class="description">Show executable associated with connections</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -o</span>
+                <span class="description">Show process ID for each connection</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -e</span>
+                <span class="description">Display Ethernet statistics</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PowerShell Network Commands</h2>
+            <div class="command-line">
+                <span class="command">Test-NetConnection google.com</span>
+                <span class="description">Test network connectivity (PowerShell)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Test-NetConnection google.com -Port 80</span>
+                <span class="description">Test specific port</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Get-NetAdapter</span>
+                <span class="description">Get network adapter information</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Get-NetIPConfiguration</span>
+                <span class="description">Get IP configuration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Get-DnsClientCache</span>
+                <span class="description">Display DNS cache</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Clear-DnsClientCache</span>
+                <span class="description">Clear DNS cache</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>WiFi Management</h2>
+            <div class="command-line">
+                <span class="command">netsh wlan show profiles</span>
+                <span class="description">Show saved WiFi profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan show profile name="ProfileName" key=clear</span>
+                <span class="description">Show WiFi profile details with password</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan delete profile name="ProfileName"</span>
+                <span class="description">Delete WiFi profile</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan show wlanreport</span>
+                <span class="description">Generate WiFi report</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan export profile key=clear</span>
+                <span class="description">Export all WiFi profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh wlan import profile filename="profile.xml"</span>
+                <span class="description">Import WiFi profile</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ARP and Network Discovery</h2>
+            <div class="command-line">
+                <span class="command">arp -a</span>
+                <span class="description">Display ARP table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">arp -d</span>
+                <span class="description">Clear ARP table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">arp -s 192.168.1.1 aa-bb-cc-dd-ee-ff</span>
+                <span class="description">Add static ARP entry</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net view</span>
+                <span class="description">Display computers in workgroup</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net use</span>
+                <span class="description">Display network connections</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ping -a 192.168.1.1</span>
+                <span class="description">Ping with hostname resolution</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Windows Firewall</h2>
+            <div class="command-line">
+                <span class="command">netsh advfirewall show allprofiles</span>
+                <span class="description">Show firewall status for all profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh advfirewall set allprofiles state on</span>
+                <span class="description">Enable firewall for all profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh advfirewall set allprofiles state off</span>
+                <span class="description">Disable firewall for all profiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh advfirewall firewall show rule name=all</span>
+                <span class="description">Show all firewall rules</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh advfirewall reset</span>
+                <span class="description">Reset firewall to default settings</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Routing and Network Routes</h2>
+            <div class="command-line">
+                <span class="command">route print</span>
+                <span class="description">Display routing table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">route add 0.0.0.0 mask 0.0.0.0 192.168.1.1</span>
+                <span class="description">Add default gateway</span>
+            </div>
+            <div class="command-line">
+                <span class="command">route delete 0.0.0.0</span>
+                <span class="description">Delete default route</span>
+            </div>
+            <div class="command-line">
+                <span class="command">route add 10.0.0.0 mask 255.0.0.0 192.168.1.1 -p</span>
+                <span class="description">Add persistent route</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Network Troubleshooting Tools</h2>
+            <div class="command-line">
+                <span class="command">netsh int ip reset resetlog.txt</span>
+                <span class="description">Reset TCP/IP stack with log</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh winsock reset</span>
+                <span class="description">Reset Winsock catalog</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sfc /scannow</span>
+                <span class="description">System file checker</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netsh int tcp set global autotuninglevel=normal</span>
+                <span class="description">Reset TCP autotuning</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dism /online /cleanup-image /restorehealth</span>
+                <span class="description">Repair Windows image</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Event Log and Monitoring</h2>
+            <div class="command-line">
+                <span class="command">eventvwr.msc</span>
+                <span class="description">Open Event Viewer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">perfmon.msc</span>
+                <span class="description">Open Performance Monitor</span>
+            </div>
+            <div class="command-line">
+                <span class="command">resmon</span>
+                <span class="description">Open Resource Monitor</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tasklist /svc</span>
+                <span class="description">List processes and services</span>
+            </div>
+            <div class="command-line">
+                <span class="command">services.msc</span>
+                <span class="description">Open Services console</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Network Shares and SMB</h2>
+            <div class="command-line">
+                <span class="command">net share</span>
+                <span class="description">Display shared resources</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net use \\server\share</span>
+                <span class="description">Connect to network share</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net use * /delete</span>
+                <span class="description">Disconnect all network drives</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net session</span>
+                <span class="description">Display active sessions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">net files</span>
+                <span class="description">Display open files on server</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Common Troubleshooting Workflows</h2>
+            <div class="workflow">
+                <strong>Basic Network Issues:</strong><br>
+                1. ipconfig /all (check configuration)<br>
+                2. ping 127.0.0.1 (test local stack)<br>
+                3. ping gateway IP (test local network)<br>
+                4. ping 8.8.8.8 (test internet)<br>
+                5. nslookup google.com (test DNS)<br>
+                6. tracert google.com (trace path)
+            </div>
+            <div class="workflow">
+                <strong>DHCP Problems:</strong><br>
+                1. ipconfig /release<br>
+                2. ipconfig /renew<br>
+                3. Check DHCP service status<br>
+                4. Test with static IP<br>
+                5. Check network cable/WiFi<br>
+                6. Restart network adapter
+            </div>
+            <div class="workflow">
+                <strong>DNS Resolution Issues:</strong><br>
+                1. ipconfig /flushdns<br>
+                2. nslookup google.com<br>
+                3. Test different DNS servers<br>
+                4. Check hosts file<br>
+                5. netsh int ip reset<br>
+                6. Restart DNS Client service
+            </div>
+            <div class="workflow">
+                <strong>Network Performance Issues:</strong><br>
+                1. netstat -e (check error counters)<br>
+                2. perfmon (monitor network utilization)<br>
+                3. resmon (identify network usage)<br>
+                4. Check for malware<br>
+                5. Update network drivers<br>
+                6. Test with different cable/port
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Tips</h2>
+            <div class="tip">
+                <strong>Network Troubleshooting Best Practices:</strong><br>
+                • Always start with ipconfig /all<br>
+                • Test layer by layer (OSI model)<br>
+                • Document all changes made<br>
+                • Keep network drivers updated<br>
+                • Use Event Viewer for detailed errors
+            </div>
+            <div class="workflow">
+                <strong>Performance Optimization:</strong><br>
+                • Disable unused network adapters<br>
+                • Configure proper DNS servers<br>
+                • Monitor network utilization<br>
+                • Update network adapter drivers<br>
+                • Optimize TCP window scaling
+            </div>
+            <div class="workflow">
+                <strong>Security Best Practices:</strong><br>
+                • Enable Windows Firewall<br>
+                • Use strong WiFi passwords<br>
+                • Disable unnecessary services<br>
+                • Monitor network connections<br>
+                • Keep Windows updated
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Windows network troubleshooting and diagnostic commands reference • <a href="../../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>
