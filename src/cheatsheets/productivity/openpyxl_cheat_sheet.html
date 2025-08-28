@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenPyXL Library CheatSheet</title>
+    <meta name="description" content="Python OpenPyXL library reference for reading, writing, and automating Excel files">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="productivity">
+    <header class="header">
+        <h1>OpenPyXL Library</h1>
+        <p>Python library for reading, writing, and manipulating Excel files</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Installation & Import</h2>
+            <div class="command-line">
+                <span class="command">pip install openpyxl</span>
+                <span class="description">Install OpenPyXL</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl import Workbook</span>
+                <span class="description">Create new workbooks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl import load_workbook</span>
+                <span class="description">Load existing workbooks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import Font, Fill</span>
+                <span class="description">Import styling</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl.chart import BarChart</span>
+                <span class="description">Import charting</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Creating Workbooks</h2>
+            <div class="command-line">
+                <span class="command">wb = Workbook()</span>
+                <span class="description">Create new workbook</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws = wb.active</span>
+                <span class="description">Get active worksheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.title = "My Sheet"</span>
+                <span class="description">Rename worksheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws2 = wb.create_sheet("Data")</span>
+                <span class="description">Create new sheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wb.save("example.xlsx")</span>
+                <span class="description">Save workbook</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Opening Files</h2>
+            <div class="command-line">
+                <span class="command">wb = load_workbook("file.xlsx")</span>
+                <span class="description">Load existing file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">load_workbook("file.xlsx", data_only=True)</span>
+                <span class="description">Load with calculated values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">load_workbook("file.xlsx", read_only=True)</span>
+                <span class="description">Read-only mode</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wb.sheetnames</span>
+                <span class="description">List all sheet names</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws = wb["Sheet1"]</span>
+                <span class="description">Access sheet by name</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cell Operations</h2>
+            <div class="command-line">
+                <span class="command">ws['A1'] = "Hello"</span>
+                <span class="description">Set cell value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cell = ws.cell(row=1, column=1)</span>
+                <span class="description">Access cell by coordinates</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cell.value = 42</span>
+                <span class="description">Set cell value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">value = ws['A1'].value</span>
+                <span class="description">Get cell value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'] = datetime.now()</span>
+                <span class="description">Insert date/time</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'] = '=SUM(B1:B10)'</span>
+                <span class="description">Insert formula</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Range Operations</h2>
+            <div class="command-line">
+                <span class="command">cell_range = ws['A1:C3']</span>
+                <span class="description">Select range</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1:C1'] = [1, 2, 3]</span>
+                <span class="description">Set range values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">for row in ws.iter_rows(min_row=1, max_col=3):</span>
+                <span class="description">Iterate over rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">for col in ws.iter_cols(min_col=1, max_row=3):</span>
+                <span class="description">Iterate over columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.append([1, 2, 3, 4])</span>
+                <span class="description">Append row to end</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Row & Column Operations</h2>
+            <div class="command-line">
+                <span class="command">ws.insert_rows(2, 3)</span>
+                <span class="description">Insert 3 rows at row 2</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.delete_rows(5, 2)</span>
+                <span class="description">Delete 2 rows starting at 5</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.insert_cols(2, 1)</span>
+                <span class="description">Insert 1 column at B</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.delete_cols(3, 1)</span>
+                <span class="description">Delete column C</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.row_dimensions[1].height = 20</span>
+                <span class="description">Set row height</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.column_dimensions['A'].width = 15</span>
+                <span class="description">Set column width</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Styling - Fonts</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import Font</span>
+                <span class="description">Import Font class</span>
+            </div>
+            <div class="command-line">
+                <span class="command">font = Font(bold=True)</span>
+                <span class="description">Create bold font</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Font(name='Arial', size=12)</span>
+                <span class="description">Set font and size</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Font(color='FF0000')</span>
+                <span class="description">Set font color (red)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Font(italic=True, underline='single')</span>
+                <span class="description">Italic with underline</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'].font = font</span>
+                <span class="description">Apply font to cell</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Styling - Fill & Colors</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import PatternFill</span>
+                <span class="description">Import fill patterns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">fill = PatternFill(fill_type='solid', start_color='FFFF00')</span>
+                <span class="description">Yellow background</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'].fill = fill</span>
+                <span class="description">Apply fill to cell</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PatternFill('solid', fgColor='00FF00')</span>
+                <span class="description">Green fill shorthand</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Borders</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import Border, Side</span>
+                <span class="description">Import border classes</span>
+            </div>
+            <div class="command-line">
+                <span class="command">thin_side = Side(style='thin')</span>
+                <span class="description">Create thin border side</span>
+            </div>
+            <div class="command-line">
+                <span class="command">border = Border(left=thin_side, right=thin_side)</span>
+                <span class="description">Create border</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'].border = border</span>
+                <span class="description">Apply border</span>
+            </div>
+            <div class="workflow">
+                <strong>Border styles:</strong><br>
+                • 'thin', 'medium', 'thick'<br>
+                • 'dotted', 'dashed', 'double'<br>
+                • 'hair', 'mediumDashed'
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Alignment</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import Alignment</span>
+                <span class="description">Import alignment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">align = Alignment(horizontal='center')</span>
+                <span class="description">Center horizontally</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Alignment(vertical='middle')</span>
+                <span class="description">Center vertically</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Alignment(wrap_text=True)</span>
+                <span class="description">Wrap text</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'].alignment = align</span>
+                <span class="description">Apply alignment</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Merging Cells</h2>
+            <div class="command-line">
+                <span class="command">ws.merge_cells('A1:C1')</span>
+                <span class="description">Merge cells A1 to C1</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.merge_cells(start_row=1, start_column=1, end_row=1, end_column=3)</span>
+                <span class="description">Merge by coordinates</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.unmerge_cells('A1:C1')</span>
+                <span class="description">Unmerge cells</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Charts</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.chart import BarChart</span>
+                <span class="description">Import bar chart</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chart = BarChart()</span>
+                <span class="description">Create bar chart</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chart.title = "Sales Data"</span>
+                <span class="description">Set chart title</span>
+            </div>
+            <div class="command-line">
+                <span class="command">data = Reference(ws, min_col=1, min_row=1, max_col=1, max_row=10)</span>
+                <span class="description">Define data range</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chart.add_data(data, titles_from_data=True)</span>
+                <span class="description">Add data to chart</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.add_chart(chart, "E5")</span>
+                <span class="description">Insert chart at E5</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Formulas</h2>
+            <div class="command-line">
+                <span class="command">ws['C1'] = '=A1+B1'</span>
+                <span class="description">Simple addition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['D10'] = '=SUM(D1:D9)'</span>
+                <span class="description">Sum function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['E1'] = '=AVERAGE(A1:A10)'</span>
+                <span class="description">Average function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['F1'] = '=IF(A1>10,"High","Low")'</span>
+                <span class="description">IF condition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['G1'] = '=VLOOKUP(A1,Table1,2,0)'</span>
+                <span class="description">VLOOKUP function</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Validation</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.worksheet.datavalidation import DataValidation</span>
+                <span class="description">Import validation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dv = DataValidation(type="list", formula1='"Yes,No,Maybe"')</span>
+                <span class="description">Create dropdown list</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dv.prompt = 'Please select from list'</span>
+                <span class="description">Set validation prompt</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.add_data_validation(dv)</span>
+                <span class="description">Add validation to sheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dv.add('A1:A10')</span>
+                <span class="description">Apply to range</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Images</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.drawing.image import Image</span>
+                <span class="description">Import image support</span>
+            </div>
+            <div class="command-line">
+                <span class="command">img = Image('logo.png')</span>
+                <span class="description">Load image file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">img.width = 200</span>
+                <span class="description">Set image width</span>
+            </div>
+            <div class="command-line">
+                <span class="command">img.height = 100</span>
+                <span class="description">Set image height</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.add_image(img, 'B2')</span>
+                <span class="description">Insert image at B2</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Working with Pandas</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.utils.dataframe import dataframe_to_rows</span>
+                <span class="description">Import DataFrame support</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_excel('output.xlsx', engine='openpyxl')</span>
+                <span class="description">Save DataFrame to Excel</span>
+            </div>
+            <div class="workflow">
+                <strong>Write DataFrame to worksheet:</strong><br>
+                for r in dataframe_to_rows(df, index=False, header=True):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;ws.append(r)
+            </div>
+            <div class="command-line">
+                <span class="command">with pd.ExcelWriter('file.xlsx', engine='openpyxl') as writer:</span>
+                <span class="description">Use ExcelWriter context</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Protection</h2>
+            <div class="command-line">
+                <span class="command">ws.protection.sheet = True</span>
+                <span class="description">Enable sheet protection</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.protection.password = 'secret'</span>
+                <span class="description">Set protection password</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl.styles import Protection</span>
+                <span class="description">Import protection class</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws['A1'].protection = Protection(locked=False)</span>
+                <span class="description">Unlock specific cell</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Utilities</h2>
+            <div class="command-line">
+                <span class="command">from openpyxl.utils import get_column_letter</span>
+                <span class="description">Convert number to letter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">get_column_letter(1)</span>
+                <span class="description">Returns 'A'</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from openpyxl.utils import column_index_from_string</span>
+                <span class="description">Convert letter to number</span>
+            </div>
+            <div class="command-line">
+                <span class="command">column_index_from_string('A')</span>
+                <span class="description">Returns 1</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.max_row</span>
+                <span class="description">Get last used row</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ws.max_column</span>
+                <span class="description">Get last used column</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Advanced Features</h2>
+            <div class="tip">
+                <strong>Performance Tips:</strong><br>
+                • Use read_only=True for large files<br>
+                • Use write_only=True for large outputs<br>
+                • Use data_only=True to get formula results<br>
+                • Close workbooks when done<br>
+                • Use iter_rows() for memory efficiency
+            </tip>
+            <div class="workflow">
+                <strong>Batch processing:</strong><br>
+                wb = Workbook(write_only=True)<br>
+                ws = wb.create_sheet()<br>
+                for row in data:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;ws.append(row)<br>
+                wb.save('output.xlsx')
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>OpenPyXL library reference • <a href="../../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>

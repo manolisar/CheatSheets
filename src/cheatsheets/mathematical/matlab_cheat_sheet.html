@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATLAB Programming</title>
+    <meta name="description" content="Comprehensive MATLAB reference for matrix operations, plotting, numerical computing, and programming">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="mathematical">
+    <header class="header">
+        <h1>MATLAB Programming</h1>
+        <p>Complete reference for matrix operations, plotting, and numerical computing</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Getting Started</h2>
+            <div class="command-line">
+                <span class="command">clc</span>
+                <span class="description">Clear command window</span>
+            </div>
+            <div class="command-line">
+                <span class="command">clear</span>
+                <span class="description">Clear workspace variables</span>
+            </div>
+            <div class="command-line">
+                <span class="command">clear all</span>
+                <span class="description">Clear everything</span>
+            </div>
+            <div class="command-line">
+                <span class="command">close all</span>
+                <span class="description">Close all figures</span>
+            </div>
+            <div class="command-line">
+                <span class="command">whos</span>
+                <span class="description">List variables with details</span>
+            </div>
+            <div class="command-line">
+                <span class="command">who</span>
+                <span class="description">List variable names only</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Help & Documentation</h2>
+            <div class="command-line">
+                <span class="command">help function_name</span>
+                <span class="description">Help for specific function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">doc function_name</span>
+                <span class="description">Open documentation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">lookfor keyword</span>
+                <span class="description">Search for functions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">which function_name</span>
+                <span class="description">Find function location</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Variable Assignment</h2>
+            <div class="command-line">
+                <span class="command">x = 5</span>
+                <span class="description">Scalar assignment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">name = 'MATLAB'</span>
+                <span class="description">String (character array)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">str = "MATLAB"</span>
+                <span class="description">String array (R2016b+)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">flag = true</span>
+                <span class="description">Boolean variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">complex_num = 3 + 4i</span>
+                <span class="description">Complex number</span>
+            </div>
+            <div class="command-line">
+                <span class="command">disp(x)</span>
+                <span class="description">Display variable value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">fprintf('Value: %d\n', x)</span>
+                <span class="description">Formatted output</span>
+            </div>
+            <div class="command-line">
+                <span class="command">class(x)</span>
+                <span class="description">Get data type</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Array Creation</h2>
+            <div class="command-line">
+                <span class="command">[1, 2, 3, 4, 5]</span>
+                <span class="description">Row vector</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[1; 2; 3; 4; 5]</span>
+                <span class="description">Column vector</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[1, 2, 3; 4, 5, 6]</span>
+                <span class="description">Matrix (2x3)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">zeros(3, 4)</span>
+                <span class="description">3x4 matrix of zeros</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ones(2, 3)</span>
+                <span class="description">2x3 matrix of ones</span>
+            </div>
+            <div class="command-line">
+                <span class="command">eye(4)</span>
+                <span class="description">4x4 identity matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rand(3, 3)</span>
+                <span class="description">3x3 random matrix [0,1]</span>
+            </div>
+            <div class="command-line">
+                <span class="command">randn(3, 3)</span>
+                <span class="description">3x3 normal distribution</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sequences</h2>
+            <div class="command-line">
+                <span class="command">1:10</span>
+                <span class="description">1 to 10, step 1</span>
+            </div>
+            <div class="command-line">
+                <span class="command">0:0.1:1</span>
+                <span class="description">0 to 1, step 0.1</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linspace(0, 10, 100)</span>
+                <span class="description">100 points from 0 to 10</span>
+            </div>
+            <div class="command-line">
+                <span class="command">logspace(1, 3, 50)</span>
+                <span class="description">50 points from 10^1 to 10^3</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Array Properties</h2>
+            <div class="command-line">
+                <span class="command">size(A)</span>
+                <span class="description">Get array dimensions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">length(A)</span>
+                <span class="description">Length of largest dimension</span>
+            </div>
+            <div class="command-line">
+                <span class="command">numel(A)</span>
+                <span class="description">Total number of elements</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ndims(A)</span>
+                <span class="description">Number of dimensions</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Array Indexing</h2>
+            <div class="command-line">
+                <span class="command">matrix(2, 3)</span>
+                <span class="description">Single element</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(2, :)</span>
+                <span class="description">Entire row 2</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(:, 3)</span>
+                <span class="description">Entire column 3</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(1:2, 2:4)</span>
+                <span class="description">Submatrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">diag(matrix)</span>
+                <span class="description">Main diagonal</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(6)</span>
+                <span class="description">6th element (linear indexing)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(matrix > 5)</span>
+                <span class="description">Logical indexing</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Array Manipulation</h2>
+            <div class="command-line">
+                <span class="command">reshape(A, 3, 4)</span>
+                <span class="description">Reshape to 3x4</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A(:)</span>
+                <span class="description">Column vector</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[A, B]</span>
+                <span class="description">Horizontal concatenation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[A; B]</span>
+                <span class="description">Vertical concatenation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A'</span>
+                <span class="description">Complex conjugate transpose</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A.'</span>
+                <span class="description">Simple transpose</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sort(vec)</span>
+                <span class="description">Sort ascending</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[sorted_vec, indices] = sort(vec)</span>
+                <span class="description">Sort with indices</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Element-wise Operations</h2>
+            <div class="command-line">
+                <span class="command">A + B</span>
+                <span class="description">Addition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A - B</span>
+                <span class="description">Subtraction</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A .* B</span>
+                <span class="description">Element-wise multiplication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A ./ B</span>
+                <span class="description">Element-wise division</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A .^ 2</span>
+                <span class="description">Element-wise power</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Matrix Operations</h2>
+            <div class="command-line">
+                <span class="command">A * B</span>
+                <span class="description">Matrix multiplication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A^2</span>
+                <span class="description">Matrix power</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A / B</span>
+                <span class="description">Right matrix division</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A \ B</span>
+                <span class="description">Left matrix division</span>
+            </div>
+            <div class="command-line">
+                <span class="command">inv(A)</span>
+                <span class="description">Matrix inverse</span>
+            </div>
+            <div class="command-line">
+                <span class="command">det(A)</span>
+                <span class="description">Determinant</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rank(A)</span>
+                <span class="description">Matrix rank</span>
+            </div>
+            <div class="command-line">
+                <span class="command">trace(A)</span>
+                <span class="description">Matrix trace</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Trigonometric Functions</h2>
+            <div class="command-line">
+                <span class="command">sin(x)</span>
+                <span class="description">Sine function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cos(x)</span>
+                <span class="description">Cosine function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tan(x)</span>
+                <span class="description">Tangent function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">asin(x)</span>
+                <span class="description">Inverse sine</span>
+            </div>
+            <div class="command-line">
+                <span class="command">acos(x)</span>
+                <span class="description">Inverse cosine</span>
+            </div>
+            <div class="command-line">
+                <span class="command">atan(x)</span>
+                <span class="description">Inverse tangent</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Exponential & Logarithmic</h2>
+            <div class="command-line">
+                <span class="command">exp(x)</span>
+                <span class="description">Exponential function e^x</span>
+            </div>
+            <div class="command-line">
+                <span class="command">log(x)</span>
+                <span class="description">Natural logarithm</span>
+            </div>
+            <div class="command-line">
+                <span class="command">log10(x)</span>
+                <span class="description">Base-10 logarithm</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sqrt(x)</span>
+                <span class="description">Square root</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Rounding Functions</h2>
+            <div class="command-line">
+                <span class="command">round(x)</span>
+                <span class="description">Round to nearest integer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">floor(x)</span>
+                <span class="description">Round down</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ceil(x)</span>
+                <span class="description">Round up</span>
+            </div>
+            <div class="command-line">
+                <span class="command">abs(x)</span>
+                <span class="description">Absolute value</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistics</h2>
+            <div class="command-line">
+                <span class="command">mean(data)</span>
+                <span class="description">Mean value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">std(data)</span>
+                <span class="description">Standard deviation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">var(data)</span>
+                <span class="description">Variance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">median(data)</span>
+                <span class="description">Median value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">min(data)</span>
+                <span class="description">Minimum value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">max(data)</span>
+                <span class="description">Maximum value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sum(data)</span>
+                <span class="description">Sum of elements</span>
+            </div>
+            <div class="command-line">
+                <span class="command">prod(data)</span>
+                <span class="description">Product of elements</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Control Flow - If Statements</h2>
+            <div class="workflow">
+                <strong>Basic if-else structure:</strong><br>
+                if condition<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+                elseif condition2<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+                else<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+                end
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Control Flow - Loops</h2>
+            <div class="workflow">
+                <strong>For loop:</strong><br>
+                for i = 1:10<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+                end
+            </div>
+            <div class="workflow">
+                <strong>While loop:</strong><br>
+                while condition<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;statements<br>
+                end
+            </div>
+            <div class="tip">
+                <strong>Loop control:</strong><br>
+                • continue - Skip to next iteration<br>
+                • break - Exit loop
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Function Definition</h2>
+            <div class="workflow">
+                <strong>Basic function:</strong><br>
+                function result = myFunction(x, y)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;result = x^2 + y^2;<br>
+                end
+            </div>
+            <div class="workflow">
+                <strong>Multiple outputs:</strong><br>
+                function [mean_val, std_val] = myStats(data)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;mean_val = mean(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;std_val = std(data);<br>
+                end
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Anonymous Functions</h2>
+            <div class="command-line">
+                <span class="command">square = @(x) x.^2</span>
+                <span class="description">Square function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">add = @(x, y) x + y</span>
+                <span class="description">Addition function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">quadratic = @(x, a, b, c) a*x.^2 + b*x + c</span>
+                <span class="description">Quadratic function</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Basic Plotting</h2>
+            <div class="command-line">
+                <span class="command">plot(x, y)</span>
+                <span class="description">Basic line plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">plot(x, y, 'r-')</span>
+                <span class="description">Red solid line</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xlabel('x')</span>
+                <span class="description">X-axis label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ylabel('y')</span>
+                <span class="description">Y-axis label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">title('Plot Title')</span>
+                <span class="description">Plot title</span>
+            </div>
+            <div class="command-line">
+                <span class="command">legend('Line 1', 'Line 2')</span>
+                <span class="description">Add legend</span>
+            </div>
+            <div class="command-line">
+                <span class="command">grid on</span>
+                <span class="description">Show grid</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hold on</span>
+                <span class="description">Hold current plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hold off</span>
+                <span class="description">Release hold</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Subplot & Multiple Plots</h2>
+            <div class="command-line">
+                <span class="command">figure</span>
+                <span class="description">Create new figure</span>
+            </div>
+            <div class="command-line">
+                <span class="command">subplot(2, 2, 1)</span>
+                <span class="description">2x2 grid, position 1</span>
+            </div>
+            <div class="command-line">
+                <span class="command">scatter(x, y)</span>
+                <span class="description">Scatter plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">bar(x, y)</span>
+                <span class="description">Bar chart</span>
+            </div>
+            <div class="command-line">
+                <span class="command">histogram(data)</span>
+                <span class="description">Histogram</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="command-line">
+                <span class="command">load('data.mat')</span>
+                <span class="description">Load MAT file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">save('data.mat', 'x', 'y')</span>
+                <span class="description">Save specific variables</span>
+            </div>
+            <div class="command-line">
+                <span class="command">csvread('data.csv')</span>
+                <span class="description">Read CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">csvwrite('output.csv', data)</span>
+                <span class="description">Write CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xlsread('data.xlsx')</span>
+                <span class="description">Read Excel file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xlswrite('output.xlsx', data)</span>
+                <span class="description">Write Excel file</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Linear Algebra</h2>
+            <div class="command-line">
+                <span class="command">A \ b</span>
+                <span class="description">Solve linear system Ax = b</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[L, U, P] = lu(A)</span>
+                <span class="description">LU decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[Q, R] = qr(A)</span>
+                <span class="description">QR decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[U, S, V] = svd(A)</span>
+                <span class="description">Singular Value Decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">[eigenvectors, eigenvalues] = eig(A)</span>
+                <span class="description">Eigenvalues and eigenvectors</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cond(A)</span>
+                <span class="description">Condition number</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Numerical Integration</h2>
+            <div class="command-line">
+                <span class="command">integral(f, 0, 1)</span>
+                <span class="description">Numerical integration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integral2(f2d, -1, 1, -1, 1)</span>
+                <span class="description">2D integration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">trapz(x, y)</span>
+                <span class="description">Trapezoidal rule</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ODE Solving</h2>
+            <div class="command-line">
+                <span class="command">ode45(ode_func, tspan, y0)</span>
+                <span class="description">Solve ODE with Runge-Kutta</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ode23(ode_func, tspan, y0)</span>
+                <span class="description">Lower-order ODE solver</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Signal Processing</h2>
+            <div class="command-line">
+                <span class="command">fft(signal)</span>
+                <span class="description">Fast Fourier Transform</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ifft(Y)</span>
+                <span class="description">Inverse FFT</span>
+            </div>
+            <div class="command-line">
+                <span class="command">filter(b, a, signal)</span>
+                <span class="description">Digital filter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">butter(order, Wn, 'low')</span>
+                <span class="description">Butterworth filter design</span>
+            </div>
+            <div class="command-line">
+                <span class="command">freqz(b, a)</span>
+                <span class="description">Frequency response</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Useful Tips</h2>
+            <div class="tip">
+                <strong>MATLAB Best Practices:</strong><br>
+                • Use semicolon (;) to suppress output<br>
+                • Preallocate arrays for better performance<br>
+                • Use vectorized operations instead of loops<br>
+                • Comment your code with %<br>
+                • Use meaningful variable names
+            </div>
+            <div class="workflow">
+                <strong>Performance Tips:</strong><br>
+                • zeros(n,m) is faster than A = []<br>
+                • A(end) accesses last element<br>
+                • Use logical indexing: A(A>0)<br>
+                • Profile code with tic/toc
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Essential MATLAB programming reference • <a href="../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>

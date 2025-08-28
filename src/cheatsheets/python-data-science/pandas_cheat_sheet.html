@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas Data Analysis CheatSheet</title>
+    <meta name="description" content="Comprehensive Pandas reference covering DataFrame operations, data cleaning, manipulation, and analysis">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="python-data-science">
+    <header class="header">
+        <h1>Pandas Data Analysis</h1>
+        <p>DataFrame operations, data cleaning, manipulation, and analysis with Pandas library</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Import & Create DataFrames</h2>
+            <div class="command-line">
+                <span class="command">import pandas as pd</span>
+                <span class="description">Import Pandas library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.DataFrame({'A': [1,2], 'B': [3,4]})</span>
+                <span class="description">Create DataFrame from dict</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.read_csv('file.csv')</span>
+                <span class="description">Read CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.read_excel('file.xlsx')</span>
+                <span class="description">Read Excel file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.read_json('file.json')</span>
+                <span class="description">Read JSON file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.Series([1, 2, 3, 4])</span>
+                <span class="description">Create Series</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>DataFrame Info & Inspection</h2>
+            <div class="command-line">
+                <span class="command">df.head()</span>
+                <span class="description">First 5 rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.tail()</span>
+                <span class="description">Last 5 rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.info()</span>
+                <span class="description">DataFrame info and dtypes</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.describe()</span>
+                <span class="description">Statistical summary</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.shape</span>
+                <span class="description">Dimensions (rows, columns)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.columns</span>
+                <span class="description">Column names</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.index</span>
+                <span class="description">Row index</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.dtypes</span>
+                <span class="description">Data types of columns</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Selection</h2>
+            <div class="command-line">
+                <span class="command">df['column']</span>
+                <span class="description">Select single column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[['col1', 'col2']]</span>
+                <span class="description">Select multiple columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.loc[0]</span>
+                <span class="description">Select row by label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.iloc[0]</span>
+                <span class="description">Select row by position</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.loc[0:2, 'col1':'col3']</span>
+                <span class="description">Select range by labels</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.iloc[0:3, 1:4]</span>
+                <span class="description">Select range by positions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.at[0, 'column']</span>
+                <span class="description">Single value by label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.iat[0, 1]</span>
+                <span class="description">Single value by position</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Filtering & Querying</h2>
+            <div class="command-line">
+                <span class="command">df[df['col'] > 5]</span>
+                <span class="description">Filter by condition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[(df['A'] > 5) & (df['B'] < 10)]</span>
+                <span class="description">Multiple conditions with &</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[(df['A'] > 5) | (df['B'] < 10)]</span>
+                <span class="description">Multiple conditions with |</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.query('A > 5 and B < 10')</span>
+                <span class="description">Query with string expression</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[df['col'].isin([1, 2, 3])]</span>
+                <span class="description">Filter by values in list</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[df['col'].str.contains('text')]</span>
+                <span class="description">Filter by string pattern</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.nlargest(5, 'column')</span>
+                <span class="description">Top 5 values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.nsmallest(5, 'column')</span>
+                <span class="description">Bottom 5 values</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Cleaning</h2>
+            <div class="command-line">
+                <span class="command">df.dropna()</span>
+                <span class="description">Drop rows with NaN</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.fillna(0)</span>
+                <span class="description">Fill NaN with value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.fillna(method='ffill')</span>
+                <span class="description">Forward fill NaN</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.drop_duplicates()</span>
+                <span class="description">Remove duplicate rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.drop('column', axis=1)</span>
+                <span class="description">Drop column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.rename(columns={'old': 'new'})</span>
+                <span class="description">Rename columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].astype(float)</span>
+                <span class="description">Change data type</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.replace('old_value', 'new_value')</span>
+                <span class="description">Replace values</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>String Operations</h2>
+            <div class="command-line">
+                <span class="command">df['col'].str.upper()</span>
+                <span class="description">Convert to uppercase</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.lower()</span>
+                <span class="description">Convert to lowercase</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.strip()</span>
+                <span class="description">Remove whitespace</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.split(',')</span>
+                <span class="description">Split strings</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.replace('old', 'new')</span>
+                <span class="description">Replace in strings</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.contains('pattern')</span>
+                <span class="description">Check if contains pattern</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str.len()</span>
+                <span class="description">String length</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['col'].str[:3]</span>
+                <span class="description">String slicing</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Groupby Operations</h2>
+            <div class="command-line">
+                <span class="command">df.groupby('column').sum()</span>
+                <span class="description">Group by and sum</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby('column').mean()</span>
+                <span class="description">Group by and average</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby('column').count()</span>
+                <span class="description">Group by and count</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby('column').agg(['sum', 'mean'])</span>
+                <span class="description">Multiple aggregations</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby(['col1', 'col2']).sum()</span>
+                <span class="description">Group by multiple columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby('column').size()</span>
+                <span class="description">Size of each group</span>
+            </div>
+            <div class="workflow">
+                <strong>Custom aggregation:</strong><br>
+                df.groupby('column').agg({<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'col1': 'sum',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'col2': 'mean',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'col3': 'max'<br>
+                })
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Merging & Joining</h2>
+            <div class="command-line">
+                <span class="command">pd.concat([df1, df2])</span>
+                <span class="description">Concatenate DataFrames</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df1.merge(df2, on='key')</span>
+                <span class="description">Inner join on key</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df1.merge(df2, how='left')</span>
+                <span class="description">Left join</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df1.merge(df2, how='outer')</span>
+                <span class="description">Outer join</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df1.join(df2)</span>
+                <span class="description">Join on index</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.concat([df1, df2], axis=1)</span>
+                <span class="description">Concatenate horizontally</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Pivot Tables</h2>
+            <div class="workflow">
+                <strong>Basic pivot table:</strong><br>
+                df.pivot_table(<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;values='value_col',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;index='row_col',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;columns='col_col',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;aggfunc='sum'<br>
+                )
+            </div>
+            <div class="command-line">
+                <span class="command">df.pivot(index='A', columns='B', values='C')</span>
+                <span class="description">Simple pivot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.crosstab(df['A'], df['B'])</span>
+                <span class="description">Cross tabulation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.melt(id_vars=['A'], value_vars=['B', 'C'])</span>
+                <span class="description">Unpivot data</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>DateTime Operations</h2>
+            <div class="command-line">
+                <span class="command">pd.to_datetime(df['date'])</span>
+                <span class="description">Convert to datetime</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['date'].dt.year</span>
+                <span class="description">Extract year</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['date'].dt.month</span>
+                <span class="description">Extract month</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['date'].dt.dayofweek</span>
+                <span class="description">Day of week (0=Monday)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.set_index('date')</span>
+                <span class="description">Set date as index</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.resample('M').sum()</span>
+                <span class="description">Resample by month</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.date_range('2023-01-01', periods=10)</span>
+                <span class="description">Create date range</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistical Functions</h2>
+            <div class="command-line">
+                <span class="command">df.sum()</span>
+                <span class="description">Sum of columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.mean()</span>
+                <span class="description">Mean of columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.median()</span>
+                <span class="description">Median of columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.std()</span>
+                <span class="description">Standard deviation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.corr()</span>
+                <span class="description">Correlation matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.cov()</span>
+                <span class="description">Covariance matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.quantile(0.75)</span>
+                <span class="description">75th percentile</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.value_counts()</span>
+                <span class="description">Count unique values</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sorting & Ranking</h2>
+            <div class="command-line">
+                <span class="command">df.sort_values('column')</span>
+                <span class="description">Sort by column values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sort_values(['A', 'B'])</span>
+                <span class="description">Sort by multiple columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sort_index()</span>
+                <span class="description">Sort by index</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['column'].rank()</span>
+                <span class="description">Rank values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sample(n=5)</span>
+                <span class="description">Random sample</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sample(frac=0.1)</span>
+                <span class="description">Sample fraction</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Export Data</h2>
+            <div class="command-line">
+                <span class="command">df.to_csv('file.csv', index=False)</span>
+                <span class="description">Save to CSV</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_excel('file.xlsx', index=False)</span>
+                <span class="description">Save to Excel</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_json('file.json')</span>
+                <span class="description">Save to JSON</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_html('file.html')</span>
+                <span class="description">Save to HTML</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_dict()</span>
+                <span class="description">Convert to dictionary</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.to_numpy()</span>
+                <span class="description">Convert to NumPy array</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Performance & Memory</h2>
+            <div class="command-line">
+                <span class="command">df.memory_usage(deep=True)</span>
+                <span class="description">Memory usage by column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.read_csv('file.csv', chunksize=1000)</span>
+                <span class="description">Read in chunks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.astype('category')</span>
+                <span class="description">Use category dtype</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.eval('C = A + B')</span>
+                <span class="description">Efficient column operations</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Useful Tips</h2>
+            <div class="tip">
+                <strong>Pandas Best Practices:</strong><br>
+                • Use vectorized operations instead of loops<br>
+                • Set appropriate data types to save memory<br>
+                • Use .loc and .iloc for explicit indexing<br>
+                • Chain operations with method chaining<br>
+                • Use .copy() when modifying DataFrames
+            </div>
+            <div class="workflow">
+                <strong>Performance Tips:</strong><br>
+                • Read large files in chunks<br>
+                • Use categorical data for repeated strings<br>
+                • Avoid using apply() when vectorized operations exist<br>
+                • Use .query() for complex filtering<br>
+                • Consider using .eval() for arithmetic operations
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Pandas data analysis reference • <a href="../../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>

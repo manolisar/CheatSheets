@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python in Excel CheatSheet</title>
+    <meta name="description" content="Microsoft Python in Excel reference for data analysis and automation">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="productivity">
+    <header class="header">
+        <h1>Python in Excel</h1>
+        <p>Microsoft's Python integration for advanced data analysis within Excel</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>System Requirements</h2>
+            <div class="workflow">
+                <strong>Requirements:</strong><br>
+                • Excel for Microsoft 365 (Windows and Mac)<br>
+                • Microsoft 365 subscription (Business/Enterprise)<br>
+                • Internet connection (cloud-based execution)<br>
+                • Excel Version 2309 or later
+            </div>
+            <div class="tip">
+                <strong>Enabling Python:</strong><br>
+                1. File → Account → Office Insider<br>
+                2. Update Excel to latest version<br>
+                3. Insert tab → Python button<br>
+                4. Accept cloud execution terms
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Basic Python Cells</h2>
+            <div class="command-line">
+                <span class="command">=PY(2 + 3)</span>
+                <span class="description">Simple calculation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">=PY("Hello " + "World")</span>
+                <span class="description">String operations</span>
+            </div>
+            <div class="command-line">
+                <span class="command">=PY([1, 2, 3, 4, 5])</span>
+                <span class="description">Return list as array</span>
+            </div>
+            <div class="workflow">
+                <strong>Creating Python cells:</strong><br>
+                1. Select target cell<br>
+                2. Insert tab → Python button<br>
+                3. Or type =PY( to start<br>
+                4. Write code in editor<br>
+                5. Ctrl+Enter to execute
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Reading Excel Data</h2>
+            <div class="command-line">
+                <span class="command">xl["A1"].value</span>
+                <span class="description">Read single cell</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xl["A1:C10"].value</span>
+                <span class="description">Read range as DataFrame</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xl["A:A"].value</span>
+                <span class="description">Read entire column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xl["1:1"].value</span>
+                <span class="description">Read entire row</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xl["Sheet2!A1:B5"].value</span>
+                <span class="description">Read from other sheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xl["SalesData"].value</span>
+                <span class="description">Read named range</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Available Libraries</h2>
+            <div class="command-line">
+                <span class="command">import pandas as pd</span>
+                <span class="description">Data analysis library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import numpy as np</span>
+                <span class="description">Numerical computing</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import matplotlib.pyplot as plt</span>
+                <span class="description">Plotting and visualization</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import seaborn as sns</span>
+                <span class="description">Statistical visualizations</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import datetime</span>
+                <span class="description">Date and time operations</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import re</span>
+                <span class="description">Regular expressions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import json</span>
+                <span class="description">JSON handling</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Analysis with Pandas</h2>
+            <div class="command-line">
+                <span class="command">df = xl["A1:E100"].value</span>
+                <span class="description">Get DataFrame from range</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.head()</span>
+                <span class="description">First 5 rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.describe()</span>
+                <span class="description">Statistical summary</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.info()</span>
+                <span class="description">Data types and info</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby('Category').sum()</span>
+                <span class="description">Group and aggregate</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sort_values('Sales', ascending=False)</span>
+                <span class="description">Sort by column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Sales'].mean()</span>
+                <span class="description">Column average</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Cleaning</h2>
+            <div class="command-line">
+                <span class="command">df.dropna()</span>
+                <span class="description">Remove missing values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.fillna(0)</span>
+                <span class="description">Fill missing with 0</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.drop_duplicates()</span>
+                <span class="description">Remove duplicates</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Column'].astype(float)</span>
+                <span class="description">Change data type</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pd.to_datetime(df['Date'])</span>
+                <span class="description">Convert to datetime</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Text'].str.upper()</span>
+                <span class="description">Convert text to uppercase</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Returning Data to Excel</h2>
+            <div class="command-line">
+                <span class="command">return 42</span>
+                <span class="description">Return single number</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return "Hello World"</span>
+                <span class="description">Return text</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return [1, 2, 3, 4, 5]</span>
+                <span class="description">Return as row array</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return pd.Series([1, 2, 3])</span>
+                <span class="description">Return as column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return df</span>
+                <span class="description">Return DataFrame as table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return pd.Timestamp.now()</span>
+                <span class="description">Return current datetime</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistical Analysis</h2>
+            <div class="command-line">
+                <span class="command">df['Sales'].corr(df['Price'])</span>
+                <span class="description">Correlation between columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.corr()</span>
+                <span class="description">Correlation matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">np.percentile(df['Sales'], 95)</span>
+                <span class="description">95th percentile</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Sales'].quantile([0.25, 0.5, 0.75])</span>
+                <span class="description">Quartiles</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.rolling(window=7).mean()</span>
+                <span class="description">7-day rolling average</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Filtering</h2>
+            <div class="command-line">
+                <span class="command">df[df['Sales'] > 1000]</span>
+                <span class="description">Filter by condition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[df['Region'].isin(['North', 'South'])]</span>
+                <span class="description">Filter by multiple values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.query('Sales > 1000 and Region == "North"')</span>
+                <span class="description">Query with conditions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.nlargest(10, 'Sales')</span>
+                <span class="description">Top 10 by Sales</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.sample(n=100)</span>
+                <span class="description">Random sample of 100 rows</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Time Series Analysis</h2>
+            <div class="command-line">
+                <span class="command">df.set_index('Date')</span>
+                <span class="description">Set date as index</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.resample('M').mean()</span>
+                <span class="description">Monthly averages</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.resample('D').sum()</span>
+                <span class="description">Daily totals</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.shift(1)</span>
+                <span class="description">Shift data by 1 period</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.diff()</span>
+                <span class="description">Calculate differences</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Text Processing</h2>
+            <div class="command-line">
+                <span class="command">df['Text'].str.contains('keyword')</span>
+                <span class="description">Check if contains keyword</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Text'].str.extract(r'(\d+)')</span>
+                <span class="description">Extract numbers using regex</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Text'].str.replace('old', 'new')</span>
+                <span class="description">Replace text</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Text'].str.split(',')</span>
+                <span class="description">Split text by delimiter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df['Text'].str.len()</span>
+                <span class="description">Text length</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Pivot Operations</h2>
+            <div class="command-line">
+                <span class="command">df.pivot_table(values='Sales', index='Region', columns='Quarter')</span>
+                <span class="description">Create pivot table</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.groupby(['Region', 'Product']).sum()</span>
+                <span class="description">Multi-level grouping</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.unstack()</span>
+                <span class="description">Convert index to columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.stack()</span>
+                <span class="description">Convert columns to index</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Error Handling</h2>
+            <div class="workflow">
+                <strong>Try-except pattern:</strong><br>
+                try:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;df = xl["A1:C100"].value<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;result = df['Sales'].sum()<br>
+                except KeyError:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return "Sales column not found"<br>
+                except Exception as e:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return f"Error: {str(e)}"
+            </div>
+            <div class="command-line">
+                <span class="command">df.empty</span>
+                <span class="description">Check if DataFrame is empty</span>
+            </div>
+            <div class="command-line">
+                <span class="command">'Sales' in df.columns</span>
+                <span class="description">Check if column exists</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Business Analytics</h2>
+            <div class="workflow">
+                <strong>Sales analysis example:</strong><br>
+                df = xl["A1:E1000"].value<br>
+                summary = {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'Total Sales': df['Sales'].sum(),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'Average Sale': df['Sales'].mean(),<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;'Top Region': df.groupby('Region')['Sales'].sum().idxmax()<br>
+                }<br>
+                return pd.DataFrame(list(summary.items()))
+            </div>
+            <div class="command-line">
+                <span class="command">df['Sales'].pct_change()</span>
+                <span class="description">Calculate percent change</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.expanding().mean()</span>
+                <span class="description">Expanding window average</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Visualization with Matplotlib</h2>
+            <div class="workflow">
+                <strong>Basic plot:</strong><br>
+                plt.figure(figsize=(10, 6))<br>
+                plt.plot(df['Date'], df['Sales'])<br>
+                plt.title('Sales Over Time')<br>
+                plt.xlabel('Date')<br>
+                plt.ylabel('Sales')<br>
+                return plt.show()
+            </div>
+            <div class="command-line">
+                <span class="command">df.plot(kind='bar')</span>
+                <span class="description">Bar chart</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.hist()</span>
+                <span class="description">Histogram</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.plot.scatter(x='Price', y='Sales')</span>
+                <span class="description">Scatter plot</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Limitations & Tips</h2>
+            <div class="tip">
+                <strong>Current Limitations:</strong><br>
+                • Cloud-based execution (requires internet)<br>
+                • No file system access<br>
+                • Limited to pre-installed libraries<br>
+                • Execution timeout limits<br>
+                • Memory limitations
+            </div>
+            <div class="workflow">
+                <strong>Best Practices:</strong><br>
+                • Handle large datasets in chunks<br>
+                • Use error handling for robust code<br>
+                • Keep functions focused and simple<br>
+                • Test with sample data first<br>
+                • Document your Python code
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Python in Excel integration reference • <a href="../../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>
