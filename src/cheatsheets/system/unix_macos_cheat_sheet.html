@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix/macOS Terminal Commands</title>
+    <meta name="description" content="Essential Unix and macOS terminal commands for file management, text processing, and system administration">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="system">
+    <header class="header">
+        <h1>Unix/macOS Terminal Commands</h1>
+        <p>Essential commands for file management, text processing, and system administration</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Navigation</h2>
+            <div class="command-line">
+                <span class="command">pwd</span>
+                <span class="description">Print working directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ls</span>
+                <span class="description">List files and directories</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ls -la</span>
+                <span class="description">List with details (long format, hidden files)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ls -lh</span>
+                <span class="description">List with human-readable file sizes</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cd /path/to/directory</span>
+                <span class="description">Change directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cd ~</span>
+                <span class="description">Go to home directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cd ..</span>
+                <span class="description">Go up one directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cd -</span>
+                <span class="description">Go to previous directory</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="command-line">
+                <span class="command">touch filename</span>
+                <span class="description">Create empty file or update timestamp</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cp source destination</span>
+                <span class="description">Copy file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cp -r source dest</span>
+                <span class="description">Copy directory recursively</span>
+            </div>
+            <div class="command-line">
+                <span class="command">mv old_name new_name</span>
+                <span class="description">Move/rename file or directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rm filename</span>
+                <span class="description">Delete file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rm -r directory</span>
+                <span class="description">Delete directory recursively</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rm -rf directory</span>
+                <span class="description">Force delete directory (be careful!)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">mkdir dirname</span>
+                <span class="description">Create directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">mkdir -p path/to/dir</span>
+                <span class="description">Create directory with parent directories</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rmdir dirname</span>
+                <span class="description">Remove empty directory</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Content</h2>
+            <div class="command-line">
+                <span class="command">cat filename</span>
+                <span class="description">Display file content</span>
+            </div>
+            <div class="command-line">
+                <span class="command">less filename</span>
+                <span class="description">View file content page by page</span>
+            </div>
+            <div class="command-line">
+                <span class="command">head filename</span>
+                <span class="description">Show first 10 lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">head -n 20 filename</span>
+                <span class="description">Show first 20 lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tail filename</span>
+                <span class="description">Show last 10 lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tail -n 20 filename</span>
+                <span class="description">Show last 20 lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tail -f filename</span>
+                <span class="description">Follow file changes in real-time</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wc filename</span>
+                <span class="description">Word, line, character count</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wc -l filename</span>
+                <span class="description">Line count only</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Search & Filter</h2>
+            <div class="command-line">
+                <span class="command">grep "pattern" file</span>
+                <span class="description">Search for pattern in file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">grep -r "pattern" dir</span>
+                <span class="description">Recursive search in directory</span>
+            </div>
+            <div class="command-line">
+                <span class="command">grep -i "pattern" file</span>
+                <span class="description">Case-insensitive search</span>
+            </div>
+            <div class="command-line">
+                <span class="command">grep -n "pattern" file</span>
+                <span class="description">Show line numbers</span>
+            </div>
+            <div class="command-line">
+                <span class="command">grep -v "pattern" file</span>
+                <span class="description">Show lines NOT matching pattern</span>
+            </div>
+            <div class="command-line">
+                <span class="command">find . -name "*.txt"</span>
+                <span class="description">Find files by name pattern</span>
+            </div>
+            <div class="command-line">
+                <span class="command">find . -type f -name "pattern"</span>
+                <span class="description">Find files matching pattern</span>
+            </div>
+            <div class="command-line">
+                <span class="command">locate filename</span>
+                <span class="description">Quick file search (uses database)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Text Manipulation</h2>
+            <div class="command-line">
+                <span class="command">sort filename</span>
+                <span class="description">Sort lines alphabetically</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sort -n filename</span>
+                <span class="description">Sort numerically</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sort -r filename</span>
+                <span class="description">Reverse sort</span>
+            </div>
+            <div class="command-line">
+                <span class="command">uniq filename</span>
+                <span class="description">Remove duplicate lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">uniq -c filename</span>
+                <span class="description">Count occurrences</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cut -d',' -f1 file.csv</span>
+                <span class="description">Cut first column (comma-separated)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">awk '{print $1}' file</span>
+                <span class="description">Print first column (space-separated)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sed 's/old/new/g' file</span>
+                <span class="description">Replace 'old' with 'new' globally</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Process Viewing</h2>
+            <div class="command-line">
+                <span class="command">ps</span>
+                <span class="description">Show current processes</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ps aux</span>
+                <span class="description">Show all processes with details</span>
+            </div>
+            <div class="command-line">
+                <span class="command">top</span>
+                <span class="description">Real-time process viewer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">htop</span>
+                <span class="description">Enhanced process viewer (if installed)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pgrep process_name</span>
+                <span class="description">Find process ID by name</span>
+            </div>
+            <div class="command-line">
+                <span class="command">jobs</span>
+                <span class="description">Show active jobs</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Process Control</h2>
+            <div class="command-line">
+                <span class="command">command &</span>
+                <span class="description">Run command in background</span>
+            </div>
+            <div class="command-line">
+                <span class="command">nohup command &</span>
+                <span class="description">Run command immune to hangups</span>
+            </div>
+            <div class="command-line">
+                <span class="command">kill PID</span>
+                <span class="description">Terminate process by ID</span>
+            </div>
+            <div class="command-line">
+                <span class="command">kill -9 PID</span>
+                <span class="description">Force kill process</span>
+            </div>
+            <div class="command-line">
+                <span class="command">killall process_name</span>
+                <span class="description">Kill all processes by name</span>
+            </div>
+            <div class="command-line">
+                <span class="command">fg</span>
+                <span class="description">Bring background job to foreground</span>
+            </div>
+            <div class="command-line">
+                <span class="command">bg</span>
+                <span class="description">Send job to background</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Status</h2>
+            <div class="command-line">
+                <span class="command">date</span>
+                <span class="description">Show current date and time</span>
+            </div>
+            <div class="command-line">
+                <span class="command">uptime</span>
+                <span class="description">System uptime and load</span>
+            </div>
+            <div class="command-line">
+                <span class="command">whoami</span>
+                <span class="description">Current username</span>
+            </div>
+            <div class="command-line">
+                <span class="command">id</span>
+                <span class="description">User and group IDs</span>
+            </div>
+            <div class="command-line">
+                <span class="command">uname -a</span>
+                <span class="description">System information</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df -h</span>
+                <span class="description">Disk usage (human-readable)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">du -sh directory</span>
+                <span class="description">Directory size</span>
+            </div>
+            <div class="command-line">
+                <span class="command">free -h</span>
+                <span class="description">Memory usage (Linux)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">vm_stat</span>
+                <span class="description">Memory statistics (macOS)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hardware & Network</h2>
+            <div class="command-line">
+                <span class="command">lscpu</span>
+                <span class="description">CPU information (Linux)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">system_profiler SPHardwareDataType</span>
+                <span class="description">Hardware info (macOS)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ifconfig</span>
+                <span class="description">Network interface configuration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ping hostname</span>
+                <span class="description">Test network connectivity</span>
+            </div>
+            <div class="command-line">
+                <span class="command">netstat -an</span>
+                <span class="description">Show network connections</span>
+            </div>
+            <div class="command-line">
+                <span class="command">lsof -i :port</span>
+                <span class="description">Show what's using a specific port</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Permissions</h2>
+            <div class="command-line">
+                <span class="command">chmod 755 filename</span>
+                <span class="description">Set permissions (rwxr-xr-x)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chmod +x filename</span>
+                <span class="description">Make executable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chmod -w filename</span>
+                <span class="description">Remove write permission</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chmod u+rwx filename</span>
+                <span class="description">Give user read, write, execute</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chown user:group file</span>
+                <span class="description">Change ownership</span>
+            </div>
+            <div class="command-line">
+                <span class="command">chgrp group filename</span>
+                <span class="description">Change group ownership</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Permission Codes</h2>
+            <div class="workflow">
+                <strong>Permission Values:</strong><br>
+                • r (read) = 4<br>
+                • w (write) = 2<br>
+                • x (execute) = 1<br>
+                • 755 = rwxr-xr-x (owner: rwx, group: r-x, others: r-x)<br>
+                • 644 = rw-r--r-- (owner: rw-, group: r--, others: r--)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tar Archives</h2>
+            <div class="command-line">
+                <span class="command">tar -czf archive.tar.gz directory/</span>
+                <span class="description">Create compressed archive</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tar -xzf archive.tar.gz</span>
+                <span class="description">Extract compressed archive</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tar -tf archive.tar.gz</span>
+                <span class="description">List archive contents</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tar -xzf archive.tar.gz -C /dest/</span>
+                <span class="description">Extract to specific directory</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Other Compression</h2>
+            <div class="command-line">
+                <span class="command">zip -r archive.zip directory/</span>
+                <span class="description">Create ZIP archive</span>
+            </div>
+            <div class="command-line">
+                <span class="command">unzip archive.zip</span>
+                <span class="description">Extract ZIP archive</span>
+            </div>
+            <div class="command-line">
+                <span class="command">gzip filename</span>
+                <span class="description">Compress file with gzip</span>
+            </div>
+            <div class="command-line">
+                <span class="command">gunzip filename.gz</span>
+                <span class="description">Decompress gzip file</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Environment Variables</h2>
+            <div class="command-line">
+                <span class="command">env</span>
+                <span class="description">Show all environment variables</span>
+            </div>
+            <div class="command-line">
+                <span class="command">echo $PATH</span>
+                <span class="description">Show PATH variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">export VAR=value</span>
+                <span class="description">Set environment variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">export PATH=$PATH:/new/path</span>
+                <span class="description">Add to PATH</span>
+            </div>
+            <div class="command-line">
+                <span class="command">unset VAR</span>
+                <span class="description">Remove variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">source ~/.bashrc</span>
+                <span class="description">Reload bash configuration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">which command</span>
+                <span class="description">Show command location</span>
+            </div>
+            <div class="command-line">
+                <span class="command">type command</span>
+                <span class="description">Show command type</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Shell History</h2>
+            <div class="command-line">
+                <span class="command">history</span>
+                <span class="description">Show command history</span>
+            </div>
+            <div class="command-line">
+                <span class="command">history | grep pattern</span>
+                <span class="description">Search command history</span>
+            </div>
+            <div class="command-line">
+                <span class="command">!!</span>
+                <span class="description">Repeat last command</span>
+            </div>
+            <div class="command-line">
+                <span class="command">!n</span>
+                <span class="description">Repeat command number n</span>
+            </div>
+            <div class="command-line">
+                <span class="command">!string</span>
+                <span class="description">Repeat last command starting with string</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>SSH & Remote Access</h2>
+            <div class="command-line">
+                <span class="command">ssh user@hostname</span>
+                <span class="description">Connect to remote server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ssh -p port user@host</span>
+                <span class="description">Connect using specific port</span>
+            </div>
+            <div class="command-line">
+                <span class="command">scp file user@host:/path</span>
+                <span class="description">Copy file to remote server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">scp user@host:/path/file .</span>
+                <span class="description">Copy file from remote server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rsync -av source/ dest/</span>
+                <span class="description">Sync directories</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Downloads</h2>
+            <div class="command-line">
+                <span class="command">curl -O url</span>
+                <span class="description">Download file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">curl -L url</span>
+                <span class="description">Follow redirects</span>
+            </div>
+            <div class="command-line">
+                <span class="command">wget url</span>
+                <span class="description">Download file (if wget is installed)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>macOS Specific Commands</h2>
+            <div class="command-line">
+                <span class="command">open filename</span>
+                <span class="description">Open file with default application</span>
+            </div>
+            <div class="command-line">
+                <span class="command">open .</span>
+                <span class="description">Open current directory in Finder</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pbcopy < file</span>
+                <span class="description">Copy file contents to clipboard</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pbpaste > file</span>
+                <span class="description">Paste clipboard to file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">say "text"</span>
+                <span class="description">Text-to-speech</span>
+            </div>
+            <div class="command-line">
+                <span class="command">screencapture file.png</span>
+                <span class="description">Take screenshot</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Homebrew Package Management</h2>
+            <div class="command-line">
+                <span class="command">brew install package</span>
+                <span class="description">Install package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">brew update</span>
+                <span class="description">Update Homebrew</span>
+            </div>
+            <div class="command-line">
+                <span class="command">brew upgrade</span>
+                <span class="description">Upgrade packages</span>
+            </div>
+            <div class="command-line">
+                <span class="command">brew list</span>
+                <span class="description">List installed packages</span>
+            </div>
+            <div class="command-line">
+                <span class="command">brew search package</span>
+                <span class="description">Search for package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">brew uninstall package</span>
+                <span class="description">Remove package</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Useful Shortcuts & Tips</h2>
+            <div class="workflow">
+                <strong>Keyboard Shortcuts:</strong><br>
+                • Tab - Auto-complete commands and filenames<br>
+                • Ctrl+C - Interrupt current command<br>
+                • Ctrl+D - Exit shell or end input<br>
+                • Ctrl+L - Clear screen<br>
+                • Ctrl+A - Move to beginning of line<br>
+                • Ctrl+E - Move to end of line<br>
+                • Ctrl+U - Delete from cursor to beginning<br>
+                • Ctrl+K - Delete from cursor to end
+            </div>
+            <div class="workflow">
+                <strong>Command Combinations:</strong><br>
+                • command1 && command2 - Run command2 only if command1 succeeds<br>
+                • command1 || command2 - Run command2 only if command1 fails<br>
+                • command1; command2 - Run both commands sequentially<br>
+                • command1 | command2 - Pipe output of command1 to command2<br>
+                • command > file - Redirect output to file (overwrite)<br>
+                • command >> file - Redirect output to file (append)
+            </div>
+            <div class="tip">
+                <strong>Aliases:</strong><br>
+                • alias ll='ls -la' - Create alias<br>
+                • alias grep='grep --color=auto'<br>
+                • unalias ll - Remove alias
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Essential Unix/macOS terminal reference • <a href="../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>

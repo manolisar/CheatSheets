@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciPy Scientific Computing CheatSheet</title>
+    <meta name="description" content="Comprehensive SciPy reference covering scientific computing functions, statistics, optimization, and signal processing">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="python-data-science">
+    <header class="header">
+        <h1>SciPy Scientific Computing</h1>
+        <p>Scientific computing functions, statistics, optimization, and signal processing</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Import & Basic Setup</h2>
+            <div class="command-line">
+                <span class="command">import scipy</span>
+                <span class="description">Import SciPy library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy import stats</span>
+                <span class="description">Import statistics module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy import optimize</span>
+                <span class="description">Import optimization module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy import integrate</span>
+                <span class="description">Import integration module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy import linalg</span>
+                <span class="description">Import linear algebra module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy import signal</span>
+                <span class="description">Import signal processing module</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistical Distributions</h2>
+            <div class="command-line">
+                <span class="command">stats.norm(loc=0, scale=1)</span>
+                <span class="description">Normal distribution</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.uniform(loc=0, scale=1)</span>
+                <span class="description">Uniform distribution</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.expon(scale=1)</span>
+                <span class="description">Exponential distribution</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.poisson(mu=1)</span>
+                <span class="description">Poisson distribution</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dist.pdf(x)</span>
+                <span class="description">Probability density function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dist.cdf(x)</span>
+                <span class="description">Cumulative distribution function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dist.rvs(size=100)</span>
+                <span class="description">Random samples</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dist.ppf(q)</span>
+                <span class="description">Percent point function (inverse CDF)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistical Tests</h2>
+            <div class="command-line">
+                <span class="command">stats.ttest_1samp(data, popmean)</span>
+                <span class="description">One-sample t-test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.ttest_ind(data1, data2)</span>
+                <span class="description">Independent samples t-test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.ttest_rel(data1, data2)</span>
+                <span class="description">Paired samples t-test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.chi2_contingency(table)</span>
+                <span class="description">Chi-square test of independence</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.f_oneway(group1, group2, group3)</span>
+                <span class="description">One-way ANOVA</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.shapiro(data)</span>
+                <span class="description">Shapiro-Wilk normality test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.mannwhitneyu(x, y)</span>
+                <span class="description">Mann-Whitney U test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.wilcoxon(x, y)</span>
+                <span class="description">Wilcoxon signed-rank test</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Correlation & Regression</h2>
+            <div class="command-line">
+                <span class="command">stats.pearsonr(x, y)</span>
+                <span class="description">Pearson correlation coefficient</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.spearmanr(x, y)</span>
+                <span class="description">Spearman correlation coefficient</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.kendalltau(x, y)</span>
+                <span class="description">Kendall's tau correlation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.linregress(x, y)</span>
+                <span class="description">Linear regression</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.theilslopes(y, x)</span>
+                <span class="description">Theil-Sen regression</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Descriptive Statistics</h2>
+            <div class="command-line">
+                <span class="command">stats.describe(data)</span>
+                <span class="description">Descriptive statistics summary</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.gmean(data)</span>
+                <span class="description">Geometric mean</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.hmean(data)</span>
+                <span class="description">Harmonic mean</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.trim_mean(data, proportiontocut)</span>
+                <span class="description">Trimmed mean</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.skew(data)</span>
+                <span class="description">Skewness</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.kurtosis(data)</span>
+                <span class="description">Kurtosis</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.iqr(data)</span>
+                <span class="description">Interquartile range</span>
+            </div>
+            <div class="command-line">
+                <span class="command">stats.mode(data)</span>
+                <span class="description">Mode (most frequent value)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Optimization</h2>
+            <div class="workflow">
+                <strong>Minimize function:</strong><br>
+                def objective(x):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return x**2 + 10*np.sin(x)<br>
+                result = optimize.minimize(objective, x0=0)
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.minimize_scalar(func)</span>
+                <span class="description">Minimize scalar function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.fsolve(func, x0)</span>
+                <span class="description">Find roots of function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.root(func, x0)</span>
+                <span class="description">Find roots (more options)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.curve_fit(func, x, y)</span>
+                <span class="description">Curve fitting</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.least_squares(func, x0)</span>
+                <span class="description">Non-linear least squares</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.linprog(c, A_ub, b_ub)</span>
+                <span class="description">Linear programming</span>
+            </div>
+            <div class="command-line">
+                <span class="command">optimize.differential_evolution(func, bounds)</span>
+                <span class="description">Global optimization</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Integration</h2>
+            <div class="command-line">
+                <span class="command">integrate.quad(func, a, b)</span>
+                <span class="description">Numerical integration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.dblquad(func, a, b, gfun, hfun)</span>
+                <span class="description">Double integration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.tplquad(func, a, b, gfun, hfun, qfun, rfun)</span>
+                <span class="description">Triple integration</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.trapz(y, x)</span>
+                <span class="description">Trapezoidal rule</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.simps(y, x)</span>
+                <span class="description">Simpson's rule</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.odeint(func, y0, t)</span>
+                <span class="description">Solve ODE</span>
+            </div>
+            <div class="command-line">
+                <span class="command">integrate.solve_ivp(func, t_span, y0)</span>
+                <span class="description">Solve initial value problem</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Linear Algebra</h2>
+            <div class="command-line">
+                <span class="command">linalg.det(A)</span>
+                <span class="description">Matrix determinant</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.inv(A)</span>
+                <span class="description">Matrix inverse</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.pinv(A)</span>
+                <span class="description">Pseudo-inverse</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.eig(A)</span>
+                <span class="description">Eigenvalues and eigenvectors</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.svd(A)</span>
+                <span class="description">Singular value decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.qr(A)</span>
+                <span class="description">QR decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.cholesky(A)</span>
+                <span class="description">Cholesky decomposition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">linalg.solve(A, b)</span>
+                <span class="description">Solve linear system Ax = b</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Signal Processing</h2>
+            <div class="command-line">
+                <span class="command">signal.butter(N, Wn, btype='low')</span>
+                <span class="description">Butterworth filter design</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.cheby1(N, rp, Wn)</span>
+                <span class="description">Chebyshev type I filter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.filtfilt(b, a, x)</span>
+                <span class="description">Zero-phase filtering</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.lfilter(b, a, x)</span>
+                <span class="description">Apply digital filter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.fft(x)</span>
+                <span class="description">Fast Fourier Transform</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.welch(x)</span>
+                <span class="description">Power spectral density</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.spectrogram(x)</span>
+                <span class="description">Compute spectrogram</span>
+            </div>
+            <div class="command-line">
+                <span class="command">signal.hilbert(x)</span>
+                <span class="description">Hilbert transform</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Spatial & Distance</h2>
+            <div class="command-line">
+                <span class="command">from scipy.spatial import distance</span>
+                <span class="description">Import distance functions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">distance.euclidean(u, v)</span>
+                <span class="description">Euclidean distance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">distance.manhattan(u, v)</span>
+                <span class="description">Manhattan distance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">distance.cosine(u, v)</span>
+                <span class="description">Cosine distance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">distance.pdist(X)</span>
+                <span class="description">Pairwise distances</span>
+            </div>
+            <div class="command-line">
+                <span class="command">distance.cdist(XA, XB)</span>
+                <span class="description">Cross distances</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Interpolation</h2>
+            <div class="command-line">
+                <span class="command">from scipy import interpolate</span>
+                <span class="description">Import interpolation module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interpolate.interp1d(x, y)</span>
+                <span class="description">1D interpolation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interpolate.interp2d(x, y, z)</span>
+                <span class="description">2D interpolation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interpolate.griddata(points, values, xi)</span>
+                <span class="description">N-D interpolation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interpolate.UnivariateSpline(x, y)</span>
+                <span class="description">Univariate spline</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interpolate.BSpline(t, c, k)</span>
+                <span class="description">B-spline</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Clustering</h2>
+            <div class="command-line">
+                <span class="command">from scipy.cluster import hierarchy</span>
+                <span class="description">Import clustering module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hierarchy.linkage(X, method='ward')</span>
+                <span class="description">Hierarchical clustering</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hierarchy.dendrogram(Z)</span>
+                <span class="description">Plot dendrogram</span>
+            </div>
+            <div class="command-line">
+                <span class="command">hierarchy.fcluster(Z, t, criterion='distance')</span>
+                <span class="description">Form clusters</span>
+            </div>
+            <div class="command-line">
+                <span class="command">from scipy.cluster.vq import kmeans, vq</span>
+                <span class="description">K-means clustering</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sparse Matrices</h2>
+            <div class="command-line">
+                <span class="command">from scipy import sparse</span>
+                <span class="description">Import sparse module</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sparse.csr_matrix(data)</span>
+                <span class="description">Compressed sparse row</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sparse.csc_matrix(data)</span>
+                <span class="description">Compressed sparse column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sparse.eye(n)</span>
+                <span class="description">Sparse identity matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sparse.diags(diagonals)</span>
+                <span class="description">Diagonal sparse matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sparse.linalg.spsolve(A, b)</span>
+                <span class="description">Solve sparse linear system</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Common Workflows</h2>
+            <div class="workflow">
+                <strong>Statistical Analysis:</strong><br>
+                # Load data and test normality<br>
+                stat, p = stats.shapiro(data)<br>
+                if p > 0.05:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# Use parametric test<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;stats.ttest_ind(group1, group2)<br>
+                else:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;# Use non-parametric test<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;stats.mannwhitneyu(group1, group2)
+            </div>
+            <div class="workflow">
+                <strong>Curve Fitting:</strong><br>
+                def func(x, a, b, c):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;return a * np.exp(-b * x) + c<br>
+                <br>
+                popt, pcov = optimize.curve_fit(func, x, y)<br>
+                y_pred = func(x, *popt)
+            </div>
+            <div class="workflow">
+                <strong>Signal Filtering:</strong><br>
+                # Design filter<br>
+                b, a = signal.butter(4, 0.2, 'low')<br>
+                # Apply filter<br>
+                filtered = signal.filtfilt(b, a, data)<br>
+                # Compute power spectrum<br>
+                f, Pxx = signal.welch(filtered)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Useful Tips</h2>
+            <div class="tip">
+                <strong>SciPy Best Practices:</strong><br>
+                • Use appropriate statistical tests based on data distribution<br>
+                • Check test assumptions before applying statistical tests<br>
+                • Use scipy.sparse for large matrices with many zeros<br>
+                • Combine with NumPy and Matplotlib for complete workflows<br>
+                • Use optimize.minimize with appropriate method for problem type
+            </div>
+            <div class="workflow">
+                <strong>Performance Tips:</strong><br>
+                • Use vectorized operations when possible<br>
+                • Choose appropriate optimization method for your problem<br>
+                • Use sparse matrices for large, sparse systems<br>
+                • Consider numerical stability in linear algebra operations<br>
+                • Use appropriate integration methods for your function
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>SciPy scientific computing reference • <a href="../../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>

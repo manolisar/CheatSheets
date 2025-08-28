@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Analytics</title>
+    <meta name="description" content="Essential Tableau shortcuts, data visualization techniques, and dashboard design best practices">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="mathematical">
+    <header class="header">
+        <h1>Tableau Analytics</h1>
+        <p>Shortcuts, data visualization techniques, and dashboard design essentials</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Essential Shortcuts</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + N</span>
+                <span class="description">New workbook</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + O</span>
+                <span class="description">Open workbook</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + S</span>
+                <span class="description">Save workbook</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Z</span>
+                <span class="description">Undo</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Y</span>
+                <span class="description">Redo</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + D</span>
+                <span class="description">Duplicate sheet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F4</span>
+                <span class="description">Show/hide sheets panel</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F5</span>
+                <span class="description">Refresh data</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F9</span>
+                <span class="description">Show/hide sidebar</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + E</span>
+                <span class="description">Export image</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + B</span>
+                <span class="description">Toggle Show Me panel</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Interface Components</h2>
+            <div class="workflow">
+                <strong>Main Interface Areas:</strong><br>
+                • Menu Bar - File, Data, Worksheet, Dashboard<br>
+                • Toolbar - Undo, Redo, Save, New Worksheet<br>
+                • Data Pane - Dimensions, Measures, Sets<br>
+                • Analytics Pane - Summarize, Model, Custom<br>
+                • Shelves - Pages, Filters, Marks<br>
+                • Cards - Rows, Columns<br>
+                • View - Main visualization area
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Connections</h2>
+            <div class="command-line">
+                <span class="command">Excel Files</span>
+                <span class="description">.xlsx, .xls formats</span>
+            </div>
+            <div class="command-line">
+                <span class="command">CSV/Text Files</span>
+                <span class="description">Comma-separated values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Databases</span>
+                <span class="description">MySQL, PostgreSQL, SQL Server</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Cloud Sources</span>
+                <span class="description">Google Analytics, Salesforce</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Tableau Server</span>
+                <span class="description">Published data sources</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Extract vs Live Connection</h2>
+            <div class="workflow">
+                <strong>Live Connection:</strong><br>
+                • Real-time data from source<br>
+                • Always up-to-date<br>
+                • Depends on source performance
+            </div>
+            <div class="workflow">
+                <strong>Extract Benefits:</strong><br>
+                • Faster performance<br>
+                • Offline capability<br>
+                • Data optimization<br>
+                • Incremental refresh
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Join Types</h2>
+            <div class="command-line">
+                <span class="command">Inner Join</span>
+                <span class="description">Records matching in both tables</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Left Join</span>
+                <span class="description">All from left + matching from right</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Right Join</span>
+                <span class="description">All from right + matching from left</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Full Outer Join</span>
+                <span class="description">All records from both tables</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Basic Chart Creation</h2>
+            <div class="workflow">
+                <strong>Bar Chart:</strong><br>
+                • Dimension to Rows<br>
+                • Measure to Columns<br>
+                • Good for categorical comparisons
+            </div>
+            <div class="workflow">
+                <strong>Line Chart:</strong><br>
+                • Date/time to Columns (continuous)<br>
+                • Measure to Rows<br>
+                • Perfect for trends over time
+            </div>
+            <div class="workflow">
+                <strong>Scatter Plot:</strong><br>
+                • Measure to Columns<br>
+                • Measure to Rows<br>
+                • Dimension to Color or Detail
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Marks Card</h2>
+            <div class="command-line">
+                <span class="command">Color</span>
+                <span class="description">Color-code marks by dimension/measure</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Size</span>
+                <span class="description">Size marks by measure values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Text</span>
+                <span class="description">Add text labels to marks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Detail</span>
+                <span class="description">Add detail without visual encoding</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Tooltip</span>
+                <span class="description">Information shown on hover</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Path</span>
+                <span class="description">Connect marks with lines</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Calculated Fields</h2>
+            <div class="command-line">
+                <span class="command">SUM([Sales])</span>
+                <span class="description">Sum aggregation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">AVG([Profit])</span>
+                <span class="description">Average aggregation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">COUNT([Orders])</span>
+                <span class="description">Count of records</span>
+            </div>
+            <div class="command-line">
+                <span class="command">IF [Sales] > 1000 THEN "High" ELSE "Low" END</span>
+                <span class="description">Conditional logic</span>
+            </div>
+            <div class="command-line">
+                <span class="command">DATEDIFF('day', [Order Date], TODAY())</span>
+                <span class="description">Date difference calculation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">LEFT([Customer Name], 1)</span>
+                <span class="description">String manipulation</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Table Calculations</h2>
+            <div class="command-line">
+                <span class="command">RUNNING_SUM(SUM([Sales]))</span>
+                <span class="description">Running total</span>
+            </div>
+            <div class="command-line">
+                <span class="command">WINDOW_AVG(SUM([Sales]))</span>
+                <span class="description">Moving average</span>
+            </div>
+            <div class="command-line">
+                <span class="command">RANK(SUM([Sales]))</span>
+                <span class="description">Rank values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PERCENT_OF_TOTAL(SUM([Sales]))</span>
+                <span class="description">Percentage of total</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PREVIOUS_VALUE(0) + SUM([Sales])</span>
+                <span class="description">Previous value reference</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Level of Detail (LOD) Expressions</h2>
+            <div class="command-line">
+                <span class="command">{FIXED [Region] : SUM([Sales])}</span>
+                <span class="description">Fixed LOD - ignores view filters</span>
+            </div>
+            <div class="command-line">
+                <span class="command">{INCLUDE [Category] : AVG([Sales])}</span>
+                <span class="description">Include LOD - adds dimension</span>
+            </div>
+            <div class="command-line">
+                <span class="command">{EXCLUDE [Sub-Category] : SUM([Sales])}</span>
+                <span class="description">Exclude LOD - removes dimension</span>
+            </div>
+            <div class="workflow">
+                <strong>Common LOD Patterns:</strong><br>
+                • Customer acquisition date: {FIXED [Customer] : MIN([Order Date])}<br>
+                • Percentage of total: SUM([Sales]) / {FIXED : SUM([Sales])}<br>
+                • Cohort analysis: {FIXED [Customer] : MIN([Order Date])}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <div class="workflow">
+                <strong>Creating Parameters:</strong><br>
+                • Right-click Data pane → Create Parameter<br>
+                • Configure name, data type, values<br>
+                • Show parameter control for user input
+            </div>
+            <div class="workflow">
+                <strong>Parameter Uses:</strong><br>
+                • Dynamic filtering: RANK(SUM([Sales])) <= [Top N Parameter]<br>
+                • What-if analysis: [Sales] * (1 + [Growth Rate Parameter])<br>
+                • Dynamic measures: CASE [Measure Parameter]
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sets</h2>
+            <div class="workflow">
+                <strong>Set Types:</strong><br>
+                • Manual selection (General tab)<br>
+                • Formula-based (Condition tab)<br>
+                • Top/Bottom N (Top tab)
+            </div>
+            <div class="command-line">
+                <span class="command">IF [Customer Set] THEN "In Set" ELSE "Out" END</span>
+                <span class="description">Using sets in calculations</span>
+            </div>
+            <div class="workflow">
+                <strong>Combined Sets:</strong><br>
+                • Intersection (AND): Members in both<br>
+                • Union (OR): Members in either<br>
+                • Difference (NOT): Members in first only
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Dashboard Components</h2>
+            <div class="command-line">
+                <span class="command">Worksheets</span>
+                <span class="description">Visualizations from sheets</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Text Objects</span>
+                <span class="description">Titles, descriptions, annotations</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Images</span>
+                <span class="description">Logos, icons, graphics</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Web Pages</span>
+                <span class="description">Embedded web content</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Blank Objects</span>
+                <span class="description">Spacers for layout</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Navigation</span>
+                <span class="description">Buttons for sheet navigation</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Layout Containers</h2>
+            <div class="command-line">
+                <span class="command">Horizontal Container</span>
+                <span class="description">Objects arranged left to right</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Vertical Container</span>
+                <span class="description">Objects arranged top to bottom</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Floating Objects</span>
+                <span class="description">Free positioning</span>
+            </div>
+            <div class="workflow">
+                <strong>Sizing Options:</strong><br>
+                • Fixed: Set pixel dimensions<br>
+                • Automatic: Size based on content<br>
+                • Range: Min/max constraints
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Dashboard Actions</h2>
+            <div class="workflow">
+                <strong>Filter Actions:</strong><br>
+                • Dashboard → Actions → Add Action<br>
+                • Source sheet triggers filter<br>
+                • Target sheet gets filtered<br>
+                • Run on: Select, Hover, Menu
+            </div>
+            <div class="workflow">
+                <strong>Highlight Actions:</strong><br>
+                • Highlight related marks<br>
+                • Visual emphasis without filtering<br>
+                • Better for exploration
+            </div>
+            <div class="workflow">
+                <strong>URL Actions:</strong><br>
+                • Open web pages<br>
+                • Pass parameters to external systems<br>
+                • Link to reports/documents
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Analytics Features</h2>
+            <div class="command-line">
+                <span class="command">Reference Lines</span>
+                <span class="description">Constant or computed reference lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Trend Lines</span>
+                <span class="description">Linear, polynomial, exponential trends</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Forecasting</span>
+                <span class="description">Exponential smoothing predictions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Clustering</span>
+                <span class="description">K-means clustering for scatter plots</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Box Plots</span>
+                <span class="description">Statistical distribution visualization</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mapping Features</h2>
+            <div class="workflow">
+                <strong>Symbol Maps:</strong><br>
+                • Geographic field + measure<br>
+                • Size/color shows measure values<br>
+                • Good for showing data by location
+            </div>
+            <div class="workflow">
+                <strong>Filled Maps:</strong><br>
+                • Geographic field on Detail<br>
+                • Measure on Color<br>
+                • Creates choropleth maps
+            </div>
+            <div class="command-line">
+                <span class="command">MAKEPOINT([Longitude], [Latitude])</span>
+                <span class="description">Custom geocoding</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Advanced Chart Types</h2>
+            <div class="workflow">
+                <strong>Heat Map:</strong><br>
+                • Dimension on Rows<br>
+                • Dimension on Columns<br>
+                • Measure on Color<br>
+                • Square mark type
+            </div>
+            <div class="workflow">
+                <strong>Tree Map:</strong><br>
+                • Dimension(s) on Detail<br>
+                • Measure on Size<br>
+                • Square mark type<br>
+                • Nested rectangles
+            </div>
+            <div class="workflow">
+                <strong>Histogram:</strong><br>
+                • Create bins from measure<br>
+                • Bin field to Columns<br>
+                • Count to Rows
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Performance Best Practices</h2>
+            <div class="workflow">
+                <strong>Data Level:</strong><br>
+                • Use extracts for better performance<br>
+                • Filter at data source level<br>
+                • Aggregate data appropriately<br>
+                • Use proper data types
+            </div>
+            <div class="workflow">
+                <strong>Calculation Level:</strong><br>
+                • Use basic calculations over table calculations<br>
+                • Avoid nested calculations<br>
+                • Use context filters strategically<br>
+                • Minimize number of marks
+            </div>
+            <div class="workflow">
+                <strong>Dashboard Level:</strong><br>
+                • Limit number of sheets<br>
+                • Use containers efficiently<br>
+                • Optimize images and logos<br>
+                • Test with realistic data volumes
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Publishing Options</h2>
+            <div class="command-line">
+                <span class="command">Tableau Server</span>
+                <span class="description">Enterprise sharing platform</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Tableau Online</span>
+                <span class="description">Cloud-based sharing</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Tableau Public</span>
+                <span class="description">Free public sharing</span>
+            </div>
+            <div class="workflow">
+                <strong>Publishing Steps:</strong><br>
+                • Server → Publish Workbook<br>
+                • Configure project, permissions<br>
+                • Data source options<br>
+                • Authentication settings
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Design Principles</h2>
+            <div class="tip">
+                <strong>Visual Design:</strong><br>
+                • Choose right chart type for data<br>
+                • Use consistent colors and formatting<br>
+                • Minimize chart clutter<br>
+                • Direct attention with color and size<br>
+                • Make text readable
+            </div>
+            <div class="tip">
+                <strong>Dashboard Layout:</strong><br>
+                • Follow visual hierarchy principles<br>
+                • Group related information<br>
+                • Use white space effectively<br>
+                • Design for target screen size<br>
+                • Test on different devices
+            </div>
+            <div class="tip">
+                <strong>Interactivity:</strong><br>
+                • Make interactions intuitive<br>
+                • Provide clear feedback<br>
+                • Don't over-filter<br>
+                • Include reset/clear options<br>
+                • Use progressive disclosure
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Troubleshooting</h2>
+            <div class="workflow">
+                <strong>Data Issues:</strong><br>
+                • Null values: Check data source, use IFNULL()<br>
+                • Unexpected aggregation: Check field types<br>
+                • Missing marks: Check filters and densification<br>
+                • Incorrect joins: Verify join conditions
+            </div>
+            <div class="workflow">
+                <strong>Performance Issues:</strong><br>
+                • Slow loading: Check data volume<br>
+                • Complex calculations: Simplify where possible<br>
+                • Too many marks: Add filters or aggregation<br>
+                • Use Performance Recording tool
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Essential Tableau reference for data visualization • <a href="../../index.html">View all cheatsheets</a></p>
+    </footer>
+
+    <script src="../../js/cheatsheet.js"></script>
+</body>
+</html>
