@@ -46,6 +46,9 @@ body {
     color: white;
     margin-bottom: 0;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .header h1 {
@@ -347,6 +350,9 @@ body.network .shortcut-keys {
     text-align: left;
     color: white;
     border-top: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .footer-content {
@@ -356,6 +362,8 @@ body.network .shortcut-keys {
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-nav {
@@ -541,6 +549,7 @@ body.dark-theme.network .shortcut-keys {
     
     .header {
         padding: 16px 12px;
+        min-height: auto;
     }
     
     .header-controls-left,
@@ -549,6 +558,7 @@ body.dark-theme.network .shortcut-keys {
         margin-top: 20px;
         justify-content: center;
         flex-wrap: wrap;
+        max-width: 100%;
     }
     
     .header-controls-left {
@@ -563,14 +573,20 @@ body.dark-theme.network .shortcut-keys {
     .header-btn {
         font-size: 12px;
         padding: 6px 12px;
+        max-width: 120px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     
     .header h1 {
         font-size: 22px;
+        word-wrap: break-word;
+        hyphens: auto;
     }
     
     .header p {
         font-size: 13px;
+        word-wrap: break-word;
     }
     
     body {
@@ -591,6 +607,10 @@ body.dark-theme.network .shortcut-keys {
         font-size: 11px;
     }
     
+    .footer {
+        padding: 12px;
+    }
+    
     .footer-nav {
         flex-direction: column;
         gap: 8px;
@@ -601,10 +621,12 @@ body.dark-theme.network .shortcut-keys {
         text-align: center;
         font-size: 12px;
         line-height: 1.4;
+        word-wrap: break-word;
     }
     
     .footer-link {
         font-size: 12px;
+        word-wrap: break-word;
     }
 }
 
@@ -615,15 +637,31 @@ body.dark-theme.network .shortcut-keys {
     }
     
     .header, .footer {
-        padding: 12px;
+        padding: 12px 8px;
+        min-width: 0;
     }
     
     .header h1 {
         font-size: 20px;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .header p {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .header-btn {
+        font-size: 11px;
+        padding: 4px 8px;
+        max-width: 100px;
+        min-width: 0;
     }
     
     body {
         font-size: 11px;
+        overflow-x: hidden;
     }
     
     .section {
@@ -632,10 +670,17 @@ body.dark-theme.network .shortcut-keys {
     
     .footer {
         text-align: center;
+        padding: 12px 8px;
     }
     
     .footer-nav {
         gap: 6px;
+    }
+    
+    .footer-stats,
+    .footer-link {
+        word-wrap: break-word;
+        hyphens: auto;
     }
 }
 
