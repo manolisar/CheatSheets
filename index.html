@@ -6,7 +6,26 @@
     <title>CheatSheets Collection - 21 Developer References</title>
     <meta name="description" content="Ultimate developer reference with shortcuts, commands, and quick guides for programming tools and technologies.">
     <meta name="keywords" content="cheatsheets, developer, reference, shortcuts, commands, programming, tools, productivity">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="CheatSheets">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#000000">
+    
     <link rel="stylesheet" href="src/styles/main.css">
+    
     <style>
         /* Inline critical CSS for immediate loading */
         * {
@@ -285,6 +304,50 @@
             border-top: 1px solid var(--border);
         }
         
+        /* PWA Install Button */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+            font-size: 0.9rem;
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        .install-prompt.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+        
+        .install-prompt button {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .install-prompt button:hover {
+            transform: translateY(-1px);
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateX(-50%) translateY(100%); opacity: 0; }
+            to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        }
+        
         @media (max-width: 768px) {
             .header {
                 padding: 2rem 1rem;
@@ -308,6 +371,14 @@
             
             .filter-tabs::-webkit-scrollbar {
                 display: none;
+            }
+            
+            .install-prompt {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                max-width: none;
             }
         }
     </style>
@@ -415,6 +486,13 @@
         </div>
     </div>
 
+    <!-- PWA Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <p>Add CheatSheets Collection to your home screen for quick access!</p>
+        <button onclick="installPWA()">Install App</button>
+        <button onclick="dismissInstall()">Not Now</button>
+    </div>
+
     <div class="footer">
         <div class="container">
             <p>&copy; 2025 CheatSheets Collection. Built with ❤️ for all.</p>
@@ -424,6 +502,58 @@
 
     <script src="src/js/main.js"></script>
     <script>
+        // PWA Install functionality
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        
+        // Listen for install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install prompt after a delay
+            setTimeout(() => {
+                if (!localStorage.getItem('pwa-install-dismissed')) {
+                    installPrompt.classList.add('show');
+                }
+            }, 10000); // Show after 10 seconds
+        });
+        
+        // Install PWA
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted PWA install');
+                        gtag('event', 'pwa_install_accepted', {
+                            'event_category': 'engagement'
+                        });
+                    }
+                    deferredPrompt = null;
+                    installPrompt.classList.remove('show');
+                });
+            }
+        }
+        
+        // Dismiss install prompt
+        function dismissInstall() {
+            installPrompt.classList.remove('show');
+            localStorage.setItem('pwa-install-dismissed', 'true');
+        }
+        
+        // Handle successful installation
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('PWA was installed');
+            installPrompt.classList.remove('show');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'pwa_installed', {
+                    'event_category': 'engagement'
+                });
+            }
+        });
+        
         // Theme toggle function
         function toggleTheme() {
             document.body.classList.toggle('dark-theme');
@@ -448,6 +578,50 @@
                 }
             }
         });
+        
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('/sw.js');
+                    console.log('SW registered: ', registration);
+                    
+                    // Handle service worker updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New version available
+                                showUpdateNotification();
+                            }
+                        });
+                    });
+                    
+                } catch (registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                }
+            });
+        }
+        
+        // Show update notification
+        function showUpdateNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'toast show';
+            notification.innerHTML = `
+                <p>New version available!</p>
+                <button onclick="updateApp()">Update</button>
+                <button onclick="this.parentNode.remove()">Later</button>
+            `;
+            document.body.appendChild(notification);
+        }
+        
+        // Update app
+        function updateApp() {
+            if (navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+            }
+            window.location.reload();
+        }
     </script>
 </body>
 </html>
