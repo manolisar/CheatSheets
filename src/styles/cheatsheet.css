@@ -229,6 +229,9 @@ body.network .section h2 { border-bottom-color: var(--network); color: #1565c0; 
     flex-shrink: 0;
     margin-right: 8px;
     font-size: 11px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Category-specific command styling */
@@ -576,6 +579,12 @@ body.dark-theme.network .shortcut-keys {
     .header {
         padding: 16px 12px;
         min-height: auto;
+    }
+    
+    .command, .shortcut, .shortcut-keys {
+        white-space: normal;
+        word-break: break-all;
+        max-width: 200px;
     }
     
     .header-controls-left,
