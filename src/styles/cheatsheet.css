@@ -184,10 +184,11 @@ body.network .section h2 { border-bottom-color: var(--network); color: #1565c0; 
 
 .command-line {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin: 6px 0;
     position: relative;
     padding-right: 40px; /* Space for copy button */
+    min-height: 24px;
 }
 
 .command, .shortcut, .shortcut-keys {
@@ -198,14 +199,13 @@ body.network .section h2 { border-bottom-color: var(--network); color: #1565c0; 
     border-radius: 5px;
     font-family: 'Consolas', 'Courier New', monospace;
     font-weight: 600;
-    white-space: nowrap;
+    white-space: pre-wrap;
     flex-shrink: 0;
     margin-right: 8px;
     font-size: 11px;
     max-width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-all;
+    line-height: 1.3;
+    word-break: break-word;
 }
 
 /* Category-specific command styling */
@@ -556,9 +556,7 @@ body.dark-theme.network .shortcut-keys {
     }
     
     .command, .shortcut, .shortcut-keys {
-        white-space: normal;
-        max-width: 200px;
-        word-break: break-all;
+        max-width: 250px;
     }
     
     .header-controls-left,
