@@ -1,4 +1,30 @@
 /* Complete CheatSheet CSS - All styling for cheatsheet pages */
+/* Fix for command layout */
+.command-line {
+    display: block !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    background: var(--surface) !important;
+    border-radius: 8px !important;
+    border-left: 4px solid var(--system) !important;
+}
+
+.command-line .command {
+    display: inline-block !important;
+    background: #f1f5f9 !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 6px !important;
+    font-family: var(--font-mono) !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem !important;
+}
+
+.command-line .description {
+    display: block !important;
+    color: var(--text-secondary) !important;
+    margin-top: 0.5rem !important;
+}
 
 * {
     margin: 0;
