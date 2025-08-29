@@ -170,6 +170,8 @@ body.network .header { background: linear-gradient(135deg, var(--network) 0%, #1
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* =============================================================================
@@ -551,11 +553,12 @@ body.dark-theme.network .shortcut-keys {
    RESPONSIVE DESIGN
 ============================================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .container {
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 16px;
+        max-width: 100%;
     }
     
     .header h1 {
@@ -567,10 +570,22 @@ body.dark-theme.network .shortcut-keys {
     }
 }
 
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+        max-width: calc(100% - 32px);
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 12px;
         gap: 12px;
+        max-width: calc(100% - 24px);
+        margin: 0 auto;
     }
     
     .header {
@@ -658,8 +673,10 @@ body.dark-theme.network .shortcut-keys {
 
 @media (max-width: 480px) {
     .container {
-        padding: 10px;
-        gap: 10px;
+        padding: 8px;
+        gap: 8px;
+        max-width: calc(100% - 16px);
+        margin: 0 auto;
     }
     
     .header, .footer {
