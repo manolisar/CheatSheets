@@ -9,7 +9,7 @@
   --electronics-circuit-design: #06b6d4;
   --mechanical-design-cad: #ec4899;
   --creative-media: #8b5cf6;
-  --productivity: #00ff00;
+  --productivity: #0891b2;
   
   /* Black Theme Colors */
   --primary: #000000;
@@ -404,9 +404,15 @@ a:hover {
 }
 .productivity { 
   --card-color: var(--productivity);
-  border-left-color: var(--productivity);
-  background: #00ff00 !important;
-  border: 5px solid red !important;
+  border-left-color: var(--productivity) !important;
+}
+
+.productivity .card-type {
+  background: var(--productivity) !important;
+}
+
+.productivity::before {
+  background: linear-gradient(90deg, var(--productivity), transparent) !important;
 }
 
 /* Category Icon Colors */
