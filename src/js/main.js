@@ -242,7 +242,7 @@ const cheatsheetData = {
             keywords: ['rhino', 'nurbs', '3d modeling', 'industrial design', 'geometry', 'cad']
         }
     ],
-    productivity: [
+    'productivity': [
         {
             title: 'Microsoft Excel Functions',
             description: 'Essential Excel formulas, functions, and shortcuts for data analysis and spreadsheet automation.',
