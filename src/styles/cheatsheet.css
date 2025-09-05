@@ -14,15 +14,23 @@
     --text-secondary: #4b5563;
     --border: #e2e8f0;
     
-    /* Category colors */
-    --development: #f05032;
-    --python-data-science: #3776ab;
-    --python: #3776ab;
-    --system: #0891b2;
-    --mathematical: #2563eb;
+    /* Category colors - Updated to match main.css */
+    --software-development: #f97316;
+    --data-science-analytics: #10b981;
+    --scientific-computing: #3b82f6;
+    --electronics-circuit-design: #06b6d4;
+    --mechanical-design-cad: #ec4899;
+    --creative-media: #8b5cf6;
+    --productivity: #059669;
+    
+    /* Legacy aliases for backward compatibility */
+    --development: #f97316;
+    --python-data-science: #10b981;
+    --python: #10b981;
+    --system: #f97316;
+    --mathematical: #3b82f6;
     --design-cad: #ec4899;
-    --productivity: #8b5cf6;
-    --network: #1976d2;
+    --network: #f97316;
 }
 
 body {
