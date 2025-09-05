@@ -12,9 +12,9 @@ function initializeApp() {
     setupAnalytics();
 }
 
-// Updated cheatsheetData object with new additions
+// Updated cheatsheetData object with new reorganized categories
 const cheatsheetData = {
-    development: [
+    'software-development': [
         {
             title: 'Git Commands',
             description: 'Essential Git commands for version control, branching, merging, and collaboration workflows.',
@@ -46,9 +46,25 @@ const cheatsheetData = {
             file: 'arduino_cheat_sheet.html',
             stats: { count: '80+ commands', tech: 'IDE' },
             keywords: ['arduino', 'ide', 'microcontroller', 'programming', 'embedded', 'serial', 'analog', 'digital']
+        },
+        {
+            title: 'Unix/macOS Commands',
+            description: 'Essential Unix and macOS terminal commands for system administration and file management.',
+            type: 'commands',
+            file: 'unix_macos_cheat_sheet.html',
+            stats: { count: '80+ commands', tech: 'Terminal' },
+            keywords: ['unix', 'macos', 'terminal', 'bash', 'shell', 'commands']
+        },
+        {
+            title: 'Windows Command Line',
+            description: 'Windows CMD and PowerShell commands for system administration and automation.',
+            type: 'commands',
+            file: 'windows_cmd_cheat_sheet.html',
+            stats: { count: '70+ commands', tech: 'Terminal' },
+            keywords: ['windows', 'cmd', 'powershell', 'terminal', 'batch', 'commands']
         }
     ],
-    'python-data-science': [
+    'data-science-analytics': [
         {
             title: 'Python Programming',
             description: 'Core Python syntax, data structures, functions, and object-oriented programming concepts.',
@@ -88,7 +104,9 @@ const cheatsheetData = {
             file: 'scipy_cheat_sheet.html',
             stats: { count: '70+ functions', tech: 'Library' },
             keywords: ['scipy', 'scientific computing', 'statistics', 'optimization', 'signal processing']
-        },
+        }
+    ],
+    'scientific-computing': [
         {
             title: 'R Programming',
             description: 'Statistical computing, data manipulation with dplyr/tidyr, ggplot2 visualization, and R data analysis workflows.',
@@ -104,9 +122,7 @@ const cheatsheetData = {
             file: 'julia_cheat_sheet.html',
             stats: { count: '150+ commands', tech: 'Language' },
             keywords: ['julia', 'high-performance', 'scientific computing', 'repl', 'dataframes', 'plots', 'multiple dispatch']
-        }
-    ],
-    mathematical: [
+        },
         {
             title: 'MATLAB Programming',
             description: 'Complete reference for matrix operations, plotting, and numerical computing with MATLAB.',
@@ -124,7 +140,75 @@ const cheatsheetData = {
             keywords: ['tableau', 'data visualization', 'dashboards', 'analytics', 'business intelligence', 'charts']
         }
     ],
-    'design-cad': [
+    'electronics-circuit-design': [
+        {
+            title: 'LTspice Circuit Simulation',
+            description: 'Complete LTspice reference for SPICE commands, circuit analysis, and simulation workflows.',
+            type: 'commands',
+            file: 'ltspice_cheat_sheet.html',
+            stats: { count: '80+ commands', tech: 'SPICE' },
+            keywords: ['ltspice', 'spice', 'circuit simulation', 'electronics', 'analog design', 'waveform', 'analysis']
+        },
+        {
+            title: 'KiCad PCB Design',
+            description: 'KiCad keyboard shortcuts for electronic schematic capture and PCB layout design.',
+            type: 'shortcuts',
+            file: 'kicad_cheat_sheet.html',
+            stats: { count: '70+ shortcuts', tech: 'EDA' },
+            keywords: ['kicad', 'pcb', 'electronics', 'schematic', 'layout', 'eda', 'circuit board']
+        }
+    ],
+    'mechanical-design-cad': [
+        {
+            title: 'AutoCAD Commands',
+            description: 'Essential AutoCAD commands for 2D and 3D drafting, design, and technical drawing.',
+            type: 'commands',
+            file: 'autocad_cheat_sheet.html',
+            stats: { count: '100+ commands', tech: 'CAD' },
+            keywords: ['autocad', 'cad', 'drafting', '2d', '3d', 'technical drawing', 'design']
+        },
+        {
+            title: 'SOLIDWORKS 3D CAD',
+            description: 'SOLIDWORKS keyboard shortcuts for 3D CAD design, assemblies, and engineering drawings.',
+            type: 'shortcuts',
+            file: 'solidworks_cheat_sheet.html',
+            stats: { count: '85+ shortcuts', tech: 'CAD' },
+            keywords: ['solidworks', 'cad', '3d design', 'assemblies', 'drawings', 'engineering', 'modeling']
+        },
+        {
+            title: 'Fusion 360 Cloud CAD/CAM',
+            description: 'Fusion 360 shortcuts for cloud CAD modeling, parametric design, CAM toolpaths, and manufacturing.',
+            type: 'shortcuts',
+            file: 'fusion360_cheat_sheet.html',
+            stats: { count: '90+ shortcuts', tech: 'CAD/CAM' },
+            keywords: ['fusion360', 'cloud cad', 'parametric design', 'cam', 'toolpaths', 'manufacturing', 'autodesk']
+        }
+    ],
+    'creative-media': [
+        {
+            title: 'Adobe Photoshop',
+            description: 'Photoshop keyboard shortcuts for photo editing, digital art, and graphic design.',
+            type: 'shortcuts',
+            file: 'photoshop_shortcuts_cheat_sheet.html',
+            stats: { count: '100+ shortcuts', tech: 'Adobe' },
+            keywords: ['photoshop', 'photo editing', 'digital art', 'graphics', 'adobe', 'design']
+        },
+        {
+            title: '3ds Max Shortcuts',
+            description: '3ds Max keyboard shortcuts for 3D modeling, animation, and rendering workflows.',
+            type: 'shortcuts',
+            file: '3dsmax_cheat_sheet.html',
+            stats: { count: '120+ shortcuts', tech: '3D Software' },
+            keywords: ['3ds max', '3d modeling', 'animation', 'rendering', 'autodesk', 'shortcuts']
+        },
+        {
+            title: 'After Effects',
+            description: 'After Effects keyboard shortcuts for motion graphics, visual effects, and compositing.',
+            type: 'shortcuts',
+            file: 'after_effects_cheat_sheet.html',
+            stats: { count: '90+ shortcuts', tech: 'Adobe' },
+            keywords: ['after effects', 'motion graphics', 'visual effects', 'compositing', 'adobe', 'animation']
+        },
         {
             title: 'Blender 3D Modeling',
             description: 'Blender keyboard shortcuts for 3D modeling, animation, and rendering workflows.',
@@ -134,60 +218,28 @@ const cheatsheetData = {
             keywords: ['blender', '3d', 'modeling', 'animation', 'rendering', 'shortcuts']
         },
         {
-            title: 'Figma Design',
-            description: 'Figma keyboard shortcuts for UI/UX design, prototyping, and collaborative workflows.',
+            title: 'Revit Architecture',
+            description: 'Revit keyboard shortcuts for architectural design, BIM modeling, and construction documentation.',
             type: 'shortcuts',
-            file: 'figma_cheat_sheet.html',
-            stats: { count: '80+ shortcuts', tech: 'Design Tool' },
-            keywords: ['figma', 'ui', 'ux', 'design', 'prototyping', 'collaboration']
+            file: 'revit_cheat_sheet.html',
+            stats: { count: '80+ shortcuts', tech: 'BIM' },
+            keywords: ['revit', 'architecture', 'bim', 'modeling', 'construction', 'autodesk']
         },
         {
-            title: 'Adobe Photoshop',
-            description: 'Photoshop keyboard shortcuts for photo editing, digital art, and graphic design.',
+            title: 'SketchUp Pro',
+            description: 'SketchUp keyboard shortcuts for 3D modeling, architectural design, and visualization.',
             type: 'shortcuts',
-            file: 'photoshop_cheat_sheet.html',
-            stats: { count: '100+ shortcuts', tech: 'Adobe' },
-            keywords: ['photoshop', 'photo editing', 'digital art', 'graphics', 'adobe', 'design']
+            file: 'sketchup_cheat_sheet.html',
+            stats: { count: '70+ shortcuts', tech: '3D Software' },
+            keywords: ['sketchup', '3d modeling', 'architecture', 'design', 'visualization', 'shortcuts']
         },
         {
-            title: 'Autodesk Fusion 360',
-            description: 'Fusion 360 keyboard shortcuts for 3D CAD modeling, simulation, and manufacturing workflows.',
+            title: 'Rhino 3D Modeling',
+            description: 'Rhino keyboard shortcuts for NURBS modeling, industrial design, and complex 3D geometry.',
             type: 'shortcuts',
-            file: 'fusion360_cheat_sheet.html',
-            stats: { count: '90+ shortcuts', tech: 'CAD' },
-            keywords: ['fusion360', 'cad', '3d modeling', 'autodesk', 'manufacturing', 'simulation']
-        },
-        {
-            title: 'SolidWorks CAD',
-            description: 'SolidWorks keyboard shortcuts for 3D CAD design, assemblies, and engineering drawings.',
-            type: 'shortcuts',
-            file: 'solidworks_cheat_sheet.html',
-            stats: { count: '85+ shortcuts', tech: 'CAD' },
-            keywords: ['solidworks', 'cad', '3d design', 'assemblies', 'drawings', 'engineering']
-        },
-        {
-            title: 'KiCad PCB Design',
-            description: 'KiCad keyboard shortcuts for electronic schematic capture and PCB layout design.',
-            type: 'shortcuts',
-            file: 'kicad_cheat_sheet.html',
-            stats: { count: '70+ shortcuts', tech: 'EDA' },
-            keywords: ['kicad', 'pcb', 'electronics', 'schematic', 'layout', 'eda']
-        },
-        {
-            title: 'DaVinci Resolve Video',
-            description: 'DaVinci Resolve keyboard shortcuts for video editing, color grading, and post-production.',
-            type: 'shortcuts',
-            file: 'davinci_resolve_cheat_sheet.html',
-            stats: { count: '95+ shortcuts', tech: 'Video Editor' },
-            keywords: ['davinci resolve', 'video editing', 'color grading', 'post production', 'blackmagic']
-        },
-        {
-            title: 'Ableton Live Music',
-            description: 'Ableton Live keyboard shortcuts for music production, recording, and live performance.',
-            type: 'shortcuts',
-            file: 'ableton_live_cheat_sheet.html',
-            stats: { count: '80+ shortcuts', tech: 'DAW' },
-            keywords: ['ableton live', 'music production', 'daw', 'recording', 'live performance', 'audio']
+            file: 'rhino_cheat_sheet.html',
+            stats: { count: '85+ shortcuts', tech: '3D Software' },
+            keywords: ['rhino', 'nurbs', '3d modeling', 'industrial design', 'geometry', 'cad']
         }
     ],
     productivity: [
@@ -195,7 +247,7 @@ const cheatsheetData = {
             title: 'Microsoft Excel Functions',
             description: 'Essential Excel formulas, functions, and shortcuts for data analysis and spreadsheet automation.',
             type: 'commands',
-            file: 'excel_cheat_sheet.html',
+            file: 'excel_shortcuts_cheat_sheet.html',
             stats: { count: '80+ functions', tech: 'Spreadsheet' },
             keywords: ['excel', 'formulas', 'functions', 'spreadsheet', 'data analysis', 'pivot tables']
         },
@@ -214,24 +266,6 @@ const cheatsheetData = {
             file: 'python_in_excel_cheat_sheet.html',
             stats: { count: '40+ examples', tech: 'Integration' },
             keywords: ['python', 'excel', 'automation', 'data analysis', 'integration']
-        }
-    ],
-    system: [
-        {
-            title: 'Unix/macOS Commands',
-            description: 'Essential Unix and macOS terminal commands for system administration and file management.',
-            type: 'commands',
-            file: 'unix_macos_cheat_sheet.html',
-            stats: { count: '80+ commands', tech: 'Terminal' },
-            keywords: ['unix', 'macos', 'terminal', 'bash', 'shell', 'commands']
-        },
-        {
-            title: 'Windows Command Line',
-            description: 'Windows CMD and PowerShell commands for system administration and automation.',
-            type: 'commands',
-            file: 'windows_cmd_cheat_sheet.html',
-            stats: { count: '70+ commands', tech: 'Terminal' },
-            keywords: ['windows', 'cmd', 'powershell', 'terminal', 'batch', 'commands']
         }
     ]
 };

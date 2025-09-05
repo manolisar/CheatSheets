@@ -3,12 +3,13 @@
 /* CSS Custom Properties (Variables) */
 :root {
   /* Category Colors */
-  --development: #f97316;
-  --python-data-science: #10b981;
-  --mathematical: #3b82f6;
-  --design-cad: #ec4899;
+  --software-development: #f97316;
+  --data-science-analytics: #10b981;
+  --scientific-computing: #3b82f6;
+  --electronics-circuit-design: #06b6d4;
+  --mechanical-design-cad: #ec4899;
+  --creative-media: #8b5cf6;
   --productivity: #a855f7;
-  --system: #14b8a6;
   
   /* Black Theme Colors */
   --primary: #000000;
@@ -377,38 +378,43 @@ a:hover {
 }
 
 /* Category Color Variables */
-.development { 
-  --card-color: var(--development);
-  border-left-color: var(--development);
+.software-development { 
+  --card-color: var(--software-development);
+  border-left-color: var(--software-development);
 }
-.python-data-science { 
-  --card-color: var(--python-data-science);
-  border-left-color: var(--python-data-science);
+.data-science-analytics { 
+  --card-color: var(--data-science-analytics);
+  border-left-color: var(--data-science-analytics);
 }
-.mathematical { 
-  --card-color: var(--mathematical);
-  border-left-color: var(--mathematical);
+.scientific-computing { 
+  --card-color: var(--scientific-computing);
+  border-left-color: var(--scientific-computing);
 }
-.design-cad { 
-  --card-color: var(--design-cad);
-  border-left-color: var(--design-cad);
+.electronics-circuit-design { 
+  --card-color: var(--electronics-circuit-design);
+  border-left-color: var(--electronics-circuit-design);
+}
+.mechanical-design-cad { 
+  --card-color: var(--mechanical-design-cad);
+  border-left-color: var(--mechanical-design-cad);
+}
+.creative-media { 
+  --card-color: var(--creative-media);
+  border-left-color: var(--creative-media);
 }
 .productivity { 
   --card-color: var(--productivity);
   border-left-color: var(--productivity);
 }
-.system { 
-  --card-color: var(--system);
-  border-left-color: var(--system);
-}
 
 /* Category Icon Colors */
-.category-icon.development { background-color: var(--development); }
-.category-icon.python-data-science { background-color: var(--python-data-science); }
-.category-icon.mathematical { background-color: var(--mathematical); }
-.category-icon.design-cad { background-color: var(--design-cad); }
+.category-icon.software-development { background-color: var(--software-development); }
+.category-icon.data-science-analytics { background-color: var(--data-science-analytics); }
+.category-icon.scientific-computing { background-color: var(--scientific-computing); }
+.category-icon.electronics-circuit-design { background-color: var(--electronics-circuit-design); }
+.category-icon.mechanical-design-cad { background-color: var(--mechanical-design-cad); }
+.category-icon.creative-media { background-color: var(--creative-media); }
 .category-icon.productivity { background-color: var(--productivity); }
-.category-icon.system { background-color: var(--system); }
 
 /* Footer with Midnight Blue Background */
 .footer {
