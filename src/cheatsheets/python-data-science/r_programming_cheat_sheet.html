@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Programming CheatSheet</title>
+    <meta name="description" content="Statistical computing, data manipulation with dplyr/tidyr, ggplot2 visualization, and R data analysis workflows">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="python-data-science">
+    <header class="header">
+        <h1>R Programming</h1>
+        <p>Statistical computing, data manipulation with dplyr/tidyr, ggplot2 visualization, and R data analysis workflows</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Basic Syntax</h2>
+            <div class="command-line">
+                <span class="command">x &lt;- value</span>
+                <span class="description">Assign value to variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">x = value</span>
+                <span class="description">Alternative assignment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">print(x)</span>
+                <span class="description">Print variable value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ls()</span>
+                <span class="description">List objects in environment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rm(x)</span>
+                <span class="description">Remove object</span>
+            </div>
+            <div class="command-line">
+                <span class="command">rm(list=ls())</span>
+                <span class="description">Clear all objects</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Types</h2>
+            <div class="command-line">
+                <span class="command">c(1,2,3)</span>
+                <span class="description">Create vector</span>
+            </div>
+            <div class="command-line">
+                <span class="command">list(a=1, b=2)</span>
+                <span class="description">Create list</span>
+            </div>
+            <div class="command-line">
+                <span class="command">data.frame(x=1:3, y=4:6)</span>
+                <span class="description">Create data frame</span>
+            </div>
+            <div class="command-line">
+                <span class="command">matrix(1:6, nrow=2)</span>
+                <span class="description">Create matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">factor(c("a","b","c"))</span>
+                <span class="description">Create factor</span>
+            </div>
+            <div class="command-line">
+                <span class="command">array(1:12, dim=c(2,3,2))</span>
+                <span class="description">Create array</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Import/Export</h2>
+            <div class="command-line">
+                <span class="command">read.csv("file.csv")</span>
+                <span class="description">Read CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">write.csv(df, "file.csv")</span>
+                <span class="description">Write CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">read.table("file.txt")</span>
+                <span class="description">Read table file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">load("file.RData")</span>
+                <span class="description">Load R data file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">save(df, file="data.RData")</span>
+                <span class="description">Save R data file</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Exploration</h2>
+            <div class="command-line">
+                <span class="command">head(df)</span>
+                <span class="description">First 6 rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">tail(df)</span>
+                <span class="description">Last 6 rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">str(df)</span>
+                <span class="description">Structure of data</span>
+            </div>
+            <div class="command-line">
+                <span class="command">summary(df)</span>
+                <span class="description">Summary statistics</span>
+            </div>
+            <div class="command-line">
+                <span class="command">names(df)</span>
+                <span class="description">Column names</span>
+            </div>
+            <div class="command-line">
+                <span class="command">dim(df)</span>
+                <span class="description">Dimensions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">nrow(df)</span>
+                <span class="description">Number of rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ncol(df)</span>
+                <span class="description">Number of columns</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Indexing</h2>
+            <div class="command-line">
+                <span class="command">df[1,]</span>
+                <span class="description">First row</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[,1]</span>
+                <span class="description">First column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df$column</span>
+                <span class="description">Select column by name</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[1:3, 2:4]</span>
+                <span class="description">Subset rows and columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[df$x > 5,]</span>
+                <span class="description">Filter rows by condition</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>dplyr Functions</h2>
+            <div class="command-line">
+                <span class="command">library(dplyr)</span>
+                <span class="description">Load dplyr library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">select(df, col1, col2)</span>
+                <span class="description">Select columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">filter(df, col1 > 5)</span>
+                <span class="description">Filter rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">arrange(df, col1)</span>
+                <span class="description">Sort by column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">mutate(df, new_col = col1 * 2)</span>
+                <span class="description">Create new column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">summarise(df, mean_x = mean(x))</span>
+                <span class="description">Summarize data</span>
+            </div>
+            <div class="command-line">
+                <span class="command">group_by(df, category)</span>
+                <span class="description">Group data</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df %&gt;% filter(x > 5) %&gt;% select(y)</span>
+                <span class="description">Pipe operations</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>tidyr Functions</h2>
+            <div class="command-line">
+                <span class="command">library(tidyr)</span>
+                <span class="description">Load tidyr library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pivot_longer(df, cols)</span>
+                <span class="description">Reshape wide to long</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pivot_wider(df, names_from, values_from)</span>
+                <span class="description">Reshape long to wide</span>
+            </div>
+            <div class="command-line">
+                <span class="command">separate(df, col, into = c("a", "b"))</span>
+                <span class="description">Split column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">unite(df, new_col, col1, col2)</span>
+                <span class="description">Combine columns</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ggplot2 Basics</h2>
+            <div class="command-line">
+                <span class="command">library(ggplot2)</span>
+                <span class="description">Load ggplot2 library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ggplot(df, aes(x, y))</span>
+                <span class="description">Initialize plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ geom_point()</span>
+                <span class="description">Add scatter plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ geom_line()</span>
+                <span class="description">Add line plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ geom_bar()</span>
+                <span class="description">Add bar plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ geom_histogram()</span>
+                <span class="description">Add histogram</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ geom_boxplot()</span>
+                <span class="description">Add box plot</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ggplot2 Customization</h2>
+            <div class="command-line">
+                <span class="command">+ labs(title = "Title", x = "X", y = "Y")</span>
+                <span class="description">Add labels</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ theme_minimal()</span>
+                <span class="description">Apply minimal theme</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ scale_x_continuous()</span>
+                <span class="description">Customize x-axis</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ facet_wrap(~group)</span>
+                <span class="description">Create subplots</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+ aes(color = group)</span>
+                <span class="description">Color by group</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistical Functions</h2>
+            <div class="command-line">
+                <span class="command">mean(x)</span>
+                <span class="description">Calculate mean</span>
+            </div>
+            <div class="command-line">
+                <span class="command">median(x)</span>
+                <span class="description">Calculate median</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sd(x)</span>
+                <span class="description">Standard deviation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">var(x)</span>
+                <span class="description">Variance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">cor(x, y)</span>
+                <span class="description">Correlation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">lm(y ~ x, data = df)</span>
+                <span class="description">Linear regression</span>
+            </div>
+            <div class="command-line">
+                <span class="command">t.test(x, y)</span>
+                <span class="description">T-test</span>
+            </div>
+            <div class="command-line">
+                <span class="command">anova(model)</span>
+                <span class="description">ANOVA analysis</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Control Structures</h2>
+            <div class="command-line">
+                <span class="command">if (condition) { code }</span>
+                <span class="description">If statement</span>
+            </div>
+            <div class="command-line">
+                <span class="command">for (i in 1:10) { code }</span>
+                <span class="description">For loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">while (condition) { code }</span>
+                <span class="description">While loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">function(x) { return(x^2) }</span>
+                <span class="description">Define function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">apply(df, 2, mean)</span>
+                <span class="description">Apply function to columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">lapply(list, function)</span>
+                <span class="description">Apply to list elements</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>String Operations</h2>
+            <div class="command-line">
+                <span class="command">paste(a, b, sep = " ")</span>
+                <span class="description">Concatenate strings</span>
+            </div>
+            <div class="command-line">
+                <span class="command">nchar(string)</span>
+                <span class="description">String length</span>
+            </div>
+            <div class="command-line">
+                <span class="command">substr(string, start, stop)</span>
+                <span class="description">Extract substring</span>
+            </div>
+            <div class="command-line">
+                <span class="command">gsub("old", "new", string)</span>
+                <span class="description">Replace text</span>
+            </div>
+            <div class="command-line">
+                <span class="command">strsplit(string, "separator")</span>
+                <span class="description">Split string</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="../../../index.html" class="back-to-index">← Back to CheatSheets Collection</a>
+        </div>
+    </footer>
+</body>
+</html>

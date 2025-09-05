@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino IDE Programming CheatSheet</title>
+    <meta name="description" content="Arduino IDE shortcuts, programming syntax, board configurations, and microcontroller development commands">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="development">
+    <header class="header">
+        <h1>Arduino IDE Programming</h1>
+        <p>Arduino IDE shortcuts, programming syntax, board configurations, and microcontroller development commands</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>IDE Shortcuts</h2>
+            <div class="command-line">
+                <span class="command">Ctrl+R</span>
+                <span class="description">Compile/Verify sketch</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+U</span>
+                <span class="description">Upload sketch to board</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+Shift+M</span>
+                <span class="description">Open Serial Monitor</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+Shift+L</span>
+                <span class="description">Open Serial Plotter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+N</span>
+                <span class="description">New sketch</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+O</span>
+                <span class="description">Open sketch</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+S</span>
+                <span class="description">Save sketch</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl+T</span>
+                <span class="description">Auto format code</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Basic Structure</h2>
+            <div class="command-line">
+                <span class="command">void setup() {}</span>
+                <span class="description">Initialization function, runs once</span>
+            </div>
+            <div class="command-line">
+                <span class="command">void loop() {}</span>
+                <span class="description">Main loop function, runs repeatedly</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;library.h&gt;</span>
+                <span class="description">Include external library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#define PIN_NAME 13</span>
+                <span class="description">Define constant</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Digital I/O</h2>
+            <div class="command-line">
+                <span class="command">pinMode(pin, mode)</span>
+                <span class="description">Set pin mode (INPUT, OUTPUT, INPUT_PULLUP)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">digitalWrite(pin, value)</span>
+                <span class="description">Write digital value (HIGH/LOW)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">digitalRead(pin)</span>
+                <span class="description">Read digital value from pin</span>
+            </div>
+            <div class="command-line">
+                <span class="command">digitalToggle(pin)</span>
+                <span class="description">Toggle digital pin state</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Analog I/O</h2>
+            <div class="command-line">
+                <span class="command">analogRead(pin)</span>
+                <span class="description">Read analog value (0-1023)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">analogWrite(pin, value)</span>
+                <span class="description">Write PWM value (0-255)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">analogReference(type)</span>
+                <span class="description">Set analog reference voltage</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Serial Communication</h2>
+            <div class="command-line">
+                <span class="command">Serial.begin(baudrate)</span>
+                <span class="description">Initialize serial communication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Serial.print(data)</span>
+                <span class="description">Print data to serial</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Serial.println(data)</span>
+                <span class="description">Print data with newline</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Serial.available()</span>
+                <span class="description">Check if data available</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Serial.read()</span>
+                <span class="description">Read serial data</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Serial.readString()</span>
+                <span class="description">Read string from serial</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Time Functions</h2>
+            <div class="command-line">
+                <span class="command">delay(ms)</span>
+                <span class="description">Pause execution for milliseconds</span>
+            </div>
+            <div class="command-line">
+                <span class="command">delayMicroseconds(us)</span>
+                <span class="description">Pause execution for microseconds</span>
+            </div>
+            <div class="command-line">
+                <span class="command">millis()</span>
+                <span class="description">Get milliseconds since program started</span>
+            </div>
+            <div class="command-line">
+                <span class="command">micros()</span>
+                <span class="description">Get microseconds since program started</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Math Functions</h2>
+            <div class="command-line">
+                <span class="command">map(value, fromLow, fromHigh, toLow, toHigh)</span>
+                <span class="description">Map value from one range to another</span>
+            </div>
+            <div class="command-line">
+                <span class="command">constrain(x, a, b)</span>
+                <span class="description">Constrain value between a and b</span>
+            </div>
+            <div class="command-line">
+                <span class="command">abs(x)</span>
+                <span class="description">Absolute value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">min(x, y)</span>
+                <span class="description">Minimum of two values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">max(x, y)</span>
+                <span class="description">Maximum of two values</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pow(base, exponent)</span>
+                <span class="description">Power function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sqrt(x)</span>
+                <span class="description">Square root</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Types</h2>
+            <div class="command-line">
+                <span class="command">boolean</span>
+                <span class="description">True or false value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">byte</span>
+                <span class="description">8-bit unsigned integer (0-255)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">int</span>
+                <span class="description">16-bit signed integer (-32,768 to 32,767)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">long</span>
+                <span class="description">32-bit signed integer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">float</span>
+                <span class="description">32-bit floating point number</span>
+            </div>
+            <div class="command-line">
+                <span class="command">double</span>
+                <span class="description">Same as float on Arduino</span>
+            </div>
+            <div class="command-line">
+                <span class="command">char</span>
+                <span class="description">Single character</span>
+            </div>
+            <div class="command-line">
+                <span class="command">String</span>
+                <span class="description">String object</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Control Structures</h2>
+            <div class="command-line">
+                <span class="command">if (condition) {}</span>
+                <span class="description">Conditional execution</span>
+            </div>
+            <div class="command-line">
+                <span class="command">if (condition) {} else {}</span>
+                <span class="description">If-else statement</span>
+            </div>
+            <div class="command-line">
+                <span class="command">for (int i=0; i&lt;10; i++) {}</span>
+                <span class="description">For loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">while (condition) {}</span>
+                <span class="description">While loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">do {} while (condition)</span>
+                <span class="description">Do-while loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">switch (var) { case 1: break; }</span>
+                <span class="description">Switch statement</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Interrupts</h2>
+            <div class="command-line">
+                <span class="command">attachInterrupt(pin, function, mode)</span>
+                <span class="description">Attach interrupt to pin</span>
+            </div>
+            <div class="command-line">
+                <span class="command">detachInterrupt(pin)</span>
+                <span class="description">Remove interrupt from pin</span>
+            </div>
+            <div class="command-line">
+                <span class="command">interrupts()</span>
+                <span class="description">Enable interrupts</span>
+            </div>
+            <div class="command-line">
+                <span class="command">noInterrupts()</span>
+                <span class="description">Disable interrupts</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Common Libraries</h2>
+            <div class="command-line">
+                <span class="command">#include &lt;Servo.h&gt;</span>
+                <span class="description">Servo motor control library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;SoftwareSerial.h&gt;</span>
+                <span class="description">Software serial communication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;Wire.h&gt;</span>
+                <span class="description">I2C communication library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;SPI.h&gt;</span>
+                <span class="description">SPI communication library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;EEPROM.h&gt;</span>
+                <span class="description">EEPROM read/write library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#include &lt;LiquidCrystal.h&gt;</span>
+                <span class="description">LCD display library</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="../../../index.html" class="back-to-index">← Back to CheatSheets Collection</a>
+        </div>
+    </footer>
+</body>
+</html>

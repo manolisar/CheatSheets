@@ -43,7 +43,7 @@ const cheatsheetData = {
             title: 'Arduino IDE Programming',
             description: 'Arduino IDE shortcuts, programming syntax, board configurations, and microcontroller development commands.',
             type: 'commands',
-            file: 'arduino_cheatsheet.html',
+            file: 'arduino_cheat_sheet.html',
             stats: { count: '80+ commands', tech: 'IDE' },
             keywords: ['arduino', 'ide', 'microcontroller', 'programming', 'embedded', 'serial', 'analog', 'digital']
         }
@@ -93,7 +93,7 @@ const cheatsheetData = {
             title: 'R Programming',
             description: 'Statistical computing, data manipulation with dplyr/tidyr, ggplot2 visualization, and R data analysis workflows.',
             type: 'commands',
-            file: 'r_programming_cheatsheet.html',
+            file: 'r_programming_cheat_sheet.html',
             stats: { count: '120+ functions', tech: 'Language' },
             keywords: ['r programming', 'statistics', 'ggplot2', 'dplyr', 'tidyr', 'data analysis', 'rstudio']
         },
@@ -101,7 +101,7 @@ const cheatsheetData = {
             title: 'Julia Programming',
             description: 'High-performance computing, scientific programming, multiple dispatch, and Julia ecosystem for data science.',
             type: 'commands',
-            file: 'julia_cheatsheet.html',
+            file: 'julia_cheat_sheet.html',
             stats: { count: '150+ commands', tech: 'Language' },
             keywords: ['julia', 'high-performance', 'scientific computing', 'repl', 'dataframes', 'plots', 'multiple dispatch']
         }

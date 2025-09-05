@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Programming CheatSheet</title>
+    <meta name="description" content="High-performance computing, scientific programming, multiple dispatch, and Julia ecosystem for data science">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body class="python-data-science">
+    <header class="header">
+        <h1>Julia Programming</h1>
+        <p>High-performance computing, scientific programming, multiple dispatch, and Julia ecosystem for data science</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Basic Syntax</h2>
+            <div class="command-line">
+                <span class="command">x = value</span>
+                <span class="description">Assign value to variable</span>
+            </div>
+            <div class="command-line">
+                <span class="command">println(x)</span>
+                <span class="description">Print variable with newline</span>
+            </div>
+            <div class="command-line">
+                <span class="command">print(x)</span>
+                <span class="description">Print variable without newline</span>
+            </div>
+            <div class="command-line">
+                <span class="command"># Comment</span>
+                <span class="description">Single line comment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">#= Multi-line comment =#</span>
+                <span class="description">Multi-line comment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">typeof(x)</span>
+                <span class="description">Get type of variable</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Types</h2>
+            <div class="command-line">
+                <span class="command">Int64, Int32, Int8</span>
+                <span class="description">Integer types</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Float64, Float32</span>
+                <span class="description">Floating point types</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Bool</span>
+                <span class="description">Boolean type (true/false)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Char</span>
+                <span class="description">Character type ('a')</span>
+            </div>
+            <div class="command-line">
+                <span class="command">String</span>
+                <span class="description">String type ("hello")</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Symbol</span>
+                <span class="description">Symbol type (:symbol)</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Arrays and Collections</h2>
+            <div class="command-line">
+                <span class="command">[1, 2, 3]</span>
+                <span class="description">Create array</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Array{Int}(undef, 5)</span>
+                <span class="description">Uninitialized array of size 5</span>
+            </div>
+            <div class="command-line">
+                <span class="command">zeros(5)</span>
+                <span class="description">Array of zeros</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ones(5)</span>
+                <span class="description">Array of ones</span>
+            </div>
+            <div class="command-line">
+                <span class="command">range(1, 10, length=5)</span>
+                <span class="description">Create range</span>
+            </div>
+            <div class="command-line">
+                <span class="command">length(arr)</span>
+                <span class="description">Array length</span>
+            </div>
+            <div class="command-line">
+                <span class="command">size(arr)</span>
+                <span class="description">Array dimensions</span>
+            </div>
+            <div class="command-line">
+                <span class="command">push!(arr, item)</span>
+                <span class="description">Add element to end</span>
+            </div>
+            <div class="command-line">
+                <span class="command">pop!(arr)</span>
+                <span class="description">Remove last element</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Matrix Operations</h2>
+            <div class="command-line">
+                <span class="command">[1 2; 3 4]</span>
+                <span class="description">Create 2x2 matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">zeros(3, 3)</span>
+                <span class="description">3x3 zero matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ones(3, 3)</span>
+                <span class="description">3x3 ones matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">I(3)</span>
+                <span class="description">3x3 identity matrix</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A * B</span>
+                <span class="description">Matrix multiplication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A .* B</span>
+                <span class="description">Element-wise multiplication</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A'</span>
+                <span class="description">Matrix transpose</span>
+            </div>
+            <div class="command-line">
+                <span class="command">inv(A)</span>
+                <span class="description">Matrix inverse</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Control Flow</h2>
+            <div class="command-line">
+                <span class="command">if condition; code; end</span>
+                <span class="description">If statement</span>
+            </div>
+            <div class="command-line">
+                <span class="command">if cond; code; else; code2; end</span>
+                <span class="description">If-else statement</span>
+            </div>
+            <div class="command-line">
+                <span class="command">for i in 1:10; code; end</span>
+                <span class="description">For loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">while condition; code; end</span>
+                <span class="description">While loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">break</span>
+                <span class="description">Exit loop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">continue</span>
+                <span class="description">Skip to next iteration</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Functions</h2>
+            <div class="command-line">
+                <span class="command">function name(args); code; end</span>
+                <span class="description">Define function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">name(args) = expression</span>
+                <span class="description">Short function syntax</span>
+            </div>
+            <div class="command-line">
+                <span class="command">return value</span>
+                <span class="description">Return value from function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">function name(x::Int); code; end</span>
+                <span class="description">Type-specific function</span>
+            </div>
+            <div class="command-line">
+                <span class="command">methods(function_name)</span>
+                <span class="description">Show all methods</span>
+            </div>
+            <div class="command-line">
+                <span class="command">x -> x^2</span>
+                <span class="description">Anonymous function</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Package Management</h2>
+            <div class="command-line">
+                <span class="command">using Pkg</span>
+                <span class="description">Load package manager</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Pkg.add("PackageName")</span>
+                <span class="description">Install package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Pkg.update()</span>
+                <span class="description">Update all packages</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Pkg.status()</span>
+                <span class="description">Show installed packages</span>
+            </div>
+            <div class="command-line">
+                <span class="command">using PackageName</span>
+                <span class="description">Load package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">import PackageName</span>
+                <span class="description">Import package</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>DataFrames.jl</h2>
+            <div class="command-line">
+                <span class="command">using DataFrames</span>
+                <span class="description">Load DataFrames package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">DataFrame(x=1:3, y=4:6)</span>
+                <span class="description">Create DataFrame</span>
+            </div>
+            <div class="command-line">
+                <span class="command">CSV.read("file.csv", DataFrame)</span>
+                <span class="description">Read CSV file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df.column</span>
+                <span class="description">Access column</span>
+            </div>
+            <div class="command-line">
+                <span class="command">df[!, :column]</span>
+                <span class="description">Access column by symbol</span>
+            </div>
+            <div class="command-line">
+                <span class="command">nrow(df)</span>
+                <span class="description">Number of rows</span>
+            </div>
+            <div class="command-line">
+                <span class="command">ncol(df)</span>
+                <span class="description">Number of columns</span>
+            </div>
+            <div class="command-line">
+                <span class="command">names(df)</span>
+                <span class="description">Column names</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Plots.jl</h2>
+            <div class="command-line">
+                <span class="command">using Plots</span>
+                <span class="description">Load Plots package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">plot(x, y)</span>
+                <span class="description">Create line plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">scatter(x, y)</span>
+                <span class="description">Create scatter plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">histogram(data)</span>
+                <span class="description">Create histogram</span>
+            </div>
+            <div class="command-line">
+                <span class="command">plot!(x, y)</span>
+                <span class="description">Add to existing plot</span>
+            </div>
+            <div class="command-line">
+                <span class="command">xlabel!("X Label")</span>
+                <span class="description">Add x-axis label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">title!("Title")</span>
+                <span class="description">Add title</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Statistics and Math</h2>
+            <div class="command-line">
+                <span class="command">using Statistics</span>
+                <span class="description">Load Statistics package</span>
+            </div>
+            <div class="command-line">
+                <span class="command">mean(x)</span>
+                <span class="description">Calculate mean</span>
+            </div>
+            <div class="command-line">
+                <span class="command">median(x)</span>
+                <span class="description">Calculate median</span>
+            </div>
+            <div class="command-line">
+                <span class="command">std(x)</span>
+                <span class="description">Standard deviation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">var(x)</span>
+                <span class="description">Variance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">sum(x)</span>
+                <span class="description">Sum of elements</span>
+            </div>
+            <div class="command-line">
+                <span class="command">minimum(x)</span>
+                <span class="description">Minimum value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">maximum(x)</span>
+                <span class="description">Maximum value</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>String Operations</h2>
+            <div class="command-line">
+                <span class="command">string(a, b)</span>
+                <span class="description">Concatenate to string</span>
+            </div>
+            <div class="command-line">
+                <span class="command">"$variable"</span>
+                <span class="description">String interpolation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">length(str)</span>
+                <span class="description">String length</span>
+            </div>
+            <div class="command-line">
+                <span class="command">str[1:3]</span>
+                <span class="description">Substring</span>
+            </div>
+            <div class="command-line">
+                <span class="command">split(str, "delimiter")</span>
+                <span class="description">Split string</span>
+            </div>
+            <div class="command-line">
+                <span class="command">join(array, "separator")</span>
+                <span class="description">Join array elements</span>
+            </div>
+            <div class="command-line">
+                <span class="command">replace(str, "old" => "new")</span>
+                <span class="description">Replace text</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File I/O</h2>
+            <div class="command-line">
+                <span class="command">open("file.txt", "r")</span>
+                <span class="description">Open file for reading</span>
+            </div>
+            <div class="command-line">
+                <span class="command">readline(file)</span>
+                <span class="description">Read line from file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">readlines("file.txt")</span>
+                <span class="description">Read all lines</span>
+            </div>
+            <div class="command-line">
+                <span class="command">write("file.txt", content)</span>
+                <span class="description">Write to file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">close(file)</span>
+                <span class="description">Close file</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>REPL Commands</h2>
+            <div class="command-line">
+                <span class="command">?</span>
+                <span class="description">Help mode</span>
+            </div>
+            <div class="command-line">
+                <span class="command">;</span>
+                <span class="description">Shell mode</span>
+            </div>
+            <div class="command-line">
+                <span class="command">]</span>
+                <span class="description">Package mode</span>
+            </div>
+            <div class="command-line">
+                <span class="command">exit()</span>
+                <span class="description">Exit Julia</span>
+            </div>
+            <div class="command-line">
+                <span class="command">include("file.jl")</span>
+                <span class="description">Run Julia file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">workspace()</span>
+                <span class="description">Clear workspace</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="../../../index.html" class="back-to-index">← Back to CheatSheets Collection</a>
+        </div>
+    </footer>
+</body>
+</html>
