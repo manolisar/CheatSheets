@@ -136,7 +136,7 @@ body.python .header { background: linear-gradient(135deg, var(--python-data-scie
 body.system .header { background: linear-gradient(135deg, var(--system) 0%, #0e7490 100%); }
 body.mathematical .header { background: linear-gradient(135deg, var(--mathematical) 0%, #1d4ed8 100%); }
 body.design-cad .header { background: linear-gradient(135deg, var(--design-cad) 0%, #be185d 100%); }
-body.productivity .header { background: linear-gradient(135deg, var(--productivity) 0%, #7c3aed 100%); }
+body.productivity .header { background: linear-gradient(135deg, var(--productivity) 0%, #065f73 100%); }
 body.network .header { background: linear-gradient(135deg, var(--network) 0%, #1565c0 100%); }
 
 /* =============================================================================
@@ -183,7 +183,7 @@ body.python .section h2 { border-bottom-color: var(--python-data-science); color
 body.system .section h2 { border-bottom-color: var(--system); color: #0e7490; }
 body.mathematical .section h2 { border-bottom-color: var(--mathematical); color: #1d4ed8; }
 body.design-cad .section h2 { border-bottom-color: var(--design-cad); color: #be185d; }
-body.productivity .section h2 { border-bottom-color: var(--productivity); color: #7c3aed; }
+body.productivity .section h2 { border-bottom-color: var(--productivity); color: #065f73; }
 body.network .section h2 { border-bottom-color: var(--network); color: #1565c0; }
 
 /* =============================================================================
@@ -419,7 +419,7 @@ body.python .footer { background: linear-gradient(135deg, var(--python-data-scie
 body.system .footer { background: linear-gradient(135deg, var(--system) 0%, #0e7490 100%); }
 body.mathematical .footer { background: linear-gradient(135deg, var(--mathematical) 0%, #1d4ed8 100%); }
 body.design-cad .footer { background: linear-gradient(135deg, var(--design-cad) 0%, #be185d 100%); }
-body.productivity .footer { background: linear-gradient(135deg, var(--productivity) 0%, #7c3aed 100%); }
+body.productivity .footer { background: linear-gradient(135deg, var(--productivity) 0%, #065f73 100%); }
 body.network .footer { background: linear-gradient(135deg, var(--network) 0%, #1565c0 100%); }
 
 /* =============================================================================
