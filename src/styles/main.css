@@ -405,6 +405,8 @@ a:hover {
 .productivity { 
   --card-color: var(--productivity);
   border-left-color: var(--productivity);
+  background: #00ff00 !important;
+  border: 5px solid red !important;
 }
 
 /* Category Icon Colors */
