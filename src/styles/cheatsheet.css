@@ -14,7 +14,7 @@
     --text-secondary: #4b5563;
     --border: #e2e8f0;
     
-    /* Category colors - Updated to match main.css */
+    /* Category Colors - Consistent with main.css */
     --software-development: #f97316;
     --data-science-analytics: #10b981;
     --scientific-computing: #3b82f6;
@@ -23,14 +23,14 @@
     --creative-media: #8b5cf6;
     --productivity: #0891b2;
     
-    /* Legacy aliases for backward compatibility */
-    --development: #f97316;
-    --python-data-science: #10b981;
-    --python: #10b981;
-    --system: #f97316;
-    --mathematical: #3b82f6;
-    --design-cad: #ec4899;
-    --network: #f97316;
+    /* Derived colors for gradients */
+    --software-development-dark: #ea580c;
+    --data-science-analytics-dark: #059669;
+    --scientific-computing-dark: #2563eb;
+    --electronics-circuit-design-dark: #0891b2;
+    --mechanical-design-cad-dark: #db2777;
+    --creative-media-dark: #7c3aed;
+    --productivity-dark: #0e7490;
 }
 
 body {
@@ -130,15 +130,28 @@ body {
    CATEGORY-SPECIFIC HEADER COLORS
 ============================================================================= */
 
-body.development .header { background: linear-gradient(135deg, var(--development) 0%, #d63384 100%); }
-body.python-data-science .header,
-body.python .header { background: linear-gradient(135deg, var(--python-data-science) 0%, #1e40af 100%); }
-body.system .header { background: linear-gradient(135deg, var(--system) 0%, #0e7490 100%); }
-body.mathematical .header { background: linear-gradient(135deg, var(--mathematical) 0%, #1d4ed8 100%); }
-body.design-cad .header { background: linear-gradient(135deg, var(--design-cad) 0%, #be185d 100%); }
-body.productivity .header { background: linear-gradient(135deg, var(--productivity) 0%, #065f73 100%); }
-body.creative-media .header { background: linear-gradient(135deg, var(--creative-media) 0%, #6b21a8 100%); }
-body.network .header { background: linear-gradient(135deg, var(--network) 0%, #1565c0 100%); }
+/* Header gradients for each category */
+body.software-development .header { 
+    background: linear-gradient(135deg, var(--software-development) 0%, var(--software-development-dark) 100%); 
+}
+body.data-science-analytics .header { 
+    background: linear-gradient(135deg, var(--data-science-analytics) 0%, var(--data-science-analytics-dark) 100%); 
+}
+body.scientific-computing .header { 
+    background: linear-gradient(135deg, var(--scientific-computing) 0%, var(--scientific-computing-dark) 100%); 
+}
+body.electronics-circuit-design .header { 
+    background: linear-gradient(135deg, var(--electronics-circuit-design) 0%, var(--electronics-circuit-design-dark) 100%); 
+}
+body.mechanical-design-cad .header { 
+    background: linear-gradient(135deg, var(--mechanical-design-cad) 0%, var(--mechanical-design-cad-dark) 100%); 
+}
+body.creative-media .header { 
+    background: linear-gradient(135deg, var(--creative-media) 0%, var(--creative-media-dark) 100%); 
+}
+body.productivity .header { 
+    background: linear-gradient(135deg, var(--productivity) 0%, var(--productivity-dark) 100%); 
+}
 
 /* =============================================================================
    MAIN CONTENT LAYOUT - TWO COLUMNS
@@ -178,15 +191,34 @@ body.network .header { background: linear-gradient(135deg, var(--network) 0%, #1
 }
 
 /* Category-specific section headers */
-body.development .section h2 { border-bottom-color: var(--development); color: #c2410c; }
-body.python-data-science .section h2,
-body.python .section h2 { border-bottom-color: var(--python-data-science); color: #1e3a8a; }
-body.system .section h2 { border-bottom-color: var(--system); color: #0e7490; }
-body.mathematical .section h2 { border-bottom-color: var(--mathematical); color: #1d4ed8; }
-body.design-cad .section h2 { border-bottom-color: var(--design-cad); color: #be185d; }
-body.productivity .section h2 { border-bottom-color: var(--productivity); color: #065f73; }
-body.creative-media .section h2 { border-bottom-color: var(--creative-media); color: #6b21a8; }
-body.network .section h2 { border-bottom-color: var(--network); color: #1565c0; }
+body.software-development .section h2 { 
+    border-bottom-color: var(--software-development); 
+    color: var(--software-development-dark); 
+}
+body.data-science-analytics .section h2 { 
+    border-bottom-color: var(--data-science-analytics); 
+    color: var(--data-science-analytics-dark); 
+}
+body.scientific-computing .section h2 { 
+    border-bottom-color: var(--scientific-computing); 
+    color: var(--scientific-computing-dark); 
+}
+body.electronics-circuit-design .section h2 { 
+    border-bottom-color: var(--electronics-circuit-design); 
+    color: var(--electronics-circuit-design-dark); 
+}
+body.mechanical-design-cad .section h2 { 
+    border-bottom-color: var(--mechanical-design-cad); 
+    color: var(--mechanical-design-cad-dark); 
+}
+body.creative-media .section h2 { 
+    border-bottom-color: var(--creative-media); 
+    color: var(--creative-media-dark); 
+}
+body.productivity .section h2 { 
+    border-bottom-color: var(--productivity); 
+    color: var(--productivity-dark); 
+}
 
 /* =============================================================================
    COMMAND STYLING

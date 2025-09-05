@@ -377,42 +377,40 @@ a:hover {
   font-weight: 500;
 }
 
-/* Category Color Variables */
+/* Category Color Assignments - Clean Structure */
 .software-development { 
   --card-color: var(--software-development);
   border-left-color: var(--software-development);
 }
+
 .data-science-analytics { 
   --card-color: var(--data-science-analytics);
   border-left-color: var(--data-science-analytics);
 }
+
 .scientific-computing { 
   --card-color: var(--scientific-computing);
   border-left-color: var(--scientific-computing);
 }
+
 .electronics-circuit-design { 
   --card-color: var(--electronics-circuit-design);
   border-left-color: var(--electronics-circuit-design);
 }
+
 .mechanical-design-cad { 
   --card-color: var(--mechanical-design-cad);
   border-left-color: var(--mechanical-design-cad);
 }
+
 .creative-media { 
   --card-color: var(--creative-media);
   border-left-color: var(--creative-media);
 }
+
 .productivity { 
   --card-color: var(--productivity);
-  border-left-color: var(--productivity) !important;
-}
-
-.productivity .card-type {
-  background: var(--productivity) !important;
-}
-
-.productivity::before {
-  background: linear-gradient(90deg, var(--productivity), transparent) !important;
+  border-left-color: var(--productivity);
 }
 
 /* Category Icon Colors */
