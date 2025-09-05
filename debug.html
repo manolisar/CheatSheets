@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+</head>
+<body>
+    <h1>Debug Test</h1>
+    <div id="productivity-grid"></div>
+    <div id="software-development-grid"></div>
+    
+    <script>
+        // Simplified version of the cheatsheet data for testing
+        const testData = {
+            'productivity': [
+                {
+                    title: 'Microsoft Excel Functions',
+                    description: 'Test description',
+                    type: 'commands',
+                    file: 'excel_shortcuts_cheat_sheet.html',
+                    stats: { count: '80+ functions', tech: 'Spreadsheet' },
+                    keywords: ['excel']
+                }
+            ]
+        };
+        
+        function testCreateCard(sheet, category) {
+            return `<div class="card">${sheet.title}</div>`;
+        }
+        
+        function testLoad() {
+            console.log('Starting test load');
+            Object.entries(testData).forEach(([category, sheets]) => {
+                console.log(`Category: ${category}`);
+                const grid = document.getElementById(`${category}-grid`);
+                console.log(`Grid found:`, !!grid);
+                if (grid) {
+                    grid.innerHTML = sheets.map(sheet => testCreateCard(sheet, category)).join('');
+                    console.log('Cards added');
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', testLoad);
+    </script>
+</body>
+</html>
