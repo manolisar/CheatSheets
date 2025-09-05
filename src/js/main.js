@@ -108,22 +108,6 @@ const cheatsheetData = {
     ],
     mathematical: [
         {
-            title: 'LaTeX Mathematical Notation',
-            description: 'LaTeX commands for mathematical equations, symbols, and document formatting.',
-            type: 'commands',
-            file: 'latex_math_cheat_sheet.html',
-            stats: { count: '100+ symbols', tech: 'Markup' },
-            keywords: ['latex', 'math', 'equations', 'symbols', 'scientific writing', 'tex']
-        },
-        {
-            title: 'Wolfram Alpha Queries',
-            description: 'Query syntax and examples for Wolfram Alpha computational intelligence.',
-            type: 'commands',
-            file: 'wolfram_alpha_cheat_sheet.html',
-            stats: { count: '60+ examples', tech: 'Query' },
-            keywords: ['wolfram alpha', 'computational', 'mathematics', 'queries', 'calculator', 'analysis']
-        },
-        {
             title: 'MATLAB Programming',
             description: 'Complete reference for matrix operations, plotting, and numerical computing with MATLAB.',
             type: 'commands',
