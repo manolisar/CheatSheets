@@ -122,6 +122,22 @@ const cheatsheetData = {
             file: 'wolfram_alpha_cheat_sheet.html',
             stats: { count: '60+ examples', tech: 'Query' },
             keywords: ['wolfram alpha', 'computational', 'mathematics', 'queries', 'calculator', 'analysis']
+        },
+        {
+            title: 'MATLAB Programming',
+            description: 'Complete reference for matrix operations, plotting, and numerical computing with MATLAB.',
+            type: 'commands',
+            file: 'matlab_cheat_sheet.html',
+            stats: { count: '150+ functions', tech: 'Language' },
+            keywords: ['matlab', 'matrix', 'numerical computing', 'plotting', 'programming', 'mathematical analysis']
+        },
+        {
+            title: 'Tableau Analytics',
+            description: 'Essential Tableau shortcuts, data visualization techniques, and dashboard design best practices.',
+            type: 'shortcuts',
+            file: 'tableau_cheat_sheet.html',
+            stats: { count: '100+ shortcuts', tech: 'Analytics' },
+            keywords: ['tableau', 'data visualization', 'dashboards', 'analytics', 'business intelligence', 'charts']
         }
     ],
     'design-cad': [
