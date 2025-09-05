@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Programming Cheatsheet - High-Performance Computing</title>
+    <meta name="description" content="Complete Julia programming cheatsheet with syntax, data structures, performance optimization, scientific computing, and package ecosystem.">
+    <meta name="keywords" content="julia, programming, high-performance, scientific computing, repl, packages, dataframes, plots, performance">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body>
+    <div class="cheatsheet-header no-print">
+        <div class="container">
+            <nav>
+                <a href="../../../index.html" class="back-link">
+                    <span>←</span> Back to Collection
+                </a>
+                <div class="header-actions">
+                    <input type="text" 
+                           id="searchInput" 
+                           class="in-page-search" 
+                           placeholder="Search commands..."
+                           aria-label="Search cheatsheet content">
+                    <button onclick="window.print()" class="print-btn">
+                        <span>🖨️</span> Print
+                    </button>
+                    <button onclick="toggleTheme()" class="theme-btn">
+                        <span>🌓</span> Theme
+                    </button>
+                </div>
+            </nav>
+            
+            <div class="title-section">
+                <h1>Julia Programming Cheatsheet</h1>
+                <p class="subtitle">High-performance computing, scientific programming, and data analysis with Julia</p>
+                <div class="meta">
+                    <span class="category-tag python-data-science">Python & Data</span>
+                    <span class="type-tag">Commands</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cheatsheet-container">
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="table-of-contents">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#repl-commands">REPL Commands</a></li>
+                    <li><a href="#basic-syntax">Basic Syntax</a></li>
+                    <li><a href="#data-structures">Data Structures</a></li>
+                    <li><a href="#functions">Functions</a></li>
+                    <li><a href="#control-flow">Control Flow</a></li>
+                    <li><a href="#types-methods">Types & Methods</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#dataframes">DataFrames</a></li>
+                    <li><a href="#plotting">Plotting</a></li>
+                    <li><a href="#linear-algebra">Linear Algebra</a></li>
+                    <li><a href="#performance">Performance</a></li>
+                    <li><a href="#metaprogramming">Metaprogramming</a></li>
+                </ul>
+            </div>
+
+            <!-- REPL Commands -->
+            <div class="section" id="repl-commands">
+                <h2>REPL Commands</h2>
+                
+                <h3>REPL Modes</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Mode Switching</div>
+                    <div class="command-desc">
+                        <pre><code># Mode indicators
+julia>          # Julian mode (normal)
+pkg>            # Package mode (press ])
+help?>          # Help mode (press ?)
+shell>          # Shell mode (press ;)
+
+# Switch modes
+]               # Enter package mode
+?               # Enter help mode  
+;               # Enter shell mode
+Backspace       # Return to Julian mode (from any mode)
+Ctrl+C          # Cancel current input and return to Julian mode</code></pre>
+                    </div>
+                </div>
+
+                <h3>REPL Shortcuts</h3>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+C</div>
+                    <div class="shortcut-desc">Clear current input / interrupt execution</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+D</div>
+                    <div class="shortcut-desc">Exit Julia</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+L</div>
+                    <div class="shortcut-desc">Clear screen</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+R</div>
+                    <div class="shortcut-desc">Reverse history search</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Tab</div>
+                    <div class="shortcut-desc">Autocomplete</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+A</div>
+                    <div class="shortcut-desc">Move cursor to beginning</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+E</div>
+                    <div class="shortcut-desc">Move cursor to end</div>
+                </div>
+                <div class="shortcut python-data-science">
+                    <div class="shortcut-key">Ctrl+K</div>
+                    <div class="shortcut-desc">Delete to end of line</div>
+                </div>
+
+                <h3>Help System</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Getting Help</div>
+                    <div class="command-desc">
+                        <pre><code># Help mode (press ?)
+help?> println     # Get help for println function
+help?> Array       # Get help for Array type
+help?> +           # Get help for + operator
+
+# In Julian mode
+?println           # Alternative help syntax
+@doc println       # Show documentation
+methods(+)         # Show all methods for +
+methodswith(Array) # Show methods that use Array</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Syntax -->
+            <div class="section" id="basic-syntax">
+                <h2>Basic Syntax</h2>
+                
+                <h3>Variables & Types</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Variable Assignment</div>
+                    <div class="command-desc">
+                        <pre><code># Variables (no declaration needed)
+x = 42              # Int64
+y = 3.14159         # Float64
+name = "Julia"      # String
+is_awesome = true   # Bool
+
+# Type annotations (optional but useful)
+x::Int64 = 42
+y::Float64 = 3.14159
+
+# Constants
+const SPEED_OF_LIGHT = 299_792_458  # Use underscores for readability
+
+# Multiple assignment
+a, b, c = 1, 2, 3
+a, b = b, a         # Swap values
+
+# Type checking
+typeof(x)           # Int64
+isa(x, Integer)     # true
+x isa Integer       # true (alternative syntax)</code></pre>
+                    </div>
+                </div>
+
+                <h3>Numbers & Math</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Numeric Types</div>
+                    <div class="command-desc">
+                        <pre><code># Integer types
+x = 42              # Int64 (default on 64-bit systems)
+x = 0x2a            # Hexadecimal
+x = 0o52            # Octal  
+x = 0b101010        # Binary
+
+# Floating point
+y = 3.14159         # Float64 (default)
+y = 3.14159f0       # Float32
+y = 1.23e-4         # Scientific notation
+
+# Complex numbers
+z = 3 + 4im         # Complex{Int64}
+z = 3.0 + 4.0im     # Complex{Float64}
+
+# Rational numbers
+r = 3//4            # Rational{Int64} = 3/4
+
+# Basic arithmetic
++ - * / ^ %         # Standard operators
+÷                   # Integer division (type \div + Tab)
+√                   # Square root (type \sqrt + Tab)
+
+# Mathematical functions
+abs(x)              # Absolute value
+sqrt(x)             # Square root
+exp(x)              # Exponential
+log(x)              # Natural logarithm
+sin(x), cos(x), tan(x)  # Trigonometric functions</code></pre>
+                    </div>
+                </div>
+
+                <h3>Strings</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">String Operations</div>
+                    <div class="command-desc">
+                        <pre><code># String creation
+s = "Hello, World!"
+s = """Multi-line
+       string with
+       proper indentation"""
+
+# String interpolation
+name = "Julia"
+greeting = "Hello, $name!"
+calculation = "2 + 2 = $(2 + 2)"
+
+# String operations
+length(s)           # String length
+s[1]                # First character (1-indexed!)
+s[1:5]              # Substring (characters 1-5)
+s[end]              # Last character
+s[end-2:end]        # Last 3 characters
+
+# String functions
+uppercase(s)        # Convert to uppercase
+lowercase(s)        # Convert to lowercase
+strip(s)            # Remove leading/trailing whitespace
+split(s, " ")       # Split on spaces
+join(["a", "b"], "-")  # Join with separator
+replace(s, "old" => "new")  # Replace substring
+
+# String formatting
+using Printf
+@printf("Value: %.2f\n", 3.14159)  # Printf-style formatting
+@sprintf("Value: %.2f", 3.14159)   # Return formatted string</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Structures -->
+            <div class="section" id="data-structures">
+                <h2>Data Structures</h2>
+                
+                <h3>Arrays</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Array Creation</div>
+                    <div class="command-desc">
+                        <pre><code># Array creation
+arr = [1, 2, 3, 4, 5]           # Vector{Int64}
+arr = Int64[1, 2, 3, 4, 5]      # Explicit type
+arr = collect(1:5)              # From range
+arr = zeros(5)                  # Vector of zeros
+arr = ones(3, 3)                # 3x3 matrix of ones
+arr = rand(2, 3)                # Random 2x3 matrix
+
+# Array comprehensions
+squares = [x^2 for x in 1:10]
+filtered = [x for x in 1:20 if x % 2 == 0]
+
+# Multi-dimensional arrays
+matrix = [1 2 3; 4 5 6]        # 2x3 matrix (space=same row, ; =new row)
+matrix = reshape(1:6, 2, 3)    # Reshape vector to 2x3 matrix</code></pre>
+                    </div>
+                </div>
+
+                <div class="command python-data-science">
+                    <div class="command-name">Array Operations</div>
+                    <div class="command-desc">
+                        <pre><code># Array access and slicing
+arr[1]                          # First element
+arr[end]                        # Last element
+arr[2:4]                        # Elements 2-4
+arr[1:2:end]                    # Every 2nd element
+arr[:]                          # All elements (copy)
+
+# Matrix operations
+A = [1 2; 3 4]                  # 2x2 matrix
+B = [5 6; 7 8]
+A + B                           # Element-wise addition
+A * B                           # Matrix multiplication
+A .* B                          # Element-wise multiplication
+A'                              # Transpose
+inv(A)                          # Matrix inverse
+
+# Array functions
+length(arr)                     # Number of elements
+size(arr)                       # Dimensions tuple
+ndims(arr)                      # Number of dimensions
+push!(arr, 6)                   # Add element to end
+pop!(arr)                       # Remove last element
+append!(arr, [7, 8])            # Add multiple elements</code></pre>
+                    </div>
+                </div>
+
+                <h3>Tuples & Named Tuples</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Tuple Operations</div>
+                    <div class="command-desc">
+                        <pre><code># Tuples (immutable)
+t = (1, 2, 3)
+t = 1, 2, 3                     # Parentheses optional
+x, y, z = t                     # Tuple unpacking
+
+# Named tuples
+nt = (name="Alice", age=25, height=165)
+nt.name                         # Access by name
+nt[1]                           # Access by index
+nt[:name]                       # Access by symbol
+
+# Create named tuple from dict
+nt = NamedTuple{(:a, :b)}((1, 2))
+
+# Convert to regular tuple
+values(nt)                      # (25, 165)
+keys(nt)                        # (:name, :age, :height)</code></pre>
+                    </div>
+                </div>
+
+                <h3>Dictionaries</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Dict Operations</div>
+                    <div class="command-desc">
+                        <pre><code># Dictionary creation
+d = Dict("a" => 1, "b" => 2, "c" => 3)
+d = Dict(:a => 1, :b => 2, :c => 3)     # With symbols
+
+# Dictionary operations
+d["a"]                          # Access value
+d["a"] = 10                     # Set value
+haskey(d, "a")                  # Check if key exists
+get(d, "d", 0)                  # Get with default value
+
+# Iteration
+for (key, value) in d
+    println("$key => $value")
+end
+
+keys(d)                         # Get all keys
+values(d)                       # Get all values
+collect(d)                      # Convert to array of pairs
+
+# Dictionary comprehension
+squares = Dict(x => x^2 for x in 1:5)</code></pre>
+                    </div>
+                </div>
+
+                <h3>Sets</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Set Operations</div>
+                    <div class="command-desc">
+                        <pre><code># Set creation
+s = Set([1, 2, 3, 3, 4])        # {1, 2, 3, 4} (duplicates removed)
+s = Set{Int}()                   # Empty set of integers
+
+# Set operations
+push!(s, 5)                     # Add element
+delete!(s, 2)                   # Remove element
+in(3, s)                        # Check membership (returns true/false)
+3 ∈ s                          # Alternative syntax
+
+# Set algebra
+s1 = Set([1, 2, 3])
+s2 = Set([2, 3, 4])
+union(s1, s2)                   # {1, 2, 3, 4}
+intersect(s1, s2)               # {2, 3}
+setdiff(s1, s2)                 # {1}
+s1 ∪ s2, s1 ∩ s2               # Unicode operators</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Functions -->
+            <div class="section" id="functions">
+                <h2>Functions</h2>
+                
+                <h3>Function Definition</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Basic Functions</div>
+                    <div class="command-desc">
+                        <pre><code># Standard function definition
+function greet(name)
+    return "Hello, $name!"
+end
+
+# Short form for simple functions
+square(x) = x^2
+add(x, y) = x + y
+
+# Functions with multiple return values
+function divrem_custom(x, y)
+    return div(x, y), rem(x, y)
+end
+quotient, remainder = divrem_custom(10, 3)
+
+# Optional arguments
+function power(x, n=2)
+    return x^n
+end
+power(3)        # 3^2 = 9
+power(3, 4)     # 3^4 = 81
+
+# Keyword arguments
+function greet(name; greeting="Hello", punctuation="!")
+    return "$greeting, $name$punctuation"
+end
+greet("Alice")                           # Hello, Alice!
+greet("Bob", greeting="Hi")              # Hi, Bob!
+greet("Charlie", punctuation=".")        # Hello, Charlie.</code></pre>
+                    </div>
+                </div>
+
+                <h3>Anonymous Functions</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Lambda Functions</div>
+                    <div class="command-desc">
+                        <pre><code># Anonymous function syntax
+f = x -> x^2
+g = (x, y) -> x + y
+
+# Multi-line anonymous functions
+f = function(x)
+    y = x^2
+    return y + 1
+end
+
+# Using with higher-order functions
+map(x -> x^2, [1, 2, 3, 4])            # [1, 4, 9, 16]
+filter(x -> x > 2, [1, 2, 3, 4])       # [3, 4]
+reduce(+, [1, 2, 3, 4])                # 10
+
+# Do syntax (convenient for anonymous functions)
+map([1, 2, 3, 4]) do x
+    x^2 + 1
+end</code></pre>
+                    </div>
+                </div>
+
+                <h3>Function Arguments</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Advanced Arguments</div>
+                    <div class="command-desc">
+                        <pre><code># Variable number of arguments
+function mysum(args...)
+    total = 0
+    for arg in args
+        total += arg
+    end
+    return total
+end
+mysum(1, 2, 3, 4)               # 10
+
+# Splatting (unpacking)
+nums = [1, 2, 3, 4]
+mysum(nums...)                  # Same as mysum(1, 2, 3, 4)
+
+# Type parameters
+function multiply{T<:Number}(x::T, y::T)
+    return x * y
+end
+
+# Modern syntax (Julia 0.6+)
+function multiply(x::T, y::T) where T<:Number
+    return x * y
+end
+
+# Function with type constraints
+function process_array(arr::Vector{<:Real})
+    return sum(arr) / length(arr)
+end</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Flow -->
+            <div class="section" id="control-flow">
+                <h2>Control Flow</h2>
+                
+                <h3>Conditional Statements</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">if/else Statements</div>
+                    <div class="command-desc">
+                        <pre><code># Basic if statement
+x = 10
+if x > 5
+    println("x is greater than 5")
+end
+
+# if-elseif-else
+if x > 15
+    result = "High"
+elseif x > 10
+    result = "Medium"
+else
+    result = "Low"
+end
+
+# Ternary operator
+result = x > 10 ? "High" : "Low"
+
+# Short-circuit evaluation
+x > 0 && println("x is positive")      # && = and
+x == 0 || println("x is not zero")     # || = or
+
+# Logical operators
+true && false       # false
+true || false       # true
+!true              # false</code></pre>
+                    </div>
+                </div>
+
+                <h3>Loops</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">for and while Loops</div>
+                    <div class="command-desc">
+                        <pre><code># for loops
+for i in 1:5
+    println(i)
+end
+
+# Loop over collections
+fruits = ["apple", "banana", "orange"]
+for fruit in fruits
+    println("I like $fruit")
+end
+
+# Loop with indices
+for (i, fruit) in enumerate(fruits)
+    println("$i: $fruit")
+end
+
+# while loops
+count = 1
+while count <= 5
+    println(count)
+    count += 1
+end
+
+# Loop control
+for i in 1:10
+    if i == 3
+        continue        # Skip iteration
+    end
+    if i == 8
+        break          # Exit loop
+    end
+    println(i)
+end
+
+# Nested loops with labels
+@label outer
+for i in 1:3
+    for j in 1:3
+        if i * j > 4
+            @goto outer
+        end
+        println("$i, $j")
+    end
+end</code></pre>
+                    </div>
+                </div>
+
+                <h3>Exception Handling</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">try/catch/finally</div>
+                    <div class="command-desc">
+                        <pre><code># Basic exception handling
+try
+    result = 10 / 0
+catch e
+    println("Error occurred: $e")
+end
+
+# Specific exception types
+try
+    parse(Int, "abc")
+catch e::ArgumentError
+    println("Argument error: $e")
+catch e::BoundsError
+    println("Bounds error: $e")
+catch e
+    println("Other error: $e")
+end
+
+# finally block
+try
+    # Some risky operation
+    file = open("data.txt")
+    # Process file
+catch e
+    println("Error: $e")
+finally
+    # This always runs
+    println("Cleanup code here")
+end
+
+# Throwing exceptions
+function divide(x, y)
+    if y == 0
+        throw(ArgumentError("Division by zero"))
+    end
+    return x / y
+end</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types & Methods -->
+            <div class="section" id="types-methods">
+                <h2>Types & Methods</h2>
+                
+                <h3>Type System</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Type Definitions</div>
+                    <div class="command-desc">
+                        <pre><code># Abstract types
+abstract type Animal end
+abstract type Mammal <: Animal end
+
+# Concrete types (structs)
+struct Point
+    x::Float64
+    y::Float64
+end
+
+# Mutable structs
+mutable struct MutablePoint
+    x::Float64
+    y::Float64
+end
+
+# Parametric types
+struct Point3D{T}
+    x::T
+    y::T
+    z::T
+end
+
+# Type with constructor
+struct Person
+    name::String
+    age::Int
+    
+    # Inner constructor
+    Person(name, age) = age >= 0 ? new(name, age) : error("Age must be non-negative")
+end
+
+# Usage
+p = Point(1.0, 2.0)
+p.x                             # 1.0
+mp = MutablePoint(3.0, 4.0)
+mp.x = 5.0                      # Can modify mutable struct
+
+p3d = Point3D{Int}(1, 2, 3)
+p3d_float = Point3D(1.0, 2.0, 3.0)  # Type inferred</code></pre>
+                    </div>
+                </div>
+
+                <h3>Multiple Dispatch</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Method Definitions</div>
+                    <div class="command-desc">
+                        <pre><code># Define methods for different types
+function area(shape::Circle)
+    return π * shape.radius^2
+end
+
+function area(shape::Rectangle)
+    return shape.width * shape.height
+end
+
+# Methods with type parameters
+function distance(p1::Point3D{T}, p2::Point3D{T}) where T
+    return sqrt((p1.x - p2.x)^2 + (p1.y - p2.y)^2 + (p1.z - p2.z)^2)
+end
+
+# Multiple argument types
+function combine(x::Number, y::Number)
+    return x + y
+end
+
+function combine(x::String, y::String)
+    return x * y
+end
+
+# Check available methods
+methods(area)                   # Show all area methods
+methodswith(Point)              # Show methods that use Point
+
+# Method ambiguity resolution
+function process(x::Integer, y::Number) 
+    println("Integer, Number")
+end
+
+function process(x::Number, y::Integer)
+    println("Number, Integer")
+end
+
+# This would be ambiguous for process(1, 2)
+# Add specific method to resolve
+function process(x::Integer, y::Integer)
+    println("Integer, Integer")
+end</code></pre>
+                    </div>
+                </div>
+
+                <h3>Type Unions & Parametric Constraints</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Advanced Types</div>
+                    <div class="command-desc">
+                        <pre><code># Union types
+IntOrString = Union{Int, String}
+function process(x::IntOrString)
+    if x isa Int
+        return x * 2
+    else
+        return uppercase(x)
+    end
+end
+
+# Type parameters with constraints
+function sort_numeric(arr::Vector{T}) where T <: Number
+    return sort(arr)
+end
+
+# Multiple type parameters
+function compare(x::T, y::S) where {T <: Number, S <: Number}
+    return x > y
+end
+
+# Type assertions
+x = parse(Int, "42")::Int       # Assert that result is Int
+y = something(nothing, 5)::Int  # Assert non-nothing
+
+# Type conversion
+convert(Float64, 42)            # 42.0
+Int(3.14)                       # Error! (inexact conversion)
+trunc(Int, 3.14)               # 3 (truncate to integer)
+round(Int, 3.14)               # 3 (round to integer)</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Packages -->
+            <div class="section" id="packages">
+                <h2>Packages</h2>
+                
+                <h3>Package Manager</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Pkg Mode Commands</div>
+                    <div class="command-desc">
+                        <pre><code># Enter package mode with ]
+
+# Package management
+add PackageName              # Install package
+rm PackageName               # Remove package
+update                       # Update all packages
+update PackageName           # Update specific package
+status                       # List installed packages
+pin PackageName              # Pin package version
+free PackageName             # Unpin package
+
+# Development
+dev PackageName              # Install for development
+dev /path/to/package         # Develop local package
+
+# Environment management
+activate                     # Activate current directory
+activate /path/to/env        # Activate specific environment
+instantiate                  # Install packages from Project.toml</code></pre>
+                    </div>
+                </div>
+
+                <h3>Using Packages</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Import Syntax</div>
+                    <div class="command-desc">
+                        <pre><code># Load packages
+using LinearAlgebra             # Load entire module
+using Statistics: mean, std     # Load specific functions
+import Random                   # Import module (qualified access)
+import Random: rand             # Import specific function
+
+# Example packages
+using Plots                     # Plotting
+using DataFrames               # Data manipulation
+using CSV                      # CSV file I/O
+using JSON                     # JSON parsing
+using HTTP                     # HTTP requests
+
+# Qualified access
+Random.rand(10)                # Use imported module
+LinearAlgebra.norm([1, 2, 3])  # Access functions via module
+
+# Check what's available
+names(Statistics)              # See exported names from module
+?Statistics                    # Get help for module</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DataFrames -->
+            <div class="section" id="dataframes">
+                <h2>DataFrames</h2>
+                
+                <h3>DataFrame Basics</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Creating DataFrames</div>
+                    <div class="command-desc">
+                        <pre><code>using DataFrames
+
+# Create DataFrame
+df = DataFrame(
+    name = ["Alice", "Bob", "Charlie"],
+    age = [25, 30, 35],
+    height = [165, 180, 175]
+)
+
+# From dictionary
+df = DataFrame(Dict(
+    :name => ["Alice", "Bob"],
+    :age => [25, 30]
+))
+
+# From arrays
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+df = DataFrame(name=names, age=ages)
+
+# Read from CSV
+using CSV
+df = CSV.read("data.csv", DataFrame)
+
+# Basic info
+size(df)                        # (3, 3) - rows, columns
+nrow(df)                        # 3
+ncol(df)                        # 3
+names(df)                       # Column names
+describe(df)                    # Summary statistics
+first(df, 5)                    # First 5 rows
+last(df, 5)                     # Last 5 rows</code></pre>
+                    </div>
+                </div>
+
+                <h3>Data Access</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Indexing & Selection</div>
+                    <div class="command-desc">
+                        <pre><code># Access columns
+df.name                         # Column as vector
+df[!, :name]                    # Same as above
+df[:, :name]                    # Copy of column
+df[!, "name"]                   # String column name
+df[:, [:name, :age]]           # Multiple columns
+
+# Access rows
+df[1, :]                        # First row
+df[1:2, :]                      # First two rows
+df[end, :]                      # Last row
+
+# Access specific cells
+df[1, :name]                    # Row 1, name column
+df[1, 2]                        # Row 1, column 2
+
+# Boolean indexing
+df[df.age .> 25, :]            # Rows where age > 25
+subset(df, :age => x -> x .> 25) # Same using subset
+
+# Column operations
+df.bmi = df.weight ./ (df.height ./ 100).^2  # Add new column
+df[!, :category] = ["A", "B", "C"]           # Add column with assignment</code></pre>
+                    </div>
+                </div>
+
+                <h3>Data Manipulation</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Transform & Combine</div>
+                    <div class="command-desc">
+                        <pre><code># Filter rows
+subset(df, :age => x -> x .> 25)
+
+# Select columns
+select(df, :name, :age)
+select(df, Not(:height))       # All except height
+
+# Transform columns
+transform(df, :age => (x -> x .+ 1) => :age_plus_one)
+transform(df, :age => ByRow(x -> x > 30) => :over_30)
+
+# Combine operations
+combine(df, :age => mean => :mean_age)
+
+# Group operations
+gdf = groupby(df, :category)
+combine(gdf, :age => mean)
+
+# Joins
+df1 = DataFrame(id=[1, 2, 3], name=["A", "B", "C"])
+df2 = DataFrame(id=[2, 3, 4], value=[10, 20, 30])
+
+innerjoin(df1, df2, on=:id)     # Inner join
+leftjoin(df1, df2, on=:id)      # Left join
+rightjoin(df1, df2, on=:id)     # Right join
+outerjoin(df1, df2, on=:id)     # Outer join
+
+# Stack/unstack (pivot)
+df_wide = DataFrame(id=[1, 2], A=[1, 3], B=[2, 4])
+df_long = stack(df_wide, [:A, :B], :id)    # Wide to long
+df_wide2 = unstack(df_long, :variable, :value)  # Long to wide</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plotting -->
+            <div class="section" id="plotting">
+                <h2>Plotting</h2>
+                
+                <h3>Plots.jl Basics</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Basic Plots</div>
+                    <div class="command-desc">
+                        <pre><code>using Plots
+
+# Basic plots
+x = 1:10
+y = x.^2
+plot(x, y)                      # Line plot
+scatter(x, y)                   # Scatter plot
+bar(x, y)                       # Bar plot
+histogram(randn(1000))          # Histogram
+
+# Multiple series
+plot(x, [sin.(x) cos.(x)], 
+     label=["sin(x)" "cos(x)"],
+     title="Trigonometric Functions")
+
+# Customize appearance
+plot(x, y, 
+     title="My Plot",
+     xlabel="X axis",
+     ylabel="Y axis",
+     legend=false,
+     color=:red,
+     linewidth=2,
+     linestyle=:dash)
+
+# Add to existing plot
+plot!(x, x.^3, label="cubic")  # ! means modify existing plot
+
+# Subplots
+p1 = plot(x, sin.(x), title="Sine")
+p2 = plot(x, cos.(x), title="Cosine")
+p3 = plot(x, tan.(x), title="Tangent")
+p4 = scatter(x, x.^2, title="Quadratic")
+plot(p1, p2, p3, p4, layout=(2, 2))</code></pre>
+                    </div>
+                </div>
+
+                <h3>Advanced Plotting</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Complex Visualizations</div>
+                    <div class="command-desc">
+                        <pre><code># 3D plots
+x = y = -3:0.1:3
+f(x, y) = x^2 + y^2
+z = [f(xi, yi) for xi in x, yi in y]
+surface(x, y, z)                # Surface plot
+contour(x, y, z)                # Contour plot
+
+# Heatmaps
+heatmap(rand(10, 10))
+
+# Annotations
+plot(x, sin.(x))
+annotate!([(5, sin(5), "Peak", :red)])
+
+# Multiple y-axes
+plot(x, x.^2, ylabel="x²")
+plot!(twinx(), x, x.^3, color=:red, ylabel="x³")
+
+# Backends
+gr()                            # Use GR backend (default)
+plotlyjs()                      # Interactive plots
+pyplot()                        # Matplotlib backend
+
+# Animation
+anim = @animate for i in 1:100
+    plot(x, sin.(x .+ i/10), ylim=(-1.1, 1.1))
+end
+gif(anim, "sine_wave.gif", fps=30)</code></pre>
+                    </div>
+                </div>
+
+                <h3>Statistical Plots</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">StatsPlots.jl</div>
+                    <div class="command-desc">
+                        <pre><code>using StatsPlots
+
+# Statistical plots with DataFrames
+df = DataFrame(x=randn(100), y=randn(100), group=rand(["A", "B"], 100))
+
+# Grouped plots
+@df df scatter(:x, :y, group=:group)
+@df df boxplot(:group, :y)
+@df df violin(:group, :y)
+
+# Density plots
+@df df density(:x)
+@df df marginalhist(:x, :y)     # Scatter with marginal histograms
+
+# Correlation plots
+corrplot(rand(10, 10))
+
+# Time series
+dates = Date(2020, 1, 1):Day(1):Date(2020, 12, 31)
+values = cumsum(randn(length(dates)))
+plot(dates, values, title="Time Series")</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linear Algebra -->
+            <div class="section" id="linear-algebra">
+                <h2>Linear Algebra</h2>
+                
+                <h3>Matrix Operations</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Basic Operations</div>
+                    <div class="command-desc">
+                        <pre><code>using LinearAlgebra
+
+# Matrix creation
+A = [1 2 3; 4 5 6; 7 8 9]      # 3x3 matrix
+I = Matrix(1.0I, 3, 3)          # 3x3 identity matrix
+zeros_mat = zeros(3, 3)         # 3x3 zero matrix
+ones_mat = ones(3, 3)           # 3x3 ones matrix
+rand_mat = randn(3, 3)          # Random normal matrix
+
+# Matrix properties
+size(A)                         # (3, 3)
+length(A)                       # 9 (total elements)
+rank(A)                         # Matrix rank
+tr(A)                           # Trace (sum of diagonal)
+det(A)                          # Determinant
+norm(A)                         # Matrix norm
+
+# Matrix operations
+A'                              # Transpose
+A + A                           # Element-wise addition
+A * A                           # Matrix multiplication
+A .* A                          # Element-wise multiplication
+A^2                             # Matrix power
+A .^ 2                          # Element-wise power</code></pre>
+                    </div>
+                </div>
+
+                <h3>Decompositions</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Matrix Factorizations</div>
+                    <div class="command-desc">
+                        <pre><code># LU decomposition
+F = lu(A)
+F.L, F.U, F.p                   # Lower, Upper, permutation
+
+# QR decomposition
+Q, R = qr(A)
+
+# Eigenvalue decomposition
+eigenvals(A)                    # Eigenvalues only
+eigenvecs(A)                    # Eigenvectors only
+F = eigen(A)                    # Both eigenvalues and eigenvectors
+F.values, F.vectors
+
+# Singular Value Decomposition
+U, S, V = svd(A)
+
+# Cholesky decomposition (for positive definite matrices)
+A_pd = A' * A                   # Make positive definite
+C = cholesky(A_pd)
+C.L                             # Lower triangular factor
+
+# Solve linear systems
+b = [1, 2, 3]
+x = A \ b                       # Solve Ax = b (backslash operator)
+x = inv(A) * b                  # Using matrix inverse (less efficient)</code></pre>
+                    </div>
+                </div>
+
+                <h3>Special Matrices</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Matrix Types</div>
+                    <div class="command-desc">
+                        <pre><code># Diagonal matrix
+D = Diagonal([1, 2, 3])
+
+# Tridiagonal matrix
+T = Tridiagonal([1, 2], [4, 5, 6], [7, 8])
+
+# Sparse matrices
+using SparseArrays
+S = sparse([1, 2, 3], [1, 2, 3], [1.0, 2.0, 3.0])  # Sparse diagonal
+S = sprand(100, 100, 0.1)       # Random sparse matrix (10% filled)
+
+# Matrix views (no copying)
+view(A, 1:2, 1:2)              # View of submatrix
+@view A[1:2, 1:2]              # Macro for view
+
+# Broadcasting
+A .+ 1                          # Add 1 to each element
+sin.(A)                         # Apply sin to each element
+A .> 0                          # Element-wise comparison</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance -->
+            <div class="section" id="performance">
+                <h2>Performance</h2>
+                
+                <h3>Performance Tips</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Optimization Guidelines</div>
+                    <div class="command-desc">
+                        <pre><code># 1. Use type annotations for better performance
+function fast_sum(arr::Vector{Float64})
+    total = 0.0
+    for x in arr
+        total += x
+    end
+    return total
+end
+
+# 2. Avoid global variables
+const GLOBAL_CONST = 10         # Constants are OK
+global_var = 10                 # Avoid this in performance-critical code
+
+function use_global()
+    return global_var * 2       # Slow!
+end
+
+function use_parameter(x)
+    return x * 2                # Fast!
+end
+
+# 3. Use in-place operations when possible
+function update_array!(arr)
+    for i in eachindex(arr)
+        arr[i] *= 2
+    end
+end
+
+# 4. Preallocate arrays
+function slow_concat()
+    result = Float64[]
+    for i in 1:1000
+        push!(result, i)        # Reallocates memory
+    end
+    return result
+end
+
+function fast_concat()
+    result = Vector{Float64}(undef, 1000)  # Preallocate
+    for i in 1:1000
+        result[i] = i
+    end
+    return result
+end</code></pre>
+                    </div>
+                </div>
+
+                <h3>Profiling & Benchmarking</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Performance Analysis</div>
+                    <div class="command-desc">
+                        <pre><code># Timing
+@time slow_function()           # Shows time, memory, allocations
+@elapsed slow_function()        # Returns only elapsed time
+
+# Benchmarking with BenchmarkTools
+using BenchmarkTools
+@benchmark sort(rand(1000))     # Detailed benchmark
+@btime sort(rand(1000))         # Quick benchmark
+
+# Profiling
+using Profile
+@profile for i in 1:1000; slow_function(); end
+Profile.print()                 # Show profile results
+Profile.clear()                 # Clear profile data
+
+# Type stability
+@code_warntype function_name(args...)  # Check for type instabilities
+
+# Memory allocation
+@allocated slow_function()      # Shows memory allocated
+
+# Compilation
+@code_lowered function_name(args...)   # Julia AST
+@code_typed function_name(args...)     # Type-inferred code
+@code_llvm function_name(args...)      # LLVM IR
+@code_native function_name(args...)    # Native assembly</code></pre>
+                    </div>
+                </div>
+
+                <h3>Parallelization</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Parallel Computing</div>
+                    <div class="command-desc">
+                        <pre><code># Multi-threading
+using Base.Threads
+@threads for i in 1:nthreads()
+    println("Thread $(threadid())")
+end
+
+# Parallel map
+Threads.@threads for i in 1:10
+    # Parallel execution
+    result[i] = expensive_computation(i)
+end
+
+# Distributed computing
+using Distributed
+addprocs(4)                     # Add 4 worker processes
+
+@everywhere function parallel_work(x)
+    return x^2
+end
+
+# Parallel map across processes
+results = pmap(parallel_work, 1:100)
+
+# Shared arrays for distributed computing
+using SharedArrays
+shared_arr = SharedArray{Float64}(100, 100)
+
+@distributed for i in 1:100
+    shared_arr[i, :] = rand(100)
+end
+
+# SIMD (Single Instruction, Multiple Data)
+function simd_sum(arr)
+    total = 0.0
+    @simd for x in arr
+        total += x
+    end
+    return total
+end</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metaprogramming -->
+            <div class="section" id="metaprogramming">
+                <h2>Metaprogramming</h2>
+                
+                <h3>Macros</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Writing Macros</div>
+                    <div class="command-desc">
+                        <pre><code># Basic macro
+macro sayhello(name)
+    return :(println("Hello, $($name)!"))
+end
+
+@sayhello "World"               # Expands to println("Hello, World!")
+
+# Macro with multiple arguments
+macro time_it(expr)
+    return quote
+        start_time = time()
+        result = $expr
+        elapsed = time() - start_time
+        println("Elapsed time: $elapsed seconds")
+        result
+    end
+end
+
+@time_it sum(rand(1000))
+
+# String macros
+macro r_str(pattern)
+    Regex(pattern)
+end
+
+r"[0-9]+"                       # Creates a regex
+
+# Macro expansion
+@macroexpand @time_it sum(rand(1000))  # See what macro generates
+
+# Generated functions
+@generated function my_multiply(x::T, y::T) where T
+    if T <: Integer
+        return :(x * y)
+    else
+        return :(x * y + 0.0)
+    end
+end</code></pre>
+                    </div>
+                </div>
+
+                <h3>Expressions & Symbols</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Code as Data</div>
+                    <div class="command-desc">
+                        <pre><code># Symbols
+:x                              # Symbol
+:my_variable                    # Symbol with underscore
+Symbol("dynamic_name")          # Create symbol from string
+
+# Expressions
+expr = :(x + y)                 # Parse expression
+expr = quote                    # Multi-line expression
+    x = 1
+    y = 2
+    x + y
+end
+
+# Expression manipulation
+expr.head                       # :call
+expr.args                       # [:+, :x, :y]
+
+# Evaluate expressions
+x, y = 3, 4
+eval(:(x + y))                  # 7
+
+# String interpolation in expressions
+var_name = :z
+expr = :($var_name = 42)        # Creates :z = 42
+
+# Code generation
+function make_function(op)
+    return eval(quote
+        function generated_func(x, y)
+            return $op(x, y)
+        end
+    end)
+end
+
+add_func = make_function(:+)
+add_func(3, 4)                  # 7</code></pre>
+                    </div>
+                </div>
+
+                <h3>Useful Macros</h3>
+                <div class="command python-data-science">
+                    <div class="command-name">Built-in Macros</div>
+                    <div class="command-desc">
+                        <pre><code># Performance macros
+@time expression                # Time execution
+@elapsed expression             # Get elapsed time
+@allocated expression           # Get memory allocation
+
+# Code introspection
+@which func(args...)            # Which method is called
+@code_typed func(args...)       # Type-inferred code
+@code_llvm func(args...)        # LLVM IR
+@code_native func(args...)      # Assembly code
+
+# Debugging
+@show variable                  # Print variable name and value
+@assert condition "message"     # Assertion with message
+
+# Array operations
+@. expr                         # Broadcast entire expression
+@views expr                     # Use views instead of copies
+
+# Example with @.
+a = [1, 2, 3]
+b = [4, 5, 6]
+@. a = sin(a) + cos(b)         # Equivalent to a .= sin.(a) .+ cos.(b)
+
+# Example with @views
+function sum_cols(matrix)
+    @views sum(matrix[:, 1:end-1], dims=1)  # No copying
+end
+
+# String processing
+@sprintf("Value: %.2f", 3.14159)  # Format string</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cheatsheet-footer no-print">
+        <div class="container">
+            <p>Julia Programming Cheatsheet - Part of <a href="../../../index.html">CheatSheets Collection</a></p>
+            <p>For more resources, visit <a href="https://julialang.org/" target="_blank">Julia Language</a> | <a href="https://docs.julialang.org/" target="_blank">Julia Docs</a></p>
+        </div>
+    </div>
+
+    <script src="../../js/cheatsheet.js"></script>
+    <script>
+        // Additional Julia-specific JavaScript can go here
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Julia Programming Cheatsheet loaded');
+        });
+    </script>
+</body>
+</html>

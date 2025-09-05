@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino IDE Cheatsheet - Programming Shortcuts & Commands</title>
+    <meta name="description" content="Complete Arduino IDE cheatsheet with keyboard shortcuts, programming syntax, board configurations, and microcontroller development commands.">
+    <meta name="keywords" content="arduino, ide, shortcuts, microcontroller, programming, embedded, development, board, serial, monitor">
+    <link rel="stylesheet" href="../../styles/cheatsheet.css">
+</head>
+<body>
+    <div class="cheatsheet-header no-print">
+        <div class="container">
+            <nav>
+                <a href="../../../index.html" class="back-link">
+                    <span>←</span> Back to Collection
+                </a>
+                <div class="header-actions">
+                    <input type="text" 
+                           id="searchInput" 
+                           class="in-page-search" 
+                           placeholder="Search commands..."
+                           aria-label="Search cheatsheet content">
+                    <button onclick="window.print()" class="print-btn">
+                        <span>🖨️</span> Print
+                    </button>
+                    <button onclick="toggleTheme()" class="theme-btn">
+                        <span>🌓</span> Theme
+                    </button>
+                </div>
+            </nav>
+            
+            <div class="title-section">
+                <h1>Arduino IDE Cheatsheet</h1>
+                <p class="subtitle">Essential shortcuts, programming syntax, and commands for microcontroller development</p>
+                <div class="meta">
+                    <span class="category-tag development">Development</span>
+                    <span class="type-tag">Commands</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cheatsheet-container">
+        <div class="container">
+            <!-- Table of Contents -->
+            <div class="table-of-contents">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#essential-shortcuts">Essential Shortcuts</a></li>
+                    <li><a href="#basic-programming">Basic Programming</a></li>
+                    <li><a href="#data-structures">Data Structures</a></li>
+                    <li><a href="#digital-io">Digital I/O</a></li>
+                    <li><a href="#analog-io">Analog I/O</a></li>
+                    <li><a href="#serial-communication">Serial Communication</a></li>
+                    <li><a href="#timing-functions">Timing Functions</a></li>
+                    <li><a href="#interrupts">Interrupts</a></li>
+                    <li><a href="#libraries">Libraries</a></li>
+                    <li><a href="#board-management">Board Management</a></li>
+                    <li><a href="#debugging">Debugging</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                </ul>
+            </div>
+
+            <!-- Essential Shortcuts -->
+            <div class="section" id="essential-shortcuts">
+                <h2>Essential Shortcuts</h2>
+                
+                <h3>File Operations</h3>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+N</div>
+                    <div class="shortcut-desc">Create new sketch</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+O</div>
+                    <div class="shortcut-desc">Open existing sketch</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+S</div>
+                    <div class="shortcut-desc">Save current sketch</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+Shift+S</div>
+                    <div class="shortcut-desc">Save with new name</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+U</div>
+                    <div class="shortcut-desc">Compile and upload to board</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+R</div>
+                    <div class="shortcut-desc">Compile without uploading</div>
+                </div>
+
+                <h3>Edit Operations</h3>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+X</div>
+                    <div class="shortcut-desc">Cut selected text</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+C</div>
+                    <div class="shortcut-desc">Copy selected text</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+V</div>
+                    <div class="shortcut-desc">Paste from clipboard</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+A</div>
+                    <div class="shortcut-desc">Select all text</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+F</div>
+                    <div class="shortcut-desc">Find text</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+G</div>
+                    <div class="shortcut-desc">Find next occurrence</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+H</div>
+                    <div class="shortcut-desc">Find and replace</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+/</div>
+                    <div class="shortcut-desc">Toggle line comments</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+]</div>
+                    <div class="shortcut-desc">Indent selected lines</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+[</div>
+                    <div class="shortcut-desc">Unindent selected lines</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+T</div>
+                    <div class="shortcut-desc">Format code automatically</div>
+                </div>
+
+                <h3>View and Tools</h3>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+Shift+M</div>
+                    <div class="shortcut-desc">Open serial monitor</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+Shift+L</div>
+                    <div class="shortcut-desc">Open serial plotter</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+,</div>
+                    <div class="shortcut-desc">Open preferences</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl++</div>
+                    <div class="shortcut-desc">Increase font size</div>
+                </div>
+                <div class="shortcut development">
+                    <div class="shortcut-key">Ctrl+-</div>
+                    <div class="shortcut-desc">Decrease font size</div>
+                </div>
+            </div>
+
+            <!-- Basic Programming -->
+            <div class="section" id="basic-programming">
+                <h2>Basic Programming</h2>
+                
+                <h3>Program Structure</h3>
+                <div class="command development">
+                    <div class="command-name">Basic Structure</div>
+                    <div class="command-desc">
+                        <pre><code>void setup() {
+  // Initialization code - runs once
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Main code - runs repeatedly
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+}</code></pre>
+                    </div>
+                </div>
+
+                <h3>Variable Declaration</h3>
+                <div class="command development">
+                    <div class="command-name">Integer Types</div>
+                    <div class="command-desc">
+                        <pre><code>int x = 42;           // 16-bit signed integer
+unsigned int y = 65535; // 16-bit unsigned integer
+long z = 1000000;     // 32-bit signed integer
+byte b = 255;         // 8-bit unsigned integer</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">Floating Point</div>
+                    <div class="command-desc">
+                        <pre><code>float temperature = 23.5;
+double precision = 3.14159265;</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">Boolean & Character</div>
+                    <div class="command-desc">
+                        <pre><code>bool isRunning = true;
+char letter = 'A';
+String message = "Hello Arduino";</code></pre>
+                    </div>
+                </div>
+
+                <h3>Constants & Pin Definitions</h3>
+                <div class="command development">
+                    <div class="command-name">Pin Constants</div>
+                    <div class="command-desc">
+                        <pre><code>const int ledPin = 13;
+const int buttonPin = 2;
+#define SENSOR_PIN A0
+#define RELAY_PIN 7</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Structures -->
+            <div class="section" id="data-structures">
+                <h2>Data Structures</h2>
+                
+                <h3>Arrays</h3>
+                <div class="command development">
+                    <div class="command-name">Array Declaration</div>
+                    <div class="command-desc">
+                        <pre><code>int sensorValues[5];              // Array of 5 integers
+int pinNumbers[] = {2, 3, 4, 5};  // Initialize with values
+byte buffer[32] = {0};            // Initialize all to 0</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">Array Access</div>
+                    <div class="command-desc">
+                        <pre><code>sensorValues[0] = 512;            // Set first element
+int reading = sensorValues[0];    // Read first element
+int arraySize = sizeof(pinNumbers) / sizeof(pinNumbers[0]);</code></pre>
+                    </div>
+                </div>
+
+                <h3>Strings</h3>
+                <div class="command development">
+                    <div class="command-name">String Operations</div>
+                    <div class="command-desc">
+                        <pre><code>String message = "Hello";
+message += " World";              // Concatenation
+int length = message.length();    // Get length
+char buffer[50];
+message.toCharArray(buffer, 50);  // Convert to char array</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital I/O -->
+            <div class="section" id="digital-io">
+                <h2>Digital I/O</h2>
+                
+                <h3>Pin Configuration</h3>
+                <div class="command development">
+                    <div class="command-name">pinMode()</div>
+                    <div class="command-desc">
+                        <pre><code>pinMode(pin, OUTPUT);        // Set pin as output
+pinMode(pin, INPUT);         // Set pin as input (floating)
+pinMode(pin, INPUT_PULLUP);  // Set pin as input with pullup resistor</code></pre>
+                    </div>
+                </div>
+
+                <h3>Digital Read/Write</h3>
+                <div class="command development">
+                    <div class="command-name">digitalWrite()</div>
+                    <div class="command-desc">
+                        <pre><code>digitalWrite(pin, HIGH);     // Set pin to 5V (or 3.3V)
+digitalWrite(pin, LOW);      // Set pin to 0V
+digitalWrite(13, !digitalRead(13)); // Toggle pin state</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">digitalRead()</div>
+                    <div class="command-desc">
+                        <pre><code>int buttonState = digitalRead(buttonPin);
+if (digitalRead(2) == HIGH) {
+  // Button pressed (assuming pulldown)
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analog I/O -->
+            <div class="section" id="analog-io">
+                <h2>Analog I/O</h2>
+                
+                <h3>Analog Input</h3>
+                <div class="command development">
+                    <div class="command-name">analogRead()</div>
+                    <div class="command-desc">
+                        <pre><code>int sensorValue = analogRead(A0);    // Read analog pin (0-1023)
+float voltage = sensorValue * (5.0 / 1023.0); // Convert to voltage</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">analogReference()</div>
+                    <div class="command-desc">
+                        <pre><code>analogReference(DEFAULT);    // 5V reference (or 3.3V)
+analogReference(INTERNAL);   // Internal 1.1V reference
+analogReference(EXTERNAL);   // External reference on AREF pin</code></pre>
+                    </div>
+                </div>
+
+                <h3>Analog Output (PWM)</h3>
+                <div class="command development">
+                    <div class="command-name">analogWrite()</div>
+                    <div class="command-desc">
+                        <pre><code>analogWrite(pin, value);     // PWM output (0-255)
+analogWrite(9, 128);         // 50% duty cycle on pin 9
+analogWrite(6, 0);           // 0% duty cycle (OFF)
+analogWrite(5, 255);         // 100% duty cycle (ON)</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Serial Communication -->
+            <div class="section" id="serial-communication">
+                <h2>Serial Communication</h2>
+                
+                <h3>Serial Setup</h3>
+                <div class="command development">
+                    <div class="command-name">Serial.begin()</div>
+                    <div class="command-desc">
+                        <pre><code>Serial.begin(9600);          // Initialize serial at 9600 baud
+Serial.begin(115200);        // Initialize at 115200 baud
+while (!Serial);             // Wait for serial port to connect</code></pre>
+                    </div>
+                </div>
+
+                <h3>Serial Output</h3>
+                <div class="command development">
+                    <div class="command-name">Serial Print Functions</div>
+                    <div class="command-desc">
+                        <pre><code>Serial.print("Hello");       // Print without newline
+Serial.println("World");     // Print with newline
+Serial.print(value, DEC);    // Print decimal (default)
+Serial.print(value, HEX);    // Print hexadecimal
+Serial.print(value, BIN);    // Print binary
+Serial.print(3.14159, 2);    // Print float with 2 decimal places</code></pre>
+                    </div>
+                </div>
+
+                <h3>Serial Input</h3>
+                <div class="command development">
+                    <div class="command-name">Serial Read Functions</div>
+                    <div class="command-desc">
+                        <pre><code>if (Serial.available()) {
+  char incomingByte = Serial.read();    // Read single byte
+  String inputString = Serial.readString(); // Read entire string
+  int number = Serial.parseInt();       // Read integer
+  float decimal = Serial.parseFloat();  // Read float
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timing Functions -->
+            <div class="section" id="timing-functions">
+                <h2>Timing Functions</h2>
+                
+                <h3>Delay Functions</h3>
+                <div class="command development">
+                    <div class="command-name">Blocking Delays</div>
+                    <div class="command-desc">
+                        <pre><code>delay(1000);                 // Wait 1000 milliseconds (1 second)
+delayMicroseconds(50);       // Wait 50 microseconds</code></pre>
+                    </div>
+                </div>
+
+                <h3>Non-blocking Timing</h3>
+                <div class="command development">
+                    <div class="command-name">millis() and micros()</div>
+                    <div class="command-desc">
+                        <pre><code>unsigned long currentTime = millis();      // Get current time in ms
+unsigned long previousTime = 0;
+const long interval = 1000;
+
+if (currentTime - previousTime >= interval) {
+  previousTime = currentTime;
+  // Execute code every 1000ms without blocking
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interrupts -->
+            <div class="section" id="interrupts">
+                <h2>Interrupts</h2>
+                
+                <h3>External Interrupts</h3>
+                <div class="command development">
+                    <div class="command-name">attachInterrupt()</div>
+                    <div class="command-desc">
+                        <pre><code>attachInterrupt(digitalPinToInterrupt(2), ISR_function, RISING);
+// Modes: LOW, CHANGE, RISING, FALLING
+
+void ISR_function() {
+  // Interrupt service routine - keep it short!
+  // No delay(), Serial.print(), or complex operations
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">detachInterrupt()</div>
+                    <div class="command-desc">
+                        <pre><code>detachInterrupt(digitalPinToInterrupt(2)); // Disable interrupt</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Libraries -->
+            <div class="section" id="libraries">
+                <h2>Libraries</h2>
+                
+                <h3>Including Libraries</h3>
+                <div class="command development">
+                    <div class="command-name">Library Management</div>
+                    <div class="command-desc">
+                        <pre><code>#include &lt;SoftwareSerial.h&gt;  // Include library
+#include "MyLibrary.h"       // Include local library
+
+// Popular libraries:
+#include &lt;Servo.h&gt;           // Servo motor control
+#include &lt;LiquidCrystal.h&gt;   // LCD display
+#include &lt;Wire.h&gt;            // I2C communication
+#include &lt;SPI.h&gt;             // SPI communication</code></pre>
+                    </div>
+                </div>
+
+                <h3>Common Library Examples</h3>
+                <div class="command development">
+                    <div class="command-name">Servo Control</div>
+                    <div class="command-desc">
+                        <pre><code>Servo myServo;
+myServo.attach(9);           // Attach servo to pin 9
+myServo.write(90);           // Move to 90 degrees
+int pos = myServo.read();    // Read current position</code></pre>
+                    </div>
+                </div>
+
+                <div class="command development">
+                    <div class="command-name">LCD Display</div>
+                    <div class="command-desc">
+                        <pre><code>LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+lcd.begin(16, 2);            // Initialize 16x2 LCD
+lcd.print("Hello, World!");  // Display text
+lcd.setCursor(0, 1);         // Set cursor to column 0, line 1
+lcd.clear();                 // Clear display</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Board Management -->
+            <div class="section" id="board-management">
+                <h2>Board Management</h2>
+                
+                <h3>Board Selection</h3>
+                <div class="command development">
+                    <div class="command-name">Popular Arduino Boards</div>
+                    <div class="command-desc">
+                        <ul>
+                            <li><strong>Arduino Uno R3:</strong> ATmega328P, 14 digital pins, 6 analog pins</li>
+                            <li><strong>Arduino Nano:</strong> Small form factor, same as Uno</li>
+                            <li><strong>Arduino Mega 2560:</strong> ATmega2560, 54 digital pins, 16 analog pins</li>
+                            <li><strong>Arduino Leonardo:</strong> ATmega32u4, built-in USB</li>
+                            <li><strong>Arduino Pro Mini:</strong> Small, no USB connector</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Port Configuration</h3>
+                <div class="command development">
+                    <div class="command-name">Serial Port Settings</div>
+                    <div class="command-desc">
+                        Common baud rates: 9600, 19200, 38400, 57600, 115200<br>
+                        Tools → Port → Select your Arduino's COM port<br>
+                        Tools → Board → Select your specific Arduino model
+                    </div>
+                </div>
+            </div>
+
+            <!-- Debugging -->
+            <div class="section" id="debugging">
+                <h2>Debugging</h2>
+                
+                <h3>Serial Monitor Debugging</h3>
+                <div class="command development">
+                    <div class="command-name">Debug Prints</div>
+                    <div class="command-desc">
+                        <pre><code>Serial.println("Starting program...");
+Serial.print("Sensor value: ");
+Serial.println(sensorValue);
+
+// Debug with timestamps
+Serial.print(millis());
+Serial.print(": ");
+Serial.println("Debug message");</code></pre>
+                    </div>
+                </div>
+
+                <h3>Common Issues</h3>
+                <div class="command development">
+                    <div class="command-name">Troubleshooting</div>
+                    <div class="command-desc">
+                        <ul>
+                            <li><strong>Upload Error:</strong> Check board and port selection</li>
+                            <li><strong>Serial Monitor Empty:</strong> Verify baud rate matches Serial.begin()</li>
+                            <li><strong>Code Not Running:</strong> Check for infinite loops in setup()</li>
+                            <li><strong>Unexpected Behavior:</strong> Use Serial.println() for debugging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="section" id="best-practices">
+                <h2>Best Practices</h2>
+                
+                <h3>Code Organization</h3>
+                <div class="command development">
+                    <div class="command-name">Structure Guidelines</div>
+                    <div class="command-desc">
+                        <ul>
+                            <li>Use meaningful variable names: <code>ledPin</code> instead of <code>p</code></li>
+                            <li>Add comments explaining complex logic</li>
+                            <li>Use constants for pin definitions</li>
+                            <li>Avoid delay() in time-critical applications</li>
+                            <li>Initialize all variables</li>
+                            <li>Use functions to organize repeated code</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Memory Management</h3>
+                <div class="command development">
+                    <div class="command-name">Memory Tips</div>
+                    <div class="command-desc">
+                        <ul>
+                            <li>Arduino Uno has only 2KB RAM - use sparingly</li>
+                            <li>Store large strings in program memory with <code>F()</code> macro</li>
+                            <li>Avoid creating large arrays in functions</li>
+                            <li>Use <code>const</code> for values that don't change</li>
+                            <li>Consider using <code>byte</code> instead of <code>int</code> when possible</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Power Management</h3>
+                <div class="command development">
+                    <div class="command-name">Power Saving</div>
+                    <div class="command-desc">
+                        <ul>
+                            <li>Use sleep modes for battery-powered projects</li>
+                            <li>Turn off unused peripherals</li>
+                            <li>Use appropriate resistor values for LEDs</li>
+                            <li>Consider using interrupts instead of polling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cheatsheet-footer no-print">
+        <div class="container">
+            <p>Arduino IDE Cheatsheet - Part of <a href="../../../index.html">CheatSheets Collection</a></p>
+            <p>For more resources, visit <a href="https://docs.arduino.cc/" target="_blank">Arduino Official Documentation</a></p>
+        </div>
+    </div>
+
+    <script src="../../js/cheatsheet.js"></script>
+    <script>
+        // Additional Arduino-specific JavaScript can go here
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Arduino IDE Cheatsheet loaded');
+        });
+    </script>
+</body>
+</html>
