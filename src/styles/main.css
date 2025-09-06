@@ -2,7 +2,7 @@
 
 /* CSS Custom Properties (Variables) */
 :root {
-  /* Category Colors */
+  /* Category Colors - Final Scheme */
   --software-development: #f97316;
   --data-science-analytics: #10b981;
   --scientific-computing: #3b82f6;
@@ -11,7 +11,7 @@
   --creative-media: #8b5cf6;
   --productivity: #0891b2;
   
-  /* Black Theme Colors */
+  /* Main Theme Colors */
   --primary: #000000;
   --secondary: #1a1a1a;
   --background: #ffffff;
@@ -439,6 +439,9 @@ a:hover {
 .category-icon.mechanical-design-cad { background-color: var(--mechanical-design-cad); }
 .category-icon.creative-media { background-color: var(--creative-media); }
 .category-icon.productivity { background-color: var(--productivity); }
+
+/* Fix productivity icon color specifically */
+.category-icon.productivity { background-color: #0891b2 !important; }
 
 /* Footer with Midnight Blue Background */
 .footer {
