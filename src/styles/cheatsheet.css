@@ -6,13 +6,16 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables for theming */
+/* CSS Variables for theming - Updated 2025-09-06 */
 :root {
     --background: #fafafa;
     --surface: #ffffff;
     --text-primary: #2d3748;
     --text-secondary: #4b5563;
     --border: #e2e8f0;
+    
+    /* Font families */
+    --font-mono: 'Consolas', 'Courier New', monospace;
     
     /* Category Colors - Consistent with main.css */
     --software-development: #f97316;
