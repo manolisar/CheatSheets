@@ -1,4 +1,8 @@
-/* Complete CheatSheet CSS - All styling for cheatsheet pages */
+/* CheatSheet CSS - Clean Architecture 2025-09-06 */
+
+/* =============================================================================
+   RESET & BASE STYLES
+============================================================================= */
 
 * {
     margin: 0;
@@ -6,27 +10,32 @@
     box-sizing: border-box;
 }
 
-/* CSS Variables for theming - Updated 2025-09-06 */
+/* =============================================================================
+   CSS VARIABLES
+============================================================================= */
+
 :root {
+    /* Base Colors */
     --background: #fafafa;
     --surface: #ffffff;
     --text-primary: #2d3748;
     --text-secondary: #4b5563;
     --border: #e2e8f0;
     
-    /* Font families */
+    /* Typography */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-mono: 'Consolas', 'Courier New', monospace;
     
     /* Category Colors - Consistent with main.css */
-    --software-development: #f97316;
-    --data-science-analytics: #10b981;
-    --scientific-computing: #3b82f6;
-    --electronics-circuit-design: #06b6d4;
-    --mechanical-design-cad: #ec4899;
-    --creative-media: #8b5cf6;
-    --productivity: #0891b2;
+    --software-development: #f97316;           /* Orange */
+    --data-science-analytics: #10b981;        /* Green */
+    --scientific-computing: #3b82f6;          /* Blue */
+    --electronics-circuit-design: #06b6d4;    /* Cyan */
+    --mechanical-design-cad: #ec4899;         /* Pink */
+    --creative-media: #8b5cf6;                /* Purple */
+    --productivity: #0891b2;                  /* Teal */
     
-    /* Derived colors for gradients */
+    /* Dark variants for gradients */
     --software-development-dark: #ea580c;
     --data-science-analytics-dark: #059669;
     --scientific-computing-dark: #2563eb;
@@ -36,8 +45,12 @@
     --productivity-dark: #0e7490;
 }
 
+/* =============================================================================
+   BODY & LAYOUT
+============================================================================= */
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.4;
     background: var(--background);
     color: var(--text-primary);
@@ -48,19 +61,78 @@ body {
 }
 
 /* =============================================================================
-   HEADER STYLING
+   CATEGORY THEME SYSTEM
+============================================================================= */
+
+body.software-development {
+    --category-color: var(--software-development);
+    --category-dark: var(--software-development-dark);
+    --category-bg: #fed7aa;
+    --category-text: #ea580c;
+    --category-border: #fdba74;
+}
+
+body.data-science-analytics {
+    --category-color: var(--data-science-analytics);
+    --category-dark: var(--data-science-analytics-dark);
+    --category-bg: #d1fae5;
+    --category-text: #059669;
+    --category-border: #a7f3d0;
+}
+
+body.scientific-computing {
+    --category-color: var(--scientific-computing);
+    --category-dark: var(--scientific-computing-dark);
+    --category-bg: #dbeafe;
+    --category-text: #2563eb;
+    --category-border: #93c5fd;
+}
+
+body.electronics-circuit-design {
+    --category-color: var(--electronics-circuit-design);
+    --category-dark: var(--electronics-circuit-design-dark);
+    --category-bg: #cffafe;
+    --category-text: #0891b2;
+    --category-border: #a5f3fc;
+}
+
+body.mechanical-design-cad {
+    --category-color: var(--mechanical-design-cad);
+    --category-dark: var(--mechanical-design-cad-dark);
+    --category-bg: #fce7f3;
+    --category-text: #db2777;
+    --category-border: #f9a8d4;
+}
+
+body.creative-media {
+    --category-color: var(--creative-media);
+    --category-dark: var(--creative-media-dark);
+    --category-bg: #f3e8ff;
+    --category-text: #7c3aed;
+    --category-border: #e9d5ff;
+}
+
+body.productivity {
+    --category-color: var(--productivity);
+    --category-dark: var(--productivity-dark);
+    --category-bg: #cdf4ea;
+    --category-text: #0e7490;
+    --category-border: #9fe7d5;
+}
+
+/* =============================================================================
+   HEADER
 ============================================================================= */
 
 .header {
     background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
+    color: white;
     padding: 20px;
     text-align: center;
-    color: white;
     margin-bottom: 0;
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .header h1 {
@@ -77,185 +149,51 @@ body {
 }
 
 /* =============================================================================
-   HEADER CONTROLS - Home button on left, Print/Theme on right
-============================================================================= */
-
-.header-controls-left {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.header-controls {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-}
-
-.header-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.header-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.header-btn:active {
-    transform: translateY(0);
-}
-
-.header-btn:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.8);
-    outline-offset: 2px;
-}
-
-/* =============================================================================
-   CATEGORY-SPECIFIC HEADER COLORS
-============================================================================= */
-
-/* Clean Header System - Using unified rule above */
-
-/* Category Color Assignment - Each body class sets all its colors */
-body.software-development { 
-    --category-color: var(--software-development); 
-    --category-dark: var(--software-development-dark);
-    --category-bg: #fed7aa;
-    --category-text: #ea580c;
-    --category-border: #fdba74;
-}
-body.data-science-analytics { 
-    --category-color: var(--data-science-analytics); 
-    --category-dark: var(--data-science-analytics-dark);
-    --category-bg: #d1fae5;
-    --category-text: #059669;
-    --category-border: #a7f3d0;
-}
-body.scientific-computing { 
-    --category-color: var(--scientific-computing); 
-    --category-dark: var(--scientific-computing-dark);
-    --category-bg: #dbeafe;
-    --category-text: #2563eb;
-    --category-border: #93c5fd;
-}
-body.electronics-circuit-design { 
-    --category-color: var(--electronics-circuit-design); 
-    --category-dark: var(--electronics-circuit-design-dark);
-    --category-bg: #cffafe;
-    --category-text: #0891b2;
-    --category-border: #a5f3fc;
-}
-body.mechanical-design-cad { 
-    --category-color: var(--mechanical-design-cad); 
-    --category-dark: var(--mechanical-design-cad-dark);
-    --category-bg: #fce7f3;
-    --category-text: #db2777;
-    --category-border: #f9a8d4;
-}
-body.creative-media { 
-    --category-color: var(--creative-media); 
-    --category-dark: var(--creative-media-dark);
-    --category-bg: #f3e8ff;
-    --category-text: #7c3aed;
-    --category-border: #e9d5ff;
-}
-body.productivity { 
-    --category-color: var(--productivity); 
-    --category-dark: var(--productivity-dark);
-    --category-bg: #cdf4ea;
-    --category-text: #0e7490;
-    --category-border: #9fe7d5;
-}
-
-/* =============================================================================
-   MAIN CONTENT LAYOUT - TWO COLUMNS
+   MAIN CONTENT
 ============================================================================= */
 
 .container {
     flex: 1;
-    columns: 2;
-    column-gap: 20px;
-    padding: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    width: 100%;
+    padding: 20px;
+    columns: 3;
+    column-gap: 20px;
+    column-fill: balance;
 }
-
-/* =============================================================================
-   SECTION STYLING
-============================================================================= */
 
 .section {
     background: var(--surface);
-    border: 1px solid var(--border);
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
     break-inside: avoid;
     page-break-inside: avoid;
+    border: 1px solid var(--border);
 }
 
-/* Clean Section Header System - Single Rule for All Categories */
 .section h2 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--category-color);
     margin-bottom: 12px;
     padding-bottom: 8px;
     border-bottom: 2px solid var(--category-color);
-    color: var(--category-dark);
 }
 
 /* =============================================================================
-   COMMAND STYLING
+   COMMAND LINES
 ============================================================================= */
 
 .command-line {
     display: flex;
     align-items: flex-start;
-    margin: 6px 0;
+    margin: 4px 0;
     position: relative;
-    padding-right: 40px; /* Space for copy button */
-    min-height: 24px;
+    min-height: 20px;
 }
 
-.command, .shortcut, .shortcut-keys {
-    background: #f8f9fa;
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-weight: 600;
-    white-space: pre-wrap;
-    flex-shrink: 0;
-    margin-right: 8px;
-    font-size: 11px;
-    max-width: 300px;
-    line-height: 1.3;
-    word-break: break-word;
-}
-
-/* Clean Content System - Single Rule for All Categories */
 .command,
 .shortcut,
 .shortcut-keys {
@@ -266,202 +204,75 @@ body.productivity {
     border-radius: 3px;
     font-family: var(--font-mono);
     font-size: 11px;
+    font-weight: 600;
     display: inline-block;
-    margin: 2px 4px 2px 0;
+    margin-right: 8px;
     line-height: 1.1;
     word-break: break-word;
+    white-space: pre-wrap;
 }
-
-
 
 .description {
     color: var(--text-secondary);
     font-size: 11px;
     flex: 1;
+    padding: 3px 0;
+    line-height: 1.2;
 }
 
 /* =============================================================================
-   COPY BUTTON STYLING
+   SPECIAL CONTENT BLOCKS
 ============================================================================= */
 
-.copy-btn {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #6b7280;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    width: 24px;
-    height: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.7;
-    transition: all 0.2s ease;
-}
-
-.copy-btn:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.05);
-}
-
-.copy-btn.copied {
-    background: #10b981;
-    animation: pulse 0.3s ease;
-}
-
-@keyframes pulse {
-    0% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-50%) scale(1.1); }
-    100% { transform: translateY(-50%) scale(1); }
-}
-
-/* =============================================================================
-   WORKFLOW, TIP, AND EXAMPLE STYLING
-============================================================================= */
-
-.workflow, .tip, .example {
-    background: #f8fafc;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px;
+.workflow,
+.tip,
+.example {
+    background: var(--surface);
+    padding: 12px;
     margin: 8px 0;
+    border-radius: 4px;
     font-size: 11px;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .workflow {
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid var(--category-color);
+    background: var(--category-bg);
 }
 
 .tip {
-    border-left: 4px solid #10b981;
+    border-left: 4px solid var(--data-science-analytics);
+    background: #d1fae5;
 }
 
 .example {
-    font-family: 'Consolas', 'Courier New', monospace;
-    background: #1f2937;
-    color: #e5e7eb;
-    border: 1px solid #374151;
+    border-left: 4px solid var(--text-secondary);
+    background: #f8f9fa;
 }
 
 /* =============================================================================
-   FOOTER STYLING - Home button on left, stats on right
+   FOOTER
 ============================================================================= */
 
 .footer {
+    background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 12px;
     margin-top: auto;
-    padding: 16px 20px;
-    text-align: left;
+    font-size: 11px;
+}
+
+.footer a {
     color: white;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-stats {
-    font-size: 13px;
-    font-weight: 500;
-    color: white;
-    opacity: 0.9;
-    text-align: right;
-}
-
-.footer-link {
-    color: rgba(255,255,255,0.9);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-    font-size: 13px;
-    white-space: nowrap;
+    opacity: 0.9;
 }
 
-.footer-link:hover {
-    color: white;
+.footer a:hover {
+    opacity: 1;
     text-decoration: underline;
 }
-
-.footer-link:focus {
-    outline: 2px solid rgba(255,255,255,0.8);
-    outline-offset: 2px;
-}
-
-
-/* =============================================================================
-   DARK THEME SUPPORT
-============================================================================= */
-
-body.dark-theme {
-    --background: #1a202c;
-    --surface: #2d3748;
-    --text-primary: #f7fafc;
-    --text-secondary: #cbd5e0;
-    --border: #4a5568;
-    
-    background-color: var(--background);
-    color: var(--text-primary);
-}
-
-body.dark-theme .header-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .header-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .section {
-    background: var(--surface);
-    border-color: var(--border);
-}
-
-body.dark-theme .workflow,
-body.dark-theme .tip {
-    background: var(--surface);
-    border-color: var(--border);
-}
-
-body.dark-theme .example {
-    background: #111827;
-    color: #f3f4f6;
-    border-color: #374151;
-}
-
-/* Dark theme command styling adjustments */
-body.dark-theme .command,
-body.dark-theme .shortcut,
-body.dark-theme .shortcut-keys {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-}
-
-/* Category-specific dark theme command colors */
 
 /* =============================================================================
    RESPONSIVE DESIGN
@@ -469,7 +280,7 @@ body.dark-theme .shortcut-keys {
 
 @media (max-width: 1024px) {
     .container {
-        columns: 1;
+        columns: 2;
         column-gap: 16px;
         padding: 16px;
     }
@@ -477,156 +288,41 @@ body.dark-theme .shortcut-keys {
     .header h1 {
         font-size: 24px;
     }
-    
-    body {
-        font-size: 13px;
-    }
 }
 
 @media (max-width: 768px) {
     .container {
+        columns: 1;
         padding: 12px;
-        column-gap: 12px;
     }
     
     .header {
         padding: 16px 12px;
-        min-height: auto;
-    }
-    
-    .command, .shortcut, .shortcut-keys {
-        max-width: 250px;
-    }
-    
-    .header-controls-left,
-    .header-controls {
-        position: static;
-        margin-top: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 100%;
-    }
-    
-    .header-controls-left {
-        order: 1;
-        margin-bottom: 10px;
-    }
-    
-    .header-controls {
-        order: 2;
-    }
-    
-    .header-btn {
-        font-size: 12px;
-        padding: 6px 12px;
-        max-width: 120px;
-        text-overflow: ellipsis;
-        overflow: hidden;
     }
     
     .header h1 {
         font-size: 22px;
-        word-wrap: break-word;
-        hyphens: auto;
     }
     
     .header p {
         font-size: 13px;
-        word-wrap: break-word;
-    }
-    
-    body {
-        font-size: 12px;
-    }
-    
-    .section {
-        padding: 12px;
-    }
-    
-    .command-line {
-        padding-right: 35px;
-    }
-    
-    .copy-btn {
-        width: 20px;
-        height: 18px;
-        font-size: 11px;
-    }
-    
-    .footer {
-        padding: 12px;
-    }
-    
-    .footer-nav {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
-    
-    .footer-stats {
-        text-align: center;
-        font-size: 12px;
-        line-height: 1.4;
-        word-wrap: break-word;
-    }
-    
-    .footer-link {
-        font-size: 12px;
-        word-wrap: break-word;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        column-gap: 10px;
-    }
-    
-    .header, .footer {
-        padding: 12px 8px;
-        min-width: 0;
-    }
-    
     .header h1 {
         font-size: 20px;
-        word-wrap: break-word;
-        hyphens: auto;
     }
     
-    .header p {
-        word-wrap: break-word;
-        hyphens: auto;
+    .command,
+    .shortcut,
+    .shortcut-keys {
+        font-size: 10px;
+        padding: 2px 4px;
     }
     
-    .header-btn {
-        font-size: 11px;
-        padding: 4px 8px;
-        max-width: 100px;
-        min-width: 0;
-    }
-    
-    body {
-        font-size: 11px;
-        overflow-x: hidden;
-    }
-    
-    .section {
-        padding: 10px;
-    }
-    
-    .footer {
-        text-align: center;
-        padding: 12px 8px;
-    }
-    
-    .footer-nav {
-        gap: 6px;
-    }
-    
-    .footer-stats,
-    .footer-link {
-        word-wrap: break-word;
-        hyphens: auto;
+    .description {
+        font-size: 10px;
     }
 }
 
@@ -636,42 +332,14 @@ body.dark-theme .shortcut-keys {
 
 @media print {
     body {
-        background: white;
-        font-size: 9px;
-        color: black;
-    }
-    
-    /* Hide interactive elements */
-    .header-controls-left,
-    .header-controls,
-    .copy-btn {
-        display: none !important;
+        font-size: 10px;
+        background: white !important;
     }
     
     .header,
     .footer {
         background: #333 !important;
         color: white !important;
-        box-shadow: none !important;
-    }
-    
-    .footer-stats,
-    .footer-link {
-        color: white !important;
-    }
-    
-    .container {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        padding: 10px;
-    }
-    
-    .section {
-        border: 1px solid #ddd;
-        break-inside: avoid;
-        page-break-inside: avoid;
-        box-shadow: none;
-        background: white !important;
     }
     
     .command,
@@ -682,75 +350,8 @@ body.dark-theme .shortcut-keys {
         border: 1px solid #ccc !important;
     }
     
-    .description {
-        color: #333 !important;
-    }
-    
-    .workflow,
-    .tip,
-    .example {
-        break-inside: avoid;
-        border: 1px solid #ddd;
-        background: #f9f9f9 !important;
-        color: #333 !important;
-    }
-    
-    .command-line {
+    .section {
         break-inside: avoid;
         page-break-inside: avoid;
     }
-    
-    .section h2 {
-        color: #000 !important;
-        border-bottom-color: #ccc !important;
-    }
-}
-
-/* =============================================================================
-   ACCESSIBILITY IMPROVEMENTS
-============================================================================= */
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .header-btn {
-        border: 2px solid white;
-        background: rgba(0, 0, 0, 0.8);
-    }
-    
-    .command,
-    .shortcut,
-    .shortcut-keys {
-        border: 2px solid currentColor !important;
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* =============================================================================
-   UTILITY CLASSES
-============================================================================= */
-
-.hidden {
-    display: none;
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
 }
