@@ -269,16 +269,6 @@ body.productivity {
     word-break: break-word;
 }
 
-body.python-data-science .command,
-body.python-data-science .shortcut,
-body.python-data-science .shortcut-keys,
-body.python .command,
-body.python .shortcut,
-body.python .shortcut-keys {
-    background: #dbeafe;
-    color: #1e40af;
-    border: 1px solid #93c5fd;
-}
 
 body.system .command,
 body.system .shortcut,
@@ -466,8 +456,6 @@ body.network .shortcut-keys {
 
 /* Category-specific footer colors */
 body.development .footer { background: linear-gradient(135deg, var(--development) 0%, #d63384 100%); }
-body.python-data-science .footer,
-body.python .footer { background: linear-gradient(135deg, var(--python-data-science) 0%, #1e40af 100%); }
 body.system .footer { background: linear-gradient(135deg, var(--system) 0%, #0e7490 100%); }
 body.mathematical .footer { background: linear-gradient(135deg, var(--mathematical) 0%, #1d4ed8 100%); }
 body.design-cad .footer { background: linear-gradient(135deg, var(--design-cad) 0%, #be185d 100%); }
@@ -534,16 +522,6 @@ body.dark-theme.development .shortcut-keys {
     border: 1px solid rgba(240, 80, 50, 0.3);
 }
 
-body.dark-theme.python-data-science .command,
-body.dark-theme.python-data-science .shortcut,
-body.dark-theme.python-data-science .shortcut-keys,
-body.dark-theme.python .command,
-body.dark-theme.python .shortcut,
-body.dark-theme.python .shortcut-keys {
-    background: rgba(55, 118, 171, 0.2);
-    color: #dbeafe;
-    border: 1px solid rgba(55, 118, 171, 0.3);
-}
 
 body.dark-theme.system .command,
 body.dark-theme.system .shortcut,
