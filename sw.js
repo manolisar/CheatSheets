@@ -1,7 +1,7 @@
 // Service Worker for CheatSheets Collection PWA
-const CACHE_NAME = 'cheatsheets-v1.2.0';
-const STATIC_CACHE_NAME = 'cheatsheets-static-v1.2.0';
-const DYNAMIC_CACHE_NAME = 'cheatsheets-dynamic-v1.2.0';
+const CACHE_NAME = 'cheatsheets-v1.3.0';
+const STATIC_CACHE_NAME = 'cheatsheets-static-v1.3.0';
+const DYNAMIC_CACHE_NAME = 'cheatsheets-dynamic-v1.3.0';
 
 // Resources to cache immediately
 const STATIC_ASSETS = [
