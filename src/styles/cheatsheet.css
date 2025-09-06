@@ -124,7 +124,8 @@ body.productivity {
    HEADER
 ============================================================================= */
 
-.header {
+.header,
+.cheatsheet-header {
     background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
     color: white;
     padding: 20px;
@@ -133,6 +134,45 @@ body.productivity {
     position: relative;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* Handle different header structures */
+.cheatsheet-header {
+    margin-bottom: 20px;
+}
+
+.cheatsheet-header h1,
+.title-section h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.title-section {
+    text-align: center;
+}
+
+.title-section .subtitle {
+    color: white;
+    opacity: 0.9;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.meta {
+    margin-top: 10px;
+}
+
+.category-tag,
+.type-tag {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    margin: 0 2px;
 }
 
 .header h1 {
@@ -152,7 +192,8 @@ body.productivity {
    MAIN CONTENT
 ============================================================================= */
 
-.container {
+.container,
+.cheatsheet-container {
     flex: 1;
     max-width: 1400px;
     margin: 0 auto;
@@ -160,6 +201,12 @@ body.productivity {
     columns: 3;
     column-gap: 20px;
     column-fill: balance;
+}
+
+/* Container inside header should not have columns */
+.cheatsheet-header .container {
+    columns: initial;
+    padding: 0;
 }
 
 .section {
