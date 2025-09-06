@@ -377,41 +377,59 @@ a:hover {
   font-weight: 500;
 }
 
-/* Category Color Assignments - Clean Structure */
+/* Category Color Assignments - Direct Colors (No Variables) */
 .software-development { 
-  --card-color: var(--software-development);
-  border-left-color: var(--software-development);
+  --card-color: #f97316;
+  border-left-color: #f97316;
 }
 
 .data-science-analytics { 
-  --card-color: var(--data-science-analytics);
-  border-left-color: var(--data-science-analytics);
+  --card-color: #10b981;
+  border-left-color: #10b981;
 }
 
 .scientific-computing { 
-  --card-color: var(--scientific-computing);
-  border-left-color: var(--scientific-computing);
+  --card-color: #3b82f6;
+  border-left-color: #3b82f6;
 }
 
 .electronics-circuit-design { 
-  --card-color: var(--electronics-circuit-design);
-  border-left-color: var(--electronics-circuit-design);
+  --card-color: #06b6d4;
+  border-left-color: #06b6d4;
 }
 
 .mechanical-design-cad { 
-  --card-color: var(--mechanical-design-cad);
-  border-left-color: var(--mechanical-design-cad);
+  --card-color: #ec4899;
+  border-left-color: #ec4899;
 }
 
 .creative-media { 
-  --card-color: var(--creative-media);
-  border-left-color: var(--creative-media);
+  --card-color: #8b5cf6;
+  border-left-color: #8b5cf6;
 }
 
 .productivity { 
-  --card-color: var(--productivity);
-  border-left-color: var(--productivity);
+  --card-color: #0891b2;
+  border-left-color: #0891b2;
 }
+
+/* Direct styling for card type badges */
+.software-development .card-type { background: #f97316; }
+.data-science-analytics .card-type { background: #10b981; }
+.scientific-computing .card-type { background: #3b82f6; }
+.electronics-circuit-design .card-type { background: #06b6d4; }
+.mechanical-design-cad .card-type { background: #ec4899; }
+.creative-media .card-type { background: #8b5cf6; }
+.productivity .card-type { background: #0891b2; }
+
+/* Direct styling for card gradients */
+.software-development::before { background: linear-gradient(90deg, #f97316, transparent); }
+.data-science-analytics::before { background: linear-gradient(90deg, #10b981, transparent); }
+.scientific-computing::before { background: linear-gradient(90deg, #3b82f6, transparent); }
+.electronics-circuit-design::before { background: linear-gradient(90deg, #06b6d4, transparent); }
+.mechanical-design-cad::before { background: linear-gradient(90deg, #ec4899, transparent); }
+.creative-media::before { background: linear-gradient(90deg, #8b5cf6, transparent); }
+.productivity::before { background: linear-gradient(90deg, #0891b2, transparent); }
 
 /* Category Icon Colors */
 .category-icon.software-development { background-color: var(--software-development); }
