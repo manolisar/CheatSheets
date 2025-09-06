@@ -251,6 +251,14 @@ body.productivity .section h2 {
 }
 
 /* Category-specific command styling */
+body.software-development .command,
+body.software-development .shortcut,
+body.software-development .shortcut-keys {
+    background: #fed7aa;
+    color: #ea580c;
+    border: 1px solid #fdba74;
+}
+
 body.development .command,
 body.development .shortcut,
 body.development .shortcut-keys {
