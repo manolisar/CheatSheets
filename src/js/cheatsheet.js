@@ -14,7 +14,10 @@ function initializeCheatsheet() {
 // Add header control buttons
 function addHeaderControls() {
     const header = document.querySelector('.header');
-    if (!header) return;
+    const cheatsheetHeader = document.querySelector('.cheatsheet-header');
+    
+    // Don't add buttons to cheatsheet-header files (they have their own)
+    if (!header || cheatsheetHeader) return;
 
     // Create left controls container (Home button only)
     const leftControlsContainer = document.createElement('div');
