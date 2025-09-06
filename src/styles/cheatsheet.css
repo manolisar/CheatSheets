@@ -1,4 +1,4 @@
-/* CheatSheet CSS - Clean Architecture 2025-09-06 */
+/* CheatSheet CSS - Clean Architecture 2025-09-06-v2 - Scientific Computing Debug */
 
 /* =============================================================================
    RESET & BASE STYLES
@@ -86,6 +86,11 @@ body.scientific-computing {
     --category-bg: #dbeafe;
     --category-text: #2563eb;
     --category-border: #93c5fd;
+}
+
+/* DEBUG: Force scientific computing header to be blue */
+body.scientific-computing .header {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
 }
 
 body.electronics-circuit-design {
