@@ -49,6 +49,7 @@ body {
 ============================================================================= */
 
 .header {
+    background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
     padding: 20px;
     text-align: center;
     color: white;
@@ -130,17 +131,7 @@ body {
    CATEGORY-SPECIFIC HEADER COLORS
 ============================================================================= */
 
-/* Clean Header System - Single Rule for All Categories */
-.header {
-    background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 0;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
+/* Clean Header System - Using unified rule above */
 
 /* Category Color Assignment - Each body class sets all its colors */
 body.software-development { 
