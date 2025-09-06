@@ -130,27 +130,67 @@ body {
    CATEGORY-SPECIFIC HEADER COLORS
 ============================================================================= */
 
-/* Header gradients for each category */
-body.software-development .header { 
-    background: linear-gradient(135deg, var(--software-development) 0%, var(--software-development-dark) 100%); 
+/* Clean Header System - Single Rule for All Categories */
+.header {
+    background: linear-gradient(135deg, var(--category-color) 0%, var(--category-dark) 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
-body.data-science-analytics .header { 
-    background: linear-gradient(135deg, var(--data-science-analytics) 0%, var(--data-science-analytics-dark) 100%); 
+
+/* Category Color Assignment - Each body class sets all its colors */
+body.software-development { 
+    --category-color: var(--software-development); 
+    --category-dark: var(--software-development-dark);
+    --category-bg: #fed7aa;
+    --category-text: #ea580c;
+    --category-border: #fdba74;
 }
-body.scientific-computing .header { 
-    background: linear-gradient(135deg, var(--scientific-computing) 0%, var(--scientific-computing-dark) 100%); 
+body.data-science-analytics { 
+    --category-color: var(--data-science-analytics); 
+    --category-dark: var(--data-science-analytics-dark);
+    --category-bg: #d1fae5;
+    --category-text: #059669;
+    --category-border: #a7f3d0;
 }
-body.electronics-circuit-design .header { 
-    background: linear-gradient(135deg, var(--electronics-circuit-design) 0%, var(--electronics-circuit-design-dark) 100%); 
+body.scientific-computing { 
+    --category-color: var(--scientific-computing); 
+    --category-dark: var(--scientific-computing-dark);
+    --category-bg: #dbeafe;
+    --category-text: #2563eb;
+    --category-border: #93c5fd;
 }
-body.mechanical-design-cad .header { 
-    background: linear-gradient(135deg, var(--mechanical-design-cad) 0%, var(--mechanical-design-cad-dark) 100%); 
+body.electronics-circuit-design { 
+    --category-color: var(--electronics-circuit-design); 
+    --category-dark: var(--electronics-circuit-design-dark);
+    --category-bg: #cffafe;
+    --category-text: #0891b2;
+    --category-border: #a5f3fc;
 }
-body.creative-media .header { 
-    background: linear-gradient(135deg, var(--creative-media) 0%, var(--creative-media-dark) 100%); 
+body.mechanical-design-cad { 
+    --category-color: var(--mechanical-design-cad); 
+    --category-dark: var(--mechanical-design-cad-dark);
+    --category-bg: #fce7f3;
+    --category-text: #db2777;
+    --category-border: #f9a8d4;
 }
-body.productivity .header { 
-    background: linear-gradient(135deg, var(--productivity) 0%, var(--productivity-dark) 100%); 
+body.creative-media { 
+    --category-color: var(--creative-media); 
+    --category-dark: var(--creative-media-dark);
+    --category-bg: #f3e8ff;
+    --category-text: #7c3aed;
+    --category-border: #e9d5ff;
+}
+body.productivity { 
+    --category-color: var(--productivity); 
+    --category-dark: var(--productivity-dark);
+    --category-bg: #cdf4ea;
+    --category-text: #0e7490;
+    --category-border: #9fe7d5;
 }
 
 /* =============================================================================
@@ -181,43 +221,14 @@ body.productivity .header {
     page-break-inside: avoid;
 }
 
+/* Clean Section Header System - Single Rule for All Categories */
 .section h2 {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 12px;
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
-    color: var(--text-primary);
-}
-
-/* Category-specific section headers */
-body.software-development .section h2 { 
-    border-bottom-color: var(--software-development); 
-    color: var(--software-development-dark); 
-}
-body.data-science-analytics .section h2 { 
-    border-bottom-color: var(--data-science-analytics); 
-    color: var(--data-science-analytics-dark); 
-}
-body.scientific-computing .section h2 { 
-    border-bottom-color: var(--scientific-computing); 
-    color: var(--scientific-computing-dark); 
-}
-body.electronics-circuit-design .section h2 { 
-    border-bottom-color: var(--electronics-circuit-design); 
-    color: var(--electronics-circuit-design-dark); 
-}
-body.mechanical-design-cad .section h2 { 
-    border-bottom-color: var(--mechanical-design-cad); 
-    color: var(--mechanical-design-cad-dark); 
-}
-body.creative-media .section h2 { 
-    border-bottom-color: var(--creative-media); 
-    color: var(--creative-media-dark); 
-}
-body.productivity .section h2 { 
-    border-bottom-color: var(--productivity); 
-    color: var(--productivity-dark); 
+    border-bottom: 2px solid var(--category-color);
+    color: var(--category-dark);
 }
 
 /* =============================================================================
@@ -250,21 +261,21 @@ body.productivity .section h2 {
     word-break: break-word;
 }
 
-/* Category-specific command styling */
-body.software-development .command,
-body.software-development .shortcut,
-body.software-development .shortcut-keys {
-    background: #fed7aa;
-    color: #ea580c;
-    border: 1px solid #fdba74;
-}
-
-body.development .command,
-body.development .shortcut,
-body.development .shortcut-keys {
-    background: #fed7aa;
-    color: #c2410c;
-    border: 1px solid #fdba74;
+/* Clean Content System - Single Rule for All Categories */
+.command,
+.shortcut,
+.shortcut-keys {
+    background: var(--category-bg);
+    color: var(--category-text);
+    border: 1px solid var(--category-border);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    display: inline-block;
+    margin: 2px 4px 2px 0;
+    line-height: 1.3;
+    word-break: break-word;
 }
 
 body.python-data-science .command,
