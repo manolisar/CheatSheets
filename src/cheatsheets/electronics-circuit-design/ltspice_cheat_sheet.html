@@ -3,836 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTspice Circuit Simulation Cheatsheet - SPICE Analysis & Design</title>
-    <meta name="description" content="Complete LTspice cheatsheet with SPICE commands, circuit analysis, component libraries, waveform viewer shortcuts, and simulation workflows.">
-    <meta name="keywords" content="ltspice, spice, circuit simulation, electronics, analog design, waveform, analysis, schematic">
+    <title>LTspice Circuit Simulation Cheatsheet - SPICE Analysis & Commands</title>
+    <meta name="description" content="Complete LTspice cheatsheet with SPICE commands, circuit analysis, simulation setup, and analog design workflows.">
+    <meta name="keywords" content="ltspice, spice, circuit simulation, analog design, circuit analysis, electronics, schematic capture, transient analysis">
     <link rel="stylesheet" href="../../styles/cheatsheet.css">
 </head>
 <body class="electronics-circuit-design">
-    <div class="cheatsheet-header no-print">
-        <div class="container">
-            <nav>
-                <a href="../../../index.html" class="back-link">
-                    <span>←</span> Back to Collection
-                </a>
-                <div class="header-actions">
-                    <input type="text" 
-                           id="searchInput" 
-                           class="in-page-search" 
-                           placeholder="Search commands..."
-                           aria-label="Search cheatsheet content">
-                    <button onclick="window.print()" class="print-btn">
-                        <span>🖨️</span> Print
-                    </button>
-                    <button onclick="toggleTheme()" class="theme-btn">
-                        <span>🌓</span> Theme
-                    </button>
-                </div>
-            </nav>
-            
-            <div class="title-section">
-                <h1>LTspice Circuit Simulation Cheatsheet</h1>
-                <p class="subtitle">Circuit analysis, SPICE commands, and simulation workflows for analog design</p>
-                <div class="meta">
-                    <span class="category-tag mathematical">Mathematical</span>
-                    <span class="type-tag">Commands</span>
-                </div>
+    <header class="header">
+        <h1>LTspice Circuit Simulation</h1>
+        <p>Complete SPICE simulation reference with analysis commands, circuit modeling, and analog design workflows</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>Basic Navigation</h2>
+            <div class="command-line">
+                <span class="command">F2</span>
+                <span class="description">Add component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F3</span>
+                <span class="description">Draw wire</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F4</span>
+                <span class="description">Add text label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F5</span>
+                <span class="description">Add ground</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + R</span>
+                <span class="description">Rotate component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + E</span>
+                <span class="description">Mirror component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Delete</span>
+                <span class="description">Delete selected</span>
+            </div>
+            <div class="command-line">
+                <span class="command">M</span>
+                <span class="description">Move selected</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F9</span>
+                <span class="description">Undo</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F10</span>
+                <span class="description">Redo</span>
             </div>
         </div>
-    </div>
 
-    <div class="cheatsheet-container">
-        <div class="container">
-            <!-- Table of Contents -->
-            <div class="table-of-contents">
-                <h3>Quick Navigation</h3>
-                <ul>
-                    <li><a href="#essential-shortcuts">Essential Shortcuts</a></li>
-                    <li><a href="#schematic-capture">Schematic Capture</a></li>
-                    <li><a href="#component-placement">Component Placement</a></li>
-                    <li><a href="#spice-directives">SPICE Directives</a></li>
-                    <li><a href="#analysis-types">Analysis Types</a></li>
-                    <li><a href="#waveform-viewer">Waveform Viewer</a></li>
-                    <li><a href="#component-models">Component Models</a></li>
-                    <li><a href="#behavioral-modeling">Behavioral Modeling</a></li>
-                    <li><a href="#simulation-control">Simulation Control</a></li>
-                    <li><a href="#measurement-functions">Measurement Functions</a></li>
-                    <li><a href="#troubleshooting">Troubleshooting</a></li>
-                    <li><a href="#advanced-techniques">Advanced Techniques</a></li>
-                </ul>
+        <div class="section">
+            <h2>Simulation Commands</h2>
+            <div class="command-line">
+                <span class="command">.tran</span>
+                <span class="description">Transient analysis</span>
             </div>
-
-            <!-- Essential Shortcuts -->
-            <div class="section" id="essential-shortcuts">
-                <h2>Essential Shortcuts</h2>
-                
-                <h3>File Operations</h3>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+N</div>
-                    <div class="shortcut-desc">New schematic</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+O</div>
-                    <div class="shortcut-desc">Open schematic</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+S</div>
-                    <div class="shortcut-desc">Save schematic</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+P</div>
-                    <div class="shortcut-desc">Print schematic</div>
-                </div>
-
-                <h3>Navigation & View</h3>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F5</div>
-                    <div class="shortcut-desc">Zoom to fit</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F6</div>
-                    <div class="shortcut-desc">Zoom to area</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F7</div>
-                    <div class="shortcut-desc">Zoom in</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F8</div>
-                    <div class="shortcut-desc">Zoom out</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F9</div>
-                    <div class="shortcut-desc">Undo view change</div>
-                </div>
-
-                <h3>Component Operations</h3>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F2</div>
-                    <div class="shortcut-desc">Place component</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F3</div>
-                    <div class="shortcut-desc">Place wire</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">F4</div>
-                    <div class="shortcut-desc">Place text/label</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+R</div>
-                    <div class="shortcut-desc">Rotate component</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+E</div>
-                    <div class="shortcut-desc">Mirror component</div>
-                </div>
-
-                <h3>Simulation Control</h3>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Alt+R</div>
-                    <div class="shortcut-desc">Run simulation</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+Alt+H</div>
-                    <div class="shortcut-desc">Halt simulation</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">S</div>
-                    <div class="shortcut-desc">Edit simulation command</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">T</div>
-                    <div class="shortcut-desc">Place SPICE directive</div>
-                </div>
+            <div class="command-line">
+                <span class="command">.ac</span>
+                <span class="description">AC analysis</span>
             </div>
-
-            <!-- Schematic Capture -->
-            <div class="section" id="schematic-capture">
-                <h2>Schematic Capture</h2>
-                
-                <h3>Drawing Tools</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Wire Placement</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>F3:</strong> Draw wire mode</li>
-                            <li><strong>Ctrl+Click:</strong> Start wire from pin</li>
-                            <li><strong>Right-click:</strong> End wire segment</li>
-                            <li><strong>Esc:</strong> Cancel wire drawing</li>
-                            <li><strong>Auto-junction:</strong> Wires automatically connect at intersections</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="command mathematical">
-                    <div class="command-name">Net Labels & Names</div>
-                    <div class="command-desc">
-                        <pre><code>F4 - Place net label
-Ctrl+H - Place net name 
-Right-click wire → "Label Net" 
-
-Net naming conventions:
-- VCC, VDD, VEE - Power rails
-- GND, 0 - Ground (node 0)
-- IN, OUT - Signal names
-- No spaces in net names</code></pre>
-                    </div>
-                </div>
-
-                <h3>Grid & Alignment</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Grid Settings</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Ctrl+G:</strong> Toggle grid display</li>
-                            <li><strong>Grid spacing:</strong> Default 16 units (0.1 inch)</li>
-                            <li><strong>Snap to grid:</strong> Always enabled</li>
-                            <li><strong>Component alignment:</strong> Use grid for clean schematics</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Selection & Editing</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Object Manipulation</div>
-                    <div class="command-desc">
-                        <pre><code>Left-click - Select single object
-Ctrl+Click - Toggle selection
-Drag rectangle - Select multiple objects
-Delete - Remove selected objects
-Ctrl+C/V - Copy/Paste
-Ctrl+D - Duplicate (copy and move)
-Ctrl+A - Select all
-Escape - Deselect all</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.dc</span>
+                <span class="description">DC sweep analysis</span>
             </div>
-
-            <!-- Component Placement -->
-            <div class="section" id="component-placement">
-                <h2>Component Placement</h2>
-                
-                <h3>Basic Components</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Passive Components</div>
-                    <div class="command-desc">
-                        <pre><code>R - Resistor
-C - Capacitor  
-L - Inductor (inductor)
-D - Diode
-LED - Light Emitting Diode
-SW - Switch
-FUSE - Fuse
-FERRITE - Ferrite Bead
-
-Component values:
-R1 = 1k, 1K, 1000
-C1 = 1u, 1µF, 1e-6
-L1 = 1m, 1mH, 1e-3</code></pre>
-                    </div>
-                </div>
-
-                <div class="command mathematical">
-                    <div class="command-name">Active Components</div>
-                    <div class="command-desc">
-                        <pre><code>NPN - NPN Bipolar transistor
-PNP - PNP Bipolar transistor  
-NMOS - N-channel MOSFET
-PMOS - P-channel MOSFET
-NJFET - N-channel JFET
-PJFET - P-channel JFET
-OpAmp - Operational amplifier
-OpAmp2 - Dual op-amp</code></pre>
-                    </div>
-                </div>
-
-                <h3>Voltage & Current Sources</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Independent Sources</div>
-                    <div class="command-desc">
-                        <pre><code>Voltage Sources:
-V - DC voltage source
-SINE - AC sine wave voltage
-PULSE - Pulse voltage source
-EXP - Exponential voltage
-PWL - Piecewise linear voltage
-
-Current Sources:  
-I - DC current source
-ISINE - AC sine wave current
-IPULSE - Pulse current source
-IEXP - Exponential current</code></pre>
-                    </div>
-                </div>
-
-                <h3>Measurement Probes</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Voltage & Current Probes</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Right-click on wire:</strong> Add voltage probe</li>
-                            <li><strong>Right-click on component:</strong> Add current probe</li>
-                            <li><strong>Probe colors:</strong> Automatic assignment for multiple signals</li>
-                            <li><strong>Differential probes:</strong> Select two nodes for voltage difference</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.op</span>
+                <span class="description">Operating point analysis</span>
             </div>
-
-            <!-- SPICE Directives -->
-            <div class="section" id="spice-directives">
-                <h2>SPICE Directives</h2>
-                
-                <h3>Analysis Commands</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Basic Analysis Types</div>
-                    <div class="command-desc">
-                        <pre><code>.op                    ; Operating point analysis
-.dc V1 0 10 0.1       ; DC sweep from 0V to 10V, 0.1V steps
-.ac dec 10 1 1meg     ; AC analysis, 10 pts/decade, 1Hz to 1MHz
-.tran 0 1m            ; Transient analysis for 1ms
-.noise V(out) V1 dec 10 1 1meg  ; Noise analysis</code></pre>
-                    </div>
-                </div>
-
-                <h3>Simulation Control</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Control Directives</div>
-                    <div class="command-desc">
-                        <pre><code>.param R1=1k C1=1u    ; Parameter definitions
-.step param R1 1k 10k 1k  ; Parameter stepping
-.temp 27              ; Operating temperature (°C)
-.options reltol=0.001 ; Convergence tolerance
-.ic V(n001)=5         ; Initial conditions</code></pre>
-                    </div>
-                </div>
-
-                <h3>Model Statements</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Device Models</div>
-                    <div class="command-desc">
-                        <pre><code>.model Dbreak D(Is=1e-14 Cjo=.1pF Rs=.1)  ; Diode model
-.model Nbreak NMOS(Level=1 Vto=2 Kp=20u)  ; NMOS model  
-.model Pbreak PMOS(Level=1 Vto=-2 Kp=10u) ; PMOS model
-.model Qbreak NPN(Is=1e-16 Bf=100)        ; NPN model
-
-.include "standard.bjt"  ; Include model library
-.lib "mymodels.lib"      ; Library file</code></pre>
-                    </div>
-                </div>
-
-                <h3>Output Commands</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Data Export</div>
-                    <div class="command-desc">
-                        <pre><code>.save V(out) I(R1)    ; Save specific signals
-.save all             ; Save all node voltages  
-.print ac vm(out) vp(out)  ; Print magnitude and phase
-.plot dc V(out)       ; Plot DC results
-.four 1khz V(out)     ; Fourier analysis at 1kHz</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.noise</span>
+                <span class="description">Noise analysis</span>
             </div>
-
-            <!-- Analysis Types -->
-            <div class="section" id="analysis-types">
-                <h2>Analysis Types</h2>
-                
-                <h3>DC Analysis</h3>
-                <div class="command mathematical">
-                    <div class="command-name">DC Operating Point</div>
-                    <div class="command-desc">
-                        <pre><code>.op                    ; Find DC operating point
-.dc V1 0 10 0.1       ; Sweep V1 from 0V to 10V
-.dc V1 0 5 0.1 V2 0 3 0.5  ; Nested sweep (2D)
-.dc temp -40 125 5    ; Temperature sweep
-
-Viewing results:
-- Right-click → "View → Spice Error Log"
-- DC operating point values shown on schematic
-- Current through components displayed</code></pre>
-                    </div>
-                </div>
-
-                <h3>AC Analysis</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Frequency Response</div>
-                    <div class="command-desc">
-                        <pre><code>.ac dec 10 1 1meg     ; 10 points per decade, 1Hz to 1MHz
-.ac oct 5 1k 100k     ; 5 points per octave, 1kHz to 100kHz  
-.ac lin 1000 1k 2k    ; 1000 linear points, 1-2kHz
-
-Plot functions:
-V(out) - Voltage magnitude
-Vdb(out) - Voltage in dB (20*log10)
-Vp(out) - Phase in degrees
-I(R1) - Current magnitude</code></pre>
-                    </div>
-                </div>
-
-                <h3>Transient Analysis</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Time Domain</div>
-                    <div class="command-desc">
-                        <pre><code>.tran 1u 1m           ; 1µs timestep, 1ms total time
-.tran 0 1m 0.1m       ; Auto timestep, 1ms total, start save at 0.1ms
-.tran 0 1m 0 1u       ; Auto timestep, max step 1µs
-
-UIC - Use Initial Conditions
-.ic V(node)=5         ; Set initial voltage
-.ic I(L1)=1m          ; Set initial current</code></pre>
-                    </div>
-                </div>
-
-                <h3>Monte Carlo & Worst Case</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Statistical Analysis</div>
-                    <div class="command-desc">
-                        <pre><code>.step param tolerance uniform 100  ; Monte Carlo with 100 runs
-.step param R1 list 900 1000 1100  ; Worst case analysis
-
-Component tolerances:
-{mc(1000, 5%)}        ; 1000 nominal, 5% tolerance
-{random(0.9, 1.1)}    ; Random between 0.9 and 1.1
-{gauss(1000, 50, 3)}  ; Gaussian, 1000 mean, 50 sigma, 3σ limit</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.four</span>
+                <span class="description">Fourier analysis</span>
             </div>
-
-            <!-- Waveform Viewer -->
-            <div class="section" id="waveform-viewer">
-                <h2>Waveform Viewer</h2>
-                
-                <h3>Navigation & Zoom</h3>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Mouse Wheel</div>
-                    <div class="shortcut-desc">Zoom in/out at cursor</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+Mouse Wheel</div>
-                    <div class="shortcut-desc">Horizontal zoom</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Shift+Mouse Wheel</div>
-                    <div class="shortcut-desc">Vertical zoom</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Left Drag</div>
-                    <div class="shortcut-desc">Pan waveform</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Right Drag</div>
-                    <div class="shortcut-desc">Zoom to selected area</div>
-                </div>
-                <div class="shortcut mathematical">
-                    <div class="shortcut-key">Ctrl+A</div>
-                    <div class="shortcut-desc">Auto-range all visible traces</div>
-                </div>
-
-                <h3>Cursors & Measurements</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Cursor Operations</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Left-click on trace:</strong> Attach cursor 1</li>
-                            <li><strong>Right-click on trace:</strong> Attach cursor 2</li>
-                            <li><strong>Ctrl+Left-click:</strong> Differential measurement</li>
-                            <li><strong>Cursor readout:</strong> Shows frequency, time, magnitude, phase</li>
-                            <li><strong>Delta measurements:</strong> Displays difference between cursors</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Plot Panes & Layout</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Multiple Plots</div>
-                    <div class="command-desc">
-                        <pre><code>Add Plot Pane - Create new vertical plot section
-Drag trace between panes - Move signal to different plot
-Right-click trace → Delete - Remove trace from plot
-Right-click axis → Set axis limits - Manual scaling
-
-Plot types:
-- Linear - Standard voltage/current plots
-- Log - Logarithmic scaling  
-- dB - Decibel scaling (20*log10)
-- Phase - Phase response plots</code></pre>
-                    </div>
-                </div>
-
-                <h3>Expression Evaluation</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Math Functions</div>
-                    <div class="command-desc">
-                        <pre><code>Right-click plot → "Add Traces" → Enter expression:
-
-Basic math:
-V(out)*I(R1)          ; Power calculation
-V(out)-V(in)          ; Voltage difference  
-db(V(out))            ; Convert to dB
-phase(V(out))         ; Extract phase
-
-Advanced functions:
-avg(V(out))           ; Average value
-rms(V(out))           ; RMS value  
-min(V(out))           ; Minimum value
-max(V(out))           ; Maximum value
-deriv(V(out))         ; Derivative
-integ(V(out))         ; Integral</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.tf</span>
+                <span class="description">Transfer function</span>
             </div>
-
-            <!-- Component Models -->
-            <div class="section" id="component-models">
-                <h2>Component Models</h2>
-                
-                <h3>Standard Component Libraries</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Built-in Models</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>standard.bjt:</strong> Bipolar transistor models</li>
-                            <li><strong>standard.mos:</strong> MOSFET models</li>
-                            <li><strong>standard.dio:</strong> Diode models</li>
-                            <li><strong>standard.jft:</strong> JFET models</li>
-                            <li><strong>LTC components:</strong> Linear Technology parts database</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Semiconductor Models</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Transistor Models</div>
-                    <div class="command-desc">
-                        <pre><code>MOSFET Models:
-.model NMOS1 NMOS(Level=1 Vto=2 Kp=20u Lambda=0.01)
-.model PMOS1 PMOS(Level=1 Vto=-2 Kp=10u Lambda=0.02)
-
-BJT Models:  
-.model NPN1 NPN(Is=1e-16 Bf=100 Br=1 Vaf=100)
-.model PNP1 PNP(Is=1e-16 Bf=80 Br=1 Vaf=80)
-
-Diode Models:
-.model D1 D(Is=1e-14 Rs=1 Cjo=1p Tt=1n)</code></pre>
-                    </div>
-                </div>
-
-                <h3>Passive Component Models</h3>
-                <div class="command mathematical">
-                    <div class="command-name">RLC Parasitics</div>
-                    <div class="command-desc">
-                        <pre><code>Resistor with parasitics:
-.model RMOD R(RSH=1 DEFW=1e-6 NARROW=0)
-
-Capacitor with ESR and ESL:
-.model CMOD C(C=1 VC1=0 VC2=0 TC1=0 TC2=0)
-
-Inductor with series resistance:
-.model LMOD L(L=1 IL1=0 IL2=0 TC1=0 TC2=0)
-
-Real-world models:
-C1 N1 N2 1uF ESR=0.1 ESL=1nH  ; Capacitor with parasitics</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.step</span>
+                <span class="description">Parameter sweep</span>
             </div>
-
-            <!-- Behavioral Modeling -->
-            <div class="section" id="behavioral-modeling">
-                <h2>Behavioral Modeling</h2>
-                
-                <h3>Voltage & Current Sources</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Arbitrary Sources</div>
-                    <div class="command-desc">
-                        <pre><code>Behavioral voltage source (BV):
-BV1 N1 N2 V=V(N3)*2 + 5     ; Voltage-controlled voltage
-
-Behavioral current source (BI):  
-BI1 N1 N2 I=V(N3)/1000       ; Voltage-controlled current
-
-Table lookup:
-BV1 N1 N2 V=TABLE(V(N3), 0,0, 1,2, 2,5, 3,7)
-
-Time-dependent:
-BV1 N1 N2 V=if(time<1m, 0, 5) ; Conditional behavior</code></pre>
-                    </div>
-                </div>
-
-                <h3>Math Functions</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Function Library</div>
-                    <div class="command-desc">
-                        <pre><code>Mathematical operators:
-+ - * / ^             ; Basic arithmetic
-sin() cos() tan()     ; Trigonometric functions
-exp() log() ln()      ; Exponential and logarithm
-abs() sqrt()          ; Absolute value and square root
-min() max()           ; Minimum and maximum
-int() sgn()           ; Integer and sign functions
-
-Conditional logic:
-if(condition, true_val, false_val)
-u(x)                  ; Unit step function  
-uramp(x)              ; Ramp function
-white(td)             ; White noise
-limit(x, min, max)    ; Clamp function</code></pre>
-                    </div>
-                </div>
-
-                <h3>Laplace Transfer Functions</h3>
-                <div class="command mathematical">
-                    <div class="command-name">s-Domain Models</div>
-                    <div class="command-desc">
-                        <pre><code>Laplace block (E element):
-E1 out 0 LAPLACE {V(in)} {1/(1+s*1m)}  ; Low-pass filter
-
-G element (VCCS with Laplace):
-G1 out 0 in 0 LAPLACE {1/(s*1u)}       ; Integrator
-
-Common transfer functions:
-{1/(1+s/wc)}          ; Single pole low-pass
-{s/(1+s/wc)}          ; Single pole high-pass  
-{1/(1+s/Q/wc+s^2/wc^2)} ; Second-order low-pass</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">.meas</span>
+                <span class="description">Measurement functions</span>
             </div>
-
-            <!-- Simulation Control -->
-            <div class="section" id="simulation-control">
-                <h2>Simulation Control</h2>
-                
-                <h3>Solver Options</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Convergence Control</div>
-                    <div class="command-desc">
-                        <pre><code>.options reltol=0.001      ; Relative tolerance (default 0.001)
-.options abstol=1e-12      ; Absolute current tolerance  
-.options vntol=1e-6        ; Absolute voltage tolerance
-.options chgtol=1e-14      ; Charge tolerance
-.options gmin=1e-12        ; Minimum conductance
-.options pivrel=1e-3       ; Pivot relative tolerance
-.options pivtol=1e-13      ; Pivot absolute tolerance</code></pre>
-                    </div>
-                </div>
-
-                <h3>Timestep Control</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Transient Settings</div>
-                    <div class="command-desc">
-                        <pre><code>.options maxstep=1u        ; Maximum timestep
-.options minstep=1p        ; Minimum timestep  
-.options ramptime=1u       ; Source rise time
-.options trtol=7           ; Transient tolerance
-.options method=gear       ; Integration method (gear/trap)
-
-Startup conditions:
-.options startup           ; Include source ramp-up
-.ic V(node)=5             ; Initial node voltage
-UIC                       ; Use initial conditions (skip DC analysis)</code></pre>
-                    </div>
-                </div>
-
-                <h3>Performance Optimization</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Speed vs. Accuracy</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Fast simulation:</strong> Increase reltol to 0.01</li>
-                            <li><strong>Accurate simulation:</strong> Decrease reltol to 1e-6</li>
-                            <li><strong>Large circuits:</strong> Use sparse matrix (.options sparse)</li>
-                            <li><strong>Oscillators:</strong> Set appropriate initial conditions</li>
-                            <li><strong>High-Q circuits:</strong> Use tighter tolerances</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Measurement Functions -->
-            <div class="section" id="measurement-functions">
-                <h2>Measurement Functions</h2>
-                
-                <h3>Built-in Measurements</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Waveform Analysis</div>
-                    <div class="command-desc">
-                        <pre><code>.meas tran Vmax MAX V(out)        ; Maximum voltage
-.meas tran Vmin MIN V(out)        ; Minimum voltage  
-.meas tran Vavg AVG V(out)        ; Average voltage
-.meas tran Vrms RMS V(out)        ; RMS voltage
-.meas tran Vpp PP V(out)          ; Peak-to-peak voltage
-
-Timing measurements:
-.meas tran trise TRIG V(out)=1 TARG V(out)=4  ; Rise time
-.meas tran freq FIND 1/tperiod                 ; Frequency
-.meas tran duty FIND rise_time/period*100      ; Duty cycle</code></pre>
-                    </div>
-                </div>
-
-                <h3>Conditional Measurements</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Advanced Analysis</div>
-                    <div class="command-desc">
-                        <pre><code>Time-windowed measurements:
-.meas tran Vavg AVG V(out) FROM=1m TO=2m      ; Average from 1ms to 2ms
-
-Derivative measurements:  
-.meas tran max_di_dt MAX deriv(I(L1))         ; Maximum current slew rate
-
-AC measurements:
-.meas ac gain_db MAX db(V(out))               ; Maximum gain in dB
-.meas ac f3db WHEN db(V(out))=-3              ; 3dB frequency  
-.meas ac phase_margin FIND 180+vp(V(out)) AT=fc ; Phase margin</code></pre>
-                    </div>
-                </div>
-
-                <h3>Power Analysis</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Power Calculations</div>
-                    <div class="command-desc">
-                        <pre><code>Instantaneous power:
-.meas tran Pinst FIND V(out)*I(R1) AT=1m     ; Power at t=1ms
-
-Average power:
-.meas tran Pavg AVG V(out)*I(R1)             ; Average power  
-
-Efficiency calculation:
-.meas tran Pin AVG V(vin)*I(vin)             ; Input power
-.meas tran Pout AVG V(out)*I(load)           ; Output power  
-.meas tran eff PARAM Pout/Pin*100            ; Efficiency %</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Troubleshooting -->
-            <div class="section" id="troubleshooting">
-                <h2>Troubleshooting</h2>
-                
-                <h3>Common Simulation Errors</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Convergence Issues</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Node floating:</strong> Add high-value resistor to ground</li>
-                            <li><strong>Voltage loop:</strong> Add small series resistance</li>
-                            <li><strong>Current path:</strong> Add small parallel conductance</li>
-                            <li><strong>Initial conditions:</strong> Set .ic for reactive components</li>
-                            <li><strong>Large timestep:</strong> Add .options maxstep=small_value</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Model Issues</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Component Problems</div>
-                    <div class="command-desc">
-                        <pre><code>Missing model file:
-- Check .include and .lib statements
-- Verify file path and name
-- Use absolute paths if needed
-
-Unrealistic component values:
-- Avoid zero resistance/conductance  
-- Avoid infinite inductance/capacitance
-- Use realistic parasitic values
-
-Numerical precision:
-- Avoid ratios > 1e12 in component values
-- Scale circuit for better numerical conditioning</code></pre>
-                    </div>
-                </div>
-
-                <h3>Simulation Performance</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Speed Optimization</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Reduce simulation time:</strong> Use shorter time windows</li>
-                            <li><strong>Increase tolerances:</strong> Less accuracy, faster simulation</li>
-                            <li><strong>Remove unnecessary probes:</strong> Save only needed signals</li>
-                            <li><strong>Use appropriate models:</strong> Simple models for initial design</li>
-                            <li><strong>Break large circuits:</strong> Test subcircuits separately</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Advanced Techniques -->
-            <div class="section" id="advanced-techniques">
-                <h2>Advanced Techniques</h2>
-                
-                <h3>Subcircuits</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Hierarchical Design</div>
-                    <div class="command-desc">
-                        <pre><code>.subckt opamp inp inn out vcc vee
-* Internal circuit description
-R1 inp inn 1meg
-G1 out 0 inp inn 100k  
-.ends opamp
-
-Usage in main circuit:
-X1 in+ in- output vcc vee opamp  ; Instance of subcircuit
-
-External subcircuit file:
-.include "opamp.cir"             ; Include subcircuit definition</code></pre>
-                    </div>
-                </div>
-
-                <h3>Parametric Analysis</h3>
-                <div class="command mathematical">
-                    <div class="command-name">Design Optimization</div>
-                    <div class="command-desc">
-                        <pre><code>Parameter sweeping:
-.step param R1 1k 10k 1k         ; Step R1 from 1k to 10k
-.step param C1 list 1p 10p 100p  ; List of specific values  
-.step temp -40 125 25             ; Temperature stepping
-
-Multi-parameter sweep:
-.step param R1 1k 10k 1k
-.step param C1 1p 100p 10        ; Nested parameter sweep
-
-Global parameters:
-.param Vcc=5 Rf={Vcc*1000}       ; Use expressions in parameters</code></pre>
-                    </div>
-                </div>
-
-                <h3>Custom Models</h3>
-                <div class="command mathematical">
-                    <div class="command-name">User-Defined Components</div>
-                    <div class="command-desc">
-                        <pre><code>Create custom symbol:
-1. Draw schematic in separate file
-2. Add .subckt definition
-3. Tools → Create Symbol
-4. Save as .asy file in sym directory
-
-Behavioral resistor:
-BR1 N1 N2 R=1k*(1+0.004*(temp-27))  ; Temperature coefficient
-
-Voltage-controlled resistor:
-GR1 N1 N2 VALUE={V(N1,N2)/(1k*(1+V(ctrl)))} ; Control voltage varies R</code></pre>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <div class="cheatsheet-footer no-print">
-        <div class="container">
-            <p>LTspice Circuit Simulation Cheatsheet - Part of <a href="../../../index.html">CheatSheets Collection</a></p>
-            <p>For more resources, visit <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="_blank">LTspice Homepage</a></p>
+        <div class="section">
+            <h2>Component Values</h2>
+            <div class="command-line">
+                <span class="command">1k</span>
+                <span class="description">1 kiloohm</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1meg</span>
+                <span class="description">1 megaohm</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1u</span>
+                <span class="description">1 microfarad</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1n</span>
+                <span class="description">1 nanofarad</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1p</span>
+                <span class="description">1 picofarad</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1m</span>
+                <span class="description">1 millihenry</span>
+            </div>
+            <div class="command-line">
+                <span class="command">1µ</span>
+                <span class="description">1 microhenry</span>
+            </div>
+            <div class="command-line">
+                <span class="command">{param}</span>
+                <span class="description">Parameter reference</span>
+            </div>
         </div>
-    </div>
+
+        <div class="section">
+            <h2>Sources & Signals</h2>
+            <div class="command-line">
+                <span class="command">SINE</span>
+                <span class="description">Sinusoidal source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PULSE</span>
+                <span class="description">Pulse source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PWL</span>
+                <span class="description">Piecewise linear source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">EXP</span>
+                <span class="description">Exponential source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">SFFM</span>
+                <span class="description">FM modulated source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">AM</span>
+                <span class="description">AM modulated source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">DC</span>
+                <span class="description">DC voltage/current</span>
+            </div>
+            <div class="command-line">
+                <span class="command">AC</span>
+                <span class="description">AC magnitude/phase</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Analysis Parameters</h2>
+            <div class="command-line">
+                <span class="command">.tran 0 1ms 0 1us</span>
+                <span class="description">Transient: tstop, tstart, tstep</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.ac dec 100 1 1meg</span>
+                <span class="description">AC: decade, points, fstart, fstop</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.dc V1 0 5 0.1</span>
+                <span class="description">DC: source, start, stop, step</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.step param R 1k 10k 1k</span>
+                <span class="description">Parameter sweep</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.temp 27 85 125</span>
+                <span class="description">Temperature sweep</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Waveform Viewer</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + L</span>
+                <span class="description">Add trace</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + H</span>
+                <span class="description">Halt simulation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Alt + Left Click</span>
+                <span class="description">Probe voltage</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Alt + Right Click</span>
+                <span class="description">Probe current</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + A</span>
+                <span class="description">Autorange</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Y</span>
+                <span class="description">Delete trace</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + G</span>
+                <span class="description">Show grid</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F6</span>
+                <span class="description">Zoom to fit</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>SPICE Directives</h2>
+            <div class="command-line">
+                <span class="command">.param</span>
+                <span class="description">Define parameter</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.global</span>
+                <span class="description">Global node</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.include</span>
+                <span class="description">Include model file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.lib</span>
+                <span class="description">Library reference</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.model</span>
+                <span class="description">Device model</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.subckt</span>
+                <span class="description">Subcircuit definition</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.ends</span>
+                <span class="description">End subcircuit</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.ic</span>
+                <span class="description">Initial conditions</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Measurement Functions</h2>
+            <div class="command-line">
+                <span class="command">.meas tran Vmax MAX V(out)</span>
+                <span class="description">Measure maximum value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.meas tran Vmin MIN V(out)</span>
+                <span class="description">Measure minimum value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.meas tran Vavg AVG V(out)</span>
+                <span class="description">Measure average value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.meas tran Vrms RMS V(out)</span>
+                <span class="description">Measure RMS value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">.meas tran rise_time TRIG V(out) VAL=0.1 RISE=1 TARG V(out) VAL=0.9 RISE=1</span>
+                <span class="description">Measure rise time</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Advanced Features</h2>
+            <div class="command-line">
+                <span class="command">B source</span>
+                <span class="description">Behavioral voltage source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">E source</span>
+                <span class="description">Voltage controlled voltage source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">G source</span>
+                <span class="description">Voltage controlled current source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">H source</span>
+                <span class="description">Current controlled voltage source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F source</span>
+                <span class="description">Current controlled current source</span>
+            </div>
+            <div class="command-line">
+                <span class="command">K coupling</span>
+                <span class="description">Mutual inductance</span>
+            </div>
+            <div class="command-line">
+                <span class="command">S switch</span>
+                <span class="description">Voltage controlled switch</span>
+            </div>
+            <div class="command-line">
+                <span class="command">W switch</span>
+                <span class="description">Current controlled switch</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Simulation Tips</h2>
+            <div class="workflow">
+                <strong>Efficient Simulation Setup:</strong><br>
+                • Set appropriate simulation time and step size<br>
+                • Use initial conditions for faster convergence<br>
+                • Add small resistors to avoid floating nodes<br>
+                • Use .ic directive for initial capacitor voltages<br>
+                • Set reasonable source rise/fall times
+            </div>
+            <div class="workflow">
+                <strong>Model Development:</strong><br>
+                • Create custom symbols for subcircuits<br>
+                • Use .param for parameterized designs<br>
+                • Validate models with known test circuits<br>
+                • Document model limitations and assumptions<br>
+                • Use hierarchical design for complex circuits
+            </div>
+            <div class="tip">
+                <strong>Troubleshooting:</strong><br>
+                • Check for convergence failures in error log<br>
+                • Reduce simulation step size for accuracy<br>
+                • Add series resistance to voltage sources<br>
+                • Use .OPTIONS for solver parameters<br>
+                • Verify component connections and values
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>LTspice Circuit Simulation - Part of CheatSheets Collection</p>
+    </footer>
 
     <script src="../../js/cheatsheet.js"></script>
-    <script>
-        // Additional LTspice-specific JavaScript can go here
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('LTspice Circuit Simulation Cheatsheet loaded');
-        });
-    </script>
 </body>
 </html>

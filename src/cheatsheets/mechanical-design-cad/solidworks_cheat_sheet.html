@@ -3,946 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLIDWORKS 3D CAD Cheatsheet - Modeling & Design</title>
-    <meta name="description" content="Complete SOLIDWORKS cheatsheet with 3D modeling, sketching, assembly, drawing, simulation shortcuts and professional CAD workflows.">
-    <meta name="keywords" content="solidworks, 3d cad, modeling, sketching, assembly, drawing, simulation, parametric design, mechanical engineering">
+    <title>SolidWorks Keyboard Shortcuts - Cheatsheet</title>
+    <meta name="description" content="Complete SolidWorks cheatsheet with 3D CAD modeling, sketching, assembly, and drawing shortcuts.">
+    <meta name="keywords" content="solidworks, 3d cad, mechanical design, sketching, assembly, drawings, parametric modeling">
     <link rel="stylesheet" href="../../styles/cheatsheet.css">
 </head>
 <body class="mechanical-design-cad">
-    <div class="cheatsheet-header no-print">
-        <div class="container">
-            <nav>
-                <a href="../../../index.html" class="back-link">
-                    <span>←</span> Back to Collection
-                </a>
-                <div class="header-actions">
-                    <input type="text" 
-                           id="searchInput" 
-                           class="in-page-search" 
-                           placeholder="Search commands..."
-                           aria-label="Search cheatsheet content">
-                    <button onclick="window.print()" class="print-btn">
-                        <span>🖨️</span> Print
-                    </button>
-                    <button onclick="toggleTheme()" class="theme-btn">
-                        <span>🌓</span> Theme
-                    </button>
-                </div>
-            </nav>
-            
-            <div class="title-section">
-                <h1>SOLIDWORKS 3D CAD Cheatsheet</h1>
-                <p class="subtitle">3D modeling, sketching, assembly design, and professional CAD workflows</p>
-                <div class="meta">
-                    <span class="category-tag design-cad">Design & CAD</span>
-                    <span class="type-tag">Shortcuts</span>
-                </div>
+    <header class="header">
+        <h1>SolidWorks Keyboard Shortcuts</h1>
+        <p>Complete reference for SolidWorks 3D CAD software including sketching, modeling, assembly, and drawing tools</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>View Manipulation</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + 1</span>
+                <span class="description">Front view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 2</span>
+                <span class="description">Back view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 3</span>
+                <span class="description">Left view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 4</span>
+                <span class="description">Right view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 5</span>
+                <span class="description">Top view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 6</span>
+                <span class="description">Bottom view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 7</span>
+                <span class="description">Isometric view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + 8</span>
+                <span class="description">Normal to selection</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F</span>
+                <span class="description">Zoom to fit</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Z</span>
+                <span class="description">Zoom to selection</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + Z</span>
+                <span class="description">Zoom out</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + Z</span>
+                <span class="description">Zoom in</span>
             </div>
         </div>
-    </div>
 
-    <div class="cheatsheet-container">
-        <div class="container">
-            <!-- Table of Contents -->
-            <div class="table-of-contents">
-                <h3>Quick Navigation</h3>
-                <ul>
-                    <li><a href="#file-operations">File Operations</a></li>
-                    <li><a href="#view-navigation">View & Navigation</a></li>
-                    <li><a href="#sketching">Sketching</a></li>
-                    <li><a href="#features">Features & Modeling</a></li>
-                    <li><a href="#assembly">Assembly</a></li>
-                    <li><a href="#drawing">Drawing & Detailing</a></li>
-                    <li><a href="#selection-tools">Selection Tools</a></li>
-                    <li><a href="#measurement">Measurement & Analysis</a></li>
-                    <li><a href="#display-settings">Display Settings</a></li>
-                    <li><a href="#simulation">Simulation</a></li>
-                    <li><a href="#customization">Customization</a></li>
-                    <li><a href="#productivity-tips">Productivity Tips</a></li>
-                </ul>
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + N</span>
+                <span class="description">New document</span>
             </div>
-
-            <!-- File Operations -->
-            <div class="section" id="file-operations">
-                <h2>File Operations</h2>
-                
-                <h3>Basic File Commands</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+N</div>
-                    <div class="shortcut-desc">New document</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+O</div>
-                    <div class="shortcut-desc">Open document</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+S</div>
-                    <div class="shortcut-desc">Save document</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Shift+S</div>
-                    <div class="shortcut-desc">Save As</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+W</div>
-                    <div class="shortcut-desc">Close document</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+P</div>
-                    <div class="shortcut-desc">Print</div>
-                </div>
-
-                <h3>Document Management</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Tab</div>
-                    <div class="shortcut-desc">Switch between open documents</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+F4</div>
-                    <div class="shortcut-desc">Close current window</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Alt+F4</div>
-                    <div class="shortcut-desc">Exit SOLIDWORKS</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F1</div>
-                    <div class="shortcut-desc">SOLIDWORKS Help</div>
-                </div>
-
-                <h3>Import/Export</h3>
-                <div class="command design-cad">
-                    <div class="command-name">File Formats</div>
-                    <div class="command-desc">
-                        <pre><code>Native formats:
-.sldprt - Part files
-.sldasm - Assembly files  
-.slddrw - Drawing files
-
-Import formats:
-.step/.stp - STEP files
-.iges/.igs - IGES files
-.x_t - Parasolid files
-.dwg - AutoCAD files
-.dxf - Drawing exchange format
-
-Export formats:
-.pdf - Portable document
-.jpg/.png - Image files
-.stl - 3D printing
-.vrml - Virtual reality</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + O</span>
+                <span class="description">Open document</span>
             </div>
-
-            <!-- View & Navigation -->
-            <div class="section" id="view-navigation">
-                <h2>View & Navigation</h2>
-                
-                <h3>View Orientation</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Spacebar</div>
-                    <div class="shortcut-desc">View orientation cube</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+1</div>
-                    <div class="shortcut-desc">Front view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+2</div>
-                    <div class="shortcut-desc">Back view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+3</div>
-                    <div class="shortcut-desc">Left view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+4</div>
-                    <div class="shortcut-desc">Right view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+5</div>
-                    <div class="shortcut-desc">Top view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+6</div>
-                    <div class="shortcut-desc">Bottom view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+7</div>
-                    <div class="shortcut-desc">Isometric view</div>
-                </div>
-
-                <h3>Zoom & Pan</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F</div>
-                    <div class="shortcut-desc">Zoom to fit</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Z</div>
-                    <div class="shortcut-desc">Zoom to area</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Z</div>
-                    <div class="shortcut-desc">Zoom to selection</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">G</div>
-                    <div class="shortcut-desc">Magnifying glass</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Shift+Z</div>
-                    <div class="shortcut-desc">Zoom out</div>
-                </div>
-
-                <h3>Mouse Controls</h3>
-                <div class="command design-cad">
-                    <div class="command-name">3D Navigation</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Middle Mouse Button:</strong> Rotate view</li>
-                            <li><strong>Shift + Middle Mouse:</strong> Pan view</li>
-                            <li><strong>Ctrl + Middle Mouse:</strong> Pan view (alternative)</li>
-                            <li><strong>Scroll Wheel:</strong> Zoom in/out</li>
-                            <li><strong>Shift + Scroll:</strong> Zoom slower</li>
-                            <li><strong>Middle Click:</strong> Zoom to fit</li>
-                            <li><strong>Alt + Middle Mouse:</strong> Rotate about screen center</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + S</span>
+                <span class="description">Save document</span>
             </div>
-
-            <!-- Sketching -->
-            <div class="section" id="sketching">
-                <h2>Sketching</h2>
-                
-                <h3>Sketch Tools</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">L</div>
-                    <div class="shortcut-desc">Line tool</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">C</div>
-                    <div class="shortcut-desc">Circle tool</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">A</div>
-                    <div class="shortcut-desc">Arc tool</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">R</div>
-                    <div class="shortcut-desc">Rectangle tool</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">P</div>
-                    <div class="shortcut-desc">Point tool</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">S</div>
-                    <div class="shortcut-desc">Spline tool</div>
-                </div>
-
-                <h3>Sketch Constraints</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Geometric Relations</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Coincident:</strong> Points touch</li>
-                            <li><strong>Parallel:</strong> Lines are parallel</li>
-                            <li><strong>Perpendicular:</strong> Lines at 90°</li>
-                            <li><strong>Horizontal:</strong> Line is horizontal</li>
-                            <li><strong>Vertical:</strong> Line is vertical</li>
-                            <li><strong>Equal:</strong> Same length/radius</li>
-                            <li><strong>Concentric:</strong> Same center point</li>
-                            <li><strong>Tangent:</strong> Smooth connection</li>
-                            <li><strong>Midpoint:</strong> Point at middle</li>
-                            <li><strong>Symmetric:</strong> Mirror relationship</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Dimensioning</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">D</div>
-                    <div class="shortcut-desc">Smart dimension</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+D</div>
-                    <div class="shortcut-desc">Horizontal dimension</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+D</div>
-                    <div class="shortcut-desc">Vertical dimension</div>
-                </div>
-
-                <h3>Sketch Editing</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+C</div>
-                    <div class="shortcut-desc">Copy sketch entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+V</div>
-                    <div class="shortcut-desc">Paste sketch entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+X</div>
-                    <div class="shortcut-desc">Cut sketch entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Delete</div>
-                    <div class="shortcut-desc">Delete selected entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">X</div>
-                    <div class="shortcut-desc">Trim entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">E</div>
-                    <div class="shortcut-desc">Extend entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">O</div>
-                    <div class="shortcut-desc">Offset entities</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">M</div>
-                    <div class="shortcut-desc">Mirror entities</div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + S</span>
+                <span class="description">Save as</span>
             </div>
-
-            <!-- Features & Modeling -->
-            <div class="section" id="features">
-                <h2>Features & Modeling</h2>
-                
-                <h3>Base Features</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Primary Features</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Extrude Boss/Base:</strong> Add material by extrusion</li>
-                            <li><strong>Extrude Cut:</strong> Remove material by extrusion</li>
-                            <li><strong>Revolve Boss/Base:</strong> Add material by revolution</li>
-                            <li><strong>Revolve Cut:</strong> Remove material by revolution</li>
-                            <li><strong>Sweep Boss/Base:</strong> Add material along path</li>
-                            <li><strong>Sweep Cut:</strong> Remove material along path</li>
-                            <li><strong>Loft Boss/Base:</strong> Add material between profiles</li>
-                            <li><strong>Loft Cut:</strong> Remove material between profiles</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Applied Features</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Modify Features</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Fillet:</strong> Round edges</li>
-                            <li><strong>Chamfer:</strong> Beveled edges</li>
-                            <li><strong>Shell:</strong> Hollow out part</li>
-                            <li><strong>Draft:</strong> Tapered faces</li>
-                            <li><strong>Mirror:</strong> Mirror features across plane</li>
-                            <li><strong>Linear Pattern:</strong> Array in straight line</li>
-                            <li><strong>Circular Pattern:</strong> Array around axis</li>
-                            <li><strong>Rib:</strong> Thin wall feature</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Feature Editing</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+E</div>
-                    <div class="shortcut-desc">Edit feature</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Q</div>
-                    <div class="shortcut-desc">Edit sketch</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+B</div>
-                    <div class="shortcut-desc">Rebuild model</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Shift+B</div>
-                    <div class="shortcut-desc">Force rebuild</div>
-                </div>
-
-                <h3>Feature Tree Operations</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Tree Management</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Rename:</strong> F2 or slow double-click</li>
-                            <li><strong>Suppress:</strong> Right-click → Suppress</li>
-                            <li><strong>Unsuppress:</strong> Right-click → Unsuppress</li>
-                            <li><strong>Rollback:</strong> Drag rollback bar</li>
-                            <li><strong>Reorder:</strong> Drag features up/down</li>
-                            <li><strong>Feature Properties:</strong> Right-click → Properties</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + P</span>
+                <span class="description">Print</span>
             </div>
-
-            <!-- Assembly -->
-            <div class="section" id="assembly">
-                <h2>Assembly</h2>
-                
-                <h3>Component Operations</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+I</div>
-                    <div class="shortcut-desc">Insert component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+D</div>
-                    <div class="shortcut-desc">Insert new part</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Alt+Drag</div>
-                    <div class="shortcut-desc">Copy component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+M</div>
-                    <div class="shortcut-desc">Move component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+R</div>
-                    <div class="shortcut-desc">Rotate component</div>
-                </div>
-
-                <h3>Mates</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Standard Mates</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Coincident:</strong> Faces, edges, or points touch</li>
-                            <li><strong>Parallel:</strong> Faces or planes parallel</li>
-                            <li><strong>Perpendicular:</strong> Faces at 90° angle</li>
-                            <li><strong>Tangent:</strong> Curved surface tangent to face</li>
-                            <li><strong>Concentric:</strong> Circular features share center</li>
-                            <li><strong>Distance:</strong> Set distance between entities</li>
-                            <li><strong>Angle:</strong> Set angle between planes</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Advanced Mates</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Mechanical Mates</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Gear:</strong> Simulate gear relationship</li>
-                            <li><strong>Rack Pinion:</strong> Linear-rotary motion</li>
-                            <li><strong>Screw:</strong> Helical motion relationship</li>
-                            <li><strong>Cam:</strong> Cam-follower relationship</li>
-                            <li><strong>Slot:</strong> Component moves in slot</li>
-                            <li><strong>Hinge:</strong> Rotational motion limit</li>
-                            <li><strong>Ball Joint:</strong> Spherical rotation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Assembly Features</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Assembly Operations</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Assembly Cut:</strong> Cut through multiple parts</li>
-                            <li><strong>Hole Wizard:</strong> Create holes in assembly</li>
-                            <li><strong>Linear Pattern:</strong> Pattern components</li>
-                            <li><strong>Circular Pattern:</strong> Circular component array</li>
-                            <li><strong>Mirror Components:</strong> Mirror parts across plane</li>
-                            <li><strong>Replace Component:</strong> Swap one part for another</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Assembly Visualization</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Shift+H</div>
-                    <div class="shortcut-desc">Hide/show components</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Tab</div>
-                    <div class="shortcut-desc">Change transparency</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+H</div>
-                    <div class="shortcut-desc">Hide/show bodies</div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Z</span>
+                <span class="description">Undo</span>
             </div>
-
-            <!-- Drawing -->
-            <div class="section" id="drawing">
-                <h2>Drawing & Detailing</h2>
-                
-                <h3>View Creation</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Standard Views</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Standard 3 View:</strong> Auto-generates front, top, right</li>
-                            <li><strong>Projected View:</strong> Project from parent view</li>
-                            <li><strong>Auxiliary View:</strong> View perpendicular to edge</li>
-                            <li><strong>Section View:</strong> Cut-away internal view</li>
-                            <li><strong>Detail View:</strong> Enlarged detail callout</li>
-                            <li><strong>Isometric View:</strong> 3D pictorial view</li>
-                            <li><strong>Broken-out Section:</strong> Partial section view</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Dimensioning</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">D</div>
-                    <div class="shortcut-desc">Smart dimension</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+D</div>
-                    <div class="shortcut-desc">Autodimension</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">A</div>
-                    <div class="shortcut-desc">Angular dimension</div>
-                </div>
-
-                <h3>Annotations</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Drawing Annotations</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Note:</strong> Text annotation</li>
-                            <li><strong>Balloon:</strong> Item number callout</li>
-                            <li><strong>Surface Finish:</strong> Surface roughness symbol</li>
-                            <li><strong>Geometric Tolerance:</strong> GD&T symbols</li>
-                            <li><strong>Datum Feature:</strong> Datum reference</li>
-                            <li><strong>Weld Symbol:</strong> Welding notation</li>
-                            <li><strong>Center Mark:</strong> Circle/arc center indicator</li>
-                            <li><strong>Centerline:</strong> Symmetry indication</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Tables</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Drawing Tables</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Bill of Materials:</strong> Parts list table</li>
-                            <li><strong>Hole Table:</strong> Hole location coordinates</li>
-                            <li><strong>Revision Table:</strong> Change tracking</li>
-                            <li><strong>General Table:</strong> Custom data table</li>
-                            <li><strong>Bend Table:</strong> Sheet metal bend data</li>
-                            <li><strong>Weldment Cut List:</strong> Structural member list</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Y</span>
+                <span class="description">Redo</span>
             </div>
-
-            <!-- Selection Tools -->
-            <div class="section" id="selection-tools">
-                <h2>Selection Tools</h2>
-                
-                <h3>Selection Methods</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Click</div>
-                    <div class="shortcut-desc">Add to selection</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Click</div>
-                    <div class="shortcut-desc">Select range</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+A</div>
-                    <div class="shortcut-desc">Select all</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+I</div>
-                    <div class="shortcut-desc">Invert selection</div>
-                </div>
-
-                <h3>Selection Filters</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F5</div>
-                    <div class="shortcut-desc">Filter vertices</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F6</div>
-                    <div class="shortcut-desc">Filter edges</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F7</div>
-                    <div class="shortcut-desc">Filter faces</div>
-                </div>
-
-                <h3>Advanced Selection</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Selection Tools</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Box Select:</strong> Drag rectangle to select</li>
-                            <li><strong>Lasso Select:</strong> Free-form selection area</li>
-                            <li><strong>Select Other:</strong> Cycle through overlapping items</li>
-                            <li><strong>Select Identical:</strong> Select matching features</li>
-                            <li><strong>Select Loop:</strong> Select connected edge loop</li>
-                            <li><strong>Select Midpoint:</strong> Automatic midpoint selection</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">F5</span>
+                <span class="description">Rebuild model</span>
             </div>
-
-            <!-- Measurement -->
-            <div class="section" id="measurement">
-                <h2>Measurement & Analysis</h2>
-                
-                <h3>Measurement Tools</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Measure Functions</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Measure:</strong> Distance, angle, area, volume</li>
-                            <li><strong>Mass Properties:</strong> Weight, center of mass, inertia</li>
-                            <li><strong>Section Properties:</strong> Cross-section analysis</li>
-                            <li><strong>Check:</strong> Geometry analysis tools</li>
-                            <li><strong>Deviation Analysis:</strong> Compare to reference</li>
-                            <li><strong>Thickness Analysis:</strong> Wall thickness check</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Analysis Tools</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Evaluation</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Curvature:</strong> Surface curvature display</li>
-                            <li><strong>Zebra Stripes:</strong> Surface quality check</li>
-                            <li><strong>Draft Analysis:</strong> Mold draft angles</li>
-                            <li><strong>Undercut Detection:</strong> Manufacturing issues</li>
-                            <li><strong>Thickness Analysis:</strong> Thin regions</li>
-                            <li><strong>Interference Detection:</strong> Collision check</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Ctrl + B</span>
+                <span class="description">Rebuild all</span>
             </div>
-
-            <!-- Display Settings -->
-            <div class="section" id="display-settings">
-                <h2>Display Settings</h2>
-                
-                <h3>Display Modes</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F10</div>
-                    <div class="shortcut-desc">Toggle FeatureManager</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F11</div>
-                    <div class="shortcut-desc">Full screen mode</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">C</div>
-                    <div class="shortcut-desc">Hide/show configuration pane</div>
-                </div>
-
-                <h3>View Styles</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Display Styles</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Shaded with Edges:</strong> Default solid view</li>
-                            <li><strong>Shaded:</strong> Solid without edges</li>
-                            <li><strong>Hidden Lines Visible:</strong> See-through wireframe</li>
-                            <li><strong>Hidden Lines Removed:</strong> Clean wireframe</li>
-                            <li><strong>Wireframe:</strong> Edges only</li>
-                            <li><strong>Shadows in Shaded Mode:</strong> Realistic shadows</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Section Views</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Section Tools</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Section View:</strong> Cut model with plane</li>
-                            <li><strong>Half Section:</strong> Cut halfway through</li>
-                            <li><strong>Aligned Section:</strong> Unfold section plane</li>
-                            <li><strong>3D Section View:</strong> Interactive cutting</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Simulation -->
-            <div class="section" id="simulation">
-                <h2>Simulation</h2>
-                
-                <h3>Study Types</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Analysis Types</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Static:</strong> Stress/displacement under loads</li>
-                            <li><strong>Frequency:</strong> Natural frequency/vibration modes</li>
-                            <li><strong>Buckling:</strong> Critical buckling loads</li>
-                            <li><strong>Thermal:</strong> Heat transfer analysis</li>
-                            <li><strong>Fatigue:</strong> Cyclic loading endurance</li>
-                            <li><strong>Dynamic:</strong> Time-dependent response</li>
-                            <li><strong>Flow:</strong> Fluid flow simulation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Simulation Workflow</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Setup Process</div>
-                    <div class="command-desc">
-                        <pre><code>1. Create Study
-   - Define study type and properties
-   - Set material properties
-
-2. Apply Loads and Restraints
-   - Fixed geometry (restraints)
-   - Forces, pressures, moments
-   - Gravity, centrifugal loads
-
-3. Create Mesh
-   - Automatic or manual meshing
-   - Mesh refinement for accuracy
-   - Mesh quality check
-
-4. Run Analysis
-   - Solve finite element equations
-   - Monitor convergence
-
-5. View Results
-   - Stress, displacement plots
-   - Factor of safety
-   - Animation of results</code></pre>
-                    </div>
-                </div>
-
-                <h3>Simulation Tools</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F5</div>
-                    <div class="shortcut-desc">Run simulation</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F6</div>
-                    <div class="shortcut-desc">Create mesh</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F7</div>
-                    <div class="shortcut-desc">Apply material</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F8</div>
-                    <div class="shortcut-desc">Apply fixtures</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F9</div>
-                    <div class="shortcut-desc">Apply loads</div>
-                </div>
-            </div>
-
-            <!-- Customization -->
-            <div class="section" id="customization">
-                <h2>Customization</h2>
-                
-                <h3>Interface Customization</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">S</div>
-                    <div class="shortcut-desc">Shortcut toolbar</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+K</div>
-                    <div class="shortcut-desc">Command search</div>
-                </div>
-
-                <h3>Toolbar Setup</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Customize Interface</div>
-                    <div class="command-desc">
-                        <pre><code>Tools → Customize:
-
-Toolbars:
-- Add/remove toolbar buttons
-- Create custom toolbars
-- Rearrange button order
-
-Commands:
-- Assign keyboard shortcuts
-- Create custom macros
-- Button icons and text
-
-Options:
-- Set default units and precision
-- Configure file locations
-- Performance settings</code></pre>
-                    </div>
-                </div>
-
-                <h3>Templates & Standards</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Document Templates</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Part Template:</strong> Default part settings</li>
-                            <li><strong>Assembly Template:</strong> Assembly standards</li>
-                            <li><strong>Drawing Template:</strong> Title blocks, formats</li>
-                            <li><strong>Sheet Formats:</strong> Border and title block</li>
-                            <li><strong>Material Library:</strong> Custom materials</li>
-                            <li><strong>Design Library:</strong> Standard parts</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Productivity Tips -->
-            <div class="section" id="productivity-tips">
-                <h2>Productivity Tips</h2>
-                
-                <h3>Modeling Best Practices</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Design Intent</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Design Intent:</strong> Model captures design requirements</li>
-                            <li><strong>Feature Order:</strong> Logical sequence of operations</li>
-                            <li><strong>Parent-Child:</strong> Understand feature relationships</li>
-                            <li><strong>Parametric:</strong> Use dimensions to drive changes</li>
-                            <li><strong>Symmetry:</strong> Mirror features when possible</li>
-                            <li><strong>Reference Geometry:</strong> Use planes, axes, points</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Efficiency Tips</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Workflow Optimization</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Keyboard Shortcuts:</strong> Learn and customize keys</li>
-                            <li><strong>Mouse Gestures:</strong> Right-drag for quick commands</li>
-                            <li><strong>Shortcut Bar (S):</strong> Customize for most-used tools</li>
-                            <li><strong>Search Commands:</strong> Ctrl+K to find any command</li>
-                            <li><strong>Design Library:</strong> Reuse standard components</li>
-                            <li><strong>Configurations:</strong> Multiple versions in one file</li>
-                            <li><strong>Copy with Mates:</strong> Ctrl+drag in assemblies</li>
-                            <li><strong>Instant3D:</strong> Direct manipulation of features</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Performance Optimization</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Speed Improvements</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Large Assembly Mode:</strong> For complex assemblies</li>
-                            <li><strong>Lightweight Components:</strong> Reduce memory usage</li>
-                            <li><strong>Suppress Features:</strong> Temporarily disable features</li>
-                            <li><strong>SpeedPak:</strong> Simplified assembly representations</li>
-                            <li><strong>Defeature:</strong> Remove unnecessary details</li>
-                            <li><strong>Image Quality:</strong> Adjust for performance</li>
-                            <li><strong>Automatic Rebuild:</strong> Control when models update</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Advanced Techniques</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Pro Tips</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Instant3D:</strong> Drag arrows/handles to modify features</li>
-                            <li><strong>Selection Filters:</strong> F5-F7 for precise selection</li>
-                            <li><strong>View Orientation:</strong> Spacebar for quick view changes</li>
-                            <li><strong>Feature Statistics:</strong> View rebuild times</li>
-                            <li><strong>Rollback Bar:</strong> See model at different states</li>
-                            <li><strong>Pack and Go:</strong> Save all referenced files</li>
-                            <li><strong>Equations:</strong> Link dimensions with formulas</li>
-                            <li><strong>Global Variables:</strong> Control multiple dimensions</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>File Management</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Organization</div>
-                    <div class="command-desc">
-                        <pre><code>File References:
-- Parts reference materials and configurations
-- Assemblies reference parts and sub-assemblies
-- Drawings reference parts and assemblies
-
-Version Control:
-- Save frequently with descriptive names
-- Use PDM for team collaboration
-- Archive old versions systematically
-
-Backup Strategy:
-- Enable auto-recovery
-- Set backup frequency
-- Store backups in separate location
-
-File Locations:
-Tools → Options → File Locations
-- Document templates
-- Design library
-- Toolbox folder
-- Material databases</code></pre>
-                    </div>
-                </div>
-
-                <h3>Troubleshooting</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Common Issues</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Rebuild Errors:</strong> Check feature definitions</li>
-                            <li><strong>Missing References:</strong> Use Find References tool</li>
-                            <li><strong>Slow Performance:</strong> Check display settings</li>
-                            <li><strong>File Corruption:</strong> Use built-in repair tools</li>
-                            <li><strong>Graphics Issues:</strong> Update graphics drivers</li>
-                            <li><strong>Memory Problems:</strong> Close unused documents</li>
-                            <li><strong>Feature Failures:</strong> Check sketch validity</li>
-                            <li><strong>Assembly Mates:</strong> Verify mate references</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Collaboration Features</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Team Work</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>eDrawings:</strong> Share viewable files</li>
-                            <li><strong>3D ContentCentral:</strong> Standard parts library</li>
-                            <li><strong>PDM (Product Data Management):</strong> Version control</li>
-                            <li><strong>Workgroup PDM:</strong> Simple file sharing</li>
-                            <li><strong>Comments:</strong> Add notes to features</li>
-                            <li><strong>Design Review:</strong> Markup and approval</li>
-                            <li><strong>Web2:</strong> Online collaboration platform</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <div class="cheatsheet-footer no-print">
-        <div class="container">
-            <p>SOLIDWORKS 3D CAD Cheatsheet - Part of <a href="../../../index.html">CheatSheets Collection</a></p>
-            <p>For more resources, visit <a href="https://www.solidworks.com/" target="_blank">SOLIDWORKS</a> | <a href="https://help.solidworks.com/" target="_blank">SOLIDWORKS Help</a></p>
+        <div class="section">
+            <h2>Sketching</h2>
+            <div class="command-line">
+                <span class="command">L</span>
+                <span class="description">Line tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">C</span>
+                <span class="description">Circle tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A</span>
+                <span class="description">Arc tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">R</span>
+                <span class="description">Rectangle tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">P</span>
+                <span class="description">Point tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">S</span>
+                <span class="description">Spline tool</span>
+            </div>
+            <div class="command-line">
+                <span class="command">X</span>
+                <span class="description">Trim entities</span>
+            </div>
+            <div class="command-line">
+                <span class="command">E</span>
+                <span class="description">Extend entities</span>
+            </div>
+            <div class="command-line">
+                <span class="command">O</span>
+                <span class="description">Offset entities</span>
+            </div>
+            <div class="command-line">
+                <span class="command">M</span>
+                <span class="description">Mirror entities</span>
+            </div>
+            <div class="command-line">
+                <span class="command">D</span>
+                <span class="description">Smart dimension</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + D</span>
+                <span class="description">Dimension tool</span>
+            </div>
         </div>
-    </div>
+
+        <div class="section">
+            <h2>3D Features</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + E</span>
+                <span class="description">Extrude boss/base</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + R</span>
+                <span class="description">Revolve boss/base</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + L</span>
+                <span class="description">Loft boss/base</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + W</span>
+                <span class="description">Sweep boss/base</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + E</span>
+                <span class="description">Extrude cut</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + R</span>
+                <span class="description">Revolve cut</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + L</span>
+                <span class="description">Loft cut</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + W</span>
+                <span class="description">Sweep cut</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + F</span>
+                <span class="description">Fillet</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + H</span>
+                <span class="description">Chamfer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + H</span>
+                <span class="description">Hole wizard</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Selection & Editing</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + A</span>
+                <span class="description">Select all</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + I</span>
+                <span class="description">Invert selection</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Delete</span>
+                <span class="description">Delete selected</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + C</span>
+                <span class="description">Copy</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + V</span>
+                <span class="description">Paste</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + X</span>
+                <span class="description">Cut</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F2</span>
+                <span class="description">Rename</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F3</span>
+                <span class="description">Hide/show</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + Tab</span>
+                <span class="description">Cycle through open documents</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Assembly</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + Tab</span>
+                <span class="description">Switch between part/assembly</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + A</span>
+                <span class="description">Mate</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + I</span>
+                <span class="description">Insert component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + N</span>
+                <span class="description">New part</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Alt + Drag</span>
+                <span class="description">Copy component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + M</span>
+                <span class="description">Move component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + R</span>
+                <span class="description">Rotate component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + F</span>
+                <span class="description">Fix/float component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Spacebar</span>
+                <span class="description">Rotate component view</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Drawing/Detailing</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + D</span>
+                <span class="description">Smart dimension</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + V</span>
+                <span class="description">Standard 3 view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + P</span>
+                <span class="description">Projected view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + X</span>
+                <span class="description">Section view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + D</span>
+                <span class="description">Detail view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + B</span>
+                <span class="description">Break view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + T</span>
+                <span class="description">Note/annotation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + T</span>
+                <span class="description">Surface finish symbol</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mouse Controls</h2>
+            <div class="command-line">
+                <span class="command">Middle Mouse Drag</span>
+                <span class="description">Rotate view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + Middle Mouse</span>
+                <span class="description">Pan view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Middle Mouse</span>
+                <span class="description">Zoom view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Mouse Wheel</span>
+                <span class="description">Zoom in/out</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Middle Mouse Click</span>
+                <span class="description">Zoom to fit</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Right Click</span>
+                <span class="description">Context menu</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Productivity Tips</h2>
+            <div class="workflow">
+                <strong>Efficient Modeling Workflow:</strong><br>
+                • Plan your feature tree before modeling<br>
+                • Use design intent and parameters<br>
+                • Create base sketches with proper relations<br>
+                • Use configurations for design variations<br>
+                • Apply materials and appearances early
+            </div>
+            <div class="workflow">
+                <strong>Assembly Best Practices:</strong><br>
+                • Start with fixed base component<br>
+                • Use consistent mate strategy<br>
+                • Group related mates in folders<br>
+                • Use lightweight components for large assemblies<br>
+                • Check for mate conflicts regularly
+            </div>
+            <div class="tip">
+                <strong>Performance Tips:</strong><br>
+                • Use simplified representations<br>
+                • Suppress unnecessary features<br>
+                • Use defeature tool for complex parts<br>
+                • Optimize graphics settings<br>
+                • Close unused documents
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>SolidWorks Keyboard Shortcuts - Part of CheatSheets Collection</p>
+    </footer>
 
     <script src="../../js/cheatsheet.js"></script>
-    <script>
-        // Additional SOLIDWORKS-specific JavaScript can go here
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('SOLIDWORKS 3D CAD Cheatsheet loaded');
-        });
-    </script>
 </body>
 </html>

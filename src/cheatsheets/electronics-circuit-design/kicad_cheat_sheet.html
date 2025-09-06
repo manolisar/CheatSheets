@@ -3,1080 +3,479 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KiCad PCB Design Cheatsheet - Schematic & PCB Layout</title>
-    <meta name="description" content="Complete KiCad cheatsheet with schematic capture, PCB layout, library management, DRC, and electronics design workflows.">
-    <meta name="keywords" content="kicad, pcb design, schematic, electronics, eda, footprint, library, drc, gerber, layout">
+    <title>KiCad PCB Design Shortcuts - Cheatsheet</title>
+    <meta name="description" content="Complete KiCad PCB design cheatsheet with schematic capture, PCB layout, and 3D visualization shortcuts.">
+    <meta name="keywords" content="kicad, pcb design, schematic capture, electronics, eda, circuit design, pcb layout">
     <link rel="stylesheet" href="../../styles/cheatsheet.css">
 </head>
 <body class="electronics-circuit-design">
-    <div class="cheatsheet-header no-print">
-        <div class="container">
-            <nav>
-                <a href="../../../index.html" class="back-link">
-                    <span>←</span> Back to Collection
-                </a>
-                <div class="header-actions">
-                    <input type="text" 
-                           id="searchInput" 
-                           class="in-page-search" 
-                           placeholder="Search commands..."
-                           aria-label="Search cheatsheet content">
-                    <button onclick="window.print()" class="print-btn">
-                        <span>🖨️</span> Print
-                    </button>
-                    <button onclick="toggleTheme()" class="theme-btn">
-                        <span>🌓</span> Theme
-                    </button>
-                </div>
-            </nav>
-            
-            <div class="title-section">
-                <h1>KiCad PCB Design Cheatsheet</h1>
-                <p class="subtitle">Schematic capture, PCB layout, and complete electronics design workflow</p>
-                <div class="meta">
-                    <span class="category-tag design-cad">Design & CAD</span>
-                    <span class="type-tag">Shortcuts</span>
-                </div>
+    <header class="header">
+        <h1>KiCad PCB Design Shortcuts</h1>
+        <p>Complete reference for KiCad PCB design software including schematic capture, PCB layout, and 3D visualization</p>
+    </header>
+
+    <main class="container">
+        <div class="section">
+            <h2>File Operations</h2>
+            <div class="command-line">
+                <span class="command">Ctrl + N</span>
+                <span class="description">New project/document</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + O</span>
+                <span class="description">Open existing file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + S</span>
+                <span class="description">Save current file</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Shift + S</span>
+                <span class="description">Save with new name</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + P</span>
+                <span class="description">Print current view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Q</span>
+                <span class="description">Exit application</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Z</span>
+                <span class="description">Undo last action</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + Y</span>
+                <span class="description">Redo last undone action</span>
             </div>
         </div>
-    </div>
 
-    <div class="cheatsheet-container">
-        <div class="container">
-            <!-- Table of Contents -->
-            <div class="table-of-contents">
-                <h3>Quick Navigation</h3>
-                <ul>
-                    <li><a href="#project-manager">Project Manager</a></li>
-                    <li><a href="#schematic-editor">Schematic Editor (Eeschema)</a></li>
-                    <li><a href="#pcb-editor">PCB Editor (Pcbnew)</a></li>
-                    <li><a href="#footprint-editor">Footprint Editor</a></li>
-                    <li><a href="#symbol-editor">Symbol Editor</a></li>
-                    <li><a href="#library-management">Library Management</a></li>
-                    <li><a href="#design-rules">Design Rules & DRC</a></li>
-                    <li><a href="#routing">Routing & Via</a></li>
-                    <li><a href="#output-generation">Output Generation</a></li>
-                    <li><a href="#3d-viewer">3D Viewer</a></li>
-                    <li><a href="#workflows">Common Workflows</a></li>
-                    <li><a href="#tips-best-practices">Tips & Best Practices</a></li>
-                </ul>
+        <div class="section">
+            <h2>View Controls</h2>
+            <div class="command-line">
+                <span class="command">F1</span>
+                <span class="description">Zoom in</span>
             </div>
-
-            <!-- Project Manager -->
-            <div class="section" id="project-manager">
-                <h2>Project Manager</h2>
-                
-                <h3>File Operations</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+N</div>
-                    <div class="shortcut-desc">New project</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+O</div>
-                    <div class="shortcut-desc">Open project</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Double-click .pro</div>
-                    <div class="shortcut-desc">Open project from file manager</div>
-                </div>
-
-                <h3>Project Structure</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Project Files</div>
-                    <div class="command-desc">
-                        <pre><code>project.pro         - Project file (settings)
-project.sch         - Schematic file  
-project.kicad_pcb   - PCB layout file
-project-cache.lib   - Cached symbols
-project.net         - Netlist file
-project.cmp         - Component file
-
-Backup files:
-project-bak.sch     - Schematic backup
-project-bak.kicad_pcb - PCB backup
-_autosave-*         - Auto-saved files</code></pre>
-                    </div>
-                </div>
-
-                <h3>Tool Launch</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Editor Access</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Eeschema:</strong> Schematic editor - click .sch file</li>
-                            <li><strong>Pcbnew:</strong> PCB editor - click .kicad_pcb file</li>
-                            <li><strong>GerbView:</strong> Gerber viewer</li>
-                            <li><strong>Calculator:</strong> PCB calculator tools</li>
-                            <li><strong>Bitmap2Component:</strong> Logo/image import</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">F2</span>
+                <span class="description">Zoom out</span>
             </div>
-
-            <!-- Schematic Editor -->
-            <div class="section" id="schematic-editor">
-                <h2>Schematic Editor (Eeschema)</h2>
-                
-                <h3>Navigation</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Mouse Wheel</div>
-                    <div class="shortcut-desc">Zoom in/out</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Middle Click</div>
-                    <div class="shortcut-desc">Pan/move view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F1</div>
-                    <div class="shortcut-desc">Zoom in</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F2</div>
-                    <div class="shortcut-desc">Zoom out</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F4</div>
-                    <div class="shortcut-desc">Zoom to fit</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Home</div>
-                    <div class="shortcut-desc">Zoom to fit page</div>
-                </div>
-
-                <h3>Component Placement</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">A</div>
-                    <div class="shortcut-desc">Add symbol/component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">P</div>
-                    <div class="shortcut-desc">Add power symbol</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">C</div>
-                    <div class="shortcut-desc">Copy component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">M</div>
-                    <div class="shortcut-desc">Move component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">R</div>
-                    <div class="shortcut-desc">Rotate component</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">X</div>
-                    <div class="shortcut-desc">Mirror component horizontally</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Y</div>
-                    <div class="shortcut-desc">Mirror component vertically</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Delete</div>
-                    <div class="shortcut-desc">Delete component</div>
-                </div>
-
-                <h3>Wiring</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">W</div>
-                    <div class="shortcut-desc">Start wire</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">B</div>
-                    <div class="shortcut-desc">Add bus</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">K</div>
-                    <div class="shortcut-desc">End wire/bus</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">J</div>
-                    <div class="shortcut-desc">Add junction</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">L</div>
-                    <div class="shortcut-desc">Add label</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">H</div>
-                    <div class="shortcut-desc">Add hierarchical label</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">G</div>
-                    <div class="shortcut-desc">Add global label</div>
-                </div>
-
-                <h3>Annotation & Documentation</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">T</div>
-                    <div class="shortcut-desc">Add text</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+V</div>
-                    <div class="shortcut-desc">Edit component value</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+U</div>
-                    <div class="shortcut-desc">Edit component reference</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+F</div>
-                    <div class="shortcut-desc">Edit component footprint</div>
-                </div>
-
-                <h3>Hierarchical Design</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Sheet Management</div>
-                    <div class="command-desc">
-                        <pre><code>S - Add hierarchical sheet
-Enter - Navigate into sheet
-Alt+Backspace - Navigate back to parent sheet
-F5 - Switch to sheet list
-
-Sheet pins:
-I - Add input pin to sheet
-O - Add output pin to sheet  
-T - Add tristate pin to sheet
-U - Add unspecified pin to sheet</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">F3</span>
+                <span class="description">Redraw/refresh display</span>
             </div>
-
-            <!-- PCB Editor -->
-            <div class="section" id="pcb-editor">
-                <h2>PCB Editor (Pcbnew)</h2>
-                
-                <h3>Navigation & View</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F1</div>
-                    <div class="shortcut-desc">Zoom in</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F2</div>
-                    <div class="shortcut-desc">Zoom out</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F4</div>
-                    <div class="shortcut-desc">Zoom to fit</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F12</div>
-                    <div class="shortcut-desc">Switch between layer views</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Page Up/Down</div>
-                    <div class="shortcut-desc">Switch layers</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">+/-</div>
-                    <div class="shortcut-desc">Next/previous layer</div>
-                </div>
-
-                <h3>Component Placement</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">M</div>
-                    <div class="shortcut-desc">Move footprint</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">R</div>
-                    <div class="shortcut-desc">Rotate footprint</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">F</div>
-                    <div class="shortcut-desc">Flip footprint to other layer</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">G</div>
-                    <div class="shortcut-desc">Grab and move</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">L</div>
-                    <div class="shortcut-desc">Lock/unlock footprint</div>
-                </div>
-
-                <h3>Routing</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">X</div>
-                    <div class="shortcut-desc">Route tracks</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">V</div>
-                    <div class="shortcut-desc">Add via</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+Shift+X</div>
-                    <div class="shortcut-desc">Route differential pair</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">U</div>
-                    <div class="shortcut-desc">Select connection (net)</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">I</div>
-                    <div class="shortcut-desc">Select single track</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Backspace</div>
-                    <div class="shortcut-desc">Delete last routing point</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">/</div>
-                    <div class="shortcut-desc">Switch track posture</div>
-                </div>
-
-                <h3>Drawing Tools</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+A</div>
-                    <div class="shortcut-desc">Add filled zone</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+K</div>
-                    <div class="shortcut-desc">Add keepout zone</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+T</div>
-                    <div class="shortcut-desc">Add text</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+G</div>
-                    <div class="shortcut-desc">Add graphic line</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+C</div>
-                    <div class="shortcut-desc">Add graphic circle</div>
-                </div>
-
-                <h3>Selection & Editing</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+A</div>
-                    <div class="shortcut-desc">Select all</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+C</div>
-                    <div class="shortcut-desc">Copy</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+V</div>
-                    <div class="shortcut-desc">Paste</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Delete</div>
-                    <div class="shortcut-desc">Delete selected</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Ctrl+D</div>
-                    <div class="shortcut-desc">Duplicate</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">A</div>
-                    <div class="shortcut-desc">Create array/duplicate pattern</div>
-                </div>
+            <div class="command-line">
+                <span class="command">F4</span>
+                <span class="description">Center view at cursor</span>
             </div>
-
-            <!-- Footprint Editor -->
-            <div class="section" id="footprint-editor">
-                <h2>Footprint Editor</h2>
-                
-                <h3>Pad Creation</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Pad Types</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Through-hole:</strong> Standard THT component pads</li>
-                            <li><strong>SMD:</strong> Surface mount device pads</li>
-                            <li><strong>Connector:</strong> Edge connector pads</li>
-                            <li><strong>NPTH:</strong> Non-plated through hole (mounting)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Drawing Elements</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+A</div>
-                    <div class="shortcut-desc">Add graphic arc</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+C</div>
-                    <div class="shortcut-desc">Add graphic circle</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+L</div>
-                    <div class="shortcut-desc">Add graphic line</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+P</div>
-                    <div class="shortcut-desc">Add graphic polygon</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+T</div>
-                    <div class="shortcut-desc">Add text</div>
-                </div>
-
-                <h3>Layer Assignment</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Standard Layers</div>
-                    <div class="command-desc">
-                        <pre><code>F.Cu - Front copper layer
-B.Cu - Back copper layer  
-F.SilkS - Front silkscreen
-B.SilkS - Back silkscreen
-F.Mask - Front solder mask
-B.Mask - Back solder mask
-F.Paste - Front solder paste (stencil)
-B.Paste - Back solder paste
-F.Adhes - Front adhesive  
-B.Adhes - Back adhesive
-F.CrtYd - Front courtyard
-B.CrtYd - Back courtyard
-F.Fab - Front fabrication layer
-B.Fab - Back fabrication layer
-Edge.Cuts - Board outline</code></pre>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Home</span>
+                <span class="description">Fit all objects in view</span>
             </div>
-
-            <!-- Symbol Editor -->
-            <div class="section" id="symbol-editor">
-                <h2>Symbol Editor</h2>
-                
-                <h3>Drawing Tools</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">P</div>
-                    <div class="shortcut-desc">Add pin</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+A</div>
-                    <div class="shortcut-desc">Add arc</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+C</div>
-                    <div class="shortcut-desc">Add circle</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+L</div>
-                    <div class="shortcut-desc">Add line</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+P</div>
-                    <div class="shortcut-desc">Add polygon</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+R</div>
-                    <div class="shortcut-desc">Add rectangle</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Ctrl+T</div>
-                    <div class="shortcut-desc">Add text</div>
-                </div>
-
-                <h3>Pin Properties</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Pin Types</div>
-                    <div class="command-desc">
-                        <pre><code>Pin electrical types:
-Input - Signal input
-Output - Signal output
-Bidirectional - I/O pin
-Tristate - Three-state output
-Passive - Passive component pin
-Free - Unspecified
-Unspecified - No electrical rules check
-Power input - VCC, VDD, etc.
-Power output - Power supply output
-Open collector - Open collector output
-Open emitter - Open emitter output
-Not connected - NC pin
-
-Pin graphic styles:
-Line - Standard pin line
-Inverted - Bubble at base
-Clock - Clock symbol
-Inverted clock - Inverted clock
-Input low - IEEE input low
-Clock low - IEEE clock low
-Output low - IEEE output low
-Edge clock high - Rising edge clock
-Non logic - Diamond shape</code></pre>
-                    </div>
-                </div>
-
-                <h3>Symbol Properties</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Text Fields</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Reference:</strong> Component reference (R1, U1, etc.)</li>
-                            <li><strong>Value:</strong> Component value or part number</li>
-                            <li><strong>Footprint:</strong> Associated PCB footprint</li>
-                            <li><strong>Datasheet:</strong> Link to component datasheet</li>
-                            <li><strong>Description:</strong> Component description</li>
-                            <li><strong>Keywords:</strong> Search keywords</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">Space</span>
+                <span class="description">Reset coordinate origin</span>
             </div>
-
-            <!-- Library Management -->
-            <div class="section" id="library-management">
-                <h2>Library Management</h2>
-                
-                <h3>Symbol Libraries</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Library Setup</div>
-                    <div class="command-desc">
-                        <pre><code>Global libraries:
-Preferences → Manage Symbol Libraries → Global Libraries Tab
-- Available to all projects
-- Located in KiCad installation directory
-
-Project-specific libraries:
-Preferences → Manage Symbol Libraries → Project Specific Tab
-- Only available to current project
-- Located in project directory
-
-Library table files:
-sym-lib-table (global symbol libraries)
-fp-lib-table (global footprint libraries)</code></pre>
-                    </div>
-                </div>
-
-                <h3>Footprint Libraries</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Library Types</div>
-                    <div class="command-desc">
-                        <pre><code>Library formats:
-.pretty - Native KiCad footprint library (folder)
-.mod - Legacy KiCad library file
-.kicad_mod - Individual footprint file
-
-Standard libraries:
-Connector_* - Various connector types
-Package_* - IC packages (DIP, QFP, BGA, etc.)
-Resistor_THT - Through-hole resistors
-Capacitor_THT - Through-hole capacitors
-LED_* - LED packages
-Crystal - Crystal oscillator packages</code></pre>
-                    </div>
-                </div>
-
-                <h3>Library Management Commands</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Library Operations</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Add Library:</strong> Browse to .lib or .pretty folder</li>
-                            <li><strong>Remove Library:</strong> Select and delete from table</li>
-                            <li><strong>Update Cache:</strong> Tools → Update Symbol Library Cache</li>
-                            <li><strong>Rescue Symbols:</strong> Tools → Rescue Symbols</li>
-                            <li><strong>Library Browser:</strong> Browse available symbols/footprints</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="command-line">
+                <span class="command">PgUp/PgDn</span>
+                <span class="description">Navigate between layers</span>
             </div>
-
-            <!-- Design Rules -->
-            <div class="section" id="design-rules">
-                <h2>Design Rules & DRC</h2>
-                
-                <h3>Design Rule Setup</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Basic Rules</div>
-                    <div class="command-desc">
-                        <pre><code>Setup → Design Rules:
-
-Track & Via:
-- Minimum track width: 0.1mm (typical)
-- Minimum via size: 0.2mm (typical)
-- Via drill size: 0.1mm smaller than via size
-
-Clearances:
-- Track to track: 0.127mm (5 mil)
-- Track to via: 0.127mm
-- Track to pad: 0.127mm
-- Via to via: 0.127mm
-
-Solder mask:
-- Mask clearance: 0.051mm (2 mil)
-- Mask minimum width: 0.25mm
-- Paste margin: -0.025mm (typical)</code></pre>
-                    </div>
-                </div>
-
-                <h3>DRC (Design Rule Check)</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Running DRC</div>
-                    <div class="command-desc">
-                        <pre><code>Inspect → Design Rules Checker
-
-Common DRC errors:
-- Track too close to track
-- Via too close to via  
-- Track too close to pad
-- Drill too small
-- Copper pour not connected
-- Unconnected nets
-- Duplicate footprints
-- Missing courtyard
-
-Error markers:
-- White arrows point to violations
-- Click marker to see error details
-- Fix errors and re-run DRC</code></pre>
-                    </div>
-                </div>
-
-                <h3>Net Classes</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Class Management</div>
-                    <div class="command-desc">
-                        <pre><code>Setup → Design Rules → Net Classes:
-
-Default class:
-- Applied to all nets unless specified
-- Set basic track width and clearance
-
-Power class:
-- Wider tracks for power nets
-- Larger vias for current handling
-- Example: 0.5mm tracks, 0.6mm vias
-
-Differential pairs:
-- Controlled impedance routing
-- Matched track width and spacing
-- Example: 0.127mm tracks, 0.127mm gap</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Routing -->
-            <div class="section" id="routing">
-                <h2>Routing & Via</h2>
-                
-                <h3>Interactive Routing</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Routing Modes</div>
-                    <div class="command-desc">
-                        <pre><code>Routing settings (while routing):
-1 - Switch to 45° angle mode
-2 - Switch to 90° angle mode  
-3 - Switch to free angle mode
-Ctrl - Disable grid snapping
-Shift - Force 45° from start point
-
-Track width:
-W - Select track width from menu
-Q - Switch to previous track width
-Shift+Q - Switch to next track width
-
-Via placement:
-V - Place via and continue on other layer
-Shift+V - Place via and select layer</code></pre>
-                    </div>
-                </div>
-
-                <h3>Push & Shove Routing</h3>
-                <div class="command design-cad">
-                    <div class="command-name">PnS Settings</div>
-                    <div class="command-desc">
-                        <pre><code>Route → Interactive Router Settings:
-
-Modes:
-- Highlight collisions: Show conflicts only
-- Shove: Push existing tracks aside
-- Walk around: Route around obstacles
-- Free angle: No angle constraints
-
-Options:
-- Remove redundant tracks: Clean up routing
-- Automatic neckdown: Reduce width near pads
-- Smooth dragged segments: Optimize track shape
-- Allow DRC violations: Override rules temporarily</code></pre>
-                    </div>
-                </div>
-
-                <h3>Differential Pair Routing</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Diff Pair Setup</div>
-                    <div class="command-desc">
-                        <pre><code>Setup → Design Rules → Net Classes:
-1. Create differential pair nets (+/- naming)
-2. Set track width and differential gap
-3. Enable length matching if needed
-
-Routing differential pairs:
-Ctrl+Shift+X - Start differential pair routing
-- Automatically maintains spacing
-- Keeps traces matched in length
-- Handles via placement for both traces
-
-Length matching:
-Select differential pair → Edit → Edit Track & Via Properties
-- Set target length
-- View length mismatch in status</code></pre>
-                    </div>
-                </div>
-
-                <h3>Via Types & Management</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Via Configuration</div>
-                    <div class="command-desc">
-                        <pre><code>Via types:
-- Through hole: Connect all layers
-- Blind: Connect outer to inner layer
-- Buried: Connect inner layers only
-- Micro: Small vias for HDI boards
-
-Via stitching:
-Tools → Generate Position File → Via Stitching
-- Connects copper pours to ground planes
-- Improves EMI performance
-- Reduces impedance
-
-Teardrops:
-Tools → Generate Position File → Add Teardrops
-- Improves manufacturing reliability
-- Reduces stress at via connections</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Output Generation -->
-            <div class="section" id="output-generation">
-                <h2>Output Generation</h2>
-                
-                <h3>Gerber Files</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Gerber Export</div>
-                    <div class="command-desc">
-                        <pre><code>File → Fabrication Outputs → Gerbers (.gbr):
-
-Standard layers to plot:
-F.Cu - Front copper
-B.Cu - Back copper  
-F.SilkS - Front silkscreen
-B.SilkS - Back silkscreen
-F.Mask - Front solder mask
-B.Mask - Back solder mask  
-F.Paste - Front paste (stencil)
-B.Paste - Back paste (stencil)
-Edge.Cuts - Board outline
-
-Settings:
-✓ Use Protel filename extensions
-✓ Include netlist info
-✓ Subtract soldermask from silkscreen
-Coordinate format: 4.6 (unit mm)</code></pre>
-                    </div>
-                </div>
-
-                <h3>Drill Files</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Drill Export</div>
-                    <div class="command-desc">
-                        <pre><code>File → Fabrication Outputs → Drill Files (.drl):
-
-Drill file format:
-- Excellon format (most common)
-- Absolute coordinates
-- Inches or millimeters
-- Leading zero suppression
-
-Map file:
-✓ Generate drill map
-- Shows drill sizes and locations
-- Useful for assembly reference
-- Format: PostScript or PDF</code></pre>
-                    </div>
-                </div>
-
-                <h3>Pick & Place Files</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Assembly Files</div>
-                    <div class="command-desc">
-                        <pre><code>File → Fabrication Outputs → Component Placement (.pos):
-
-Front components only: ✓ (for SMT assembly)
-Back components only: ✓ (if needed)
-Include footprint refs: ✓
-Include layer info: ✓
-
-Format options:
-- ASCII format
-- Units: mm or inches  
-- CSV format for spreadsheet import
-
-Files generated:
-project-front-pos.csv - Front side components
-project-back-pos.csv - Back side components</code></pre>
-                    </div>
-                </div>
-
-                <h3>Bill of Materials (BOM)</h3>
-                <div class="command design-cad">
-                    <div class="command-name">BOM Generation</div>
-                    <div class="command-desc">
-                        <pre><code>Eeschema → Generate Bill of Materials:
-
-BOM plugins:
-- bom_csv_grouped_by_value: Group by value
-- bom_html_grouped_by_value: HTML format
-- kibom: Advanced BOM with filters
-
-Custom fields to include:
-- Manufacturer
-- Manufacturer Part Number  
-- Supplier
-- Supplier Part Number
-- Description
-- Tolerance
-- Power rating</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3D Viewer -->
-            <div class="section" id="3d-viewer">
-                <h2>3D Viewer</h2>
-                
-                <h3>Navigation</h3>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Mouse Drag</div>
-                    <div class="shortcut-desc">Rotate view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Shift+Mouse Drag</div>
-                    <div class="shortcut-desc">Pan view</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Mouse Wheel</div>
-                    <div class="shortcut-desc">Zoom in/out</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">R</div>
-                    <div class="shortcut-desc">Reset view to default</div>
-                </div>
-                <div class="shortcut design-cad">
-                    <div class="shortcut-key">Home</div>
-                    <div class="shortcut-desc">Fit board in window</div>
-                </div>
-
-                <h3>Display Options</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Rendering Settings</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Realistic mode:</strong> Show materials and lighting</li>
-                            <li><strong>Raytracing:</strong> High-quality rendering (slower)</li>
-                            <li><strong>Show board body:</strong> Display PCB substrate</li>
-                            <li><strong>Show copper:</strong> Display copper layers</li>
-                            <li><strong>Show silkscreen:</strong> Display component labels</li>
-                            <li><strong>Show solder mask:</strong> Display mask layers</li>
-                            <li><strong>Show 3D models:</strong> Component 3D models</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>3D Model Management</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Component Models</div>
-                    <div class="command-desc">
-                        <pre><code>Footprint properties → 3D Settings:
-
-Model files:
-- .wrl (VRML format)
-- .step/.stp (STEP format)  
-- .iges/.igs (IGES format)
-
-Model positioning:
-X, Y, Z offset - Position adjustment
-X, Y, Z rotation - Orientation adjustment  
-X, Y, Z scale - Size adjustment
-
-Download 3D models:
-KiCad → Help → Get Involved → Download Libraries
-Or use online repositories like SnapEDA, Ultra Librarian</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Workflows -->
-            <div class="section" id="workflows">
-                <h2>Common Workflows</h2>
-                
-                <h3>New Project Workflow</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Project Setup</div>
-                    <div class="command-desc">
-                        <pre><code>1. File → New → Project
-2. Choose template or blank project
-3. Set project name and location
-4. Open schematic editor (Eeschema)
-5. Place components and create schematic
-6. Run Electrical Rules Check (ERC)
-7. Assign footprints to components
-8. Generate netlist
-9. Open PCB editor (Pcbnew)
-10. Import netlist to PCB
-11. Place components on PCB
-12. Route tracks between components
-13. Add copper fills/pours
-14. Run Design Rules Check (DRC)
-15. Generate output files (Gerbers, drill, etc.)</code></pre>
-                    </div>
-                </div>
-
-                <h3>Component Assignment</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Footprint Assignment</div>
-                    <div class="command-desc">
-                        <pre><code>Tools → Assign Footprints:
-
-Assignment methods:
-1. Filter by library - Browse footprint libraries
-2. Filter by keywords - Search functionality  
-3. Filter by pin count - Match pin numbers
-4. View selected footprint - Preview in 3D
-5. Assign footprint - Double-click to assign
-
-Bulk assignment:
-- Select multiple components
-- Right-click → Change Footprint
-- Useful for changing resistor/capacitor packages</code></pre>
-                    </div>
-                </div>
-
-                <h3>Layer Stack Management</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Layer Setup</div>
-                    <div class="command-desc">
-                        <pre><code>Setup → Board Setup → Board Stackup:
-
-2-layer board:
-F.Cu - Front copper (signal)
-Dielectric - FR4 substrate  
-B.Cu - Back copper (ground/power)
-
-4-layer board:
-F.Cu - Front copper (signal)
-Dielectric - Prepreg
-In1.Cu - Inner layer 1 (power)
-Core - FR4 core
-In2.Cu - Inner layer 2 (ground)  
-Dielectric - Prepreg
-B.Cu - Back copper (signal)
-
-Set dielectric properties:
-- Er (dielectric constant): 4.5 (FR4)
-- Loss tangent: 0.02 (FR4)
-- Thickness: 1.6mm (standard)</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tips & Best Practices -->
-            <div class="section" id="tips-best-practices">
-                <h2>Tips & Best Practices</h2>
-                
-                <h3>Schematic Best Practices</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Schematic Guidelines</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Component placement:</strong> Left to right signal flow</li>
-                            <li><strong>Power rails:</strong> VCC at top, GND at bottom</li>
-                            <li><strong>Net labels:</strong> Use descriptive names (CLK, DATA, etc.)</li>
-                            <li><strong>Reference designators:</strong> U for ICs, R for resistors, etc.</li>
-                            <li><strong>Hierarchical sheets:</strong> Break complex designs into blocks</li>
-                            <li><strong>Documentation:</strong> Add notes and comments</li>
-                            <li><strong>ERC clean:</strong> Fix all electrical rule violations</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>PCB Layout Best Practices</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Layout Guidelines</div>
-                    <div class="command-desc">
-                        <ul>
-                            <li><strong>Component placement:</strong> Group related components</li>
-                            <li><strong>Ground plane:</strong> Use continuous ground plane</li>
-                            <li><strong>Power distribution:</strong> Wide tracks for power nets</li>
-                            <li><strong>High-speed signals:</strong> Keep traces short and straight</li>
-                            <li><strong>Differential pairs:</strong> Route parallel with equal length</li>
-                            <li><strong>Via stitching:</strong> Connect planes with vias</li>
-                            <li><strong>Thermal relief:</strong> Use for ground connections to large pours</li>
-                            <li><strong>Silkscreen:</strong> Clear component labels and polarity marks</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Manufacturing Considerations</h3>
-                <div class="command design-cad">
-                    <div class="command-name">DFM Guidelines</div>
-                    <div class="command-desc">
-                        <pre><code>Minimum dimensions (standard PCB):
-- Track width: 0.1mm (4 mil)
-- Via size: 0.2mm (8 mil) 
-- Drill size: 0.1mm (4 mil)
-- Spacing: 0.1mm (4 mil)
-
-Solder mask:
-- Minimum opening: 0.1mm
-- Minimum web: 0.1mm between openings
-- Expansion: 0.05mm around pads
-
-Silkscreen:
-- Minimum line width: 0.15mm (6 mil)
-- Minimum text height: 1mm
-- Keep away from pads and vias
-
-Assembly considerations:
-- Component orientation consistency
-- Test points for debugging
-- Reference designators visible
-- Fiducial markers for pick-and-place</code></pre>
-                    </div>
-                </div>
-
-                <h3>Keyboard Customization</h3>
-                <div class="command design-cad">
-                    <div class="command-name">Custom Shortcuts</div>
-                    <div class="command-desc">
-                        <pre><code>Preferences → Preferences → Hotkeys:
-
-Customize frequent operations:
-- Assign single keys to common tools
-- Create combinations for complex actions
-- Export/import hotkey configurations
-- Reset to defaults if needed
-
-Recommended customizations:
-Z - Zoom to selection
-Space - Reset local coordinates  
-Tab - Switch between metric/imperial
-Q/W - Previous/next track width
-E - Edit properties of selected item</code></pre>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <div class="cheatsheet-footer no-print">
-        <div class="container">
-            <p>KiCad PCB Design Cheatsheet - Part of <a href="../../../index.html">CheatSheets Collection</a></p>
-            <p>For more resources, visit <a href="https://www.kicad.org/" target="_blank">KiCad Official Site</a> | <a href="https://docs.kicad.org/" target="_blank">KiCad Documentation</a></p>
+        <div class="section">
+            <h2>Schematic Editor - Drawing Tools</h2>
+            <div class="command-line">
+                <span class="command">A</span>
+                <span class="description">Add symbol</span>
+            </div>
+            <div class="command-line">
+                <span class="command">P</span>
+                <span class="description">Add power port</span>
+            </div>
+            <div class="command-line">
+                <span class="command">W</span>
+                <span class="description">Add wire</span>
+            </div>
+            <div class="command-line">
+                <span class="command">B</span>
+                <span class="description">Add bus</span>
+            </div>
+            <div class="command-line">
+                <span class="command">K</span>
+                <span class="description">Add no connect flag</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Q</span>
+                <span class="description">Add junction</span>
+            </div>
+            <div class="command-line">
+                <span class="command">L</span>
+                <span class="description">Add net label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">H</span>
+                <span class="description">Add hierarchical label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + H</span>
+                <span class="description">Add global label</span>
+            </div>
+            <div class="command-line">
+                <span class="command">T</span>
+                <span class="description">Add text annotation</span>
+            </div>
+            <div class="command-line">
+                <span class="command">I</span>
+                <span class="description">Add bitmap image</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + A</span>
+                <span class="description">Add hierarchical sheet</span>
+            </div>
         </div>
-    </div>
+
+        <div class="section">
+            <h2>Symbol Placement & Editing</h2>
+            <div class="command-line">
+                <span class="command">R</span>
+                <span class="description">Rotate item 90° CCW</span>
+            </div>
+            <div class="command-line">
+                <span class="command">X</span>
+                <span class="description">Mirror horizontally</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Y</span>
+                <span class="description">Mirror vertically</span>
+            </div>
+            <div class="command-line">
+                <span class="command">M</span>
+                <span class="description">Move selected item</span>
+            </div>
+            <div class="command-line">
+                <span class="command">G</span>
+                <span class="description">Drag with connections</span>
+            </div>
+            <div class="command-line">
+                <span class="command">C</span>
+                <span class="description">Copy selected item</span>
+            </div>
+            <div class="command-line">
+                <span class="command">E</span>
+                <span class="description">Edit properties dialog</span>
+            </div>
+            <div class="command-line">
+                <span class="command">V</span>
+                <span class="description">Edit component value</span>
+            </div>
+            <div class="command-line">
+                <span class="command">U</span>
+                <span class="description">Edit reference designator</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F</span>
+                <span class="description">Assign/edit footprint</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Del</span>
+                <span class="description">Remove selected item</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + D</span>
+                <span class="description">Duplicate selection</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PCB Editor - Routing</h2>
+            <div class="command-line">
+                <span class="command">X</span>
+                <span class="description">Start routing track</span>
+            </div>
+            <div class="command-line">
+                <span class="command">V</span>
+                <span class="description">Add via while routing</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + V</span>
+                <span class="description">Select via size</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + V</span>
+                <span class="description">Place standalone via</span>
+            </div>
+            <div class="command-line">
+                <span class="command">D</span>
+                <span class="description">Drag track (maintain angles)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">G</span>
+                <span class="description">Drag track (free angle)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">U</span>
+                <span class="description">Select single track</span>
+            </div>
+            <div class="command-line">
+                <span class="command">I</span>
+                <span class="description">Select connected tracks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Del</span>
+                <span class="description">Delete track segment</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Backspace</span>
+                <span class="description">Remove last segment</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Interactive Router</h2>
+            <div class="command-line">
+                <span class="command">X</span>
+                <span class="description">Start interactive routing</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + X</span>
+                <span class="description">Route differential pair</span>
+            </div>
+            <div class="command-line">
+                <span class="command">E</span>
+                <span class="description">Edit track width</span>
+            </div>
+            <div class="command-line">
+                <span class="command">W</span>
+                <span class="description">Switch track widths</span>
+            </div>
+            <div class="command-line">
+                <span class="command">/</span>
+                <span class="description">Change routing angle</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + Space</span>
+                <span class="description">Cycle routing mode</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Tab</span>
+                <span class="description">Switch copper layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Esc</span>
+                <span class="description">Exit routing mode</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Component Placement</h2>
+            <div class="command-line">
+                <span class="command">A</span>
+                <span class="description">Add footprint</span>
+            </div>
+            <div class="command-line">
+                <span class="command">O</span>
+                <span class="description">Browse footprint library</span>
+            </div>
+            <div class="command-line">
+                <span class="command">M</span>
+                <span class="description">Move component</span>
+            </div>
+            <div class="command-line">
+                <span class="command">R</span>
+                <span class="description">Rotate 90 degrees</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F</span>
+                <span class="description">Flip to opposite layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">G</span>
+                <span class="description">Drag with tracks</span>
+            </div>
+            <div class="command-line">
+                <span class="command">C</span>
+                <span class="description">Copy footprint</span>
+            </div>
+            <div class="command-line">
+                <span class="command">E</span>
+                <span class="description">Edit footprint properties</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + M</span>
+                <span class="description">Move exactly (precise positioning)</span>
+            </div>
+            <div class="command-line">
+                <span class="command">L</span>
+                <span class="description">Lock/unlock position</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Layer Controls</h2>
+            <div class="command-line">
+                <span class="command">PgDn</span>
+                <span class="description">Switch to next layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">PgUp</span>
+                <span class="description">Switch to previous layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">+</span>
+                <span class="description">Alternative next layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">-</span>
+                <span class="description">Alternative previous layer</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F5</span>
+                <span class="description">Switch to In1.Cu</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F6</span>
+                <span class="description">Switch to In2.Cu</span>
+            </div>
+            <div class="command-line">
+                <span class="command">F7</span>
+                <span class="description">Switch to B.Cu</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + F7</span>
+                <span class="description">Switch to F.Cu</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3D Viewer - Navigation</h2>
+            <div class="command-line">
+                <span class="command">R</span>
+                <span class="description">Rotate board X-axis</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Shift + R</span>
+                <span class="description">Rotate board Y-axis</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Ctrl + R</span>
+                <span class="description">Rotate board Z-axis</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Home</span>
+                <span class="description">Reset to default view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Spacebar</span>
+                <span class="description">Fit board in window</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Mouse Wheel</span>
+                <span class="description">Zoom in/out</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Left Mouse + Drag</span>
+                <span class="description">Rotate 3D view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Middle Mouse + Drag</span>
+                <span class="description">Pan 3D view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Right Mouse + Drag</span>
+                <span class="description">Zoom 3D view</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3D Viewer - Display Options</h2>
+            <div class="command-line">
+                <span class="command">1</span>
+                <span class="description">Front view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">2</span>
+                <span class="description">Back view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">3</span>
+                <span class="description">Left view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">4</span>
+                <span class="description">Right view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">5</span>
+                <span class="description">Top view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">6</span>
+                <span class="description">Bottom view</span>
+            </div>
+            <div class="command-line">
+                <span class="command">Z</span>
+                <span class="description">Toggle copper zones display</span>
+            </div>
+            <div class="command-line">
+                <span class="command">S</span>
+                <span class="description">Toggle silkscreen layers</span>
+            </div>
+            <div class="command-line">
+                <span class="command">T</span>
+                <span class="description">Toggle 3D component models</span>
+            </div>
+            <div class="command-line">
+                <span class="command">B</span>
+                <span class="description">Toggle board body display</span>
+            </div>
+            <div class="command-line">
+                <span class="command">A</span>
+                <span class="description">Toggle realistic/solid mode</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tips & Workflows</h2>
+            <div class="workflow">
+                <strong>Efficient Schematic Creation:</strong><br>
+                • Start with power symbols (P) and global labels<br>
+                • Use hierarchical sheets for complex designs<br>
+                • Group related components before routing<br>
+                • Use bus connections for multi-bit signals<br>
+                • Add no-connect flags (K) to unused pins
+            </div>
+            <div class="workflow">
+                <strong>PCB Layout Best Practices:</strong><br>
+                • Place critical components first<br>
+                • Route power and ground planes early<br>
+                • Use 45-degree angles for traces<br>
+                • Keep high-speed traces short<br>
+                • Add test points for debugging
+            </div>
+            <div class="workflow">
+                <strong>Design Rule Check:</strong><br>
+                • Run DRC frequently during layout<br>
+                • Fix clearance violations immediately<br>
+                • Check via sizes for manufacturing<br>
+                • Verify minimum trace widths<br>
+                • Export Gerber files for fabrication
+            </div>
+            <div class="tip">
+                <strong>Productivity Tips:</strong><br>
+                • Learn keyboard shortcuts for speed<br>
+                • Use component placement grid<br>
+                • Create custom libraries for frequently used parts<br>
+                • Use copy/paste for repetitive layouts<br>
+                • Save work frequently with version control
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>KiCad PCB Design Shortcuts - Part of CheatSheets Collection</p>
+    </footer>
 
     <script src="../../js/cheatsheet.js"></script>
-    <script>
-        // Additional KiCad-specific JavaScript can go here
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('KiCad PCB Design Cheatsheet loaded');
-        });
-    </script>
 </body>
 </html>
