@@ -21,7 +21,7 @@ function addHeaderControls() {
     leftControlsContainer.className = 'header-controls-left';
     leftControlsContainer.innerHTML = `
         <button onclick="goBackToIndex()" class="header-btn back-btn" title="Back to Main Page" aria-label="Back to Main Page">
-            ← Home
+            🏠
         </button>
     `;
     
@@ -30,10 +30,10 @@ function addHeaderControls() {
     rightControlsContainer.className = 'header-controls';
     rightControlsContainer.innerHTML = `
         <button onclick="printCheatsheet()" class="header-btn print-btn" title="Print CheatSheet" aria-label="Print CheatSheet">
-            🖨 Print
+            🖨️
         </button>
         <button onclick="toggleTheme()" class="header-btn theme-btn" id="themeToggle" title="Toggle Light/Dark Mode" aria-label="Toggle Theme">
-            🌙 Dark
+            🌙
         </button>
     `;
     
@@ -86,9 +86,9 @@ function toggleTheme() {
     // Save theme preference
     localStorage.setItem('cheatsheet-theme', isDark ? 'dark' : 'light');
     
-    // Update button text
+    // Update button icon
     if (themeToggle) {
-        themeToggle.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+        themeToggle.innerHTML = isDark ? '☀️' : '🌙';
         themeToggle.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
     }
 }
@@ -101,7 +101,7 @@ function loadTheme() {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
         if (themeToggle) {
-            themeToggle.innerHTML = '☀️ Light';
+            themeToggle.innerHTML = '☀️';
             themeToggle.title = 'Switch to Light Mode';
         }
     }
