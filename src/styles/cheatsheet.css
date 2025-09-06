@@ -259,64 +259,17 @@ body.productivity {
     background: var(--category-bg);
     color: var(--category-text);
     border: 1px solid var(--category-border);
-    padding: 6px 10px;
+    padding: 3px 6px;
     border-radius: 3px;
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 11px;
     display: inline-block;
     margin: 2px 4px 2px 0;
-    line-height: 1.2;
+    line-height: 1.1;
     word-break: break-word;
 }
 
 
-body.system .command,
-body.system .shortcut,
-body.system .shortcut-keys {
-    background: #cffafe;
-    color: #0e7490;
-    border: 1px solid #a5f3fc;
-}
-
-body.mathematical .command,
-body.mathematical .shortcut,
-body.mathematical .shortcut-keys {
-    background: #dbeafe;
-    color: #1d4ed8;
-    border: 1px solid #93c5fd;
-}
-
-body.design-cad .command,
-body.design-cad .shortcut,
-body.design-cad .shortcut-keys {
-    background: #fce7f3;
-    color: #be185d;
-    border: 1px solid #f9a8d4;
-}
-
-body.productivity .command,
-body.productivity .shortcut,
-body.productivity .shortcut-keys {
-    background: #cdf4ea;
-    color: #065f73;
-    border: 1px solid #9fe7d5;
-}
-
-body.creative-media .command,
-body.creative-media .shortcut,
-body.creative-media .shortcut-keys {
-    background: #f3e8ff;
-    color: #6b21a8;
-    border: 1px solid #e9d5ff;
-}
-
-body.network .command,
-body.network .shortcut,
-body.network .shortcut-keys {
-    background: #e0f2fe;
-    color: #0369a1;
-    border: 1px solid #bae6fd;
-}
 
 .description {
     color: var(--text-secondary);
@@ -454,14 +407,6 @@ body.network .shortcut-keys {
     outline-offset: 2px;
 }
 
-/* Category-specific footer colors */
-body.development .footer { background: linear-gradient(135deg, var(--development) 0%, #d63384 100%); }
-body.system .footer { background: linear-gradient(135deg, var(--system) 0%, #0e7490 100%); }
-body.mathematical .footer { background: linear-gradient(135deg, var(--mathematical) 0%, #1d4ed8 100%); }
-body.design-cad .footer { background: linear-gradient(135deg, var(--design-cad) 0%, #be185d 100%); }
-body.productivity .footer { background: linear-gradient(135deg, var(--productivity) 0%, #065f73 100%); }
-body.creative-media .footer { background: linear-gradient(135deg, var(--creative-media) 0%, #6b21a8 100%); }
-body.network .footer { background: linear-gradient(135deg, var(--network) 0%, #1565c0 100%); }
 
 /* =============================================================================
    DARK THEME SUPPORT
@@ -514,54 +459,6 @@ body.dark-theme .shortcut-keys {
 }
 
 /* Category-specific dark theme command colors */
-body.dark-theme.development .command,
-body.dark-theme.development .shortcut,
-body.dark-theme.development .shortcut-keys {
-    background: rgba(240, 80, 50, 0.2);
-    color: #fed7aa;
-    border: 1px solid rgba(240, 80, 50, 0.3);
-}
-
-
-body.dark-theme.system .command,
-body.dark-theme.system .shortcut,
-body.dark-theme.system .shortcut-keys {
-    background: rgba(8, 145, 178, 0.2);
-    color: #cffafe;
-    border: 1px solid rgba(8, 145, 178, 0.3);
-}
-
-body.dark-theme.mathematical .command,
-body.dark-theme.mathematical .shortcut,
-body.dark-theme.mathematical .shortcut-keys {
-    background: rgba(37, 99, 235, 0.2);
-    color: #dbeafe;
-    border: 1px solid rgba(37, 99, 235, 0.3);
-}
-
-body.dark-theme.design-cad .command,
-body.dark-theme.design-cad .shortcut,
-body.dark-theme.design-cad .shortcut-keys {
-    background: rgba(236, 72, 153, 0.2);
-    color: #fce7f3;
-    border: 1px solid rgba(236, 72, 153, 0.3);
-}
-
-body.dark-theme.productivity .command,
-body.dark-theme.productivity .shortcut,
-body.dark-theme.productivity .shortcut-keys {
-    background: rgba(139, 92, 246, 0.2);
-    color: #ede9fe;
-    border: 1px solid rgba(139, 92, 246, 0.3);
-}
-
-body.dark-theme.network .command,
-body.dark-theme.network .shortcut,
-body.dark-theme.network .shortcut-keys {
-    background: rgba(25, 118, 210, 0.2);
-    color: #e0f2fe;
-    border: 1px solid rgba(25, 118, 210, 0.3);
-}
 
 /* =============================================================================
    RESPONSIVE DESIGN
